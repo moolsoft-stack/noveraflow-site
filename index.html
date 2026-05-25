@@ -1,80 +1,218 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NoveraFlow</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(180deg, #f7f3ea 0%, #eef4ef 100%);
-      color: #1f2a24;
-    }
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="NoveraFlow는 짧은 기록이 시간 속에서 흐름으로 보이도록 돕는 조용한 AI 다이어리입니다."
+    />
+    <meta name="theme-color" content="#f6f1e8" />
+    <title>NoveraFlow | 기록이 흐름이 되는 곳</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Nunito+Sans:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="NoveraFlow home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>NoveraFlow</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#philosophy">철학</a>
+        <a href="#flow">흐름</a>
+        <a href="#symbol">상징</a>
+        <a href="#community">커뮤니티</a>
+        <a href="#mvp">MVP</a>
+      </nav>
+    </header>
 
-    .page {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 24px;
-      text-align: center;
-    }
+    <main id="top">
+      <section class="hero section-band" aria-labelledby="hero-title">
+        <canvas class="flow-canvas" data-flow-canvas aria-hidden="true"></canvas>
+        <div class="hero-inner">
+          <p class="eyebrow">A quiet diary for living patterns</p>
+          <h1 id="hero-title">NoveraFlow</h1>
+          <p class="hero-copy">
+            기록이 쌓이면, 삶의 흐름이 보입니다. NoveraFlow는 하루를 판단하지 않고
+            짧은 문장, 작은 상징, 조용한 피드백이 당신만의 흐름으로 이어지도록 돕습니다.
+          </p>
+          <div class="hero-actions" aria-label="Main actions">
+            <a class="button primary" href="#philosophy">철학 보기</a>
+            <a class="button secondary" href="#mvp">준비 상태</a>
+          </div>
+        </div>
+        <div class="hero-preview" aria-label="NoveraFlow diary preview">
+          <div class="phone-shell">
+            <div class="phone-top">
+              <span></span>
+              <span></span>
+            </div>
+            <div class="entry-card">
+              <span class="entry-symbol moon"></span>
+              <p>오늘은 긴 설명보다, 짧게 남겨두고 싶은 날.</p>
+            </div>
+            <div class="entry-card soft">
+              <span class="entry-symbol leaf"></span>
+              <p>비슷한 생각이 며칠 사이 조용히 이어지고 있어요.</p>
+            </div>
+            <div class="growth-line">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    .card {
-      max-width: 760px;
-    }
+      <section class="section philosophy" id="philosophy" aria-labelledby="philosophy-title">
+        <div class="section-heading">
+          <p class="eyebrow">Philosophy</p>
+          <h2 id="philosophy-title">AI보다 기록이 먼저인 다이어리</h2>
+        </div>
+        <div class="principle-grid">
+          <article>
+            <span class="index">01</span>
+            <h3>부담 없이 남기는 기록</h3>
+            <p>한 문장, 상징 하나, 별일 없음도 충분한 기록으로 다룹니다.</p>
+          </article>
+          <article>
+            <span class="index">02</span>
+            <h3>단정하지 않는 피드백</h3>
+            <p>AI는 사용자를 진단하거나 처방하지 않고, 반복되는 흐름을 조용히 비춥니다.</p>
+          </article>
+          <article>
+            <span class="index">03</span>
+            <h3>의미를 강요하지 않는 상징</h3>
+            <p>상징은 점수나 유형이 아니라 기록과 함께 자라는 작은 흔적입니다.</p>
+          </article>
+        </div>
+      </section>
 
-    .brand {
-      font-size: 20px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #6f7f72;
-      margin-bottom: 48px;
-    }
+      <section class="section flow" id="flow" aria-labelledby="flow-title">
+        <div class="section-heading">
+          <p class="eyebrow">Flow Structure</p>
+          <h2 id="flow-title">하루의 조각이 흐름으로 이어지는 방식</h2>
+          <p>
+            NoveraFlow는 기록을 빨리 분석하려 하지 않습니다. 충분히 쌓인 시간 안에서
+            반복되는 단어, 분위기, 상징의 움직임을 천천히 연결합니다.
+          </p>
+        </div>
+        <div class="flow-steps" aria-label="Flow steps">
+          <article>
+            <span>남김</span>
+            <h3>짧은 기록</h3>
+            <p>지금 가까운 말이나 상징을 가볍게 남깁니다.</p>
+          </article>
+          <article>
+            <span>이어짐</span>
+            <h3>조용한 누적</h3>
+            <p>기록은 날짜보다 흐름 중심으로 천천히 쌓입니다.</p>
+          </article>
+          <article>
+            <span>비춤</span>
+            <h3>작은 피드백</h3>
+            <p>비슷한 주제가 보일 때만 짧고 조심스럽게 알려줍니다.</p>
+          </article>
+        </div>
+      </section>
 
-    h1 {
-      font-size: clamp(38px, 7vw, 76px);
-      line-height: 1.15;
-      margin: 0 0 28px;
-      font-weight: 600;
-    }
+      <section class="section symbol" id="symbol" aria-labelledby="symbol-title">
+        <div class="section-heading">
+          <p class="eyebrow">Symbol Growth</p>
+          <h2 id="symbol-title">상징은 보상이 아니라 흐름의 형태입니다.</h2>
+          <p>
+            처음에는 점이나 선처럼 작게 시작하고, 기록이 이어지면 자연의 이미지처럼
+            천천히 형태를 갖습니다. 완성은 끝이 아니라 다음 흐름으로 넘어가는 순간입니다.
+          </p>
+        </div>
+        <div class="symbol-stage" aria-label="Symbol growth stages">
+          <div class="stage-dot"></div>
+          <div class="stage-line"></div>
+          <div class="stage-ring"></div>
+          <div class="stage-orbit"></div>
+          <div class="stage-sun"></div>
+        </div>
+      </section>
 
-    p {
-      font-size: clamp(17px, 2.2vw, 22px);
-      line-height: 1.8;
-      color: #4c5b51;
-      margin: 0 auto;
-      max-width: 640px;
-    }
+      <section class="section feedback" aria-labelledby="feedback-title">
+        <div class="quote-panel">
+          <p class="eyebrow">AI Feedback</p>
+          <h2 id="feedback-title">“최근 비슷한 감정 흐름이 반복되고 있어요.”</h2>
+          <p>
+            피드백은 판단이 아니라 관찰에 가깝습니다. 사용자의 삶을 고치려 하기보다,
+            기록 사이에 남은 흐름을 다시 볼 수 있게 돕습니다.
+          </p>
+        </div>
+      </section>
 
-    .note {
-      margin-top: 56px;
-      font-size: 15px;
-      color: #7a877d;
-    }
-  </style>
-</head>
-<body>
-  <main class="page">
-    <section class="card">
-      <div class="brand">NoveraFlow</div>
+      <section class="section community" id="community" aria-labelledby="community-title">
+        <div class="section-heading">
+          <p class="eyebrow">Community</p>
+          <h2 id="community-title">커뮤니티는 강제가 아니라 조용한 연결입니다.</h2>
+          <p>
+            원문 공개보다 익명 흐름 공유를 우선합니다. 사용자가 원할 때만 비슷한 흐름과
+            연결되고, 인기나 반응 경쟁으로 흐르지 않게 설계합니다.
+          </p>
+        </div>
+        <div class="community-grid">
+          <article>
+            <h3>익명 흐름</h3>
+            <p>내 기록 전체가 아니라 동의한 일부 흐름만 익명으로 연결합니다.</p>
+          </article>
+          <article>
+            <h3>상징 해석의 여백</h3>
+            <p>앱이 의미를 확정하지 않고, 사용자들이 자연스럽게 느낀 해석을 남깁니다.</p>
+          </article>
+          <article>
+            <h3>비교 없는 공감</h3>
+            <p>팔로워, 등급, 인기글보다 “혼자만의 흐름은 아닐 수 있다”는 감각을 우선합니다.</p>
+          </article>
+        </div>
+      </section>
 
-      <h1>
-        짧은 기록들이 쌓이면,<br />
-        삶의 흐름이 드러납니다.
-      </h1>
+      <section class="section mvp" id="mvp" aria-labelledby="mvp-title">
+        <div class="section-heading">
+          <p class="eyebrow">MVP Status</p>
+          <h2 id="mvp-title">작게 시작하되, 오래 남을 구조를 준비하고 있습니다.</h2>
+          <p>
+            첫 버전은 많은 기능보다 기록 습관, 상징 선택, 기본 피드백, 흐름형 기록 보기를
+            안정적으로 검증하는 데 집중합니다.
+          </p>
+        </div>
+        <div class="status-list">
+          <div>
+            <span class="status-dot ready"></span>
+            <p>철학과 UX 구조 정리</p>
+          </div>
+          <div>
+            <span class="status-dot ready"></span>
+            <p>상징 성장 방향 정리</p>
+          </div>
+          <div>
+            <span class="status-dot progress"></span>
+            <p>MVP 기록 경험 준비</p>
+          </div>
+          <div>
+            <span class="status-dot later"></span>
+            <p>익명 커뮤니티는 장기 고도화</p>
+          </div>
+        </div>
+      </section>
+    </main>
 
-      <p>
-        NoveraFlow는 기록을 강요하지 않고,<br />
-        반복되는 감정과 생각의 흐름을 조용히 바라보는<br />
-        AI 라이프 플랫폼입니다.
-      </p>
+    <footer class="site-footer">
+      <p>NoveraFlow</p>
+      <p>기록을 판단하지 않고, 흐름을 조용히 비추는 다이어리.</p>
+    </footer>
 
-      <div class="note">
-        First version is quietly in progress.
-      </div>
-    </section>
-  </main>
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>
