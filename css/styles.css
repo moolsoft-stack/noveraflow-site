@@ -399,7 +399,7 @@ h3 {
   top: 26%;
   border-radius: 50%;
   background: rgba(111, 151, 165, 0.62);
-  animation: heroMoonBreath 12s ease-in-out infinite alternate;
+  animation: heroMoonBreath 3.8s ease-in-out infinite alternate;
 }
 
 .field-symbol.moon::after {
@@ -421,7 +421,7 @@ h3 {
   border-radius: 72% 9px 72% 9px;
   background: rgba(113, 139, 118, 0.68);
   transform: rotate(-24deg);
-  animation: leafBreath 18s ease-in-out infinite alternate;
+  animation: leafBreath 4.2s ease-in-out infinite alternate;
 }
 
 .field-symbol.leaf::after,
@@ -435,7 +435,7 @@ h3 {
   background: linear-gradient(110deg, rgba(255, 255, 255, 0), rgba(255, 252, 236, 0.58), rgba(255, 255, 255, 0));
   opacity: 0;
   transform: translateX(-32%) rotate(12deg);
-  animation: softGleam 9s ease-in-out infinite;
+  animation: softGleam 4.8s ease-in-out infinite;
   pointer-events: none;
 }
 
@@ -684,7 +684,7 @@ h3 {
   height: 18px;
   border-radius: 50%;
   background: var(--moss);
-  animation: symbolBreath 5.8s ease-in-out infinite alternate;
+  animation: symbolBreath 3.2s ease-in-out infinite alternate;
 }
 
 .stage-line {
@@ -693,7 +693,7 @@ h3 {
   border-radius: 999px;
   background: var(--water);
   transform: rotate(-18deg);
-  animation: lineBreath 6.5s ease-in-out infinite alternate;
+  animation: lineBreath 3.4s ease-in-out infinite alternate;
 }
 
 .stage-ring {
@@ -703,7 +703,7 @@ h3 {
   border-radius: 50%;
   position: relative;
   overflow: hidden;
-  animation: symbolBreath 6.8s ease-in-out infinite alternate;
+  animation: symbolBreath 3.6s ease-in-out infinite alternate;
 }
 
 .stage-orbit {
@@ -713,7 +713,7 @@ h3 {
   border-radius: 50%;
   position: relative;
   overflow: hidden;
-  animation: symbolBreath 7.4s ease-in-out infinite alternate;
+  animation: symbolBreath 3.8s ease-in-out infinite alternate;
 }
 
 .stage-orbit::before {
@@ -738,7 +738,7 @@ h3 {
   position: relative;
   overflow: hidden;
   background: radial-gradient(circle at 42% 36%, #f7d98a 0 18%, var(--sun) 19% 58%, rgba(213, 169, 79, 0.18) 59% 100%);
-  animation: symbolBreath 8s ease-in-out infinite alternate;
+  animation: symbolBreath 4s ease-in-out infinite alternate;
 }
 
 .feedback {
@@ -1091,16 +1091,6 @@ h3 {
   .site-footer {
     align-items: flex-start;
     flex-direction: column;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
   }
 }
 

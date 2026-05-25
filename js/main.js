@@ -9,8 +9,9 @@ const state = {
   height: 0,
   layers: [],
   particles: [],
-  reducedMotion: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  reducedMotion: false,
   thoughtIndex: 0,
+  frameCount: 0,
 };
 
 const quietThoughts = [
@@ -30,6 +31,7 @@ function resizeCanvas() {
   ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
   createLayers();
   createParticles();
+  console.log("NoveraFlow particles", state.particles.length);
 }
 
 function createLayers() {
@@ -64,6 +66,11 @@ function createParticles() {
 }
 
 function drawFlow(time = 0) {
+  if (state.frameCount === 0) {
+    console.log("NoveraFlow animation loaded");
+  }
+  state.frameCount += 1;
+
   ctx.clearRect(0, 0, state.width, state.height);
 
   const hazeShift = state.reducedMotion ? 0 : Math.sin(time * 0.000075) * state.width * 0.04;
@@ -146,9 +153,7 @@ function drawFlow(time = 0) {
   });
   ctx.restore();
 
-  if (!state.reducedMotion) {
-    requestAnimationFrame(drawFlow);
-  }
+  requestAnimationFrame(drawFlow);
 }
 
 function updateHeader() {
@@ -156,13 +161,14 @@ function updateHeader() {
 }
 
 function showNextThought() {
-  if (!thoughts || !thoughtText || state.reducedMotion) return;
+  if (!thoughts || !thoughtText) return;
 
   thoughts.classList.remove("is-visible");
 
   window.setTimeout(() => {
     thoughtText.textContent = quietThoughts[state.thoughtIndex];
     thoughts.classList.add("is-visible");
+    console.log("NoveraFlow thought changed", thoughtText.textContent);
     state.thoughtIndex = (state.thoughtIndex + 1) % quietThoughts.length;
   }, 520);
 
@@ -172,10 +178,11 @@ function showNextThought() {
 }
 
 function startThoughtLoop() {
-  if (!thoughtText || state.reducedMotion) return;
+  if (!thoughtText) return;
 
   thoughtText.textContent = quietThoughts[0];
   thoughts.classList.add("is-visible");
+  console.log("NoveraFlow thought changed", thoughtText.textContent);
   state.thoughtIndex = 1;
 
   window.setTimeout(() => {
