@@ -1,13 +1,24 @@
 const header = document.querySelector("[data-header]");
 const canvas = document.querySelector("[data-flow-canvas]");
 const ctx = canvas.getContext("2d");
+const thoughts = document.querySelector("[data-thoughts]");
+const thoughtText = thoughts?.querySelector("span");
 
 const state = {
   width: 0,
   height: 0,
   layers: [],
   reducedMotion: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  thoughtIndex: 0,
 };
+
+const quietThoughts = [
+  "짧게 남긴 기록도 괜찮아요.",
+  "AI는 정답보다 흐름을 비춥니다.",
+  "비슷한 결이 조금씩 이어집니다.",
+  "상징은 기록과 함께 천천히 자랍니다.",
+  "오늘의 작은 흔적이 나중에 흐름이 됩니다.",
+];
 
 function resizeCanvas() {
   const ratio = Math.min(window.devicePixelRatio || 1, 2);
@@ -26,15 +37,15 @@ function createLayers() {
     amplitude: state.height * (0.012 + index * 0.004),
     frequency: 0.0018 + index * 0.00042,
     phase: index * 1.35,
-    speed: 0.000055 + index * 0.000014,
-    alpha: 0.11 - index * 0.008,
+    speed: 0.000024 + index * 0.000008,
+    alpha: 0.082 - index * 0.006,
   }));
 }
 
 function drawFlow(time = 0) {
   ctx.clearRect(0, 0, state.width, state.height);
 
-  const hazeShift = state.reducedMotion ? 0 : Math.sin(time * 0.00008) * state.width * 0.035;
+  const hazeShift = state.reducedMotion ? 0 : Math.sin(time * 0.000045) * state.width * 0.026;
   const haze = ctx.createRadialGradient(
     state.width * 0.62 + hazeShift,
     state.height * 0.28,
@@ -76,22 +87,6 @@ function drawFlow(time = 0) {
     ctx.stroke();
   });
 
-  const breath = state.reducedMotion ? 0 : Math.sin(time * 0.00011) * 0.35 + 0.65;
-  const marks = [
-    [0.18, 0.38, 2.1],
-    [0.34, 0.49, 1.55],
-    [0.57, 0.31, 1.8],
-    [0.76, 0.56, 1.35],
-    [0.88, 0.41, 1.65],
-  ];
-
-  marks.forEach(([xRatio, yRatio, radius], index) => {
-    ctx.beginPath();
-    ctx.fillStyle = index % 2 === 0 ? `rgba(68, 93, 77, ${0.07 * breath})` : `rgba(180, 125, 98, ${0.055 * breath})`;
-    ctx.arc(state.width * xRatio, state.height * yRatio, radius, 0, Math.PI * 2);
-    ctx.fill();
-  });
-
   if (!state.reducedMotion) {
     requestAnimationFrame(drawFlow);
   }
@@ -101,9 +96,27 @@ function updateHeader() {
   header.classList.toggle("is-scrolled", window.scrollY > 16);
 }
 
+function showNextThought() {
+  if (!thoughts || !thoughtText || state.reducedMotion) return;
+
+  thoughtText.textContent = quietThoughts[state.thoughtIndex];
+  thoughts.classList.add("is-visible");
+
+  window.setTimeout(() => {
+    thoughts.classList.remove("is-visible");
+  }, 6200);
+
+  state.thoughtIndex = (state.thoughtIndex + 1) % quietThoughts.length;
+}
+
 window.addEventListener("resize", resizeCanvas);
 window.addEventListener("scroll", updateHeader, { passive: true });
 
 resizeCanvas();
 drawFlow();
 updateHeader();
+
+if (thoughtText && !state.reducedMotion) {
+  showNextThought();
+  window.setInterval(showNextThought, 11800);
+}

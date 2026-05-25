@@ -18,17 +18,22 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
+    <div class="site-atmosphere" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <header class="site-header" data-header>
       <a class="brand" href="#top" aria-label="NoveraFlow home">
         <span class="brand-mark" aria-hidden="true"></span>
         <span>NoveraFlow</span>
       </a>
       <nav class="nav" aria-label="Primary navigation">
-        <a href="#philosophy">철학</a>
+        <a href="#philosophy">생각</a>
         <a href="#flow">흐름</a>
         <a href="#symbol">상징</a>
-        <a href="#community">커뮤니티</a>
-        <a href="#mvp">MVP</a>
+        <a href="#community">연결</a>
+        <a href="#mvp">준비 중</a>
       </nav>
     </header>
 
@@ -43,26 +48,20 @@
             짧은 문장, 작은 상징, 조용한 피드백이 당신만의 흐름으로 이어지도록 돕습니다.
           </p>
           <div class="hero-actions" aria-label="Main actions">
-            <a class="button primary" href="#philosophy">철학 보기</a>
-            <a class="button secondary" href="#mvp">준비 상태</a>
+            <a class="button primary" href="#philosophy">천천히 보기</a>
+            <a class="button secondary" href="#mvp">지금 준비 중인 것</a>
           </div>
         </div>
-        <div class="hero-preview" aria-label="NoveraFlow diary preview">
-          <div class="phone-shell">
-            <div class="phone-top">
-              <span></span>
+        <div class="hero-preview" aria-label="NoveraFlow diary feeling preview">
+          <div class="record-field">
+            <p class="record-fragment first">오늘은 긴 설명보다, 짧게 남겨두고 싶은 날.</p>
+            <span class="field-symbol moon"></span>
+            <p class="record-fragment second">비슷한 생각이 며칠 사이 조용히 이어지고 있어요.</p>
+            <span class="field-symbol leaf"></span>
+            <div class="floating-thoughts" data-thoughts aria-live="off">
               <span></span>
             </div>
-            <div class="entry-card">
-              <span class="entry-symbol moon"></span>
-              <p>오늘은 긴 설명보다, 짧게 남겨두고 싶은 날.</p>
-            </div>
-            <div class="entry-card soft">
-              <span class="entry-symbol leaf"></span>
-              <p>비슷한 생각이 며칠 사이 조용히 이어지고 있어요.</p>
-            </div>
-            <div class="growth-line">
-              <span></span>
+            <div class="field-growth" aria-hidden="true">
               <span></span>
               <span></span>
               <span></span>
@@ -74,22 +73,22 @@
 
       <section class="section philosophy" id="philosophy" aria-labelledby="philosophy-title">
         <div class="section-heading">
-          <p class="eyebrow">Philosophy</p>
+          <p class="eyebrow">What matters</p>
           <h2 id="philosophy-title">AI보다 기록이 먼저인 다이어리</h2>
         </div>
         <div class="principle-grid">
           <article>
-            <span class="index">01</span>
+            <span class="index">한 줄</span>
             <h3>부담 없이 남기는 기록</h3>
             <p>한 문장, 상징 하나, 별일 없음도 충분한 기록으로 다룹니다.</p>
           </article>
           <article>
-            <span class="index">02</span>
+            <span class="index">조용히</span>
             <h3>단정하지 않는 피드백</h3>
             <p>AI는 사용자를 진단하거나 처방하지 않고, 반복되는 흐름을 조용히 비춥니다.</p>
           </article>
           <article>
-            <span class="index">03</span>
+            <span class="index">천천히</span>
             <h3>의미를 강요하지 않는 상징</h3>
             <p>상징은 점수나 유형이 아니라 기록과 함께 자라는 작은 흔적입니다.</p>
           </article>
@@ -98,7 +97,7 @@
 
       <section class="section flow" id="flow" aria-labelledby="flow-title">
         <div class="section-heading">
-          <p class="eyebrow">Flow Structure</p>
+          <p class="eyebrow">How it flows</p>
           <h2 id="flow-title">하루의 조각이 흐름으로 이어지는 방식</h2>
           <p>
             NoveraFlow는 기록을 빨리 분석하려 하지 않습니다. 충분히 쌓인 시간 안에서
@@ -126,7 +125,7 @@
 
       <section class="section symbol" id="symbol" aria-labelledby="symbol-title">
         <div class="section-heading">
-          <p class="eyebrow">Symbol Growth</p>
+          <p class="eyebrow">Small symbols</p>
           <h2 id="symbol-title">상징은 보상이 아니라 흐름의 형태입니다.</h2>
           <p>
             처음에는 점이나 선처럼 작게 시작하고, 기록이 이어지면 자연의 이미지처럼
@@ -144,7 +143,7 @@
 
       <section class="section feedback" aria-labelledby="feedback-title">
         <div class="quote-panel">
-          <p class="eyebrow">AI Feedback</p>
+          <p class="eyebrow">A quiet note</p>
           <h2 id="feedback-title">“최근 비슷한 감정 흐름이 반복되고 있어요.”</h2>
           <p>
             피드백은 판단이 아니라 관찰에 가깝습니다. 사용자의 삶을 고치려 하기보다,
@@ -155,7 +154,7 @@
 
       <section class="section community" id="community" aria-labelledby="community-title">
         <div class="section-heading">
-          <p class="eyebrow">Community</p>
+          <p class="eyebrow">Gentle connection</p>
           <h2 id="community-title">커뮤니티는 강제가 아니라 조용한 연결입니다.</h2>
           <p>
             원문 공개보다 익명 흐름 공유를 우선합니다. 사용자가 원할 때만 비슷한 흐름과
@@ -180,17 +179,17 @@
 
       <section class="section mvp" id="mvp" aria-labelledby="mvp-title">
         <div class="section-heading">
-          <p class="eyebrow">MVP Status</p>
-          <h2 id="mvp-title">작게 시작하되, 오래 남을 구조를 준비하고 있습니다.</h2>
+          <p class="eyebrow">Now preparing</p>
+          <h2 id="mvp-title">작게 시작하고, 오래 남을 수 있게 준비하고 있습니다.</h2>
           <p>
             첫 버전은 많은 기능보다 기록 습관, 상징 선택, 기본 피드백, 흐름형 기록 보기를
-            안정적으로 검증하는 데 집중합니다.
+            편안하게 다듬는 데 집중합니다.
           </p>
         </div>
         <div class="status-list">
           <div>
             <span class="status-dot ready"></span>
-            <p>철학과 UX 구조 정리</p>
+            <p>기록 경험의 방향 정리</p>
           </div>
           <div>
             <span class="status-dot ready"></span>
@@ -198,7 +197,7 @@
           </div>
           <div>
             <span class="status-dot progress"></span>
-            <p>MVP 기록 경험 준비</p>
+            <p>첫 기록 경험 준비</p>
           </div>
           <div>
             <span class="status-dot later"></span>
