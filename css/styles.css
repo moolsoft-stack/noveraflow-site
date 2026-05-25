@@ -21,7 +21,7 @@
 
 html {
   width: 100%;
-  max-width: 100vw;
+  max-width: 100%;
   min-height: 100%;
   overflow-x: hidden;
   background: var(--paper);
@@ -30,7 +30,7 @@ html {
 
 body {
   width: 100%;
-  max-width: 100vw;
+  max-width: 100%;
   min-height: 100%;
   margin: 0;
   overflow-x: hidden;
@@ -64,17 +64,19 @@ main,
 .site-footer,
 .section-band,
 .section {
+  width: 100%;
   max-width: 100%;
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 
 .site-atmosphere {
   position: fixed;
   inset: 0;
   width: 100%;
-  max-width: 100vw;
+  max-width: 100%;
   z-index: 0;
   overflow: hidden;
+  contain: paint;
   pointer-events: none;
 }
 
@@ -508,6 +510,7 @@ h3 {
 }
 
 .section {
+  width: 100%;
   max-width: 1240px;
   margin: 0 auto;
 }
@@ -613,6 +616,7 @@ h3 {
 }
 
 .flow {
+  width: 100%;
   max-width: none;
   overflow: hidden;
   background:
@@ -781,6 +785,7 @@ h3 {
 }
 
 .feedback {
+  width: 100%;
   max-width: none;
   overflow: hidden;
   background:
@@ -806,6 +811,7 @@ h3 {
 }
 
 .mvp {
+  width: 100%;
   max-width: none;
   background:
     linear-gradient(180deg, rgba(244, 246, 241, 0) 0%, rgba(237, 241, 227, 0.86) 24%, rgba(237, 241, 227, 0.92) 100%);
@@ -907,6 +913,15 @@ h3 {
   }
   to {
     transform: translate3d(2.5%, 1.4%, 0) rotate(-10deg) scale(1.06);
+  }
+}
+
+@keyframes mobileMistBreath {
+  from {
+    opacity: 0.16;
+  }
+  to {
+    opacity: 0.24;
   }
 }
 
@@ -1092,6 +1107,64 @@ h3 {
 }
 
 @media (max-width: 860px) {
+  body::before {
+    transform-origin: center;
+  }
+
+  .site-atmosphere span {
+    width: min(64%, 280px);
+    height: 24vh;
+    filter: blur(28px);
+    transform: none;
+    animation-name: mobileMistBreath;
+    animation-duration: 46s;
+  }
+
+  .site-atmosphere::before {
+    left: 4%;
+  }
+
+  .site-atmosphere::after {
+    right: 4%;
+  }
+
+  .site-atmosphere span:nth-child(1) {
+    left: 4%;
+  }
+
+  .site-atmosphere span:nth-child(2) {
+    right: 4%;
+  }
+
+  .site-atmosphere span:nth-child(3) {
+    left: 18%;
+    bottom: 0;
+  }
+
+  .hero::before {
+    inset: 0;
+  }
+
+  .philosophy::before {
+    right: 0;
+    width: min(52%, 220px);
+  }
+
+  .symbol::before {
+    left: 0;
+    width: min(56%, 240px);
+  }
+
+  .community::before {
+    right: 0;
+    width: min(54%, 230px);
+  }
+
+  .flow::before {
+    left: 0;
+    right: 0;
+  }
+
   .site-header {
     align-items: flex-start;
   }
