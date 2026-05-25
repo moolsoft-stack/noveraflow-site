@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">NoveraFlow icon</title>
+  <desc id="desc">A quiet circular symbol with a flowing line.</desc>
+  <rect width="128" height="128" rx="30" fill="#f4f6f1"/>
+  <circle cx="56" cy="66" r="30" fill="none" stroke="#445d4d" stroke-width="10"/>
+  <path d="M60 64 C78 48 91 35 108 30" fill="none" stroke="#d5a94f" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="108" cy="30" r="5" fill="#d5a94f"/>
+</svg>

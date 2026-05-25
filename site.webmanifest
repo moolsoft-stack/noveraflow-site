@@ -1,0 +1,24 @@
+{
+  "name": "NoveraFlow",
+  "short_name": "NoveraFlow",
+  "description": "A quiet AI diary for short records, gentle reflection, and living patterns.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f4f6f1",
+  "theme_color": "#f4f6f1",
+  "icons": [
+    {
+      "src": "/assets/noveraflow-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/noveraflow-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

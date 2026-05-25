@@ -7,9 +7,16 @@ const thoughtText = thoughts?.querySelector("span");
 const LOCALES = {
   en: {
     meta: {
-      title: "NoveraFlow | A quiet diary for living patterns",
+      title: "NoveraFlow | A Quiet AI Diary for Living Patterns",
       description:
-        "NoveraFlow is a quiet diary space where small records, gentle symbols, and soft feedback help life patterns become visible over time.",
+        "NoveraFlow is a quiet AI diary designed to help you notice patterns in your thoughts, emotions, and everyday life through short daily records.",
+      keywords:
+        "NoveraFlow, AI diary, quiet diary, journaling app, living patterns, self reflection, daily record, mood journal, mindful journaling, life flow",
+      ogTitle: "NoveraFlow | A Quiet Diary for Life Flow",
+      ogDescription: "Write small daily records, grow gentle symbols, and notice the quiet patterns of your life over time.",
+      twitterTitle: "NoveraFlow | A Quiet AI Diary",
+      twitterDescription: "A gentle journaling space for short records, reflection, symbols, and living patterns.",
+      locale: "en_US",
     },
     messages: {
       "brand.home": "NoveraFlow home",
@@ -95,9 +102,16 @@ const LOCALES = {
   },
   ko: {
     meta: {
-      title: "NoveraFlow | 기록이 흐름이 되는 조용한 다이어리",
+      title: "NoveraFlow | 삶의 흐름을 비추는 조용한 AI 다이어리",
       description:
-        "NoveraFlow는 짧은 기록, 작은 상징, 조용한 피드백을 통해 삶의 흐름이 천천히 보이도록 돕는 다이어리 공간입니다.",
+        "NoveraFlow는 짧은 기록을 통해 생각, 감정, 일상의 흐름을 천천히 알아차릴 수 있도록 돕는 조용한 AI 다이어리입니다.",
+      keywords:
+        "NoveraFlow, AI 다이어리, 조용한 다이어리, 기록 앱, 삶의 흐름, 자기 성찰, 짧은 기록, 감정 기록, 상징 성장",
+      ogTitle: "NoveraFlow | 기록이 흐름이 되는 조용한 다이어리",
+      ogDescription: "짧은 기록, 작은 상징, 부드러운 피드백을 통해 삶의 흐름을 조용히 바라볼 수 있는 기록 공간입니다.",
+      twitterTitle: "NoveraFlow | 조용한 AI 다이어리",
+      twitterDescription: "짧은 기록과 조용한 피드백으로 삶의 흐름을 비추는 다이어리.",
+      locale: "ko_KR",
     },
     messages: {
       "brand.home": "NoveraFlow 홈",
@@ -220,20 +234,30 @@ function getMessage(path, locale = state.locale) {
   return copy.messages?.[path] ?? path.split(".").reduce((value, key) => value?.[key], copy);
 }
 
+function setMeta(selector, attribute, value) {
+  if (!value) return;
+
+  document.querySelector(selector)?.setAttribute(attribute, value);
+}
+
 function applyLocale(locale = detectLocale()) {
   state.locale = LOCALES[locale] ? locale : DEFAULT_LOCALE;
   document.documentElement.lang = state.locale;
 
-  const pageTitle = getMessage("meta.title");
-  const metaDescription = getMessage("meta.description");
+  const meta = getLocaleCopy().meta;
+  const pageTitle = meta.title;
 
   if (pageTitle) {
     document.title = pageTitle;
   }
 
-  if (metaDescription) {
-    document.querySelector("meta[name='description']")?.setAttribute("content", metaDescription);
-  }
+  setMeta("meta[name='description']", "content", meta.description);
+  setMeta("meta[name='keywords']", "content", meta.keywords);
+  setMeta("meta[property='og:title']", "content", meta.ogTitle);
+  setMeta("meta[property='og:description']", "content", meta.ogDescription);
+  setMeta("meta[property='og:locale']", "content", meta.locale);
+  setMeta("meta[name='twitter:title']", "content", meta.twitterTitle);
+  setMeta("meta[name='twitter:description']", "content", meta.twitterDescription);
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const message = getMessage(element.dataset.i18n);
