@@ -1,14 +1,15 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en" data-default-locale="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="NoveraFlow는 짧은 기록이 시간 속에서 흐름으로 보이도록 돕는 조용한 AI 다이어리입니다."
+      content="NoveraFlow is a quiet diary space where small records, gentle symbols, and soft feedback help life patterns become visible over time."
+      data-i18n-meta-content="meta.description"
     />
     <meta name="theme-color" content="#f4f6f1" />
-    <title>NoveraFlow | 기록이 흐름이 되는 곳</title>
+    <title data-i18n-title="meta.title">NoveraFlow | A quiet diary for living patterns</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,16 +25,16 @@
       <span></span>
     </div>
     <header class="site-header" data-header>
-      <a class="brand" href="#top" aria-label="NoveraFlow home">
+      <a class="brand" href="#top" aria-label="NoveraFlow home" data-i18n-aria-label="brand.home">
         <span class="brand-mark" aria-hidden="true"></span>
         <span>NoveraFlow</span>
       </a>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#philosophy">생각</a>
-        <a href="#flow">흐름</a>
-        <a href="#symbol">상징</a>
-        <a href="#community">연결</a>
-        <a href="#mvp">준비 중</a>
+      <nav class="nav" aria-label="Primary navigation" data-i18n-aria-label="nav.label">
+        <a href="#philosophy" data-i18n="nav.philosophy">Why</a>
+        <a href="#flow" data-i18n="nav.flow">Flow</a>
+        <a href="#symbol" data-i18n="nav.symbol">Symbols</a>
+        <a href="#community" data-i18n="nav.community">Together</a>
+        <a href="#mvp" data-i18n="nav.preparing">Preparing</a>
       </nav>
     </header>
 
@@ -41,25 +42,25 @@
       <section class="hero section-band" aria-labelledby="hero-title">
         <canvas class="flow-canvas" data-flow-canvas aria-hidden="true"></canvas>
         <div class="hero-inner">
-          <p class="eyebrow">A quiet diary for living patterns</p>
-          <h1 id="hero-title">NoveraFlow</h1>
-          <p class="hero-copy">
-            기록이 쌓이면, 삶의 흐름이 보입니다. NoveraFlow는 하루를 판단하지 않고
-            짧은 문장, 작은 상징, 조용한 피드백이 당신만의 흐름으로 이어지도록 돕습니다.
+          <p class="eyebrow" data-i18n="hero.eyebrow">A quiet diary for living patterns</p>
+          <h1 id="hero-title" data-i18n="hero.title">NoveraFlow</h1>
+          <p class="hero-copy" data-i18n="hero.copy">
+            When records gather, a flow begins to appear. NoveraFlow does not judge the day. It lets short
+            sentences, small symbols, and quiet feedback settle into a shape that feels like your own.
           </p>
-          <div class="hero-actions" aria-label="Main actions">
-            <a class="button primary" href="#philosophy">천천히 보기</a>
-            <a class="button secondary" href="#mvp">지금 준비 중인 것</a>
+          <div class="hero-actions" aria-label="Main actions" data-i18n-aria-label="hero.actionsLabel">
+            <a class="button primary" href="#philosophy" data-i18n="hero.primaryCta">Move slowly</a>
+            <a class="button secondary" href="#mvp" data-i18n="hero.secondaryCta">What is preparing</a>
           </div>
         </div>
-        <div class="hero-preview" aria-label="NoveraFlow diary feeling preview">
+        <div class="hero-preview" aria-label="NoveraFlow diary feeling preview" data-i18n-aria-label="hero.previewLabel">
           <div class="record-field">
-            <p class="record-fragment first">오늘은 긴 설명보다, 짧게 남겨두고 싶은 날.</p>
+            <p class="record-fragment first" data-i18n="hero.recordFirst">A day for leaving less explanation, and one small trace.</p>
             <span class="field-symbol moon"></span>
-            <p class="record-fragment second">비슷한 생각이 며칠 사이 조용히 이어지고 있어요.</p>
+            <p class="record-fragment second" data-i18n="hero.recordSecond">A similar thought has been moving quietly for a few days.</p>
             <span class="field-symbol leaf"></span>
             <div class="floating-thoughts" data-thoughts aria-live="off">
-              <span>짧게 남긴 기록도 괜찮아요.</span>
+              <span data-i18n="thoughts.initial">A small record is enough today.</span>
             </div>
             <div class="field-growth" aria-hidden="true">
               <span></span>
@@ -73,66 +74,66 @@
 
       <section class="section philosophy" id="philosophy" aria-labelledby="philosophy-title">
         <div class="section-heading">
-          <p class="eyebrow">What matters</p>
-          <h2 id="philosophy-title">AI보다 기록이 먼저인 다이어리</h2>
+          <p class="eyebrow" data-i18n="philosophy.eyebrow">What matters</p>
+          <h2 id="philosophy-title" data-i18n="philosophy.title">A diary where the record comes before AI</h2>
         </div>
         <div class="principle-grid">
           <article>
-            <span class="index">한 줄</span>
-            <h3>부담 없이 남기는 기록</h3>
-            <p>한 문장, 상징 하나, 별일 없음도 충분한 기록으로 다룹니다.</p>
+            <span class="index" data-i18n="philosophy.item1.index">Small</span>
+            <h3 data-i18n="philosophy.item1.title">Records that do not feel heavy</h3>
+            <p data-i18n="philosophy.item1.copy">One sentence, one symbol, or even a quiet blank can still become a record.</p>
           </article>
           <article>
-            <span class="index">조용히</span>
-            <h3>단정하지 않는 피드백</h3>
-            <p>AI는 사용자를 진단하거나 처방하지 않고, 반복되는 흐름을 조용히 비춥니다.</p>
+            <span class="index" data-i18n="philosophy.item2.index">Quiet</span>
+            <h3 data-i18n="philosophy.item2.title">Feedback that does not decide for you</h3>
+            <p data-i18n="philosophy.item2.copy">AI does not diagnose or prescribe. It simply reflects recurring flows with care.</p>
           </article>
           <article>
-            <span class="index">천천히</span>
-            <h3>의미를 강요하지 않는 상징</h3>
-            <p>상징은 점수나 유형이 아니라 기록과 함께 자라는 작은 흔적입니다.</p>
+            <span class="index" data-i18n="philosophy.item3.index">Slow</span>
+            <h3 data-i18n="philosophy.item3.title">Symbols that do not force meaning</h3>
+            <p data-i18n="philosophy.item3.copy">A symbol is not a score or a type. It is a small shape that grows beside your records.</p>
           </article>
         </div>
       </section>
 
       <section class="section flow" id="flow" aria-labelledby="flow-title">
         <div class="section-heading">
-          <p class="eyebrow">How it flows</p>
-          <h2 id="flow-title">하루의 조각이 흐름으로 이어지는 방식</h2>
-          <p>
-            NoveraFlow는 기록을 빨리 분석하려 하지 않습니다. 충분히 쌓인 시간 안에서
-            반복되는 단어, 분위기, 상징의 움직임을 천천히 연결합니다.
+          <p class="eyebrow" data-i18n="flow.eyebrow">How it flows</p>
+          <h2 id="flow-title" data-i18n="flow.title">How small pieces of a day become a flow</h2>
+          <p data-i18n="flow.copy">
+            NoveraFlow does not rush to analyze a record. It waits for repeated words, moods, symbols, and
+            small changes to connect over time.
           </p>
         </div>
-        <div class="flow-steps" aria-label="Flow steps">
+        <div class="flow-steps" aria-label="Flow steps" data-i18n-aria-label="flow.stepsLabel">
           <article>
-            <span>남김</span>
-            <h3>짧은 기록</h3>
-            <p>지금 가까운 말이나 상징을 가볍게 남깁니다.</p>
+            <span data-i18n="flow.step1.index">Leave</span>
+            <h3 data-i18n="flow.step1.title">A short record</h3>
+            <p data-i18n="flow.step1.copy">Write the nearest sentence, feeling, or symbol without needing to explain everything.</p>
           </article>
           <article>
-            <span>이어짐</span>
-            <h3>조용한 누적</h3>
-            <p>기록은 날짜보다 흐름 중심으로 천천히 쌓입니다.</p>
+            <span data-i18n="flow.step2.index">Gather</span>
+            <h3 data-i18n="flow.step2.title">A quiet accumulation</h3>
+            <p data-i18n="flow.step2.copy">Records gather around flow rather than dates alone.</p>
           </article>
           <article>
-            <span>비춤</span>
-            <h3>작은 피드백</h3>
-            <p>비슷한 주제가 보일 때만 짧고 조심스럽게 알려줍니다.</p>
+            <span data-i18n="flow.step3.index">Reflect</span>
+            <h3 data-i18n="flow.step3.title">Soft feedback</h3>
+            <p data-i18n="flow.step3.copy">When a familiar theme appears, it is gently shown without conclusion.</p>
           </article>
         </div>
       </section>
 
       <section class="section symbol" id="symbol" aria-labelledby="symbol-title">
         <div class="section-heading">
-          <p class="eyebrow">Small symbols</p>
-          <h2 id="symbol-title">상징은 보상이 아니라 흐름의 형태입니다.</h2>
-          <p>
-            처음에는 점이나 선처럼 작게 시작하고, 기록이 이어지면 자연의 이미지처럼
-            천천히 형태를 갖습니다. 완성은 끝이 아니라 다음 흐름으로 넘어가는 순간입니다.
+          <p class="eyebrow" data-i18n="symbol.eyebrow">Small symbols</p>
+          <h2 id="symbol-title" data-i18n="symbol.title">Symbols are not rewards. They are shapes of flow.</h2>
+          <p data-i18n="symbol.copy">
+            They may begin as a dot, a line, or a small trace. As records continue, they slowly grow into a
+            natural form. Completion is not an ending. It is a quiet turn into the next flow.
           </p>
         </div>
-        <div class="symbol-stage" aria-label="Symbol growth stages">
+        <div class="symbol-stage" aria-label="Symbol growth stages" data-i18n-aria-label="symbol.stageLabel">
           <div class="stage-dot"></div>
           <div class="stage-line"></div>
           <div class="stage-ring"></div>
@@ -143,65 +144,65 @@
 
       <section class="section feedback" aria-labelledby="feedback-title">
         <div class="quote-panel">
-          <p class="eyebrow">A quiet note</p>
-          <h2 id="feedback-title">“최근 비슷한 감정 흐름이 반복되고 있어요.”</h2>
-          <p>
-            피드백은 판단이 아니라 관찰에 가깝습니다. 사용자의 삶을 고치려 하기보다,
-            기록 사이에 남은 흐름을 다시 볼 수 있게 돕습니다.
+          <p class="eyebrow" data-i18n="feedback.eyebrow">A quiet note</p>
+          <h2 id="feedback-title" data-i18n="feedback.title">"A similar feeling seems to be returning lately."</h2>
+          <p data-i18n="feedback.copy">
+            Feedback stays close to observation. It does not fix a life into one answer. It helps a person see
+            a flow that may have been hard to notice alone.
           </p>
         </div>
       </section>
 
       <section class="section community" id="community" aria-labelledby="community-title">
         <div class="section-heading">
-          <p class="eyebrow">Gentle connection</p>
-          <h2 id="community-title">커뮤니티는 강제가 아니라 조용한 연결입니다.</h2>
-          <p>
-            원문 공개보다 익명 흐름 공유를 우선합니다. 사용자가 원할 때만 비슷한 흐름과
-            연결되고, 인기나 반응 경쟁으로 흐르지 않게 설계합니다.
+          <p class="eyebrow" data-i18n="community.eyebrow">Gentle connection</p>
+          <h2 id="community-title" data-i18n="community.title">Community is not a requirement. It opens quietly.</h2>
+          <p data-i18n="community.copy">
+            NoveraFlow begins with anonymous flows, not public diaries. When someone chooses to join, similar
+            flows can meet without turning a private life into display.
           </p>
         </div>
         <div class="community-grid">
           <article>
-            <h3>익명 흐름</h3>
-            <p>내 기록 전체가 아니라 동의한 일부 흐름만 익명으로 연결합니다.</p>
+            <h3 data-i18n="community.item1.title">Anonymous flow</h3>
+            <p data-i18n="community.item1.copy">A shared feeling can appear without exposing the full original record.</p>
           </article>
           <article>
-            <h3>상징 해석의 여백</h3>
-            <p>앱이 의미를 확정하지 않고, 사용자들이 자연스럽게 느낀 해석을 남깁니다.</p>
+            <h3 data-i18n="community.item2.title">Open symbol meaning</h3>
+            <p data-i18n="community.item2.copy">The service does not define symbols too strongly. People may interpret them naturally.</p>
           </article>
           <article>
-            <h3>비교 없는 공감</h3>
-            <p>팔로워, 등급, 인기글보다 “혼자만의 흐름은 아닐 수 있다”는 감각을 우선합니다.</p>
+            <h3 data-i18n="community.item3.title">Connection without pressure</h3>
+            <p data-i18n="community.item3.copy">The goal is not ranking, typing, or performing. It is the feeling that a flow is not only yours.</p>
           </article>
         </div>
       </section>
 
       <section class="section mvp" id="mvp" aria-labelledby="mvp-title">
         <div class="section-heading">
-          <p class="eyebrow">Now preparing</p>
-          <h2 id="mvp-title">작게 시작하고, 오래 남을 수 있게 준비하고 있습니다.</h2>
-          <p>
-            첫 버전은 많은 기능보다 기록 습관, 상징 선택, 기본 피드백, 흐름형 기록 보기를
-            편안하게 다듬는 데 집중합니다.
+          <p class="eyebrow" data-i18n="mvp.eyebrow">Now preparing</p>
+          <h2 id="mvp-title" data-i18n="mvp.title">Starting small, so it can stay with people longer.</h2>
+          <p data-i18n="mvp.copy">
+            The first version focuses on writing with ease, choosing or receiving a symbol, and seeing gentle
+            feedback without making the experience feel heavy.
           </p>
         </div>
         <div class="status-list">
           <div>
             <span class="status-dot ready"></span>
-            <p>기록 경험의 방향 정리</p>
+            <p data-i18n="mvp.status1">Diary experience direction</p>
           </div>
           <div>
             <span class="status-dot ready"></span>
-            <p>상징 성장 방향 정리</p>
+            <p data-i18n="mvp.status2">Symbol growth direction</p>
           </div>
           <div>
             <span class="status-dot progress"></span>
-            <p>첫 기록 경험 준비</p>
+            <p data-i18n="mvp.status3">First writing experience</p>
           </div>
           <div>
             <span class="status-dot later"></span>
-            <p>익명 커뮤니티는 장기 고도화</p>
+            <p data-i18n="mvp.status4">Anonymous community opening</p>
           </div>
         </div>
       </section>
@@ -209,7 +210,7 @@
 
     <footer class="site-footer">
       <p>NoveraFlow</p>
-      <p>기록을 판단하지 않고, 흐름을 조용히 비추는 다이어리.</p>
+      <p data-i18n="footer.copy">A quiet diary that reflects flow instead of judging records.</p>
     </footer>
 
     <script src="js/main.js"></script>

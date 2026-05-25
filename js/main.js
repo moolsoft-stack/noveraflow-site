@@ -4,6 +4,100 @@ const ctx = canvas.getContext("2d");
 const thoughts = document.querySelector("[data-thoughts]");
 const thoughtText = thoughts?.querySelector("span");
 
+const LOCALES = {
+  en: {
+    meta: {
+      title: "NoveraFlow | A quiet diary for living patterns",
+      description:
+        "NoveraFlow is a quiet diary space where small records, gentle symbols, and soft feedback help life patterns become visible over time.",
+    },
+    messages: {
+      "brand.home": "NoveraFlow home",
+      "nav.label": "Primary navigation",
+      "nav.philosophy": "Why",
+      "nav.flow": "Flow",
+      "nav.symbol": "Symbols",
+      "nav.community": "Together",
+      "nav.preparing": "Preparing",
+      "hero.eyebrow": "A quiet diary for living patterns",
+      "hero.title": "NoveraFlow",
+      "hero.copy":
+        "When records gather, a flow begins to appear. NoveraFlow does not judge the day. It lets short sentences, small symbols, and quiet feedback settle into a shape that feels like your own.",
+      "hero.actionsLabel": "Main actions",
+      "hero.primaryCta": "Move slowly",
+      "hero.secondaryCta": "What is preparing",
+      "hero.previewLabel": "NoveraFlow diary feeling preview",
+      "hero.recordFirst": "A day for leaving less explanation, and one small trace.",
+      "hero.recordSecond": "A similar thought has been moving quietly for a few days.",
+      "thoughts.initial": "A small record is enough today.",
+      "philosophy.eyebrow": "What matters",
+      "philosophy.title": "A diary where the record comes before AI",
+      "philosophy.item1.index": "Small",
+      "philosophy.item1.title": "Records that do not feel heavy",
+      "philosophy.item1.copy": "One sentence, one symbol, or even a quiet blank can still become a record.",
+      "philosophy.item2.index": "Quiet",
+      "philosophy.item2.title": "Feedback that does not decide for you",
+      "philosophy.item2.copy": "AI does not diagnose or prescribe. It simply reflects recurring flows with care.",
+      "philosophy.item3.index": "Slow",
+      "philosophy.item3.title": "Symbols that do not force meaning",
+      "philosophy.item3.copy": "A symbol is not a score or a type. It is a small shape that grows beside your records.",
+      "flow.eyebrow": "How it flows",
+      "flow.title": "How small pieces of a day become a flow",
+      "flow.copy":
+        "NoveraFlow does not rush to analyze a record. It waits for repeated words, moods, symbols, and small changes to connect over time.",
+      "flow.stepsLabel": "Flow steps",
+      "flow.step1.index": "Leave",
+      "flow.step1.title": "A short record",
+      "flow.step1.copy": "Write the nearest sentence, feeling, or symbol without needing to explain everything.",
+      "flow.step2.index": "Gather",
+      "flow.step2.title": "A quiet accumulation",
+      "flow.step2.copy": "Records gather around flow rather than dates alone.",
+      "flow.step3.index": "Reflect",
+      "flow.step3.title": "Soft feedback",
+      "flow.step3.copy": "When a familiar theme appears, it is gently shown without conclusion.",
+      "symbol.eyebrow": "Small symbols",
+      "symbol.title": "Symbols are not rewards. They are shapes of flow.",
+      "symbol.copy":
+        "They may begin as a dot, a line, or a small trace. As records continue, they slowly grow into a natural form. Completion is not an ending. It is a quiet turn into the next flow.",
+      "symbol.stageLabel": "Symbol growth stages",
+      "feedback.eyebrow": "A quiet note",
+      "feedback.title": "\"A similar feeling seems to be returning lately.\"",
+      "feedback.copy":
+        "Feedback stays close to observation. It does not fix a life into one answer. It helps a person see a flow that may have been hard to notice alone.",
+      "community.eyebrow": "Gentle connection",
+      "community.title": "Community is not a requirement. It opens quietly.",
+      "community.copy":
+        "NoveraFlow begins with anonymous flows, not public diaries. When someone chooses to join, similar flows can meet without turning a private life into display.",
+      "community.item1.title": "Anonymous flow",
+      "community.item1.copy": "A shared feeling can appear without exposing the full original record.",
+      "community.item2.title": "Open symbol meaning",
+      "community.item2.copy": "The service does not define symbols too strongly. People may interpret them naturally.",
+      "community.item3.title": "Connection without pressure",
+      "community.item3.copy":
+        "The goal is not ranking, typing, or performing. It is the feeling that a flow is not only yours.",
+      "mvp.eyebrow": "Now preparing",
+      "mvp.title": "Starting small, so it can stay with people longer.",
+      "mvp.copy":
+        "The first version focuses on writing with ease, choosing or receiving a symbol, and seeing gentle feedback without making the experience feel heavy.",
+      "mvp.status1": "Diary experience direction",
+      "mvp.status2": "Symbol growth direction",
+      "mvp.status3": "First writing experience",
+      "mvp.status4": "Anonymous community opening",
+      "footer.copy": "A quiet diary that reflects flow instead of judging records.",
+    },
+    thoughts: [
+      "A small record is enough today.",
+      "AI reflects the flow, not the answer.",
+      "A familiar thread is slowly appearing.",
+      "A symbol grows beside the record.",
+      "A quiet trace can still become a flow.",
+    ],
+  },
+};
+
+const SUPPORTED_LOCALES = Object.keys(LOCALES);
+const DEFAULT_LOCALE = document.documentElement.dataset.defaultLocale || "en";
+
 const state = {
   width: 0,
   height: 0,
@@ -12,15 +106,62 @@ const state = {
   reducedMotion: false,
   thoughtIndex: 0,
   frameCount: 0,
+  locale: DEFAULT_LOCALE,
 };
 
-const quietThoughts = [
-  "짧게 남긴 기록도 괜찮아요.",
-  "AI는 정답보다 흐름을 비춥니다.",
-  "비슷한 결이 조금씩 이어집니다.",
-  "상징은 기록과 함께 천천히 자랍니다.",
-  "오늘의 작은 흔적이 나중에 흐름이 됩니다.",
-];
+function detectLocale() {
+  const browserLocale = (navigator.language || DEFAULT_LOCALE).toLowerCase();
+  const baseLocale = browserLocale.split("-")[0];
+
+  if (SUPPORTED_LOCALES.includes(browserLocale)) {
+    return browserLocale;
+  }
+
+  if (SUPPORTED_LOCALES.includes(baseLocale)) {
+    return baseLocale;
+  }
+
+  return DEFAULT_LOCALE;
+}
+
+function getLocaleCopy(locale = state.locale) {
+  return LOCALES[locale] || LOCALES[DEFAULT_LOCALE] || LOCALES.en;
+}
+
+function getMessage(path, locale = state.locale) {
+  const copy = getLocaleCopy(locale);
+  return copy.messages?.[path] ?? path.split(".").reduce((value, key) => value?.[key], copy);
+}
+
+function applyLocale(locale = detectLocale()) {
+  state.locale = LOCALES[locale] ? locale : DEFAULT_LOCALE;
+  document.documentElement.lang = state.locale;
+
+  const pageTitle = getMessage("meta.title");
+  const metaDescription = getMessage("meta.description");
+
+  if (pageTitle) {
+    document.title = pageTitle;
+  }
+
+  if (metaDescription) {
+    document.querySelector("meta[name='description']")?.setAttribute("content", metaDescription);
+  }
+
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const message = getMessage(element.dataset.i18n);
+    if (message) {
+      element.textContent = message;
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+    const message = getMessage(element.dataset.i18nAriaLabel);
+    if (message) {
+      element.setAttribute("aria-label", message);
+    }
+  });
+}
 
 function resizeCanvas() {
   const ratio = Math.min(window.devicePixelRatio || 1, 2);
@@ -52,7 +193,7 @@ function createParticles() {
     const row = index % 4;
     const column = Math.floor(index / 4);
     const xRatio = ((column * 0.137 + row * 0.071) % 0.92) + 0.04;
-    const yRatio = 0.2 + row * 0.14 + ((column % 3) * 0.035);
+    const yRatio = 0.2 + row * 0.14 + (column % 3) * 0.035;
 
     return {
       xRatio,
@@ -145,9 +286,10 @@ function drawFlow(time = 0) {
     }
 
     ctx.beginPath();
-    ctx.fillStyle = index % 2 === 0
-      ? `rgba(68, 93, 77, ${point.alpha * pulse})`
-      : `rgba(180, 125, 98, ${point.alpha * 0.82 * pulse})`;
+    ctx.fillStyle =
+      index % 2 === 0
+        ? `rgba(68, 93, 77, ${point.alpha * pulse})`
+        : `rgba(180, 125, 98, ${point.alpha * 0.82 * pulse})`;
     ctx.arc(x, y, point.radius * pulse, 0, Math.PI * 2);
     ctx.fill();
   });
@@ -166,6 +308,7 @@ function showNextThought() {
   thoughts.classList.remove("is-visible");
 
   window.setTimeout(() => {
+    const quietThoughts = getLocaleCopy().thoughts;
     thoughtText.textContent = quietThoughts[state.thoughtIndex];
     thoughts.classList.add("is-visible");
     console.log("NoveraFlow thought changed", thoughtText.textContent);
@@ -180,6 +323,7 @@ function showNextThought() {
 function startThoughtLoop() {
   if (!thoughtText) return;
 
+  const quietThoughts = getLocaleCopy().thoughts;
   thoughtText.textContent = quietThoughts[0];
   thoughts.classList.add("is-visible");
   console.log("NoveraFlow thought changed", thoughtText.textContent);
@@ -195,8 +339,8 @@ function startThoughtLoop() {
 window.addEventListener("resize", resizeCanvas);
 window.addEventListener("scroll", updateHeader, { passive: true });
 
+applyLocale();
 resizeCanvas();
 drawFlow();
 updateHeader();
-
 startThoughtLoop();
