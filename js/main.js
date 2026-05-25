@@ -8,6 +8,7 @@ const state = {
   width: 0,
   height: 0,
   layers: [],
+  particles: [],
   reducedMotion: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
   thoughtIndex: 0,
 };
@@ -28,6 +29,7 @@ function resizeCanvas() {
   canvas.height = Math.floor(state.height * ratio);
   ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
   createLayers();
+  createParticles();
 }
 
 function createLayers() {
@@ -40,6 +42,25 @@ function createLayers() {
     speed: 0.000024 + index * 0.000008,
     alpha: 0.082 - index * 0.006,
   }));
+}
+
+function createParticles() {
+  const count = state.width < 700 ? 18 : 28;
+  state.particles = Array.from({ length: count }, (_, index) => {
+    const row = index % 4;
+    const column = Math.floor(index / 4);
+    const xRatio = ((column * 0.137 + row * 0.071) % 0.92) + 0.04;
+    const yRatio = 0.2 + row * 0.14 + ((column % 3) * 0.035);
+
+    return {
+      xRatio,
+      yRatio,
+      radius: 1.4 + (index % 3) * 0.45,
+      phase: index * 0.74,
+      speed: 0.000038 + (index % 5) * 0.000004,
+      alpha: 0.16 - (index % 4) * 0.018,
+    };
+  });
 }
 
 function drawFlow(time = 0) {
@@ -87,6 +108,44 @@ function drawFlow(time = 0) {
     ctx.stroke();
   });
 
+  ctx.save();
+  ctx.globalCompositeOperation = "source-over";
+  state.particles.forEach((point, index) => {
+    const flow = state.reducedMotion ? 0 : time * point.speed + point.phase;
+    const x = state.width * point.xRatio + Math.sin(flow) * state.width * 0.018;
+    const y = state.height * point.yRatio + Math.cos(flow * 0.72) * state.height * 0.024;
+    const pulse = state.reducedMotion ? 1 : 0.72 + Math.sin(flow * 1.6) * 0.28;
+
+    if (index % 3 === 0) {
+      const next = state.particles[(index + 5) % state.particles.length];
+      const nextFlow = state.reducedMotion ? 0 : time * next.speed + next.phase;
+      const nextX = state.width * next.xRatio + Math.sin(nextFlow) * state.width * 0.018;
+      const nextY = state.height * next.yRatio + Math.cos(nextFlow * 0.72) * state.height * 0.024;
+      const distance = Math.hypot(nextX - x, nextY - y);
+
+      if (distance < state.width * 0.32) {
+        const linkGradient = ctx.createLinearGradient(x, y, nextX, nextY);
+        linkGradient.addColorStop(0, "rgba(68, 93, 77, 0)");
+        linkGradient.addColorStop(0.5, "rgba(111, 151, 165, 0.13)");
+        linkGradient.addColorStop(1, "rgba(68, 93, 77, 0)");
+        ctx.beginPath();
+        ctx.strokeStyle = linkGradient;
+        ctx.lineWidth = 0.75;
+        ctx.moveTo(x, y);
+        ctx.quadraticCurveTo((x + nextX) / 2, (y + nextY) / 2 - 18, nextX, nextY);
+        ctx.stroke();
+      }
+    }
+
+    ctx.beginPath();
+    ctx.fillStyle = index % 2 === 0
+      ? `rgba(68, 93, 77, ${point.alpha * pulse})`
+      : `rgba(180, 125, 98, ${point.alpha * 0.82 * pulse})`;
+    ctx.arc(x, y, point.radius * pulse, 0, Math.PI * 2);
+    ctx.fill();
+  });
+  ctx.restore();
+
   if (!state.reducedMotion) {
     requestAnimationFrame(drawFlow);
   }
@@ -99,14 +158,31 @@ function updateHeader() {
 function showNextThought() {
   if (!thoughts || !thoughtText || state.reducedMotion) return;
 
-  thoughtText.textContent = quietThoughts[state.thoughtIndex];
-  thoughts.classList.add("is-visible");
+  thoughts.classList.remove("is-visible");
+
+  window.setTimeout(() => {
+    thoughtText.textContent = quietThoughts[state.thoughtIndex];
+    thoughts.classList.add("is-visible");
+    state.thoughtIndex = (state.thoughtIndex + 1) % quietThoughts.length;
+  }, 900);
 
   window.setTimeout(() => {
     thoughts.classList.remove("is-visible");
-  }, 6200);
+  }, 6800);
+}
 
-  state.thoughtIndex = (state.thoughtIndex + 1) % quietThoughts.length;
+function startThoughtLoop() {
+  if (!thoughtText || state.reducedMotion) return;
+
+  thoughtText.textContent = quietThoughts[0];
+  thoughts.classList.add("is-visible");
+  state.thoughtIndex = 1;
+
+  window.setTimeout(() => {
+    thoughts.classList.remove("is-visible");
+  }, 6800);
+
+  window.setInterval(showNextThought, 9800);
 }
 
 window.addEventListener("resize", resizeCanvas);
@@ -116,7 +192,4 @@ resizeCanvas();
 drawFlow();
 updateHeader();
 
-if (thoughtText && !state.reducedMotion) {
-  showNextThought();
-  window.setInterval(showNextThought, 11800);
-}
+startThoughtLoop();

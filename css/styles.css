@@ -229,7 +229,7 @@ a {
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.88;
+  opacity: 1;
 }
 
 .hero::after {
@@ -399,7 +399,7 @@ h3 {
   top: 26%;
   border-radius: 50%;
   background: rgba(111, 151, 165, 0.62);
-  animation: symbolBreath 16s ease-in-out infinite alternate;
+  animation: heroMoonBreath 12s ease-in-out infinite alternate;
 }
 
 .field-symbol.moon::after {
@@ -434,8 +434,8 @@ h3 {
   border-radius: inherit;
   background: linear-gradient(110deg, rgba(255, 255, 255, 0), rgba(255, 252, 236, 0.3), rgba(255, 255, 255, 0));
   opacity: 0;
-  transform: translateX(-20%);
-  animation: softGleam 26s ease-in-out infinite;
+  transform: translateX(-32%) rotate(12deg);
+  animation: softGleam 14s ease-in-out infinite;
   pointer-events: none;
 }
 
@@ -445,7 +445,7 @@ h3 {
   right: 4%;
   bottom: 42%;
   max-width: 270px;
-  color: rgba(49, 64, 58, 0.54);
+  color: rgba(49, 64, 58, 0.7);
   font-size: 14px;
   line-height: 1.75;
   pointer-events: none;
@@ -453,9 +453,10 @@ h3 {
 
 .floating-thoughts span {
   display: block;
+  min-height: 48px;
   opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 2600ms ease, transform 2600ms ease;
+  transform: translateY(10px);
+  transition: opacity 1800ms ease, transform 1800ms ease;
 }
 
 .floating-thoughts.is-visible span {
@@ -683,7 +684,7 @@ h3 {
   height: 18px;
   border-radius: 50%;
   background: var(--moss);
-  animation: symbolBreath 18s ease-in-out infinite alternate;
+  animation: symbolBreath 8s ease-in-out infinite alternate;
 }
 
 .stage-line {
@@ -692,6 +693,7 @@ h3 {
   border-radius: 999px;
   background: var(--water);
   transform: rotate(-18deg);
+  animation: lineBreath 10s ease-in-out infinite alternate;
 }
 
 .stage-ring {
@@ -700,7 +702,8 @@ h3 {
   border: 3px solid var(--sage);
   border-radius: 50%;
   position: relative;
-  animation: symbolBreath 22s ease-in-out infinite alternate;
+  overflow: hidden;
+  animation: symbolBreath 10s ease-in-out infinite alternate;
 }
 
 .stage-orbit {
@@ -709,7 +712,8 @@ h3 {
   border: 2px solid rgba(68, 93, 77, 0.56);
   border-radius: 50%;
   position: relative;
-  animation: symbolBreath 24s ease-in-out infinite alternate;
+  overflow: hidden;
+  animation: symbolBreath 11s ease-in-out infinite alternate;
 }
 
 .stage-orbit::before {
@@ -734,7 +738,7 @@ h3 {
   position: relative;
   overflow: hidden;
   background: radial-gradient(circle at 42% 36%, #f7d98a 0 18%, var(--sun) 19% 58%, rgba(213, 169, 79, 0.18) 59% 100%);
-  animation: symbolBreath 28s ease-in-out infinite alternate;
+  animation: symbolBreath 12s ease-in-out infinite alternate;
 }
 
 .feedback {
@@ -894,39 +898,61 @@ h3 {
 
 @keyframes symbolBreath {
   from {
-    transform: translate3d(0, 0, 0) scale(0.992);
-    opacity: 0.82;
+    transform: translate3d(0, 0, 0) scale(0.975);
+    opacity: 0.74;
   }
   to {
-    transform: translate3d(0, -3px, 0) scale(1.018);
-    opacity: 0.96;
+    transform: translate3d(0, -6px, 0) scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes heroMoonBreath {
+  from {
+    transform: translate3d(0, 0, 0) scale(0.97);
+    opacity: 0.78;
+  }
+  to {
+    transform: translate3d(0, -7px, 0) scale(1.045);
+    opacity: 1;
   }
 }
 
 @keyframes leafBreath {
   from {
-    transform: rotate(-24deg) translate3d(0, 0, 0) scale(0.99);
-    opacity: 0.78;
+    transform: rotate(-24deg) translate3d(0, 0, 0) scale(0.97);
+    opacity: 0.74;
   }
   to {
-    transform: rotate(-22deg) translate3d(0, -3px, 0) scale(1.018);
-    opacity: 0.94;
+    transform: rotate(-22deg) translate3d(0, -7px, 0) scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes lineBreath {
+  from {
+    transform: rotate(-18deg) scaleX(0.9);
+    opacity: 0.58;
+  }
+  to {
+    transform: rotate(-15deg) scaleX(1.08);
+    opacity: 1;
   }
 }
 
 @keyframes softGleam {
   0%,
-  38% {
+  26% {
     opacity: 0;
-    transform: translateX(-26%);
+    transform: translateX(-34%) rotate(12deg);
   }
-  52% {
-    opacity: 0.42;
+  46% {
+    opacity: 0.56;
   }
-  70%,
+  66%,
   100% {
     opacity: 0;
-    transform: translateX(26%);
+    transform: translateX(34%) rotate(12deg);
   }
 }
 
