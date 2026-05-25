@@ -5,7 +5,7 @@ const ctx = canvas.getContext("2d");
 const state = {
   width: 0,
   height: 0,
-  points: [],
+  layers: [],
   reducedMotion: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
 };
 
@@ -16,58 +16,79 @@ function resizeCanvas() {
   canvas.width = Math.floor(state.width * ratio);
   canvas.height = Math.floor(state.height * ratio);
   ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-  createPoints();
+  createLayers();
 }
 
-function createPoints() {
-  const count = Math.max(34, Math.floor(state.width / 34));
-  state.points = Array.from({ length: count }, (_, index) => ({
-    x: (index / Math.max(count - 1, 1)) * state.width,
-    y: state.height * (0.34 + Math.sin(index * 0.72) * 0.12 + Math.random() * 0.28),
-    speed: 0.0018 + Math.random() * 0.002,
-    phase: Math.random() * Math.PI * 2,
-    radius: 1.4 + Math.random() * 2.4,
+function createLayers() {
+  const waveCount = state.width < 700 ? 4 : 6;
+  state.layers = Array.from({ length: waveCount }, (_, index) => ({
+    baseY: state.height * (0.2 + index * 0.105),
+    amplitude: state.height * (0.012 + index * 0.004),
+    frequency: 0.0018 + index * 0.00042,
+    phase: index * 1.35,
+    speed: 0.000055 + index * 0.000014,
+    alpha: 0.11 - index * 0.008,
   }));
 }
 
 function drawFlow(time = 0) {
   ctx.clearRect(0, 0, state.width, state.height);
 
-  const gradient = ctx.createLinearGradient(0, 0, state.width, state.height);
-  gradient.addColorStop(0, "rgba(113, 139, 118, 0.18)");
-  gradient.addColorStop(0.48, "rgba(111, 151, 165, 0.2)");
-  gradient.addColorStop(1, "rgba(213, 169, 79, 0.13)");
+  const hazeShift = state.reducedMotion ? 0 : Math.sin(time * 0.00008) * state.width * 0.035;
+  const haze = ctx.createRadialGradient(
+    state.width * 0.62 + hazeShift,
+    state.height * 0.28,
+    0,
+    state.width * 0.62 + hazeShift,
+    state.height * 0.28,
+    Math.max(state.width, state.height) * 0.68,
+  );
+  haze.addColorStop(0, "rgba(216, 232, 224, 0.42)");
+  haze.addColorStop(0.48, "rgba(239, 243, 232, 0.18)");
+  haze.addColorStop(1, "rgba(239, 243, 232, 0)");
+  ctx.fillStyle = haze;
+  ctx.fillRect(0, 0, state.width, state.height);
 
-  ctx.lineWidth = 1.4;
-  ctx.strokeStyle = gradient;
-  ctx.beginPath();
+  state.layers.forEach((layer, layerIndex) => {
+    const drift = state.reducedMotion ? 0 : time * layer.speed;
+    const gradient = ctx.createLinearGradient(0, layer.baseY - 40, state.width, layer.baseY + 40);
+    gradient.addColorStop(0, `rgba(68, 93, 77, ${layer.alpha * 0.55})`);
+    gradient.addColorStop(0.45, `rgba(111, 151, 165, ${layer.alpha})`);
+    gradient.addColorStop(1, `rgba(213, 169, 79, ${layer.alpha * 0.42})`);
 
-  state.points.forEach((point, index) => {
-    const drift = state.reducedMotion ? 0 : Math.sin(time * point.speed + point.phase) * 18;
-    const x = point.x;
-    const y = point.y + drift;
+    ctx.beginPath();
+    ctx.lineWidth = layerIndex === 0 ? 1.15 : 0.85;
+    ctx.strokeStyle = gradient;
 
-    if (index === 0) {
-      ctx.moveTo(x, y);
-      return;
+    for (let x = -24; x <= state.width + 24; x += 18) {
+      const y =
+        layer.baseY +
+        Math.sin(x * layer.frequency + layer.phase + drift) * layer.amplitude +
+        Math.sin(x * layer.frequency * 0.42 + layer.phase * 0.7 - drift * 0.6) * layer.amplitude * 1.7;
+
+      if (x === -24) {
+        ctx.moveTo(x, y);
+      } else {
+        ctx.lineTo(x, y);
+      }
     }
 
-    const previous = state.points[index - 1];
-    const previousDrift = state.reducedMotion ? 0 : Math.sin(time * previous.speed + previous.phase) * 18;
-    const controlX = (previous.x + x) / 2;
-    const controlY = (previous.y + previousDrift + y) / 2 - 26;
-    ctx.quadraticCurveTo(controlX, controlY, x, y);
+    ctx.stroke();
   });
 
-  ctx.stroke();
+  const breath = state.reducedMotion ? 0 : Math.sin(time * 0.00011) * 0.35 + 0.65;
+  const marks = [
+    [0.18, 0.38, 2.1],
+    [0.34, 0.49, 1.55],
+    [0.57, 0.31, 1.8],
+    [0.76, 0.56, 1.35],
+    [0.88, 0.41, 1.65],
+  ];
 
-  state.points.forEach((point, index) => {
-    if (index % 4 !== 0) return;
-
-    const drift = state.reducedMotion ? 0 : Math.sin(time * point.speed + point.phase) * 18;
+  marks.forEach(([xRatio, yRatio, radius], index) => {
     ctx.beginPath();
-    ctx.fillStyle = index % 8 === 0 ? "rgba(68, 93, 77, 0.28)" : "rgba(180, 125, 98, 0.22)";
-    ctx.arc(point.x, point.y + drift, point.radius, 0, Math.PI * 2);
+    ctx.fillStyle = index % 2 === 0 ? `rgba(68, 93, 77, ${0.07 * breath})` : `rgba(180, 125, 98, ${0.055 * breath})`;
+    ctx.arc(state.width * xRatio, state.height * yRatio, radius, 0, Math.PI * 2);
     ctx.fill();
   });
 
