@@ -9,9 +9,9 @@
   "theme_color": "#f4f6f1",
   "icons": [
     {
-      "src": "/assets/noveraflow-icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "/assets/noveraflow-icon-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
       "purpose": "any maskable"
     },
     {

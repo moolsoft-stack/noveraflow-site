@@ -179,23 +179,12 @@ a {
 }
 
 .brand-mark {
-  width: 18px;
-  height: 18px;
-  border: 2px solid var(--moss);
-  border-radius: 50%;
-  position: relative;
-}
-
-.brand-mark::after {
-  content: "";
-  position: absolute;
-  width: 18px;
-  height: 2px;
-  left: 8px;
-  top: 7px;
-  background: var(--sun);
-  transform: rotate(-26deg);
-  transform-origin: left center;
+  width: 26px;
+  height: 26px;
+  display: block;
+  border-radius: 7px;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(45, 55, 47, 0.1);
 }
 
 .nav {

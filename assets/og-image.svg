@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
   <title id="title">NoveraFlow preview image</title>
-  <desc id="desc">A quiet NoveraFlow brand image centered on the main icon.</desc>
+  <desc id="desc">A quiet NoveraFlow brand image centered on the main symbol.</desc>
   <defs>
     <radialGradient id="paper" cx="50%" cy="42%" r="72%">
       <stop offset="0" stop-color="#f7f8f0"/>
@@ -15,6 +15,9 @@
     <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
       <feDropShadow dx="0" dy="28" stdDeviation="32" flood-color="#2d372f" flood-opacity="0.12"/>
     </filter>
+    <clipPath id="iconCrop">
+      <rect x="0" y="0" width="288" height="288" rx="70"/>
+    </clipPath>
   </defs>
   <rect width="1200" height="630" fill="url(#paper)"/>
   <path d="M-80 330 C180 250 355 390 580 314 C778 248 952 294 1280 238" fill="none" stroke="url(#flowLine)" stroke-width="5"/>
@@ -22,11 +25,8 @@
   <circle cx="254" cy="186" r="5" fill="#445d4d" opacity="0.18"/>
   <circle cx="934" cy="448" r="6" fill="#b47d62" opacity="0.16"/>
   <circle cx="1012" cy="198" r="4" fill="#6f97a5" opacity="0.16"/>
-  <g transform="translate(476 174)" filter="url(#softShadow)">
-    <rect x="0" y="0" width="248" height="248" rx="58" fill="#f9fbf5" opacity="0.72"/>
-    <circle cx="112" cy="134" r="58" fill="none" stroke="#445d4d" stroke-width="15"/>
-    <path d="M122 128 C164 94 198 66 242 54" fill="none" stroke="#d5a94f" stroke-width="14" stroke-linecap="round"/>
-    <circle cx="242" cy="54" r="8" fill="#d5a94f"/>
+  <g transform="translate(456 154)" filter="url(#softShadow)" clip-path="url(#iconCrop)">
+    <image href="noveraflow-icon-1024.png" x="-24" y="-24" width="336" height="336" preserveAspectRatio="xMidYMid slice"/>
   </g>
   <text x="600" y="505" text-anchor="middle" fill="#1f2b28" font-family="Nunito Sans, Arial, sans-serif" font-size="58" font-weight="700">NoveraFlow</text>
   <text x="600" y="552" text-anchor="middle" fill="#6c746f" font-family="Nunito Sans, Arial, sans-serif" font-size="24" font-weight="600">A quiet diary for living patterns</text>
