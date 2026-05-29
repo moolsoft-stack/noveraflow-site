@@ -58,17 +58,32 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "NoveraFlow",
-        "url": "https://noveraflow.com/",
-        "description": "NoveraFlow is a quiet AI diary designed to help people notice living patterns through short daily records, gentle symbols, and soft reflection.",
-        "inLanguage": ["en", "ko"],
-        "publisher": {
-          "@type": "Organization",
-          "name": "NoveraFlow",
-          "url": "https://noveraflow.com/",
-          "logo": "https://noveraflow.com/assets/noveraflow-icon-1024-v20260529.png"
-        }
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://noveraflow.com/#organization",
+            "name": "NoveraFlow",
+            "url": "https://noveraflow.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://noveraflow.com/assets/noveraflow-icon-1024-v20260529.png",
+              "width": 1024,
+              "height": 1024
+            },
+            "sameAs": []
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://noveraflow.com/#website",
+            "name": "NoveraFlow",
+            "url": "https://noveraflow.com/",
+            "description": "NoveraFlow is a quiet AI diary designed to help people notice living patterns through short daily records, gentle symbols, and soft reflection.",
+            "inLanguage": ["en", "ko"],
+            "publisher": {
+              "@id": "https://noveraflow.com/#organization"
+            }
+          }
+        ]
       }
     </script>
   </head>
@@ -84,6 +99,7 @@
         <span>NoveraFlow</span>
       </a>
       <nav class="nav" aria-label="Primary navigation" data-i18n-aria-label="nav.label">
+        <a href="/about.html">About</a>
         <a href="#philosophy" data-i18n="nav.philosophy">Why</a>
         <a href="#flow" data-i18n="nav.flow">Flow</a>
         <a href="#symbol" data-i18n="nav.symbol">Symbols</a>
@@ -265,6 +281,13 @@
     <footer class="site-footer">
       <p>NoveraFlow</p>
       <p data-i18n="footer.copy">A quiet diary that reflects flow instead of judging records.</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/about.html">About</a>
+        <a href="/philosophy.html">Philosophy</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
     </footer>
 
     <script src="js/main.js"></script>
