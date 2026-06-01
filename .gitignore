@@ -1,2 +1,17 @@
 .chrome-overflow-profile/
 mobile-overflow-check.png
+
+# Local secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.ppk
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+.ssh/
+secrets/
+credentials/
