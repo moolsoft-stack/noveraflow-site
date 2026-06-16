@@ -934,6 +934,18 @@ h3 {
   font-size: 18px;
 }
 
+.content-body ul {
+  margin: 0 0 24px;
+  padding-left: 24px;
+  color: rgba(31, 43, 40, 0.74);
+  font-size: 18px;
+  line-height: 1.78;
+}
+
+.content-body li + li {
+  margin-top: 8px;
+}
+
 .content-body .updated {
   color: var(--moss);
   font-size: 15px;
