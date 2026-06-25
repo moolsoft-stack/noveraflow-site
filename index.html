@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-default-locale="en" data-site-url="https://noveraflow.com/">
+<html lang="en" data-default-locale="en" data-page="home" data-site-url="https://noveraflow.com/">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,7 +7,6 @@
     <meta
       name="description"
       content="NoveraFlow is a quiet AI diary designed to help you notice patterns in your thoughts, emotions, and everyday life through short daily records."
-      data-i18n-meta-content="meta.description"
     />
     <meta
       name="keywords"
@@ -17,11 +16,12 @@
     <meta name="theme-color" content="#f4f6f1" />
     <meta name="application-name" content="NoveraFlow" />
     <meta name="apple-mobile-web-app-title" content="NoveraFlow" />
-    <title data-i18n-title="meta.title">NoveraFlow | A Quiet AI Diary for Living Patterns</title>
+    <title>NoveraFlow | A Quiet AI Diary for Living Patterns</title>
     <link rel="canonical" href="https://noveraflow.com/" />
     <link rel="alternate" href="https://noveraflow.com/" hreflang="x-default" />
     <link rel="alternate" href="https://noveraflow.com/" hreflang="en" />
     <link rel="alternate" href="https://noveraflow.com/" hreflang="ko" />
+    <link rel="alternate" href="https://noveraflow.com/" hreflang="ja" />
     <meta property="og:site_name" content="NoveraFlow" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://noveraflow.com/" />
@@ -78,7 +78,7 @@
             "name": "NoveraFlow",
             "url": "https://noveraflow.com/",
             "description": "NoveraFlow is a quiet AI diary designed to help people notice living patterns through short daily records, gentle symbols, and soft reflection.",
-            "inLanguage": ["en", "ko"],
+            "inLanguage": ["en", "ko", "ja"],
             "publisher": {
               "@id": "https://noveraflow.com/#organization"
             }
@@ -94,43 +94,48 @@
       <span></span>
     </div>
     <header class="site-header" data-header>
-      <a class="brand" href="#top" aria-label="NoveraFlow home" data-i18n-aria-label="brand.home">
+      <a class="brand" href="#top" aria-label="NoveraFlow home" data-i18n-aria-label="common.brand.home">
         <img class="brand-mark" src="/assets/noveraflow-icon-1024-v20260529.png" alt="" aria-hidden="true" />
         <span>NoveraFlow</span>
       </a>
-      <nav class="nav" aria-label="Primary navigation" data-i18n-aria-label="nav.label">
-        <a href="/about.html">About</a>
-        <a href="#philosophy" data-i18n="nav.philosophy">Why</a>
-        <a href="#flow" data-i18n="nav.flow">Flow</a>
-        <a href="#symbol" data-i18n="nav.symbol">Symbols</a>
-        <a href="#community" data-i18n="nav.community">Together</a>
-        <a href="#mvp" data-i18n="nav.preparing">Preparing</a>
+      <nav class="nav" aria-label="Primary navigation" data-i18n-aria-label="common.nav.label">
+        <a href="/about.html" data-i18n="common.nav.about">About</a>
+        <a href="/philosophy.html" data-i18n="common.nav.features">Features</a>
+        <a href="/faq.html" data-i18n="common.nav.faq">FAQ</a>
+        <a href="/privacy" data-i18n="common.nav.privacy">Privacy</a>
+        <a href="/terms.html" data-i18n="common.nav.terms">Terms</a>
+        <a href="/contact.html" data-i18n="common.nav.contact">Contact</a>
       </nav>
+      <div class="language-switch" role="group" aria-label="Language" data-i18n-aria-label="common.language.label">
+        <button type="button" data-locale="ko" data-i18n="common.language.ko">한국어</button>
+        <button type="button" data-locale="en" data-i18n="common.language.en">English</button>
+        <button type="button" data-locale="ja" data-i18n="common.language.ja">日本語</button>
+      </div>
     </header>
 
     <main id="top">
       <section class="hero section-band" aria-labelledby="hero-title">
         <canvas class="flow-canvas" data-flow-canvas aria-hidden="true"></canvas>
         <div class="hero-inner">
-          <p class="eyebrow" data-i18n="hero.eyebrow">A quiet diary for living patterns</p>
-          <h1 id="hero-title" data-i18n="hero.title">NoveraFlow</h1>
-          <p class="hero-copy" data-i18n="hero.copy">
+          <p class="eyebrow" data-i18n="home.hero.eyebrow">A quiet diary for living patterns</p>
+          <h1 id="hero-title" data-i18n="home.hero.title">NoveraFlow</h1>
+          <p class="hero-copy" data-i18n="home.hero.copy">
             When records gather, a flow begins to appear. NoveraFlow does not judge the day. It lets short
             sentences, small symbols, and quiet feedback settle into a shape that feels like your own.
           </p>
-          <div class="hero-actions" aria-label="Main actions" data-i18n-aria-label="hero.actionsLabel">
-            <a class="button primary" href="#philosophy" data-i18n="hero.primaryCta">Move slowly</a>
-            <a class="button secondary" href="#mvp" data-i18n="hero.secondaryCta">What is preparing</a>
+          <div class="hero-actions" aria-label="Main actions" data-i18n-aria-label="home.hero.actionsLabel">
+            <a class="button primary" href="/philosophy.html" data-i18n="home.hero.primaryCta">See features</a>
+            <a class="button secondary" href="#mvp" data-i18n="home.hero.secondaryCta">App guide</a>
           </div>
         </div>
-        <div class="hero-preview" aria-label="NoveraFlow diary feeling preview" data-i18n-aria-label="hero.previewLabel">
+        <div class="hero-preview" aria-label="NoveraFlow diary feeling preview" data-i18n-aria-label="home.hero.previewLabel">
           <div class="record-field">
-            <p class="record-fragment first" data-i18n="hero.recordFirst">A day for leaving less explanation, and one small trace.</p>
+            <p class="record-fragment first" data-i18n="home.hero.recordFirst">A day for leaving less explanation, and one small trace.</p>
             <span class="field-symbol moon"></span>
-            <p class="record-fragment second" data-i18n="hero.recordSecond">A similar thought has been moving quietly for a few days.</p>
+            <p class="record-fragment second" data-i18n="home.hero.recordSecond">A similar thought has been moving quietly for a few days.</p>
             <span class="field-symbol leaf"></span>
             <div class="floating-thoughts" data-thoughts aria-live="off">
-              <span data-i18n="thoughts.initial">A small record is enough today.</span>
+              <span data-i18n="home.thoughts.initial">A small record is enough today.</span>
             </div>
             <div class="field-growth" aria-hidden="true">
               <span></span>
@@ -144,66 +149,66 @@
 
       <section class="section philosophy" id="philosophy" aria-labelledby="philosophy-title">
         <div class="section-heading">
-          <p class="eyebrow" data-i18n="philosophy.eyebrow">What matters</p>
-          <h2 id="philosophy-title" data-i18n="philosophy.title">A diary where the record comes before AI</h2>
+          <p class="eyebrow" data-i18n="home.philosophy.eyebrow">What matters</p>
+          <h2 id="philosophy-title" data-i18n="home.philosophy.title">A diary where the record comes before AI</h2>
         </div>
         <div class="principle-grid">
           <article>
-            <span class="index" data-i18n="philosophy.item1.index">Small</span>
-            <h3 data-i18n="philosophy.item1.title">Records that do not feel heavy</h3>
-            <p data-i18n="philosophy.item1.copy">One sentence, one symbol, or even a quiet blank can still become a record.</p>
+            <span class="index" data-i18n="home.philosophy.item1.index">Small</span>
+            <h3 data-i18n="home.philosophy.item1.title">Records that do not feel heavy</h3>
+            <p data-i18n="home.philosophy.item1.copy">One sentence, one symbol, or even a quiet blank can still become a record.</p>
           </article>
           <article>
-            <span class="index" data-i18n="philosophy.item2.index">Quiet</span>
-            <h3 data-i18n="philosophy.item2.title">Feedback that does not decide for you</h3>
-            <p data-i18n="philosophy.item2.copy">AI does not diagnose or prescribe. It simply reflects recurring flows with care.</p>
+            <span class="index" data-i18n="home.philosophy.item2.index">Quiet</span>
+            <h3 data-i18n="home.philosophy.item2.title">Feedback that does not decide for you</h3>
+            <p data-i18n="home.philosophy.item2.copy">AI does not diagnose or prescribe. It simply reflects recurring flows with care.</p>
           </article>
           <article>
-            <span class="index" data-i18n="philosophy.item3.index">Slow</span>
-            <h3 data-i18n="philosophy.item3.title">Symbols that do not force meaning</h3>
-            <p data-i18n="philosophy.item3.copy">A symbol is not a score or a type. It is a small shape that grows beside your records.</p>
+            <span class="index" data-i18n="home.philosophy.item3.index">Slow</span>
+            <h3 data-i18n="home.philosophy.item3.title">Symbols that do not force meaning</h3>
+            <p data-i18n="home.philosophy.item3.copy">A symbol is not a score or a type. It is a small shape that grows beside your records.</p>
           </article>
         </div>
       </section>
 
       <section class="section flow" id="flow" aria-labelledby="flow-title">
         <div class="section-heading">
-          <p class="eyebrow" data-i18n="flow.eyebrow">How it flows</p>
-          <h2 id="flow-title" data-i18n="flow.title">How small pieces of a day become a flow</h2>
-          <p data-i18n="flow.copy">
+          <p class="eyebrow" data-i18n="home.flow.eyebrow">How it flows</p>
+          <h2 id="flow-title" data-i18n="home.flow.title">How small pieces of a day become a flow</h2>
+          <p data-i18n="home.flow.copy">
             NoveraFlow does not rush to analyze a record. It waits for repeated words, moods, symbols, and
             small changes to connect over time.
           </p>
         </div>
-        <div class="flow-steps" aria-label="Flow steps" data-i18n-aria-label="flow.stepsLabel">
+        <div class="flow-steps" aria-label="Flow steps" data-i18n-aria-label="home.flow.stepsLabel">
           <article>
-            <span data-i18n="flow.step1.index">Leave</span>
-            <h3 data-i18n="flow.step1.title">A short record</h3>
-            <p data-i18n="flow.step1.copy">Write the nearest sentence, feeling, or symbol without needing to explain everything.</p>
+            <span data-i18n="home.flow.step1.index">Leave</span>
+            <h3 data-i18n="home.flow.step1.title">A short record</h3>
+            <p data-i18n="home.flow.step1.copy">Write the nearest sentence, feeling, or symbol without needing to explain everything.</p>
           </article>
           <article>
-            <span data-i18n="flow.step2.index">Gather</span>
-            <h3 data-i18n="flow.step2.title">A quiet accumulation</h3>
-            <p data-i18n="flow.step2.copy">Records gather around flow rather than dates alone.</p>
+            <span data-i18n="home.flow.step2.index">Gather</span>
+            <h3 data-i18n="home.flow.step2.title">A quiet accumulation</h3>
+            <p data-i18n="home.flow.step2.copy">Records gather around flow rather than dates alone.</p>
           </article>
           <article>
-            <span data-i18n="flow.step3.index">Reflect</span>
-            <h3 data-i18n="flow.step3.title">Soft feedback</h3>
-            <p data-i18n="flow.step3.copy">When a familiar theme appears, it is gently shown without conclusion.</p>
+            <span data-i18n="home.flow.step3.index">Reflect</span>
+            <h3 data-i18n="home.flow.step3.title">Soft feedback</h3>
+            <p data-i18n="home.flow.step3.copy">When a familiar theme appears, it is gently shown without conclusion.</p>
           </article>
         </div>
       </section>
 
       <section class="section symbol" id="symbol" aria-labelledby="symbol-title">
         <div class="section-heading">
-          <p class="eyebrow" data-i18n="symbol.eyebrow">Small symbols</p>
-          <h2 id="symbol-title" data-i18n="symbol.title">Symbols are not rewards. They are shapes of flow.</h2>
-          <p data-i18n="symbol.copy">
+          <p class="eyebrow" data-i18n="home.symbol.eyebrow">Small symbols</p>
+          <h2 id="symbol-title" data-i18n="home.symbol.title">Symbols are not rewards. They are shapes of flow.</h2>
+          <p data-i18n="home.symbol.copy">
             They may begin as a dot, a line, or a small trace. As records continue, they slowly grow into a
             natural form. Completion is not an ending. It is a quiet turn into the next flow.
           </p>
         </div>
-        <div class="symbol-stage" aria-label="Symbol growth stages" data-i18n-aria-label="symbol.stageLabel">
+        <div class="symbol-stage" aria-label="Symbol growth stages" data-i18n-aria-label="home.symbol.stageLabel">
           <div class="stage-dot"></div>
           <div class="stage-line"></div>
           <div class="stage-ring"></div>
@@ -214,9 +219,9 @@
 
       <section class="section feedback" aria-labelledby="feedback-title">
         <div class="quote-panel">
-          <p class="eyebrow" data-i18n="feedback.eyebrow">A quiet note</p>
-          <h2 id="feedback-title" data-i18n="feedback.title">"A similar feeling seems to be returning lately."</h2>
-          <p data-i18n="feedback.copy">
+          <p class="eyebrow" data-i18n="home.feedback.eyebrow">A quiet note</p>
+          <h2 id="feedback-title" data-i18n="home.feedback.title">"A similar feeling seems to be returning lately."</h2>
+          <p data-i18n="home.feedback.copy">
             Feedback stays close to observation. It does not fix a life into one answer. It helps a person see
             a flow that may have been hard to notice alone.
           </p>
@@ -225,34 +230,34 @@
 
       <section class="section community" id="community" aria-labelledby="community-title">
         <div class="section-heading">
-          <p class="eyebrow" data-i18n="community.eyebrow">Gentle connection</p>
-          <h2 id="community-title" data-i18n="community.title">Community is not a requirement. It opens quietly.</h2>
-          <p data-i18n="community.copy">
+          <p class="eyebrow" data-i18n="home.community.eyebrow">Gentle connection</p>
+          <h2 id="community-title" data-i18n="home.community.title">Community is not a requirement. It opens quietly.</h2>
+          <p data-i18n="home.community.copy">
             NoveraFlow begins with anonymous flows, not public diaries. When someone chooses to join, similar
             flows can meet without turning a private life into display.
           </p>
         </div>
         <div class="community-grid">
           <article>
-            <h3 data-i18n="community.item1.title">Anonymous flow</h3>
-            <p data-i18n="community.item1.copy">A shared feeling can appear without exposing the full original record.</p>
+            <h3 data-i18n="home.community.item1.title">Anonymous flow</h3>
+            <p data-i18n="home.community.item1.copy">A shared feeling can appear without exposing the full original record.</p>
           </article>
           <article>
-            <h3 data-i18n="community.item2.title">Open symbol meaning</h3>
-            <p data-i18n="community.item2.copy">The service does not define symbols too strongly. People may interpret them naturally.</p>
+            <h3 data-i18n="home.community.item2.title">Open symbol meaning</h3>
+            <p data-i18n="home.community.item2.copy">The service does not define symbols too strongly. People may interpret them naturally.</p>
           </article>
           <article>
-            <h3 data-i18n="community.item3.title">Connection without pressure</h3>
-            <p data-i18n="community.item3.copy">The goal is not ranking, typing, or performing. It is the feeling that a flow is not only yours.</p>
+            <h3 data-i18n="home.community.item3.title">Connection without pressure</h3>
+            <p data-i18n="home.community.item3.copy">The goal is not ranking, typing, or performing. It is the feeling that a flow is not only yours.</p>
           </article>
         </div>
       </section>
 
       <section class="section mvp" id="mvp" aria-labelledby="mvp-title">
         <div class="section-heading">
-          <p class="eyebrow" data-i18n="mvp.eyebrow">Now preparing</p>
-          <h2 id="mvp-title" data-i18n="mvp.title">Starting small, so it can stay with people longer.</h2>
-          <p data-i18n="mvp.copy">
+          <p class="eyebrow" data-i18n="home.mvp.eyebrow">Now preparing</p>
+          <h2 id="mvp-title" data-i18n="home.mvp.title">Starting small, so it can stay with people longer.</h2>
+          <p data-i18n="home.mvp.copy">
             The first version focuses on writing with ease, choosing or receiving a symbol, and seeing gentle
             feedback without making the experience feel heavy.
           </p>
@@ -260,19 +265,19 @@
         <div class="status-list">
           <div>
             <span class="status-dot ready"></span>
-            <p data-i18n="mvp.status1">Diary experience direction</p>
+            <p data-i18n="home.mvp.status1">Diary experience direction</p>
           </div>
           <div>
             <span class="status-dot ready"></span>
-            <p data-i18n="mvp.status2">Symbol growth direction</p>
+            <p data-i18n="home.mvp.status2">Symbol growth direction</p>
           </div>
           <div>
             <span class="status-dot progress"></span>
-            <p data-i18n="mvp.status3">First writing experience</p>
+            <p data-i18n="home.mvp.status3">First writing experience</p>
           </div>
           <div>
             <span class="status-dot later"></span>
-            <p data-i18n="mvp.status4">Anonymous community opening</p>
+            <p data-i18n="home.mvp.status4">Anonymous community opening</p>
           </div>
         </div>
       </section>
@@ -280,16 +285,18 @@
 
     <footer class="site-footer">
       <p>NoveraFlow</p>
-      <p data-i18n="footer.copy">A quiet diary that reflects flow instead of judging records.</p>
-      <nav class="footer-links" aria-label="Footer navigation">
-        <a href="/about.html">About</a>
-        <a href="/philosophy.html">Philosophy</a>
-        <a href="/privacy">Privacy</a>
-        <a href="/terms.html">Terms</a>
-        <a href="/contact.html">Contact</a>
+      <p data-i18n="common.footer.copy">A quiet diary that reflects flow instead of judging records.</p>
+      <nav class="footer-links" aria-label="Footer navigation" data-i18n-aria-label="common.footer.label">
+        <a href="/about.html" data-i18n="common.nav.about">About</a>
+        <a href="/philosophy.html" data-i18n="common.nav.features">Features</a>
+        <a href="/faq.html" data-i18n="common.nav.faq">FAQ</a>
+        <a href="/privacy" data-i18n="common.nav.privacy">Privacy</a>
+        <a href="/terms.html" data-i18n="common.nav.terms">Terms</a>
+        <a href="/contact.html" data-i18n="common.nav.contact">Contact</a>
       </nav>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

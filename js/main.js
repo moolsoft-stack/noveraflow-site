@@ -1,6 +1,6 @@
 const header = document.querySelector("[data-header]");
 const canvas = document.querySelector("[data-flow-canvas]");
-const ctx = canvas.getContext("2d");
+const ctx = canvas?.getContext("2d");
 const thoughts = document.querySelector("[data-thoughts]");
 const thoughtText = thoughts?.querySelector("span");
 
@@ -198,6 +198,7 @@ const LOCALES = {
 
 const SUPPORTED_LOCALES = Object.keys(LOCALES);
 const DEFAULT_LOCALE = document.documentElement.dataset.defaultLocale || "en";
+const siteI18n = window.NoveraFlowI18n;
 
 const state = {
   width: 0,
@@ -211,6 +212,8 @@ const state = {
 };
 
 function detectLocale() {
+  if (siteI18n) return siteI18n.locale;
+
   const browserLocale = (navigator.language || DEFAULT_LOCALE).toLowerCase();
   const baseLocale = browserLocale.split("-")[0];
 
@@ -226,10 +229,14 @@ function detectLocale() {
 }
 
 function getLocaleCopy(locale = state.locale) {
+  if (siteI18n?.locales?.[locale]) return siteI18n.locales[locale];
+
   return LOCALES[locale] || LOCALES[DEFAULT_LOCALE] || LOCALES.en;
 }
 
 function getMessage(path, locale = state.locale) {
+  if (siteI18n) return siteI18n.message(path, locale);
+
   const copy = getLocaleCopy(locale);
   return copy.messages?.[path] ?? path.split(".").reduce((value, key) => value?.[key], copy);
 }
@@ -241,6 +248,12 @@ function setMeta(selector, attribute, value) {
 }
 
 function applyLocale(locale = detectLocale()) {
+  if (siteI18n) {
+    siteI18n.applyLocale(locale);
+    state.locale = siteI18n.locale;
+    return;
+  }
+
   state.locale = LOCALES[locale] ? locale : DEFAULT_LOCALE;
   document.documentElement.lang = state.locale;
 
@@ -275,6 +288,8 @@ function applyLocale(locale = detectLocale()) {
 }
 
 function resizeCanvas() {
+  if (!canvas || !ctx) return;
+
   const ratio = Math.min(window.devicePixelRatio || 1, 2);
   state.width = canvas.offsetWidth;
   state.height = canvas.offsetHeight;
@@ -318,6 +333,8 @@ function createParticles() {
 }
 
 function drawFlow(time = 0) {
+  if (!canvas || !ctx) return;
+
   if (state.frameCount === 0) {
     console.log("NoveraFlow animation loaded");
   }
@@ -449,6 +466,14 @@ function startThoughtLoop() {
 
 window.addEventListener("resize", resizeCanvas);
 window.addEventListener("scroll", updateHeader, { passive: true });
+window.addEventListener("noveraflow:localechange", (event) => {
+  state.locale = event.detail?.locale || state.locale;
+  if (thoughtText) {
+    const quietThoughts = getLocaleCopy().thoughts;
+    thoughtText.textContent = quietThoughts[0];
+    state.thoughtIndex = 1;
+  }
+});
 
 applyLocale();
 resizeCanvas();

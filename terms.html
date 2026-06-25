@@ -1,22 +1,27 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-default-locale="en" data-page="terms">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index, follow" />
-    <meta name="description" content="NoveraFlow terms of service for MVP development and future public beta preparation." />
+    <meta name="description" content="NoveraFlow service status, records, AI feedback, user responsibility, backup, restore, and future review terms." />
+    <meta name="keywords" content="NoveraFlow, terms, terms of service, AI feedback, backup, restore" />
     <meta name="theme-color" content="#f4f6f1" />
     <title>NoveraFlow Terms of Service</title>
     <link rel="canonical" href="https://noveraflow.com/terms.html" />
+    <link rel="alternate" href="https://noveraflow.com/terms.html" hreflang="x-default" />
+    <link rel="alternate" href="https://noveraflow.com/terms.html" hreflang="en" />
+    <link rel="alternate" href="https://noveraflow.com/terms.html" hreflang="ko" />
+    <link rel="alternate" href="https://noveraflow.com/terms.html" hreflang="ja" />
     <meta property="og:site_name" content="NoveraFlow" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://noveraflow.com/terms.html" />
     <meta property="og:title" content="NoveraFlow Terms of Service" />
-    <meta property="og:description" content="Terms direction for NoveraFlow during MVP development." />
+    <meta property="og:description" content="NoveraFlow terms and service boundaries." />
     <meta property="og:image" content="https://noveraflow.com/assets/og-image-v20260529.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="NoveraFlow Terms of Service" />
-    <meta name="twitter:description" content="Terms direction for NoveraFlow during MVP development." />
+    <meta name="twitter:description" content="NoveraFlow service terms." />
     <meta name="twitter:image" content="https://noveraflow.com/assets/og-image-v20260529.png" />
     <link rel="icon" href="/assets/favicon-32-v20260529.png" sizes="32x32" type="image/png" />
     <link rel="manifest" href="/site.webmanifest?v=20260529" />
@@ -27,45 +32,56 @@
   </head>
   <body>
     <header class="site-header is-scrolled">
-      <a class="brand" href="/" aria-label="NoveraFlow home">
+      <a class="brand" href="/" aria-label="NoveraFlow home" data-i18n-aria-label="common.brand.home">
         <img class="brand-mark" src="/assets/noveraflow-icon-1024-v20260529.png" alt="" aria-hidden="true" />
         <span>NoveraFlow</span>
       </a>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="/about.html">About</a>
-        <a href="/philosophy.html">Philosophy</a>
-        <a href="/privacy">Privacy</a>
-        <a href="/terms.html">Terms</a>
-        <a href="/contact.html">Contact</a>
+      <nav class="nav" aria-label="Primary navigation" data-i18n-aria-label="common.nav.label">
+        <a href="/" data-i18n="common.nav.home">Home</a>
+        <a href="/about.html" data-i18n="common.nav.about">About</a>
+        <a href="/philosophy.html" data-i18n="common.nav.features">Features</a>
+        <a href="/faq.html" data-i18n="common.nav.faq">FAQ</a>
+        <a href="/privacy" data-i18n="common.nav.privacy">Privacy</a>
+        <a href="/contact.html" data-i18n="common.nav.contact">Contact</a>
       </nav>
+      <div class="language-switch" role="group" aria-label="Language" data-i18n-aria-label="common.language.label">
+        <button type="button" data-locale="ko" data-i18n="common.language.ko">한국어</button>
+        <button type="button" data-locale="en" data-i18n="common.language.en">English</button>
+        <button type="button" data-locale="ja" data-i18n="common.language.ja">日本語</button>
+      </div>
     </header>
     <main class="content-page">
       <section class="content-hero">
-        <p class="eyebrow">Terms</p>
-        <h1>Terms of Service</h1>
-        <p>These MVP terms describe the intended service boundaries before NoveraFlow enters public beta or production operation.</p>
+        <p class="eyebrow" data-i18n="terms.eyebrow">Terms</p>
+        <h1 data-i18n="terms.title">Terms of Service</h1>
+        <p data-i18n="terms.lead">These terms describe the service boundaries before NoveraFlow enters public launch.</p>
       </section>
       <section class="content-body">
-        <p class="updated">Last updated: May 29, 2026</p>
-        <h2>Service status</h2>
-        <p>NoveraFlow is currently being developed as an MVP. Features, screens, data handling, and availability may change as the product is prepared for testing.</p>
-        <h2>Diary and AI feedback</h2>
-        <p>NoveraFlow provides a diary and reflection experience. AI feedback is informational and reflective, not medical, clinical, legal, financial, or professional advice.</p>
-        <h2>User responsibility</h2>
-        <p>Users are responsible for the records they choose to create and keep. Public sharing, if introduced later, should remain optional and designed with privacy in mind.</p>
-        <h2>Future review</h2>
-        <p>Before public launch, these terms should be reviewed against the final app behavior, account system, data policy, payment model, and jurisdiction requirements.</p>
+        <p class="updated" data-i18n="terms.updated">Last updated: June 16, 2026</p>
+        <h2 data-i18n="terms.s1.title">1. Service status</h2>
+        <p data-i18n="terms.s1.copy">NoveraFlow is preparing for public launch. Features, screens, data handling, and availability may change during testing and review.</p>
+        <h2 data-i18n="terms.s2.title">2. Records and AI feedback</h2>
+        <p data-i18n="terms.s2.copy">NoveraFlow provides a diary and reflection experience. AI feedback is not medical, legal, financial, or professional advice.</p>
+        <h2 data-i18n="terms.s3.title">3. User responsibility</h2>
+        <p data-i18n="terms.s3.copy">Users are responsible for the records they create and keep. Public sharing, if introduced later, should remain optional and privacy-first.</p>
+        <h2 data-i18n="terms.s4.title">4. Backup and restore</h2>
+        <p data-i18n="terms.s4.copy">Backup and restore support may be explained separately depending on the provided method. Users are responsible for managing backup files they create.</p>
+        <h2 data-i18n="terms.s5.title">5. Future review</h2>
+        <p data-i18n="terms.s5.copy">Before public launch, these terms will be reviewed against final app behavior, account systems, data policy, payment model, and applicable law.</p>
       </section>
     </main>
     <footer class="site-footer">
       <p>NoveraFlow</p>
-      <nav class="footer-links" aria-label="Footer navigation">
-        <a href="/">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/philosophy.html">Philosophy</a>
-        <a href="/privacy">Privacy</a>
-        <a href="/contact.html">Contact</a>
+      <p data-i18n="common.footer.copy">A quiet diary that reflects flows instead of judging records.</p>
+      <nav class="footer-links" aria-label="Footer navigation" data-i18n-aria-label="common.footer.label">
+        <a href="/" data-i18n="common.nav.home">Home</a>
+        <a href="/about.html" data-i18n="common.nav.about">About</a>
+        <a href="/philosophy.html" data-i18n="common.nav.features">Features</a>
+        <a href="/faq.html" data-i18n="common.nav.faq">FAQ</a>
+        <a href="/privacy" data-i18n="common.nav.privacy">Privacy</a>
+        <a href="/contact.html" data-i18n="common.nav.contact">Contact</a>
       </nav>
     </footer>
+    <script src="/js/i18n.js"></script>
   </body>
 </html>

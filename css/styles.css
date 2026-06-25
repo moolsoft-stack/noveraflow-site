@@ -206,6 +206,35 @@ a {
   color: var(--moss);
 }
 
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgba(31, 43, 40, 0.12);
+  border-radius: 999px;
+  background: rgba(250, 252, 247, 0.42);
+}
+
+.language-switch button {
+  min-width: 42px;
+  min-height: 30px;
+  padding: 0 9px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(31, 43, 40, 0.66);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.language-switch button.is-active {
+  background: rgba(68, 93, 77, 0.9);
+  color: #fbfff7;
+}
+
 .section-band,
 .section {
   position: relative;
@@ -1248,10 +1277,15 @@ h3 {
 
   .site-header {
     align-items: flex-start;
+    gap: 12px;
   }
 
   .nav {
     display: none;
+  }
+
+  .language-switch {
+    margin-left: auto;
   }
 
   .hero {

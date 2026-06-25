@@ -28,3 +28,6 @@
 - [03-brand-summary.md](03-brand-summary.md): 브랜드 요약 기준
 - [04-seo-direction.md](04-seo-direction.md): SEO 상세 기준
 - [05-seo-summary.md](05-seo-summary.md): SEO 요약 기준
+- [NOVERAFLOW_GLOSSARY.md](NOVERAFLOW_GLOSSARY.md): 사이트 핵심 용어집
+- [SITE_I18N_STATUS.md](SITE_I18N_STATUS.md): 사이트 언어 구조와 검수 상태
+- [HANDOVER_STATUS.md](HANDOVER_STATUS.md): 현재 작업 인수인계 상태

@@ -3,41 +3,72 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://noveraflow.com/</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/" />
   </url>
   <url>
     <loc>https://noveraflow.com/about.html</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/about.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/about.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/about.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/about.html" />
   </url>
   <url>
     <loc>https://noveraflow.com/philosophy.html</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/philosophy.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/philosophy.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/philosophy.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/philosophy.html" />
+  </url>
+  <url>
+    <loc>https://noveraflow.com/faq.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/faq.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/faq.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/faq.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/faq.html" />
   </url>
   <url>
     <loc>https://noveraflow.com/privacy</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/privacy" />
   </url>
   <url>
     <loc>https://noveraflow.com/terms.html</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/terms.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/terms.html" />
   </url>
   <url>
     <loc>https://noveraflow.com/contact.html</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/contact.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/contact.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/contact.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/contact.html" />
   </url>
 </urlset>
