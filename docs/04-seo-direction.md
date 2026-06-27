@@ -1,7 +1,15 @@
+Status: Official
+Official source for: Site SEO direction and SEO copy tone
+Latest source: This document, with brand/marketing source in
+02-brand-and-marketing.md
+Reason: Number prefix is legacy ordering only. This file remains the active SEO
+direction.
+
 # NoveraFlow SEO 방향 기준
 
 > Current role: active SEO direction document for `noveraflow-site`.
-> Source philosophy: `C:\Projects\aidiary\docs`.
+> Source philosophy: `C:\projects\projects-docs\OFFICIAL_DOCUMENT_SYSTEM.md`
+> and `C:\projects\noveraflow-app\docs\BRAND_MANIFESTO.md`.
 > SEO must explain the product clearly without exaggerating or changing the philosophy.
 
 이 문서는 NoveraFlow 사이트의 SEO 작업을 진행하기 전에, 검색엔진과 AI 검색이 사이트의 목적을 명확히 이해하도록 돕는 기준 문서입니다.

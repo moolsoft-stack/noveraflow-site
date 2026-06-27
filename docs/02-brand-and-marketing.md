@@ -1,7 +1,15 @@
+Status: Official
+Official source for: Site brand and marketing principles
+Latest source: This document, with brand philosophy in
+OFFICIAL_DOCUMENT_SYSTEM.md and BRAND_MANIFESTO.md
+Reason: Number prefix is legacy ordering only. This file remains the active
+brand/marketing direction for the public site.
+
 # Brand And Marketing
 
 > Current role: active brand/marketing document for `noveraflow-site`.
-> Source philosophy: `C:\Projects\aidiary\docs`.
+> Source philosophy: `C:\projects\projects-docs\OFFICIAL_DOCUMENT_SYSTEM.md`
+> and `C:\projects\noveraflow-app\docs\BRAND_MANIFESTO.md`.
 > Marketing copy must translate the philosophy for users, not replace it.
 
 NoveraFlow의 광고와 브랜드 표현은 앱 경험의 일부로 본다.

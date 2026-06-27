@@ -13,13 +13,21 @@
 
 ## 담당하지 않는 범위
 
-- 전체 프로젝트 철학: `aidiary/docs`
+- 전체 프로젝트 철학: `C:\projects\noveraflow-app\docs\BRAND_MANIFESTO.md`
+- 공식 문서 체계: `C:\projects\projects-docs\OFFICIAL_DOCUMENT_SYSTEM.md`
 - 실제 앱 기능/API/DB: `noveraflow-app/docs`
 - 관리자 시스템/운영 문서: `noveraflow-admin/docs`
 
 ## 기준
 
-사이트는 제품을 과장해서 설명하지 않고, `aidiary/docs`의 철학을 사용자에게 이해 가능한 언어로 전달합니다.
+사이트는 제품을 과장해서 설명하지 않고,
+`C:\projects\projects-docs\OFFICIAL_DOCUMENT_SYSTEM.md`와
+`C:\projects\noveraflow-app\docs\BRAND_MANIFESTO.md`의 철학을 사용자에게
+이해 가능한 언어로 전달합니다.
+
+번호가 붙은 사이트 문서는 더 이상 공식 우선순위나 작업 순서를 의미하지
+않습니다. 현재 상태는
+`C:\projects\projects-docs\DOCUMENT_LIFECYCLE_AUDIT.md`를 기준으로 확인합니다.
 
 ## 문서 목록
 

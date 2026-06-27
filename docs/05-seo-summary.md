@@ -1,3 +1,8 @@
+Status: Merged
+Merged into: 04-seo-direction.md
+Reason: This is a short SEO summary. Full SEO policy, tone, and application
+rules live in 04-seo-direction.md.
+
 # SEO
 
 사이트 SEO는 제품 철학과 어긋나는 과장 키워드를 사용하지 않습니다.
@@ -15,4 +20,3 @@
 - 심리 진단처럼 보이는 키워드
 - 감정 점수화 서비스처럼 보이는 표현
 - 과도한 생산성/성공 프레임
-

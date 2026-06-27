@@ -1,7 +1,15 @@
+Status: Official
+Official source for: Site Experience / public Brand Experience
+Latest source: This document, with brand philosophy in
+OFFICIAL_DOCUMENT_SYSTEM.md and BRAND_MANIFESTO.md
+Reason: Number prefix is legacy ordering only. This file remains the official
+site experience direction.
+
 # NoveraFlow 사이트 방향
 
 > Current role: active site/brand document for `noveraflow-site`.
-> Source philosophy: `C:\Projects\aidiary\docs`.
+> Source philosophy: `C:\projects\projects-docs\OFFICIAL_DOCUMENT_SYSTEM.md`
+> and `C:\projects\noveraflow-app\docs\BRAND_MANIFESTO.md`.
 > This document explains the public site experience without replacing the product philosophy.
 
 NoveraFlow 사이트는 기능을 빠르게 설명하는 페이지보다, 기록과 삶의 흐름을 조용히 느끼는 공간에 가깝다.

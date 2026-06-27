@@ -1,3 +1,9 @@
+Status: Reference
+Reference for: Short site brand summary
+Latest source: 02-brand-and-marketing.md and BRAND_MANIFESTO.md
+Reason: This summary is useful for quick orientation, but it is not the
+complete brand source.
+
 # Brand
 
 NoveraFlow 사이트는 제품을 과장하지 않고, 조용한 개인 기록 경험을 명확하게 전달합니다.
@@ -11,5 +17,6 @@ NoveraFlow 사이트는 제품을 과장하지 않고, 조용한 개인 기록 �
 
 ## 기준 문서
 
-브랜드 메시지는 `C:\Projects\aidiary\docs`의 철학을 바탕으로 작성합니다.
-
+브랜드 메시지는 `C:\projects\projects-docs\OFFICIAL_DOCUMENT_SYSTEM.md`와
+`C:\projects\noveraflow-app\docs\BRAND_MANIFESTO.md`의 철학을 바탕으로
+작성합니다.
