@@ -25,6 +25,11 @@
 `C:\projects\noveraflow-app\docs\BRAND_MANIFESTO.md`의 철학을 사용자에게
 이해 가능한 언어로 전달합니다.
 
+Hero 이미지, 배경 자연 이미지, 공기감, 빛, 계절, 이미지 생성 방향은
+`C:\projects\noveraflow-app\docs\DESIGN_SYSTEM.md`의
+`Brand Visual Identity And Image Direction`을 공통 시각 기준으로 사용합니다.
+사이트 문서는 그 기준을 사이트 경험과 랜딩 구조에 적용하는 역할을 합니다.
+
 번호가 붙은 사이트 문서는 더 이상 공식 우선순위나 작업 순서를 의미하지
 않습니다. 현재 상태는
 `C:\projects\projects-docs\DOCUMENT_LIFECYCLE_AUDIT.md`를 기준으로 확인합니다.
