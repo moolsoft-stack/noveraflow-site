@@ -1460,3 +1460,24 @@ h3 {
     width: 100%;
   }
 }
+
+.locale-copy {
+  display: none;
+}
+
+html[lang="ko"] .locale-copy-ko,
+html[lang="en"] .locale-copy-en,
+html[lang="ja"] .locale-copy-ja {
+  display: block;
+}
+
+.account-deletion-page code {
+  overflow-wrap: anywhere;
+}
+
+.account-deletion-page .policy-callout {
+  padding: 16px 18px;
+  border-left: 4px solid #9d493f;
+  border-radius: 8px;
+  background: #f8e9e5;
+}

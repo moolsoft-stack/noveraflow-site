@@ -66,6 +66,16 @@
             "NoveraFlow의 개인정보와 기록 데이터 처리 원칙입니다.",
           locale: "ko_KR",
         },
+        accountDeletion: {
+          title: "NoveraFlow 계정 삭제",
+          description: "NoveraFlow AI 기록 계정 삭제 방법과 데이터별 삭제·보유기간을 안내합니다.",
+          keywords: "NoveraFlow, 계정 삭제, 개인정보 삭제, Google Play",
+          ogTitle: "NoveraFlow 계정 삭제",
+          ogDescription: "앱과 외부 요청을 통한 계정 삭제 절차를 확인하세요.",
+          twitterTitle: "NoveraFlow 계정 삭제",
+          twitterDescription: "NoveraFlow 계정 삭제와 데이터 보유기간 안내입니다.",
+          locale: "ko_KR",
+        },
         terms: {
           title: "NoveraFlow 이용약관",
           description:
@@ -383,6 +393,16 @@
           twitterTitle: "NoveraFlow Privacy Policy",
           twitterDescription:
             "NoveraFlow privacy and record data handling principles.",
+          locale: "en_US",
+        },
+        accountDeletion: {
+          title: "Delete a NoveraFlow Account",
+          description: "How to delete a NoveraFlow AI Record account and how related data is deleted or retained.",
+          keywords: "NoveraFlow, account deletion, personal data deletion, Google Play",
+          ogTitle: "Delete a NoveraFlow Account",
+          ogDescription: "Account deletion steps in the app and when the app is unavailable.",
+          twitterTitle: "Delete a NoveraFlow Account",
+          twitterDescription: "NoveraFlow account deletion and data retention details.",
           locale: "en_US",
         },
         terms: {
@@ -703,6 +723,16 @@
           twitterTitle: "NoveraFlow プライバシーポリシー",
           twitterDescription:
             "NoveraFlowのプライバシーと記録データの取り扱い方針です。",
+          locale: "ja_JP",
+        },
+        accountDeletion: {
+          title: "NoveraFlowアカウントの削除",
+          description: "NoveraFlow AI記録のアカウント削除方法とデータの削除・保持期間をご案内します。",
+          keywords: "NoveraFlow, アカウント削除, 個人データ削除, Google Play",
+          ogTitle: "NoveraFlowアカウントの削除",
+          ogDescription: "アプリ内およびアプリを利用できない場合の削除手順です。",
+          twitterTitle: "NoveraFlowアカウントの削除",
+          twitterDescription: "NoveraFlowのアカウント削除とデータ保持期間です。",
           locale: "ja_JP",
         },
         terms: {
