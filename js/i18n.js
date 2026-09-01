@@ -251,7 +251,7 @@
         "privacy.title": "개인정보처리방침",
         "privacy.lead":
           "NoveraFlow는 사용자의 기록을 소중하게 다룹니다. 사용자를 광고 목적으로 추적하거나 기록 데이터를 판매하지 않습니다.",
-        "privacy.updated": "시행일 및 최종 업데이트: 2026년 6월 16일",
+        "privacy.updated": "시행일 및 최종 업데이트: 2026년 9월 1일",
         "privacy.s1.title": "1. 처리하는 정보",
         "privacy.s1.copy":
           "NoveraFlow는 서비스 제공을 위해 다음 정보를 처리할 수 있습니다.",
@@ -260,6 +260,12 @@
         "privacy.s1.item3": "사용자가 직접 첨부한 사진 또는 음성 파일",
         "privacy.s1.item4": "기록 생성, 기능 사용, 오류 확인에 필요한 앱 사용 이벤트",
         "privacy.s1.item5": "도움됨, 보통, 아쉬움 선택 등 피드백 평가 데이터",
+        "privacy.s1.item6":
+          "로그인을 선택한 경우 Supabase 계정 식별자와 Google 또는 Apple 로그인 신원",
+        "privacy.s1.item7":
+          "해당 기능을 이용할 때의 Support 문의와 계정 소유 Push 기기 정보",
+        "privacy.s1.item8":
+          "로그인 계정 식별자와 분리된 기기 로컬 익명 analytics 식별자",
         "privacy.s1.note":
           "NoveraFlow는 광고 식별자를 이용해 사용자를 추적하거나 광고 프로파일을 만들기 위해 기록 데이터를 수집하지 않습니다.",
         "privacy.s2.title": "2. 이용 목적",
@@ -271,15 +277,32 @@
         "privacy.s3.copy1":
           "현재 v1 정책에서 기본 기록 데이터는 사용자의 기기에 로컬로 저장됩니다.",
         "privacy.s3.copy2":
-          "사용자는 앱에서 직접 백업 파일을 생성할 수 있습니다. 백업 파일의 관리와 삭제는 사용자가 직접 수행합니다.",
+          "사용자는 앱에서 백업 ZIP 파일을 직접 내보낼 수 있습니다. 이 파일은 NoveraFlow가 관리하는 저장소 밖에 있으므로 관리와 삭제는 사용자가 직접 수행합니다.",
         "privacy.s3.copy3":
           "앱 사용 이벤트와 피드백 평가는 서비스 안정성 확인과 품질 개선을 위해 서버로 전송되어 보관될 수 있습니다.",
+        "privacy.s3.copy4":
+          "서버 백업은 최대 30일 보관됩니다. 익명 analytics 이벤트와 최소화된 Push dispatch 감사 필드의 정확한 서버 보유 기간은 확인 중이므로, 이 방침은 확인되지 않은 기간을 추정하지 않습니다.",
         "privacy.s4.title": "4. 제3자 제공 및 판매 금지",
         "privacy.s4.copy":
           "NoveraFlow는 사용자의 개인정보나 기록 데이터를 판매하지 않습니다. 법령상 요청이나 사용자의 명시적 요청이 있는 경우를 제외하고 기록을 임의로 공개하지 않습니다.",
         "privacy.s5.title": "5. 사용자 권리와 삭제",
         "privacy.s5.copy":
-          "사용자는 앱 안에서 자신의 기록을 삭제할 수 있습니다. 개인정보 처리, 삭제 요청, 정책 문의는 문의 페이지의 연락처로 보낼 수 있습니다.",
+          "로그인 사용자는 홈 → 계정/설정 → 계정 → 계정 삭제에서 영구 계정 삭제를 요청할 수 있습니다. 앱을 사용할 수 없는 사용자는 계정 삭제 페이지의 본인 확인 요청 방법을 이용할 수 있습니다.",
+        "privacy.s5.link": "계정 삭제 안내 보기",
+        "privacy.s5.item1":
+          "필요한 로그인 제공자 처리와 서버 정리 후 Supabase Auth 계정을 영구 삭제합니다.",
+        "privacy.s5.item2":
+          "Support 계정 연결과 알림 outbox는 즉시 제거합니다. 삭제와 연결된 문의 내용은 즉시 일반 조회를 차단하고 최대 7일 안에 물리 삭제합니다.",
+        "privacy.s5.item3":
+          "계정 소유 Push receipt, device, 암호화 token은 즉시 삭제합니다. 보존되는 Push dispatch JSON에서는 일치하는 수신 계정 식별자만 제거하며 관련 없는 dispatch는 변경하지 않습니다.",
+        "privacy.s5.item4":
+          "익명 analytics 식별자는 Supabase 계정 식별자와 다르며 계정 삭제에 자동으로 연결되거나 제거되지 않습니다. 앱 데이터를 지우기 전까지 로컬 사본이 남습니다.",
+        "privacy.s5.item5":
+          "재시도와 백업 복구 뒤에도 삭제를 유지하기 위해 keyed deletion replay 항목은 최대 31일, 계정 신원이 없는 deletion receipt는 최대 365일 보관합니다.",
+        "privacy.s5.item6":
+          "현재 기기의 앱 관리 기록과 첨부파일 삭제는 별도의 선택 사항이며 기본값은 유지입니다.",
+        "privacy.s5.item7":
+          "사용자가 직접 내보낸 백업 ZIP 파일은 자동 삭제되지 않습니다.",
         "privacy.s6.title": "6. 보안",
         "privacy.s6.copy":
           "NoveraFlow는 기록과 관련 데이터를 보호하기 위해 합리적인 기술적, 관리적 보호 조치를 적용합니다.",
@@ -579,7 +602,7 @@
         "privacy.title": "Privacy Policy",
         "privacy.lead":
           "NoveraFlow treats records with care. It does not track users for advertising or sell record data.",
-        "privacy.updated": "Effective and last updated: June 16, 2026",
+        "privacy.updated": "Effective and last updated: September 1, 2026",
         "privacy.s1.title": "1. Information processed",
         "privacy.s1.copy":
           "NoveraFlow may process the following information to provide the service.",
@@ -590,6 +613,12 @@
           "App events needed for record creation, feature use, and error checks",
         "privacy.s1.item5":
           "Feedback rating data such as helpful, okay, or not quite",
+        "privacy.s1.item6":
+          "A Supabase account identifier and Google or Apple sign-in identity when you choose to sign in",
+        "privacy.s1.item7":
+          "Support inquiries and account-owned Push device information when you use those features",
+        "privacy.s1.item8":
+          "A device-local anonymous analytics identifier that is separate from the signed-in account identifier",
         "privacy.s1.note":
           "NoveraFlow does not collect record data to track users with advertising identifiers or build ad profiles.",
         "privacy.s2.title": "2. Purpose of use",
@@ -601,15 +630,32 @@
         "privacy.s3.copy1":
           "Under the current v1 policy, primary record data is stored locally on the user's device.",
         "privacy.s3.copy2":
-          "Users may create backup files in the app. Managing and deleting backup files is the user's responsibility.",
+          "Users may export backup ZIP files from the app. These files are outside NoveraFlow's managed storage, so managing and deleting them is the user's responsibility.",
         "privacy.s3.copy3":
           "App events and feedback ratings may be sent to and stored on servers for stability checks and quality improvement.",
+        "privacy.s3.copy4":
+          "Server backups are retained for no more than 30 days. The exact server retention period for anonymous analytics events and minimized Push dispatch audit fields is still being verified, so this policy does not infer a duration.",
         "privacy.s4.title": "4. No sale or unnecessary third-party sharing",
         "privacy.s4.copy":
           "NoveraFlow does not sell personal information or record data. It does not disclose records except where required by law or explicitly requested by the user.",
         "privacy.s5.title": "5. User rights and deletion",
         "privacy.s5.copy":
-          "Users can delete their records in the app. Privacy, deletion, and policy questions can be sent through the contact page.",
+          "Signed-in users can request permanent account deletion in Home → Account/Settings → Account → Delete account. Users who cannot use the app can follow the verified request method on the account deletion page.",
+        "privacy.s5.link": "View account deletion instructions",
+        "privacy.s5.item1":
+          "The Supabase Auth account is hard-deleted after required provider handling and server cleanup.",
+        "privacy.s5.item2":
+          "Support account links and notification outbox rows are removed immediately. Content tied to the deletion is hidden immediately and physically purged within 7 days.",
+        "privacy.s5.item3":
+          "Account-owned Push receipts, devices, and encrypted tokens are deleted immediately. A matching recipient account identifier is removed from retained Push dispatch JSON without changing unrelated dispatches.",
+        "privacy.s5.item4":
+          "The anonymous analytics identifier is not the Supabase account identifier and is not automatically linked to or removed with account deletion. Its local copy remains unless app data is cleared.",
+        "privacy.s5.item5":
+          "The keyed deletion replay entry is retained for up to 31 days, and the identity-free deletion receipt for up to 365 days, so deletion remains effective after retries or backup restore.",
+        "privacy.s5.item6":
+          "Choosing whether to delete app-managed records and attachments on the current device is separate and optional. Records are kept by default.",
+        "privacy.s5.item7":
+          "Backup ZIP files exported by the user are not automatically deleted.",
         "privacy.s6.title": "6. Security",
         "privacy.s6.copy":
           "NoveraFlow applies reasonable technical and administrative safeguards to protect records and related data.",
@@ -908,7 +954,7 @@
         "privacy.title": "プライバシーポリシー",
         "privacy.lead":
           "NoveraFlowは利用者の記録を大切に扱います。広告目的で利用者を追跡したり、記録データを販売したりしません。",
-        "privacy.updated": "施行日および最終更新日: 2026年6月16日",
+        "privacy.updated": "施行日および最終更新日: 2026年9月1日",
         "privacy.s1.title": "1. 取り扱う情報",
         "privacy.s1.copy":
           "NoveraFlowはサービス提供のため、次の情報を取り扱う場合があります。",
@@ -917,6 +963,12 @@
         "privacy.s1.item3": "利用者が添付した写真または音声ファイル",
         "privacy.s1.item4": "記録作成、機能利用、エラー確認に必要なアプリ利用イベント",
         "privacy.s1.item5": "役に立った、普通、いまひとつ等のフィードバック評価データ",
+        "privacy.s1.item6":
+          "ログインを選択した場合のSupabaseアカウント識別子とGoogleまたはAppleのログイン情報",
+        "privacy.s1.item7":
+          "各機能を利用した場合のSupport問い合わせとアカウント所有のPush端末情報",
+        "privacy.s1.item8":
+          "ログインアカウント識別子とは別の端末内匿名analytics識別子",
         "privacy.s1.note":
           "NoveraFlowは広告識別子で利用者を追跡したり、広告プロファイルを作成したりする目的で記録データを収集しません。",
         "privacy.s2.title": "2. 利用目的",
@@ -928,15 +980,32 @@
         "privacy.s3.copy1":
           "現在のv1方針では、基本的な記録データは利用者の端末にローカル保存されます。",
         "privacy.s3.copy2":
-          "利用者はアプリ内でバックアップファイルを作成できます。バックアップファイルの管理と削除は利用者が行います。",
+          "利用者はアプリからバックアップZIPを書き出せます。このファイルはNoveraFlowの管理対象外にあるため、管理と削除は利用者自身が行います。",
         "privacy.s3.copy3":
           "アプリ利用イベントとフィードバック評価は、安定性確認と品質改善のためサーバーへ送信・保管される場合があります。",
+        "privacy.s3.copy4":
+          "サーバーバックアップは最長30日保持します。匿名analyticsイベントと最小化されたPush dispatch監査フィールドの正確なサーバー保持期間は確認中であり、本方針では未確認の期間を推測しません。",
         "privacy.s4.title": "4. 第三者提供および販売の禁止",
         "privacy.s4.copy":
           "NoveraFlowは個人情報や記録データを販売しません。法令上の要請または利用者の明示的な依頼がある場合を除き、記録を任意に公開しません。",
         "privacy.s5.title": "5. 利用者の権利と削除",
         "privacy.s5.copy":
-          "利用者はアプリ内で自分の記録を削除できます。プライバシー、削除、方針に関する問い合わせはお問い合わせページから送信できます。",
+          "ログイン利用者は、ホーム → アカウント／設定 → アカウント → アカウントを削除から完全削除をリクエストできます。アプリを利用できない場合は、アカウント削除ページの本人確認付きリクエスト方法を利用できます。",
+        "privacy.s5.link": "アカウント削除の案内を見る",
+        "privacy.s5.item1":
+          "必要なログインプロバイダー処理とサーバー整理後、Supabase Authアカウントを完全削除します。",
+        "privacy.s5.item2":
+          "Supportアカウントの紐付けと通知outboxは直ちに削除します。削除に関連する問い合わせ内容は直ちに通常閲覧を停止し、最長7日以内に物理削除します。",
+        "privacy.s5.item3":
+          "アカウント所有のPush receipt、device、暗号化tokenは直ちに削除します。保持されるPush dispatch JSONでは一致する受信アカウント識別子のみを削除し、関係のないdispatchは変更しません。",
+        "privacy.s5.item4":
+          "匿名analytics識別子はSupabaseアカウント識別子とは別で、アカウント削除に自動で紐付けまたは削除されません。アプリデータを消去するまでローカルの識別子は残ります。",
+        "privacy.s5.item5":
+          "再試行やバックアップ復元後も削除を維持するため、keyed deletion replay項目は最長31日、アカウント情報を含まないdeletion receiptは最長365日保持します。",
+        "privacy.s5.item6":
+          "現在の端末にあるアプリ管理の記録と添付ファイルの削除は別の任意選択で、初期設定では保持します。",
+        "privacy.s5.item7":
+          "利用者が書き出したバックアップZIPは自動削除されません。",
         "privacy.s6.title": "6. セキュリティ",
         "privacy.s6.copy":
           "NoveraFlowは記録と関連データを保護するため、合理的な技術的・管理的保護措置を適用します。",

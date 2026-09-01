@@ -54,7 +54,7 @@
         <p data-i18n="privacy.lead">NoveraFlow treats records with care. It does not track users for advertising or sell record data.</p>
       </section>
       <section class="content-body">
-        <p class="updated" data-i18n="privacy.updated">Effective and last updated: June 16, 2026</p>
+        <p class="updated" data-i18n="privacy.updated">Effective and last updated: September 1, 2026</p>
 
         <h2 data-i18n="privacy.s1.title">1. Information processed</h2>
         <p data-i18n="privacy.s1.copy">NoveraFlow may process the following information to provide the service.</p>
@@ -64,6 +64,9 @@
           <li data-i18n="privacy.s1.item3">Photo or voice files attached by the user</li>
           <li data-i18n="privacy.s1.item4">App events needed for record creation, feature use, and error checks</li>
           <li data-i18n="privacy.s1.item5">Feedback rating data such as helpful, okay, or not quite</li>
+          <li data-i18n="privacy.s1.item6">A Supabase account identifier and Google or Apple sign-in identity when you choose to sign in</li>
+          <li data-i18n="privacy.s1.item7">Support inquiries and account-owned Push device information when you use those features</li>
+          <li data-i18n="privacy.s1.item8">A device-local anonymous analytics identifier that is separate from the signed-in account identifier</li>
         </ul>
         <p data-i18n="privacy.s1.note">NoveraFlow does not collect record data to track users with advertising identifiers or build ad profiles.</p>
 
@@ -73,14 +76,25 @@
 
         <h2 data-i18n="privacy.s3.title">3. Storage and location</h2>
         <p data-i18n="privacy.s3.copy1">Under the current v1 policy, primary record data is stored locally on the user's device.</p>
-        <p data-i18n="privacy.s3.copy2">Users may create backup files in the app. Managing and deleting backup files is the user's responsibility.</p>
+        <p data-i18n="privacy.s3.copy2">Users may export backup ZIP files from the app. These files are outside NoveraFlow's managed storage, so managing and deleting them is the user's responsibility.</p>
         <p data-i18n="privacy.s3.copy3">App events and feedback ratings may be sent to and stored on servers for stability checks and quality improvement.</p>
+        <p data-i18n="privacy.s3.copy4">Server backups are retained for no more than 30 days. The exact server retention period for anonymous analytics events and minimized Push dispatch audit fields is still being verified, so this policy does not infer a duration.</p>
 
         <h2 data-i18n="privacy.s4.title">4. No sale or unnecessary third-party sharing</h2>
         <p data-i18n="privacy.s4.copy">NoveraFlow does not sell personal information or record data. It does not disclose records except where required by law or explicitly requested by the user.</p>
 
         <h2 data-i18n="privacy.s5.title">5. User rights and deletion</h2>
-        <p data-i18n="privacy.s5.copy">Users can delete their records in the app. Privacy, deletion, and policy questions can be sent through the contact page.</p>
+        <p data-i18n="privacy.s5.copy">Signed-in users can request permanent account deletion in Home → Account/Settings → Account → Delete account. Users who cannot use the app can follow the verified request method on the account deletion page.</p>
+        <p><a class="text-link" href="/account-deletion" data-i18n="privacy.s5.link">View account deletion instructions</a></p>
+        <ul>
+          <li data-i18n="privacy.s5.item1">The Supabase Auth account is hard-deleted after required provider handling and server cleanup.</li>
+          <li data-i18n="privacy.s5.item2">Support account links and notification outbox rows are removed immediately. Content tied to the deletion is hidden immediately and physically purged within 7 days.</li>
+          <li data-i18n="privacy.s5.item3">Account-owned Push receipts, devices, and encrypted tokens are deleted immediately. A matching recipient account identifier is removed from retained Push dispatch JSON without changing unrelated dispatches.</li>
+          <li data-i18n="privacy.s5.item4">The anonymous analytics identifier is not the Supabase account identifier and is not automatically linked to or removed with account deletion. Its local copy remains unless app data is cleared.</li>
+          <li data-i18n="privacy.s5.item5">The keyed deletion replay entry is retained for up to 31 days, and the identity-free deletion receipt for up to 365 days, so deletion remains effective after retries or backup restore.</li>
+          <li data-i18n="privacy.s5.item6">Choosing whether to delete app-managed records and attachments on the current device is separate and optional. Records are kept by default.</li>
+          <li data-i18n="privacy.s5.item7">Backup ZIP files exported by the user are not automatically deleted.</li>
+        </ul>
 
         <h2 data-i18n="privacy.s6.title">6. Security</h2>
         <p data-i18n="privacy.s6.copy">NoveraFlow applies reasonable technical and administrative safeguards to protect records and related data.</p>

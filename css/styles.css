@@ -963,7 +963,8 @@ h3 {
   font-size: 18px;
 }
 
-.content-body ul {
+.content-body ul,
+.content-body ol {
   margin: 0 0 24px;
   padding-left: 24px;
   color: rgba(31, 43, 40, 0.74);

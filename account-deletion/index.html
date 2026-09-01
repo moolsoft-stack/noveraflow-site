@@ -50,22 +50,27 @@
         <section class="content-body">
           <h2>앱에서 삭제하는 경로</h2>
           <ol><li>로그인 후 홈의 계정/설정 아이콘을 엽니다.</li><li><strong>계정 → 계정 삭제</strong>를 선택합니다.</li><li>Google 또는 Apple로 다시 인증하고 최종 확인합니다.</li></ol>
+          <p>Apple 로그인 계정은 가능한 경우 Apple 토큰 철회를 먼저 시도합니다. 철회 가능한 자격 증명을 받을 수 없더라도 검증된 계정 삭제는 완료되며, 앱이 <a class="text-link" href="https://support.apple.com/ko-kr/102571" rel="external noopener">Apple 설정에서 수동으로 연결을 해제하는 방법</a>을 안내합니다. Google 로그인 계정에는 이 Apple 단계가 적용되지 않습니다.</p>
           <p class="policy-callout">로그아웃은 계정을 삭제하지 않습니다. 삭제가 완료되면 복구할 수 없습니다.</p>
           <h2>앱을 사용할 수 없을 때</h2>
           <p><a class="text-link" href="mailto:moolsoft+help@gmail.com?subject=NoveraFlow%20Account%20Deletion%20Request">계정 삭제 전용 제목으로 이메일 보내기</a></p>
-          <p>제목은 <code>NoveraFlow Account Deletion Request</code>로 유지하고, 본문에는 로그인 제공자(Google/Apple)와 회신 가능한 계정 이메일만 적어 주세요. UUID, 비밀번호, 토큰, 기록 또는 문의 본문은 보내지 마세요.</p>
-          <p>운영자는 계정에 연결된 이메일로 일회용 본인 확인 절차를 안내합니다. 본인 확인이 끝난 요청만 같은 삭제 coordinator로 처리하며, 확인에 실패하면 삭제하지 않습니다.</p>
+          <p>제목은 <code>NoveraFlow Account Deletion Request</code>로 유지하고, 본문에는 로그인 제공자(Google/Apple)와 회신 가능한 계정 이메일만 적어 주세요. Apple의 나의 이메일 가리기를 사용했다면 Apple 설정에 표시되는 중계 이메일을 적어 주세요. UUID, 비밀번호, 인증 코드, 토큰, 기록 또는 문의 본문은 보내지 마세요.</p>
+          <p>운영자는 계정에 연결된 이메일로 일회용 본인 확인 절차를 안내합니다. 본인 확인이 끝난 요청만 계정 삭제로 처리하며, 확인에 실패하면 삭제하지 않습니다.</p>
           <h2>삭제 및 보유 범위</h2>
           <ul>
-            <li>계정 UUID 연결, Support outbox, Push device/token: 즉시 제거</li>
+            <li>Supabase Auth 로그인 계정: 서버 정리와 필요한 로그인 제공자 처리 후 영구 삭제</li>
+            <li>계정 UUID 연결과 Support 알림 outbox: 즉시 제거</li>
             <li>계정 삭제 관련 문의 내용: 즉시 일반 조회 차단, 최대 7일 안에 물리 삭제</li>
+            <li>계정 소유 Push receipt, device, 암호화 token: 즉시 제거. 보존되는 Push dispatch 감사 JSON에서는 일치하는 수신 계정 UUID 필드만 즉시 제거하며 다른 사용자의 dispatch는 변경하지 않음</li>
             <li>Support rate-limit hash: 마지막 사용 후 최대 24시간</li>
             <li>비활성 열린 문의: 마지막 활동 90일 후 자동 종료</li>
             <li>일반 종료 문의 내용: 종료 후 180일</li>
             <li>백업: 최대 30일; 복구 시 deletion replay를 다시 적용</li>
             <li>keyed-HMAC replay ledger: 최대 31일</li>
             <li>계정 UUID·이메일·본문이 없는 최소 tombstone/audit와 deletion receipt: 최대 365일</li>
+            <li>로컬 익명 analytics 식별자: 로그인 계정 UUID와 분리되어 있어 계정 삭제에 자동으로 연결되거나 삭제되지 않으며, 앱 데이터를 지우기 전까지 기기에 남음</li>
           </ul>
+          <p>익명 analytics 이벤트와 수신 계정 UUID를 제거한 Push dispatch 감사 필드의 정확한 서버 보유 기간은 확인 중입니다. 확인되지 않은 기간을 이 페이지에서 추정해 안내하지 않습니다.</p>
           <h2>기기 기록</h2>
           <p>휴대전화의 로컬 기록은 기본적으로 유지됩니다. 삭제 화면에서 <strong>이 기기의 기록도 함께 삭제</strong>를 별도로 선택한 경우에만, 서버 삭제 완료 후 앱 관리 기록과 첨부파일을 삭제합니다. 직접 내보낸 백업 ZIP은 앱이 관리하지 않으므로 직접 삭제해야 합니다.</p>
           <h2>처리 상태와 문의</h2>
@@ -82,22 +87,27 @@
         <section class="content-body">
           <h2>Delete in the app</h2>
           <ol><li>After signing in, open the account/settings icon from Home.</li><li>Select <strong>Account → Delete account</strong>.</li><li>Reauthenticate with Google or Apple and complete the final confirmation.</li></ol>
+          <p>For Apple sign-in accounts, NoveraFlow revokes the Apple token first whenever usable credentials are available. If no revocable credential can be obtained, verified account deletion still completes and the app links to <a class="text-link" href="https://support.apple.com/en-us/102571" rel="external noopener">Apple's manual disconnect steps</a>. This Apple step does not apply to Google sign-in accounts.</p>
           <p class="policy-callout">Signing out does not delete an account. Completed deletion cannot be undone.</p>
           <h2>If you cannot use the app</h2>
           <p><a class="text-link" href="mailto:moolsoft+help@gmail.com?subject=NoveraFlow%20Account%20Deletion%20Request">Send an email with the dedicated deletion subject</a></p>
-          <p>Keep the subject <code>NoveraFlow Account Deletion Request</code>. Include only the sign-in provider (Google/Apple) and the account email where we can reply. Do not send a UUID, password, token, record, or support message content.</p>
-          <p>The operator sends a one-time identity-verification procedure to the account-linked email. Only verified requests enter the same deletion coordinator; failed verification results in no deletion.</p>
+          <p>Keep the subject <code>NoveraFlow Account Deletion Request</code>. Include only the sign-in provider (Google/Apple) and the account email where we can reply. If you use Apple's Hide My Email, use the relay address shown in Apple settings. Do not send a UUID, password, authorization code, token, record, or support message content.</p>
+          <p>The operator sends a one-time identity-verification procedure to the account-linked email. Only verified requests are processed for account deletion; failed verification results in no deletion.</p>
           <h2>Deletion and retention</h2>
           <ul>
-            <li>Account UUID links, Support outbox, and Push device/token rows: removed immediately</li>
+            <li>Supabase Auth sign-in account: permanently deleted after server cleanup and required sign-in provider handling</li>
+            <li>Account UUID links and Support notification outbox rows: removed immediately</li>
             <li>Support content linked to account deletion: hidden from normal access immediately and physically deleted within 7 days</li>
+            <li>Account-owned Push receipts, devices, and encrypted tokens: removed immediately. The matching recipient account UUID field is immediately removed from retained Push dispatch audit JSON without modifying another user's dispatch</li>
             <li>Support rate-limit hash: no more than 24 hours after last use</li>
             <li>Inactive open inquiries: automatically closed after 90 days without activity</li>
             <li>Ordinary closed inquiry content: 180 days after closure</li>
             <li>Backups: up to 30 days, with deletion replay after restore</li>
             <li>Keyed-HMAC replay ledger: up to 31 days</li>
             <li>Minimal tombstone/audit and deletion receipt without account UUID, email, or content: up to 365 days</li>
+            <li>Device-local anonymous analytics identifier: separate from the sign-in account UUID, not automatically linked to or removed by account deletion, and kept until app data is cleared</li>
           </ul>
+          <p>The exact server retention periods for anonymous analytics events and the remaining Push dispatch audit fields after recipient UUID removal are still being verified. This page does not infer an unconfirmed duration.</p>
           <h2>Records on your device</h2>
           <p>Records on your phone are kept by default. They are deleted only if you separately select <strong>Also delete records on this device</strong>; app-managed records and attachments are removed only after server completion. You must delete exported backup ZIP files yourself because the app no longer manages them.</p>
           <h2>Status and contact</h2>
@@ -114,22 +124,27 @@
         <section class="content-body">
           <h2>アプリ内で削除する手順</h2>
           <ol><li>ログイン後、ホームからアカウント／設定アイコンを開きます。</li><li><strong>アカウント → アカウントを削除</strong>を選びます。</li><li>GoogleまたはAppleで再認証し、最終確認を行います。</li></ol>
+          <p>Appleログインのアカウントでは、利用可能な認証情報がある場合、Appleトークンの取り消しを先に試みます。取り消し可能な認証情報を取得できなくても、確認済みのアカウント削除は完了し、<a class="text-link" href="https://support.apple.com/ja-jp/102571" rel="external noopener">Apple設定で連携を手動解除する方法</a>をアプリで案内します。このApple手順はGoogleログインのアカウントには適用されません。</p>
           <p class="policy-callout">ログアウトではアカウントは削除されません。完了した削除は元に戻せません。</p>
           <h2>アプリを利用できない場合</h2>
           <p><a class="text-link" href="mailto:moolsoft+help@gmail.com?subject=NoveraFlow%20Account%20Deletion%20Request">削除専用件名でメールを送る</a></p>
-          <p>件名は <code>NoveraFlow Account Deletion Request</code> のままにし、ログインプロバイダー（Google/Apple）と返信可能なアカウントメールだけを記載してください。UUID、パスワード、トークン、記録、問い合わせ本文は送らないでください。</p>
-          <p>運営者はアカウントに紐づくメールへ1回限りの本人確認手順を案内します。確認済みのリクエストだけを同じ削除coordinatorで処理し、確認できない場合は削除しません。</p>
+          <p>件名は <code>NoveraFlow Account Deletion Request</code> のままにし、ログインプロバイダー（Google/Apple）と返信可能なアカウントメールだけを記載してください。Appleの「メールを非公開」を利用している場合は、Apple設定に表示される転送用アドレスを記載してください。UUID、パスワード、認証コード、トークン、記録、問い合わせ本文は送らないでください。</p>
+          <p>運営者はアカウントに紐づくメールへ1回限りの本人確認手順を案内します。確認済みのリクエストだけをアカウント削除として処理し、確認できない場合は削除しません。</p>
           <h2>削除・保持期間</h2>
           <ul>
-            <li>アカウントUUIDの紐付け、Support outbox、Push device/token：直ちに削除</li>
+            <li>Supabase Authログインアカウント：サーバーの整理と必要なログインプロバイダー処理後に完全削除</li>
+            <li>アカウントUUIDの紐付けとSupport通知outbox：直ちに削除</li>
             <li>アカウント削除に伴う問い合わせ内容：直ちに通常閲覧を停止し、最長7日以内に物理削除</li>
+            <li>アカウント所有のPush receipt、device、暗号化token：直ちに削除。保持されるPush dispatch監査JSONから一致する受信アカウントUUIDフィールドだけを直ちに削除し、他の利用者のdispatchは変更しない</li>
             <li>Support rate-limit hash：最終利用から最長24時間</li>
             <li>非アクティブな未終了問い合わせ：90日後に自動終了</li>
             <li>通常終了した問い合わせ内容：終了後180日</li>
             <li>バックアップ：最長30日、復元後にdeletion replayを再適用</li>
             <li>keyed-HMAC replay ledger：最長31日</li>
             <li>アカウントUUID・メール・本文を含まない最小tombstone/auditとdeletion receipt：最長365日</li>
+            <li>端末内の匿名analytics識別子：ログインアカウントUUIDとは別であり、アカウント削除に自動で紐付けまたは削除されず、アプリデータを消去するまで端末に保持</li>
           </ul>
+          <p>匿名analyticsイベントと、受信アカウントUUID削除後に残るPush dispatch監査フィールドの正確なサーバー保持期間は確認中です。このページでは未確認の期間を推測して記載しません。</p>
           <h2>端末内の記録</h2>
           <p>端末内の記録は初期設定では保持されます。<strong>この端末の記録も削除する</strong>を別途選んだ場合に限り、サーバー完了後にアプリ管理の記録と添付ファイルを削除します。書き出したバックアップZIPはご自身で削除してください。</p>
           <h2>処理状態と連絡先</h2>

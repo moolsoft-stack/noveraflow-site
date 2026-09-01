@@ -1,0 +1,9 @@
+{
+  "name": "noveraflow-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/verify-site.mjs",
+    "test": "node --test test/site.test.mjs"
+  }
+}
