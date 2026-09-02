@@ -179,6 +179,7 @@ export async function verifySite() {
   }
   for (const html of [home, about, philosophy, faq, contact, privacyRoute, terms, accountDeletion]) {
     requireMatch(html, /<meta name="viewport" content="width=device-width, initial-scale=1" \/>/, 'every public page must retain a mobile viewport');
+    requireMatch(html, /<script src="\/js\/i18n\.js\?v=20260902"><\/script>/, 'every localized public page must load the current versioned translations');
   }
   requireMatch(styles, /@media \(max-width: 520px\)/, 'mobile styles are missing');
   requireMatch(styles, /\.account-deletion-page/, 'account deletion styles are missing');
