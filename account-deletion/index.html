@@ -32,6 +32,7 @@
         <a href="/" data-i18n="common.nav.home">Home</a>
         <a href="/about.html" data-i18n="common.nav.about">About</a>
         <a href="/privacy" data-i18n="common.nav.privacy">Privacy</a>
+        <a href="/terms" data-i18n="common.nav.terms">Terms</a>
         <a href="/contact.html" data-i18n="common.nav.contact">Contact</a>
       </nav>
       <div class="language-switch" role="group" aria-label="Language" data-i18n-aria-label="common.language.label">
@@ -48,6 +49,7 @@
           <p>NoveraFlow(moolsoft)는 삭제 요청을 마케팅, 광고 또는 다른 동의에 연결하지 않습니다.</p>
         </section>
         <section class="content-body">
+          <p class="updated">시행일 및 최종 업데이트: 2026년 9월 2일</p>
           <h2>앱에서 삭제하는 경로</h2>
           <ol><li>로그인 후 홈의 계정/설정 아이콘을 엽니다.</li><li><strong>계정 → 계정 삭제</strong>를 선택합니다.</li><li>Google 또는 Apple로 다시 인증하고 최종 확인합니다.</li></ol>
           <p>Apple 로그인 계정은 가능한 경우 Apple 토큰 철회를 먼저 시도합니다. 철회 가능한 자격 증명을 받을 수 없더라도 검증된 계정 삭제는 완료되며, 앱이 <a class="text-link" href="https://support.apple.com/ko-kr/102571" rel="external noopener">Apple 설정에서 수동으로 연결을 해제하는 방법</a>을 안내합니다. Google 로그인 계정에는 이 Apple 단계가 적용되지 않습니다.</p>
@@ -68,13 +70,14 @@
             <li>백업: 최대 30일; 복구 시 deletion replay를 다시 적용</li>
             <li>keyed-HMAC replay ledger: 최대 31일</li>
             <li>계정 UUID·이메일·본문이 없는 최소 tombstone/audit와 deletion receipt: 최대 365일</li>
-            <li>로컬 익명 analytics 식별자: 로그인 계정 UUID와 분리되어 있어 계정 삭제에 자동으로 연결되거나 삭제되지 않으며, 앱 데이터를 지우기 전까지 기기에 남음</li>
+            <li>기기 생성 익명 analytics 식별자: 로그인 계정 UUID와 분리되어 있어 계정 삭제에 자동으로 연결되거나 삭제되지 않음. 앱 데이터 삭제 시 로컬 사본은 삭제되지만, 서버가 이미 수신한 계정 비연결 analytics 이벤트는 계정 삭제로 삭제되지 않음</li>
           </ul>
-          <p>익명 analytics 이벤트와 수신 계정 UUID를 제거한 Push dispatch 감사 필드의 정확한 서버 보유 기간은 확인 중입니다. 확인되지 않은 기간을 이 페이지에서 추정해 안내하지 않습니다.</p>
+          <p>로그인 계정 UUID와 분리된 익명 analytics 이벤트 및 AI 피드백 quota/usage 항목과, 수신 계정 UUID를 제거한 Push dispatch 감사 필드에는 현재 자동 기간 만료가 구현되어 있지 않아 고정된 보유기간이 없습니다. 이 항목들은 Supabase 계정 삭제에 자동 연결되지 않습니다.</p>
           <h2>기기 기록</h2>
           <p>휴대전화의 로컬 기록은 기본적으로 유지됩니다. 삭제 화면에서 <strong>이 기기의 기록도 함께 삭제</strong>를 별도로 선택한 경우에만, 서버 삭제 완료 후 앱 관리 기록과 첨부파일을 삭제합니다. 직접 내보낸 백업 ZIP은 앱이 관리하지 않으므로 직접 삭제해야 합니다.</p>
           <h2>처리 상태와 문의</h2>
           <p>앱은 재인증, 최종 확인, 요청 중, 처리 중, 완료 또는 안전한 재시도 상태를 표시합니다. 문의: <a class="text-link" href="mailto:moolsoft+help@gmail.com">moolsoft+help@gmail.com</a></p>
+          <p><a class="text-link" href="/privacy">개인정보처리방침</a> · <a class="text-link" href="/terms">이용약관</a></p>
         </section>
       </article>
 
@@ -85,6 +88,7 @@
           <p>NoveraFlow, operated by moolsoft, does not tie deletion requests to marketing, advertising, or any other consent.</p>
         </section>
         <section class="content-body">
+          <p class="updated">Effective and last updated: September 2, 2026</p>
           <h2>Delete in the app</h2>
           <ol><li>After signing in, open the account/settings icon from Home.</li><li>Select <strong>Account → Delete account</strong>.</li><li>Reauthenticate with Google or Apple and complete the final confirmation.</li></ol>
           <p>For Apple sign-in accounts, NoveraFlow revokes the Apple token first whenever usable credentials are available. If no revocable credential can be obtained, verified account deletion still completes and the app links to <a class="text-link" href="https://support.apple.com/en-us/102571" rel="external noopener">Apple's manual disconnect steps</a>. This Apple step does not apply to Google sign-in accounts.</p>
@@ -105,13 +109,14 @@
             <li>Backups: up to 30 days, with deletion replay after restore</li>
             <li>Keyed-HMAC replay ledger: up to 31 days</li>
             <li>Minimal tombstone/audit and deletion receipt without account UUID, email, or content: up to 365 days</li>
-            <li>Device-local anonymous analytics identifier: separate from the sign-in account UUID, not automatically linked to or removed by account deletion, and kept until app data is cleared</li>
+            <li>Device-generated anonymous analytics identifier: separate from the sign-in account UUID and not automatically linked to or removed by account deletion. Clearing app data removes the local copy, but server-received analytics events that are not account-linked are not deleted through account deletion</li>
           </ul>
-          <p>The exact server retention periods for anonymous analytics events and the remaining Push dispatch audit fields after recipient UUID removal are still being verified. This page does not infer an unconfirmed duration.</p>
+          <p>The current server implementation has no automatic time-based expiry for anonymous analytics events and AI feedback quota/usage entries that are separate from the sign-in account UUID, or for the remaining Push dispatch audit fields after recipient UUID removal, so their retention is not bounded by a fixed period. These entries are not automatically linked to Supabase account deletion.</p>
           <h2>Records on your device</h2>
           <p>Records on your phone are kept by default. They are deleted only if you separately select <strong>Also delete records on this device</strong>; app-managed records and attachments are removed only after server completion. You must delete exported backup ZIP files yourself because the app no longer manages them.</p>
           <h2>Status and contact</h2>
           <p>The app shows reauthentication, final confirmation, requesting, processing, complete, and safe-retry states. Contact: <a class="text-link" href="mailto:moolsoft+help@gmail.com">moolsoft+help@gmail.com</a></p>
+          <p><a class="text-link" href="/privacy">Privacy Policy</a> · <a class="text-link" href="/terms">Terms of Service</a></p>
         </section>
       </article>
 
@@ -122,6 +127,7 @@
           <p>moolsoftが運営するNoveraFlowは、削除リクエストをマーケティング、広告、その他の同意に結び付けません。</p>
         </section>
         <section class="content-body">
+          <p class="updated">施行日および最終更新日：2026年9月2日</p>
           <h2>アプリ内で削除する手順</h2>
           <ol><li>ログイン後、ホームからアカウント／設定アイコンを開きます。</li><li><strong>アカウント → アカウントを削除</strong>を選びます。</li><li>GoogleまたはAppleで再認証し、最終確認を行います。</li></ol>
           <p>Appleログインのアカウントでは、利用可能な認証情報がある場合、Appleトークンの取り消しを先に試みます。取り消し可能な認証情報を取得できなくても、確認済みのアカウント削除は完了し、<a class="text-link" href="https://support.apple.com/ja-jp/102571" rel="external noopener">Apple設定で連携を手動解除する方法</a>をアプリで案内します。このApple手順はGoogleログインのアカウントには適用されません。</p>
@@ -142,13 +148,14 @@
             <li>バックアップ：最長30日、復元後にdeletion replayを再適用</li>
             <li>keyed-HMAC replay ledger：最長31日</li>
             <li>アカウントUUID・メール・本文を含まない最小tombstone/auditとdeletion receipt：最長365日</li>
-            <li>端末内の匿名analytics識別子：ログインアカウントUUIDとは別であり、アカウント削除に自動で紐付けまたは削除されず、アプリデータを消去するまで端末に保持</li>
+            <li>端末で生成される匿名analytics識別子：ログインアカウントUUIDとは別で、アカウント削除に自動で紐付けまたは削除されない。アプリデータを消去すると端末内のコピーは削除されるが、サーバーが受信済みのアカウント非連携analyticsイベントはアカウント削除では削除されない</li>
           </ul>
-          <p>匿名analyticsイベントと、受信アカウントUUID削除後に残るPush dispatch監査フィールドの正確なサーバー保持期間は確認中です。このページでは未確認の期間を推測して記載しません。</p>
+          <p>ログインアカウントUUIDとは別の匿名analyticsイベントおよびAIフィードバックquota/usage項目と、受信アカウントUUID削除後に残るPush dispatch監査フィールドには、現在、自動的な期間満了が実装されておらず、固定の保持期間はありません。これらはSupabaseアカウント削除に自動で紐付きません。</p>
           <h2>端末内の記録</h2>
           <p>端末内の記録は初期設定では保持されます。<strong>この端末の記録も削除する</strong>を別途選んだ場合に限り、サーバー完了後にアプリ管理の記録と添付ファイルを削除します。書き出したバックアップZIPはご自身で削除してください。</p>
           <h2>処理状態と連絡先</h2>
           <p>アプリには再認証、最終確認、リクエスト中、処理中、完了、安全な再試行が表示されます。連絡先：<a class="text-link" href="mailto:moolsoft+help@gmail.com">moolsoft+help@gmail.com</a></p>
+          <p><a class="text-link" href="/privacy">プライバシーポリシー</a> · <a class="text-link" href="/terms">利用規約</a></p>
         </section>
       </article>
     </main>
@@ -157,6 +164,7 @@
       <p data-i18n="common.footer.copy">A quiet diary that reflects flows instead of judging records.</p>
       <nav class="footer-links" aria-label="Footer navigation" data-i18n-aria-label="common.footer.label">
         <a href="/privacy" data-i18n="common.nav.privacy">Privacy</a>
+        <a href="/terms" data-i18n="common.nav.terms">Terms</a>
         <a href="/contact.html" data-i18n="common.nav.contact">Contact</a>
       </nav>
     </footer>

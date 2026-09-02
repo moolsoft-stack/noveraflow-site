@@ -57,7 +57,7 @@
         privacy: {
           title: "NoveraFlow 개인정보처리방침",
           description:
-            "NoveraFlow의 기록, 상징, 첨부 파일, 앱 사용 이벤트, 피드백 평가 데이터 처리 원칙을 안내합니다.",
+            "NoveraFlow의 기록, Google·Apple 로그인, Supabase Auth, Support, Push, analytics 데이터 처리와 계정 삭제 원칙을 안내합니다.",
           ogTitle: "NoveraFlow 개인정보처리방침",
           ogDescription:
             "NoveraFlow의 개인정보, 기록 데이터, 백업 파일 처리 원칙을 안내합니다.",
@@ -79,7 +79,7 @@
         terms: {
           title: "NoveraFlow 이용약관",
           description:
-            "NoveraFlow의 서비스 상태, 기록 및 AI 피드백, 사용자 책임, 향후 변경 기준을 안내합니다.",
+            "NoveraFlow의 기록, AI 피드백, 로그인 계정, Support, Push, 백업과 계정 삭제 이용 기준을 안내합니다.",
           ogTitle: "NoveraFlow 이용약관",
           ogDescription:
             "NoveraFlow 이용약관과 서비스 이용 기준을 확인하세요.",
@@ -185,11 +185,11 @@
         "home.mvp.eyebrow": "앱 안내",
         "home.mvp.title": "작게 시작하고, 오래 곁에 남을 수 있게 준비하고 있습니다.",
         "home.mvp.copy":
-          "첫 버전은 편안한 기록, 상징 선택 또는 부여, 부담 없는 AI 피드백에 집중합니다. 로그인, 클라우드 백업, 복구 기능은 안정성을 확인하며 순차적으로 안내할 예정입니다.",
+          "첫 버전은 편안한 기록, 상징, 부담 없는 AI 피드백, 선택적 계정 로그인과 사용자가 관리하는 백업 ZIP 내보내기·복구를 지원합니다. 기본 기록은 기기에 남습니다.",
         "home.mvp.status1": "기록 경험 방향",
         "home.mvp.status2": "상징 성장 방향",
         "home.mvp.status3": "AI 피드백 품질 점검",
-        "home.mvp.status4": "백업과 복구 준비",
+        "home.mvp.status4": "백업 ZIP 내보내기와 복구",
         "about.eyebrow": "소개",
         "about.title": "NoveraFlow 소개",
         "about.lead":
@@ -221,7 +221,7 @@
           "AI 피드백은 진단이나 처방이 아니라, 사용자가 자신의 기록을 다시 바라볼 수 있도록 돕는 관찰형 문장입니다.",
         "features.backup.title": "백업과 복구",
         "features.backup.copy":
-          "백업과 복구는 기록 보존을 위한 핵심 기능입니다. 정식 제공 범위는 앱 오픈 전 별도로 안내합니다.",
+          "앱에서 기록을 백업 ZIP으로 내보내고 지원되는 백업을 복구할 수 있습니다. 내보낸 파일은 사용자가 직접 관리합니다.",
         "features.notice.title": "알림",
         "features.notice.copy":
           "알림은 기록을 압박하기보다, 사용자가 원할 때 조용히 돌아올 수 있도록 돕는 방향으로 설계합니다.",
@@ -240,10 +240,10 @@
           "초기 버전은 로컬 기록을 중심으로 설계됩니다. 서버 처리나 백업 기능이 추가될 때는 개인정보처리방침에 반영합니다.",
         "faq.q4.title": "백업과 복구를 지원하나요?",
         "faq.q4.copy":
-          "백업과 복구는 중요한 기능으로 준비하고 있습니다. 정식 지원 방식은 앱 오픈 전 안내합니다.",
+          "지원합니다. 앱에서 백업 ZIP을 내보내고 지원되는 백업을 복구할 수 있으며, 내보낸 파일은 사용자가 직접 관리합니다.",
         "faq.q5.title": "알림을 끌 수 있나요?",
         "faq.q5.copy":
-          "알림은 사용자가 조절할 수 있는 기능으로 준비합니다. 강한 참여 압박을 만들지 않는 것이 기준입니다.",
+          "가능합니다. 알림은 앱 설정과 기기의 알림 권한으로 제어합니다.",
         "faq.q6.title": "문의는 어디로 보내면 되나요?",
         "faq.q6.copy":
           "제품, 개인정보, 이용약관 관련 문의는 문의 페이지의 이메일로 보내실 수 있습니다.",
@@ -251,7 +251,7 @@
         "privacy.title": "개인정보처리방침",
         "privacy.lead":
           "NoveraFlow는 사용자의 기록을 소중하게 다룹니다. 사용자를 광고 목적으로 추적하거나 기록 데이터를 판매하지 않습니다.",
-        "privacy.updated": "시행일 및 최종 업데이트: 2026년 9월 1일",
+        "privacy.updated": "시행일 및 최종 업데이트: 2026년 9월 2일",
         "privacy.s1.title": "1. 처리하는 정보",
         "privacy.s1.copy":
           "NoveraFlow는 서비스 제공을 위해 다음 정보를 처리할 수 있습니다.",
@@ -261,11 +261,15 @@
         "privacy.s1.item4": "기록 생성, 기능 사용, 오류 확인에 필요한 앱 사용 이벤트",
         "privacy.s1.item5": "도움됨, 보통, 아쉬움 선택 등 피드백 평가 데이터",
         "privacy.s1.item6":
-          "로그인을 선택한 경우 Supabase 계정 식별자와 Google 또는 Apple 로그인 신원",
+          "로그인 시 Supabase Auth 계정 UUID, 인증을 위해 Google 또는 Apple이 제공하는 신원 정보와 인증 세션 데이터",
         "privacy.s1.item7":
-          "해당 기능을 이용할 때의 Support 문의와 계정 소유 Push 기기 정보",
+          "앱 내 Support 이용 시 문의 유형, 제목, 메시지, 답변, 상태, 시각, 로그인 계정 연결",
         "privacy.s1.item8":
-          "로그인 계정 식별자와 분리된 기기 로컬 익명 analytics 식별자",
+          "Push 이용 시 설치 식별자, 암호화된 기기 token, 플랫폼, 언어, 앱 버전/build, 권한 상태와 존재하는 경우 로그인 계정 연결",
+        "privacy.s1.item9":
+          "기기에서 생성한 익명 analytics 식별자, 이벤트 이름과 시각, 언어/locale, 시간대 정보, 앱 버전, 플랫폼, 화면, 제한된 기능 결과 또는 오류 정보",
+        "privacy.s1.item10":
+          "일간·주간·월간 AI 피드백 요청 시 선택된 기록 텍스트, 제한된 기간/건수와 이전 피드백 비교 데이터, 언어/시간대 및 quota 정보와 기기 생성 익명 식별자",
         "privacy.s1.note":
           "NoveraFlow는 광고 식별자를 이용해 사용자를 추적하거나 광고 프로파일을 만들기 위해 기록 데이터를 수집하지 않습니다.",
         "privacy.s2.title": "2. 이용 목적",
@@ -278,13 +282,17 @@
           "현재 v1 정책에서 기본 기록 데이터는 사용자의 기기에 로컬로 저장됩니다.",
         "privacy.s3.copy2":
           "사용자는 앱에서 백업 ZIP 파일을 직접 내보낼 수 있습니다. 이 파일은 NoveraFlow가 관리하는 저장소 밖에 있으므로 관리와 삭제는 사용자가 직접 수행합니다.",
+        "privacy.s3.copy5":
+          "AI 피드백을 요청하면 선택된 데이터가 응답 생성을 위해 NoveraFlow backend와 구성된 AI runtime으로 전송됩니다. 현재 요청 로그 경로는 기록 텍스트 대신 내용 길이와 짧은 hash를 기록하며, 생성된 피드백은 로컬 기록과 함께 저장됩니다.",
         "privacy.s3.copy3":
-          "앱 사용 이벤트와 피드백 평가는 서비스 안정성 확인과 품질 개선을 위해 서버로 전송되어 보관될 수 있습니다.",
+          "앱 사용 이벤트와 피드백 평가는 기기에서 생성한 익명 analytics 식별자와 함께 서버로 전송되어 안정성 확인과 품질 개선을 위해 보관됩니다. analytics payload에는 기록 본문, 첨부파일 내용, 이메일, Supabase 계정 UUID, 광고 식별자 또는 정밀 위치가 포함되지 않습니다.",
         "privacy.s3.copy4":
-          "서버 백업은 최대 30일 보관됩니다. 익명 analytics 이벤트와 최소화된 Push dispatch 감사 필드의 정확한 서버 보유 기간은 확인 중이므로, 이 방침은 확인되지 않은 기간을 추정하지 않습니다.",
+          "서버 백업은 최대 30일 보관됩니다. 현재 서버 구현에는 익명 analytics 이벤트, AI 피드백 quota/usage 항목과 최소화된 Push dispatch 감사 필드의 자동 기간 만료가 없어, 이 데이터의 보유기간은 고정된 기간으로 제한되지 않습니다.",
         "privacy.s4.title": "4. 제3자 제공 및 판매 금지",
         "privacy.s4.copy":
           "NoveraFlow는 사용자의 개인정보나 기록 데이터를 판매하지 않습니다. 법령상 요청이나 사용자의 명시적 요청이 있는 경우를 제외하고 기록을 임의로 공개하지 않습니다.",
+        "privacy.s4.copy2":
+          "선택 기능을 사용할 때 Google과 Apple은 로그인 정보를, Supabase는 계정 인증을, Firebase Cloud Messaging은 Push 전송 token과 메시지를 처리합니다.",
         "privacy.s5.title": "5. 사용자 권리와 삭제",
         "privacy.s5.copy":
           "로그인 사용자는 홈 → 계정/설정 → 계정 → 계정 삭제에서 영구 계정 삭제를 요청할 수 있습니다. 앱을 사용할 수 없는 사용자는 계정 삭제 페이지의 본인 확인 요청 방법을 이용할 수 있습니다.",
@@ -296,7 +304,7 @@
         "privacy.s5.item3":
           "계정 소유 Push receipt, device, 암호화 token은 즉시 삭제합니다. 보존되는 Push dispatch JSON에서는 일치하는 수신 계정 식별자만 제거하며 관련 없는 dispatch는 변경하지 않습니다.",
         "privacy.s5.item4":
-          "익명 analytics 식별자는 Supabase 계정 식별자와 다르며 계정 삭제에 자동으로 연결되거나 제거되지 않습니다. 앱 데이터를 지우기 전까지 로컬 사본이 남습니다.",
+          "기기에서 생성한 익명 analytics 식별자는 Supabase 계정 UUID와 다르며 계정 삭제에 자동으로 연결되거나 제거되지 않습니다. 앱 데이터 삭제 시 로컬 사본은 삭제되지만, 서버가 이미 수신한 계정 비연결 analytics 이벤트는 계정 삭제로 삭제되지 않습니다.",
         "privacy.s5.item5":
           "재시도와 백업 복구 뒤에도 삭제를 유지하기 위해 keyed deletion replay 항목은 최대 31일, 계정 신원이 없는 deletion receipt는 최대 365일 보관합니다.",
         "privacy.s5.item6":
@@ -317,26 +325,33 @@
         "privacy.s9.operator": "운영자: moolsoft",
         "privacy.s9.email": "이메일:",
         "privacy.s9.website": "웹사이트:",
+        "privacy.s9.termsLink": "이용약관 보기",
         "terms.eyebrow": "이용약관",
         "terms.title": "이용약관",
         "terms.lead":
-          "이 약관은 NoveraFlow의 정식 오픈 전 서비스 범위와 이용 기준을 안내합니다.",
-        "terms.updated": "최종 업데이트: 2026년 6월 16일",
-        "terms.s1.title": "1. 서비스 상태",
+          "이 약관은 현재 NoveraFlow 서비스와 이용 시 적용되는 책임을 안내합니다.",
+        "terms.updated": "시행일 및 최종 업데이트: 2026년 9월 2일",
+        "terms.s1.title": "1. 서비스와 계정",
         "terms.s1.copy":
-          "NoveraFlow는 현재 정식 오픈을 준비 중입니다. 기능, 화면, 데이터 처리 방식, 제공 범위는 테스트와 검수 과정에서 변경될 수 있습니다.",
+          "NoveraFlow는 로컬 일기 기록과 선택적 계정 기능을 제공합니다. Google 또는 Apple 로그인은 Supabase Auth 계정을 생성하고 접근하는 데 사용됩니다. Support 문의와 계정 소유 Push 기능에는 해당 로그인 계정이 필요합니다.",
         "terms.s2.title": "2. 기록과 AI 피드백",
         "terms.s2.copy":
-          "NoveraFlow는 기록과 성찰 경험을 제공합니다. AI 피드백은 의료, 법률, 금융, 전문 상담이 아니라 참고용 관찰 문장입니다.",
-        "terms.s3.title": "3. 사용자 책임",
+          "NoveraFlow는 기록과 성찰 경험을 제공합니다. AI 피드백은 이용 불가, 지연 또는 불완전할 수 있으며 의료, 법률, 금융 또는 기타 전문 상담이 아닙니다. 기록이나 피드백을 바탕으로 한 결정은 사용자의 책임입니다.",
+        "terms.s3.title": "3. 로컬 기록과 백업",
         "terms.s3.copy":
-          "사용자는 자신이 작성하고 보관하는 기록에 대한 책임을 가집니다. 공개 공유 기능이 도입되더라도 선택 사항이어야 하며 개인정보 보호를 우선합니다.",
-        "terms.s4.title": "4. 백업과 복구",
+          "현재 v1 설계에서 기본 기록과 첨부파일은 사용자의 기기에 저장됩니다. 사용자는 기기와 직접 내보낸 백업 ZIP을 보호하고, 필요한 경우 복구를 확인하며, 더 이상 필요하지 않은 사본을 삭제할 책임이 있습니다.",
+        "terms.s4.title": "4. 개인정보와 계정 연결 기능",
         "terms.s4.copy":
-          "백업과 복구 기능은 제공 범위와 방식에 따라 별도 안내될 수 있습니다. 사용자가 생성한 백업 파일의 보관과 삭제는 사용자의 책임입니다.",
-        "terms.s5.title": "5. 향후 검토",
+          "인증, analytics, Support, Push 기능은 개인정보처리방침에 설명된 데이터만 처리합니다. Support 메시지에 비밀번호, 인증 코드, token 또는 불필요한 민감 기록 내용을 입력하지 마세요.",
+        "terms.s4.privacyLink": "개인정보처리방침 보기",
+        "terms.s5.title": "5. 계정 삭제",
         "terms.s5.copy":
-          "정식 오픈 전 최종 앱 동작, 계정 시스템, 데이터 정책, 결제 모델, 관할 법령에 맞추어 본 약관을 다시 검토합니다.",
+          "로그아웃은 계정을 삭제하지 않습니다. 영구 삭제에는 앱에서 Google 또는 Apple 재인증과 최종 확인이 필요하며, 앱을 사용할 수 없을 때는 본인 확인이 포함된 외부 요청 절차를 이용합니다. 삭제 범위와 보유 기간은 계정 삭제 페이지에서 안내합니다.",
+        "terms.s5.deletionLink": "계정 삭제 안내 보기",
+        "terms.s6.title": "6. 가용성, 변경 및 문의",
+        "terms.s6.copy":
+          "서비스는 유지보수, 보안, 제공자 변경 또는 운영상 사유로 변경되거나 일시 중단될 수 있습니다. 약관 또는 데이터 처리의 중요한 변경은 공개 정책에 반영합니다. 문의는 공개 지원 채널로 보낼 수 있습니다.",
+        "terms.s6.contactLink": "NoveraFlow 지원 문의",
         "contact.eyebrow": "문의",
         "contact.title": "문의 및 지원",
         "contact.lead":
@@ -409,7 +424,7 @@
         privacy: {
           title: "NoveraFlow Privacy Policy",
           description:
-            "How NoveraFlow handles records, symbols, attachments, app events, feedback ratings, privacy, backup, and restore data.",
+            "How NoveraFlow handles records, Google and Apple sign-in, Supabase Auth, support, Push, analytics, and account deletion.",
           ogTitle: "NoveraFlow Privacy Policy",
           ogDescription:
             "NoveraFlow privacy and record data handling principles.",
@@ -431,7 +446,7 @@
         terms: {
           title: "NoveraFlow Terms of Service",
           description:
-            "NoveraFlow service status, records, AI feedback, user responsibility, backup, restore, and future review terms.",
+            "Terms for NoveraFlow records, AI feedback, sign-in accounts, support, Push, backup, and account deletion.",
           ogTitle: "NoveraFlow Terms of Service",
           ogDescription: "NoveraFlow terms and service boundaries.",
           twitterTitle: "NoveraFlow Terms of Service",
@@ -536,11 +551,11 @@
         "home.mvp.eyebrow": "App guide",
         "home.mvp.title": "Starting small, so it can stay with people longer.",
         "home.mvp.copy":
-          "The first version focuses on easy records, symbols, and light AI feedback. Login, cloud backup, and restore will be introduced after stability checks.",
+          "The first version supports easy records, symbols, light AI feedback, optional account sign-in, and user-managed backup ZIP export and restore. Primary records remain on the device.",
         "home.mvp.status1": "Record experience",
         "home.mvp.status2": "Symbol growth",
         "home.mvp.status3": "AI feedback quality",
-        "home.mvp.status4": "Backup and restore preparation",
+        "home.mvp.status4": "Backup ZIP export and restore",
         "about.eyebrow": "About",
         "about.title": "About NoveraFlow",
         "about.lead":
@@ -572,7 +587,7 @@
           "AI feedback is observational. It helps you revisit records without diagnosis or prescription.",
         "features.backup.title": "Backup and restore",
         "features.backup.copy":
-          "Backup and restore are important for record preservation. Final support details will be announced before launch.",
+          "The app can export records as a backup ZIP and restore a supported backup. Exported files remain under the user's control.",
         "features.notice.title": "Notifications",
         "features.notice.copy":
           "Notifications are designed to invite a quiet return, not pressure constant engagement.",
@@ -591,10 +606,10 @@
           "The first version is designed around local records. If server processing or backup changes are added, the privacy policy will be updated.",
         "faq.q4.title": "Will backup and restore be supported?",
         "faq.q4.copy":
-          "Backup and restore are being prepared as important features. The official method will be announced before launch.",
+          "Yes. The app can export a backup ZIP and restore from a supported backup. Exported files remain under the user's control.",
         "faq.q5.title": "Can notifications be turned off?",
         "faq.q5.copy":
-          "Notifications are being prepared as user-controlled settings. They should not create strong pressure to return.",
+          "Yes. Notifications are controlled by the app setting and the device's notification permission.",
         "faq.q6.title": "Where can I contact support?",
         "faq.q6.copy":
           "Product, privacy, and terms questions can be sent to the email on the contact page.",
@@ -602,7 +617,7 @@
         "privacy.title": "Privacy Policy",
         "privacy.lead":
           "NoveraFlow treats records with care. It does not track users for advertising or sell record data.",
-        "privacy.updated": "Effective and last updated: September 1, 2026",
+        "privacy.updated": "Effective and last updated: September 2, 2026",
         "privacy.s1.title": "1. Information processed",
         "privacy.s1.copy":
           "NoveraFlow may process the following information to provide the service.",
@@ -614,11 +629,15 @@
         "privacy.s1.item5":
           "Feedback rating data such as helpful, okay, or not quite",
         "privacy.s1.item6":
-          "A Supabase account identifier and Google or Apple sign-in identity when you choose to sign in",
+          "When you sign in, a Supabase Auth account UUID, Google or Apple identity information supplied for authentication, and authentication session data",
         "privacy.s1.item7":
-          "Support inquiries and account-owned Push device information when you use those features",
+          "Support inquiry category, subject, messages, replies, status, timestamps, and signed-in account link when you use in-app support",
         "privacy.s1.item8":
-          "A device-local anonymous analytics identifier that is separate from the signed-in account identifier",
+          "For Push, an installation identifier, encrypted device token, platform, language, app version/build, permission state, and signed-in account link when present",
+        "privacy.s1.item9":
+          "A device-generated anonymous analytics identifier, event name and time, language/locale, time-zone context, app version, platform, screen, and bounded feature outcome or error metadata",
+        "privacy.s1.item10":
+          "For requested daily, weekly, or monthly AI feedback: selected record text, limited period/count and previous-feedback comparison data, language/time-zone and quota metadata, and the device-generated anonymous identifier",
         "privacy.s1.note":
           "NoveraFlow does not collect record data to track users with advertising identifiers or build ad profiles.",
         "privacy.s2.title": "2. Purpose of use",
@@ -631,13 +650,17 @@
           "Under the current v1 policy, primary record data is stored locally on the user's device.",
         "privacy.s3.copy2":
           "Users may export backup ZIP files from the app. These files are outside NoveraFlow's managed storage, so managing and deleting them is the user's responsibility.",
+        "privacy.s3.copy5":
+          "When AI feedback is requested, the selected data is sent to NoveraFlow's backend and configured AI runtime to generate the response. The current request-log path records content length and a short hash rather than the record text, and the generated feedback is stored with the local records.",
         "privacy.s3.copy3":
-          "App events and feedback ratings may be sent to and stored on servers for stability checks and quality improvement.",
+          "App events and feedback ratings are sent with the device-generated anonymous analytics identifier and stored on servers for stability checks and quality improvement. Analytics payloads do not include record text, attachment contents, email, Supabase account UUID, advertising identifiers, or precise location.",
         "privacy.s3.copy4":
-          "Server backups are retained for no more than 30 days. The exact server retention period for anonymous analytics events and minimized Push dispatch audit fields is still being verified, so this policy does not infer a duration.",
+          "Server backups are retained for no more than 30 days. The current server implementation has no automatic time-based expiry for anonymous analytics events, AI feedback quota/usage entries, or minimized Push dispatch audit fields, so their retention is not bounded by a fixed period.",
         "privacy.s4.title": "4. No sale or unnecessary third-party sharing",
         "privacy.s4.copy":
           "NoveraFlow does not sell personal information or record data. It does not disclose records except where required by law or explicitly requested by the user.",
+        "privacy.s4.copy2":
+          "Google and Apple process sign-in information, Supabase provides account authentication, and Firebase Cloud Messaging processes Push delivery tokens and messages when those optional features are used.",
         "privacy.s5.title": "5. User rights and deletion",
         "privacy.s5.copy":
           "Signed-in users can request permanent account deletion in Home → Account/Settings → Account → Delete account. Users who cannot use the app can follow the verified request method on the account deletion page.",
@@ -649,7 +672,7 @@
         "privacy.s5.item3":
           "Account-owned Push receipts, devices, and encrypted tokens are deleted immediately. A matching recipient account identifier is removed from retained Push dispatch JSON without changing unrelated dispatches.",
         "privacy.s5.item4":
-          "The anonymous analytics identifier is not the Supabase account identifier and is not automatically linked to or removed with account deletion. Its local copy remains unless app data is cleared.",
+          "The device-generated anonymous analytics identifier is not the Supabase account UUID and is not automatically linked to or removed with account deletion. Clearing app data removes its local copy; analytics events already received by the server are not account-linked and are not deleted through account deletion.",
         "privacy.s5.item5":
           "The keyed deletion replay entry is retained for up to 31 days, and the identity-free deletion receipt for up to 365 days, so deletion remains effective after retries or backup restore.",
         "privacy.s5.item6":
@@ -670,26 +693,33 @@
         "privacy.s9.operator": "Operator: moolsoft",
         "privacy.s9.email": "Email:",
         "privacy.s9.website": "Website:",
+        "privacy.s9.termsLink": "View the Terms of Service",
         "terms.eyebrow": "Terms",
         "terms.title": "Terms of Service",
         "terms.lead":
-          "These terms describe the service boundaries before NoveraFlow enters public launch.",
-        "terms.updated": "Last updated: June 16, 2026",
-        "terms.s1.title": "1. Service status",
+          "These terms describe the current NoveraFlow service and the responsibilities that apply when you use it.",
+        "terms.updated": "Effective and last updated: September 2, 2026",
+        "terms.s1.title": "1. Service and accounts",
         "terms.s1.copy":
-          "NoveraFlow is preparing for public launch. Features, screens, data handling, and availability may change during testing and review.",
+          "NoveraFlow provides local diary records and optional account features. Google or Apple sign-in creates and accesses a Supabase Auth account. Support inquiries and account-owned Push features require the relevant signed-in account.",
         "terms.s2.title": "2. Records and AI feedback",
         "terms.s2.copy":
-          "NoveraFlow provides a diary and reflection experience. AI feedback is not medical, legal, financial, or professional advice.",
-        "terms.s3.title": "3. User responsibility",
+          "NoveraFlow provides a diary and reflection experience. AI feedback may be unavailable, delayed, or incomplete and is not medical, legal, financial, or other professional advice. You remain responsible for decisions based on your records or feedback.",
+        "terms.s3.title": "3. Local records and backup",
         "terms.s3.copy":
-          "Users are responsible for the records they create and keep. Public sharing, if introduced later, should remain optional and privacy-first.",
-        "terms.s4.title": "4. Backup and restore",
+          "Primary records and attachments are stored on your device under the current v1 design. You are responsible for protecting your device and any backup ZIP you export, testing restoration where appropriate, and deleting copies you no longer need.",
+        "terms.s4.title": "4. Privacy and account-linked features",
         "terms.s4.copy":
-          "Backup and restore support may be explained separately depending on the provided method. Users are responsible for managing backup files they create.",
-        "terms.s5.title": "5. Future review",
+          "Authentication, analytics, support, and Push features process only the data described in the Privacy Policy. Do not place passwords, authorization codes, tokens, or unnecessary sensitive record content in support messages.",
+        "terms.s4.privacyLink": "View the Privacy Policy",
+        "terms.s5.title": "5. Account deletion",
         "terms.s5.copy":
-          "Before public launch, these terms will be reviewed against final app behavior, account systems, data policy, payment model, and applicable law.",
+          "Signing out does not delete an account. Permanent deletion requires Google or Apple reauthentication and final confirmation in the app, or the verified external request procedure when the app cannot be used. Deletion scope and retention periods are explained on the account deletion page.",
+        "terms.s5.deletionLink": "View account deletion instructions",
+        "terms.s6.title": "6. Availability, changes, and contact",
+        "terms.s6.copy":
+          "The service may change or be temporarily unavailable for maintenance, security, provider changes, or operational reasons. Material changes to these terms or data handling will be reflected in the public policies. Questions may be sent through the public contact channel.",
+        "terms.s6.contactLink": "Contact NoveraFlow support",
         "contact.eyebrow": "Contact",
         "contact.title": "Contact and support",
         "contact.lead":
@@ -762,7 +792,7 @@
         privacy: {
           title: "NoveraFlow プライバシーポリシー",
           description:
-            "NoveraFlowの記録、象徴、添付ファイル、アプリ利用イベント、フィードバック評価データの取り扱い方針です。",
+            "NoveraFlowの記録、Google・Appleログイン、Supabase Auth、Support、Push、analytics、アカウント削除に関する取り扱い方針です。",
           ogTitle: "NoveraFlow プライバシーポリシー",
           ogDescription:
             "NoveraFlowのプライバシーと記録データの取り扱い方針です。",
@@ -784,7 +814,7 @@
         terms: {
           title: "NoveraFlow 利用規約",
           description:
-            "NoveraFlowのサービス状態、記録とAIフィードバック、利用者の責任、バックアップ、復元、今後の見直しについて案内します。",
+            "NoveraFlowの記録、AIフィードバック、ログインアカウント、Support、Push、バックアップ、アカウント削除の利用基準です。",
           ogTitle: "NoveraFlow 利用規約",
           ogDescription: "NoveraFlowの利用規約とサービス範囲です。",
           twitterTitle: "NoveraFlow 利用規約",
@@ -888,11 +918,11 @@
         "home.mvp.eyebrow": "アプリ案内",
         "home.mvp.title": "小さく始め、長くそばに残れるよう準備しています。",
         "home.mvp.copy":
-          "最初のバージョンは、気軽な記録、象徴、軽いAIフィードバックに集中します。ログイン、クラウドバックアップ、復元は安定性を確認しながら順次案内します。",
+          "最初のバージョンは、気軽な記録、象徴、軽いAIフィードバック、任意のアカウントログイン、利用者が管理するバックアップZIPの書き出しと復元に対応します。基本記録は端末に残ります。",
         "home.mvp.status1": "記録体験",
         "home.mvp.status2": "象徴の成長",
         "home.mvp.status3": "AIフィードバック品質",
-        "home.mvp.status4": "バックアップと復元の準備",
+        "home.mvp.status4": "バックアップZIPの書き出しと復元",
         "about.eyebrow": "紹介",
         "about.title": "NoveraFlowについて",
         "about.lead":
@@ -924,7 +954,7 @@
           "AIフィードバックは診断や処方ではなく、自分の記録を見直すための観察型の言葉です。",
         "features.backup.title": "バックアップと復元",
         "features.backup.copy":
-          "バックアップと復元は記録を残すための重要な機能です。正式な対応範囲は公開前に案内します。",
+          "アプリから記録をバックアップZIPとして書き出し、対応するバックアップを復元できます。書き出したファイルは利用者が管理します。",
         "features.notice.title": "通知",
         "features.notice.copy":
           "通知は記録を急かすのではなく、必要なときに静かに戻れるよう支える方向で設計します。",
@@ -943,10 +973,10 @@
           "初期バージョンはローカル記録を中心に設計されます。サーバー処理やバックアップ機能が追加される場合は、プライバシーポリシーに反映します。",
         "faq.q4.title": "バックアップと復元に対応しますか？",
         "faq.q4.copy":
-          "バックアップと復元は重要な機能として準備しています。正式な方式はアプリ公開前に案内します。",
+          "対応しています。アプリからバックアップZIPを書き出し、対応するバックアップを復元できます。書き出したファイルは利用者が管理します。",
         "faq.q5.title": "通知はオフにできますか？",
         "faq.q5.copy":
-          "通知は利用者が調整できる機能として準備します。強い利用圧力を作らないことを基準にします。",
+          "はい。通知はアプリ設定と端末の通知権限で管理できます。",
         "faq.q6.title": "問い合わせはどこに送ればよいですか？",
         "faq.q6.copy":
           "製品、プライバシー、利用規約に関する問い合わせは、お問い合わせページのメールアドレスへ送信できます。",
@@ -954,7 +984,7 @@
         "privacy.title": "プライバシーポリシー",
         "privacy.lead":
           "NoveraFlowは利用者の記録を大切に扱います。広告目的で利用者を追跡したり、記録データを販売したりしません。",
-        "privacy.updated": "施行日および最終更新日: 2026年9月1日",
+        "privacy.updated": "施行日および最終更新日: 2026年9月2日",
         "privacy.s1.title": "1. 取り扱う情報",
         "privacy.s1.copy":
           "NoveraFlowはサービス提供のため、次の情報を取り扱う場合があります。",
@@ -964,11 +994,15 @@
         "privacy.s1.item4": "記録作成、機能利用、エラー確認に必要なアプリ利用イベント",
         "privacy.s1.item5": "役に立った、普通、いまひとつ等のフィードバック評価データ",
         "privacy.s1.item6":
-          "ログインを選択した場合のSupabaseアカウント識別子とGoogleまたはAppleのログイン情報",
+          "ログイン時のSupabase AuthアカウントUUID、認証のためGoogleまたはAppleから提供される本人情報と認証セッションデータ",
         "privacy.s1.item7":
-          "各機能を利用した場合のSupport問い合わせとアカウント所有のPush端末情報",
+          "アプリ内Support利用時の問い合わせ種別、件名、メッセージ、返信、状態、時刻、ログインアカウントとの紐付け",
         "privacy.s1.item8":
-          "ログインアカウント識別子とは別の端末内匿名analytics識別子",
+          "Push利用時のインストール識別子、暗号化された端末token、プラットフォーム、言語、アプリのバージョン/build、権限状態、および存在する場合のログインアカウントとの紐付け",
+        "privacy.s1.item9":
+          "端末で生成される匿名analytics識別子、イベント名と時刻、言語/locale、タイムゾーン情報、アプリのバージョン、プラットフォーム、画面、限定された機能結果またはエラー情報",
+        "privacy.s1.item10":
+          "日次・週次・月次AIフィードバックのリクエスト時に選択された記録テキスト、限定された期間/件数と以前のフィードバック比較データ、言語/タイムゾーンおよびquota情報、端末で生成される匿名識別子",
         "privacy.s1.note":
           "NoveraFlowは広告識別子で利用者を追跡したり、広告プロファイルを作成したりする目的で記録データを収集しません。",
         "privacy.s2.title": "2. 利用目的",
@@ -981,13 +1015,17 @@
           "現在のv1方針では、基本的な記録データは利用者の端末にローカル保存されます。",
         "privacy.s3.copy2":
           "利用者はアプリからバックアップZIPを書き出せます。このファイルはNoveraFlowの管理対象外にあるため、管理と削除は利用者自身が行います。",
+        "privacy.s3.copy5":
+          "AIフィードバックをリクエストすると、選択されたデータは応答生成のためNoveraFlow backendと設定済みAI runtimeへ送信されます。現在のリクエストログ経路は記録テキストではなく内容の長さと短いhashを記録し、生成されたフィードバックは端末内記録とともに保存されます。",
         "privacy.s3.copy3":
-          "アプリ利用イベントとフィードバック評価は、安定性確認と品質改善のためサーバーへ送信・保管される場合があります。",
+          "アプリ利用イベントとフィードバック評価は、端末で生成される匿名analytics識別子とともにサーバーへ送信され、安定性確認と品質改善のため保管されます。analytics payloadには記録本文、添付ファイルの内容、メール、SupabaseアカウントUUID、広告識別子、正確な位置情報は含まれません。",
         "privacy.s3.copy4":
-          "サーバーバックアップは最長30日保持します。匿名analyticsイベントと最小化されたPush dispatch監査フィールドの正確なサーバー保持期間は確認中であり、本方針では未確認の期間を推測しません。",
+          "サーバーバックアップは最長30日保持します。現在のサーバー実装では、匿名analyticsイベント、AIフィードバックquota/usage項目、最小化されたPush dispatch監査フィールドに自動的な期間満了がなく、保持期間は固定期間に制限されません。",
         "privacy.s4.title": "4. 第三者提供および販売の禁止",
         "privacy.s4.copy":
           "NoveraFlowは個人情報や記録データを販売しません。法令上の要請または利用者の明示的な依頼がある場合を除き、記録を任意に公開しません。",
+        "privacy.s4.copy2":
+          "任意機能の利用時、GoogleとAppleはログイン情報を、Supabaseはアカウント認証を、Firebase Cloud MessagingはPush配信用tokenとメッセージを処理します。",
         "privacy.s5.title": "5. 利用者の権利と削除",
         "privacy.s5.copy":
           "ログイン利用者は、ホーム → アカウント／設定 → アカウント → アカウントを削除から完全削除をリクエストできます。アプリを利用できない場合は、アカウント削除ページの本人確認付きリクエスト方法を利用できます。",
@@ -999,7 +1037,7 @@
         "privacy.s5.item3":
           "アカウント所有のPush receipt、device、暗号化tokenは直ちに削除します。保持されるPush dispatch JSONでは一致する受信アカウント識別子のみを削除し、関係のないdispatchは変更しません。",
         "privacy.s5.item4":
-          "匿名analytics識別子はSupabaseアカウント識別子とは別で、アカウント削除に自動で紐付けまたは削除されません。アプリデータを消去するまでローカルの識別子は残ります。",
+          "端末で生成される匿名analytics識別子はSupabaseアカウントUUIDとは別で、アカウント削除に自動で紐付けまたは削除されません。アプリデータを消去すると端末内のコピーは削除されますが、サーバーが受信済みのアカウント非連携analyticsイベントはアカウント削除では削除されません。",
         "privacy.s5.item5":
           "再試行やバックアップ復元後も削除を維持するため、keyed deletion replay項目は最長31日、アカウント情報を含まないdeletion receiptは最長365日保持します。",
         "privacy.s5.item6":
@@ -1020,26 +1058,33 @@
         "privacy.s9.operator": "運営者: moolsoft",
         "privacy.s9.email": "メール:",
         "privacy.s9.website": "ウェブサイト:",
+        "privacy.s9.termsLink": "利用規約を見る",
         "terms.eyebrow": "利用規約",
         "terms.title": "利用規約",
         "terms.lead":
-          "この規約は、NoveraFlowの正式公開前のサービス範囲と利用基準を案内するものです。",
-        "terms.updated": "最終更新日: 2026年6月16日",
-        "terms.s1.title": "1. サービスの状態",
+          "この規約は、現在のNoveraFlowサービスと利用時に適用される責任を案内するものです。",
+        "terms.updated": "施行日および最終更新日: 2026年9月2日",
+        "terms.s1.title": "1. サービスとアカウント",
         "terms.s1.copy":
-          "NoveraFlowは現在、正式公開に向けて準備中です。機能、画面、データ処理、提供範囲はテストと確認の過程で変更される場合があります。",
+          "NoveraFlowは端末内の日記記録と任意のアカウント機能を提供します。GoogleまたはAppleログインはSupabase Authアカウントの作成とアクセスに使用されます。Support問い合わせとアカウント所有のPush機能には該当するログインアカウントが必要です。",
         "terms.s2.title": "2. 記録とAIフィードバック",
         "terms.s2.copy":
-          "NoveraFlowは日記と振り返りの体験を提供します。AIフィードバックは医療、法律、金融、専門的助言ではありません。",
-        "terms.s3.title": "3. 利用者の責任",
+          "NoveraFlowは日記と振り返りの体験を提供します。AIフィードバックは利用できない、遅延する、または不完全な場合があり、医療、法律、金融その他の専門的助言ではありません。記録やフィードバックに基づく判断は利用者の責任です。",
+        "terms.s3.title": "3. 端末内記録とバックアップ",
         "terms.s3.copy":
-          "利用者は自分が作成し保管する記録に責任を持ちます。公開共有機能が導入される場合も任意であり、プライバシーを優先します。",
-        "terms.s4.title": "4. バックアップと復元",
+          "現在のv1設計では、基本記録と添付ファイルは利用者の端末に保存されます。利用者は端末と書き出したバックアップZIPを保護し、必要に応じて復元を確認し、不要なコピーを削除する責任があります。",
+        "terms.s4.title": "4. プライバシーとアカウント連携機能",
         "terms.s4.copy":
-          "バックアップと復元の対応は、提供方法に応じて別途案内される場合があります。利用者が作成したバックアップファイルの管理は利用者の責任です。",
-        "terms.s5.title": "5. 今後の見直し",
+          "認証、analytics、Support、Push機能はプライバシーポリシーに記載されたデータのみを処理します。Supportメッセージにパスワード、認証コード、token、不要な機微記録内容を入力しないでください。",
+        "terms.s4.privacyLink": "プライバシーポリシーを見る",
+        "terms.s5.title": "5. アカウント削除",
         "terms.s5.copy":
-          "正式公開前に、最終的なアプリ動作、アカウント、データ方針、決済モデル、適用法令に合わせて本規約を再確認します。",
+          "ログアウトではアカウントは削除されません。完全削除にはアプリ内でGoogleまたはAppleによる再認証と最終確認が必要で、アプリを利用できない場合は本人確認を伴う外部リクエスト手順を利用します。削除範囲と保持期間はアカウント削除ページで案内します。",
+        "terms.s5.deletionLink": "アカウント削除の案内を見る",
+        "terms.s6.title": "6. 提供状況、変更、問い合わせ",
+        "terms.s6.copy":
+          "サービスは保守、セキュリティ、提供者の変更、運用上の理由により変更または一時停止する場合があります。規約またはデータ処理の重要な変更は公開ポリシーに反映します。問い合わせは公開サポート窓口へ送信できます。",
+        "terms.s6.contactLink": "NoveraFlowサポートへ問い合わせる",
         "contact.eyebrow": "お問い合わせ",
         "contact.title": "お問い合わせとサポート",
         "contact.lead":
