@@ -1482,3 +1482,15 @@ html[lang="ja"] .locale-copy-ja {
   border-radius: 8px;
   background: #f8e9e5;
 }
+:root { --faq-gap: 12px; }
+#supportFaq { margin-bottom: 32px; overflow-wrap: anywhere; }
+.faq-search { display: flex; flex-wrap: wrap; gap: var(--faq-gap); }
+.faq-search input,.faq-search select { flex: 1 1 160px; min-width: 0; max-width: 100%; }
+#supportFaq button,#supportFaq summary { min-height: 44px; padding: 10px; cursor: pointer; }
+#supportFaq details { padding: 12px 0; border-bottom: 1px solid #d5d8cf; }
+#supportFaq details p { white-space: pre-wrap; }
+#supportFaq input,#supportFaq select,#supportFaq button { font: inherit; border: 1px solid #b9c8be; border-radius: 10px; padding: 10px 12px; background: #f6f9f5; color: inherit; }
+#supportFaq input,#supportFaq select { min-height: 44px; }
+#supportFaq button { margin: 4px 6px 4px 0; }
+#supportFaq :focus-visible { outline: 2px solid #385f4d; outline-offset: 3px; }
+@media(max-width: 500px) { .faq-search > *, .faq-search input, .faq-search select { flex-basis: 100%; width: 100%; box-sizing: border-box; } }

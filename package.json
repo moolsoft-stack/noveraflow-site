@@ -4,6 +4,6 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/verify-site.mjs",
-    "test": "node --test test/site.test.mjs"
+    "test": "node --test test/*.test.mjs"
   }
 }
