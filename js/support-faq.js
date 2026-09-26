@@ -26,7 +26,7 @@ export function mountSupportFaq(host,{fetchImpl=fetch,endpoint='https://admin.no
     const load=async()=>{const own=++sequence;controller?.abort();controller=new AbortController();results.replaceChildren();status.textContent=t.loading;
       try{const response=await fetchImpl(url('',{query:input.value,category:category.value}),{credentials:'omit',signal:controller.signal});if(!response.ok)throw Error();const data=await response.json();if(own!==sequence)return;
         status.textContent=data.items.length?'':t.empty;
-        for(const item of data.items){const card=node('details');const title=node('summary',item.question);const body=node('div');card.append(title,body);results.append(card);
+        for(const item of data.items){const card=node('details');const title=node('summary',item.title);const body=node('div');card.append(title,body);results.append(card);
           if(input.value)metric(item,'recommendation').catch(()=>{});
           card.addEventListener('toggle',async()=>{if(!card.open)return;body.textContent=t.loading;
             try{const r=await fetchImpl(url(`/${item.faqId}`),{credentials:'omit'});if(!r.ok)throw Error();const fresh=(await r.json()).items[0];if(own!==sequence)return;

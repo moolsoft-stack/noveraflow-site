@@ -9,7 +9,7 @@ class Node {
   addEventListener(name,fn){this.events[name]=fn;}
 }
 test('site FAQ searches SITE scope, revalidates details and deduplicates feedback without identity',async()=>{
-  const host=new Node('div'),requests=[],item={faqId:'11111111-1111-4111-8111-111111111111',question:'Connection help',answer:'Approved answer',version:3};
+  const host=new Node('div'),requests=[],item={faqId:'11111111-1111-4111-8111-111111111111',title:'Connection help',question:'How do I reconnect?',answer:'Approved answer',version:3};
   globalThis.document={createElement:tag=>new Node(tag),documentElement:{lang:'en'}};
   globalThis.window={addEventListener(){}};
   try {
@@ -18,7 +18,7 @@ test('site FAQ searches SITE scope, revalidates details and deduplicates feedbac
     }});await mounted.refresh();
     const form=host.children[1],results=host.children[3];form.children[0].value='connection';
     await form.onsubmit({preventDefault(){}});await new Promise(resolve=>setImmediate(resolve));
-    const card=results.children[0];card.open=true;await card.events.toggle();
+    const card=results.children[0];assert.equal(card.children[0].textContent,item.title);assert.notEqual(item.title,item.question);card.open=true;await card.events.toggle();
     const body=card.children[1];assert.equal(body.children[0].textContent,'Approved answer');
     await body.children[1].onclick();await body.children[2].onclick();
     const votes=requests.filter(r=>r.method==='POST'&&['helpful','unhelpful'].includes(JSON.parse(r.body).kind));assert.equal(votes.length,1);
