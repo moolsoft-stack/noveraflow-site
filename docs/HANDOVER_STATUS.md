@@ -746,3 +746,51 @@ remove the remaining CSS clipping and SVG composition paths.
   bar hides/shows, leave the page open over two minutes, and check both scenes.
 - No regression or condition requiring rollback was observed in Production.
   Recovery remains the `cfd420c` deployment above or a revert of `5d65104`.
+
+### Completion-check evidence: languages, viewport classes and warm cache
+
+- The existing iPhone 12 mini WebKit evidence was retained without rerunning it:
+  375x812, ko/en/ja x A/B, two minutes, four repeated scroll cycles and
+  812->620->812 viewport-height changes. The title document Y remained
+  172.46875px in every sample and the mobile content transform remained `none`.
+- A targeted Production WebKit run added the current large-iPhone viewport
+  class at 440x956. All ko/en/ja x A/B cases stayed open for 120 seconds and
+  completed four cycles of scrollY=220 plus 956->700->956 height changes.
+  Every case passed with 0px title document-position drift, `overflow:visible`
+  on the Hero, and no title transform. At the top, ko/en titles occupied
+  Y=172.46875..297.875px and the taller ja title occupied
+  Y=172.46875..357.3125px, fully inside the 956px viewport.
+- Before each large-viewport reload, the browser fetched the preceding asset
+  URLs `landing.css?v=20261017d` and `landing.js?v=20261017c` with a cacheable
+  request. After reload in the same browser context, the live document and
+  resource trace selected `landing.css?v=20261017e` and
+  `landing.js?v=20261017d`; neither preceding URL was selected as the page's
+  stylesheet or script. This covers a returning browser with earlier assets in
+  cache, in addition to the fresh-load checks already recorded above.
+- These runs cover the requested language, scene, repeated-scroll, elapsed-time,
+  viewport-height-change and warm-cache conditions in Production emulation.
+  They do not constitute physical iPhone Safari evidence. Complete resolution
+  remains pending the device sequence below.
+
+### Minimum physical-iPhone acceptance sequence
+
+1. On a physical iPhone 12 mini (375x812 class), use an existing non-private
+   Safari tab that has visited the site before. Open Production without first
+   clearing website data; this preserves the warm-cache condition.
+2. Check Korean, English and Japanese. For each language, select scene 1 and
+   scene 2 and confirm the full title, description and download buttons are
+   visible at the top.
+3. In every language/scene combination, scroll down and back to the top at
+   least four times so Safari's address bar hides and reappears. Rotate
+   portrait->landscape->portrait once to force a viewport-size change, then
+   leave the page open for at least two minutes and repeat the scroll.
+4. Repeat steps 1-3 on the newest/larger iPhone available (440x956 class). If a
+   second physical device is unavailable, record that limitation explicitly;
+   responsive simulation is supporting evidence and does not replace this
+   physical-device check.
+5. Reload the existing tab and repeat one scroll cycle. When Web Inspector is
+   available, confirm the loaded asset URLs are
+   `landing.css?v=20261017e` and `landing.js?v=20261017d`. Also open one private
+   tab for a fresh-cache comparison. A pass requires the title to remain whole
+   after warm-cache reload, fresh-cache load, resizing, repeated scrolling and
+   the two-minute wait in all three languages and both scenes.
