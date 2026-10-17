@@ -5,20 +5,20 @@
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#f4f6f1",
-  "theme_color": "#f4f6f1",
+  "background_color": "#f6f3ed",
+  "theme_color": "#24293e",
   "icons": [
     {
-      "src": "/assets/noveraflow-icon-1024-v20260529.png",
-      "sizes": "1024x1024",
+      "src": "/assets/landing/icon-192-v20261017.png",
+      "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "/assets/noveraflow-icon-512-v20260529.png",
+      "src": "/assets/landing/icon-512-v20261017.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }

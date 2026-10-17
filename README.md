@@ -37,7 +37,7 @@ npm test
 
 ## Site icon 기준
 
-- 앱 최신 아이콘 기준 원본은 `C:\Projects\noveraflow-app\assets\branding\noveraflow_icon_master.png`입니다.
-- 사이트 favicon, 홈 화면 아이콘, manifest icon, JSON-LD logo, header brand mark는 같은 원본에서 생성한 versioned PNG를 사용합니다.
-- OG 이미지는 앱 splash 기준 원본 `C:\Projects\noveraflow-app\assets\branding\noveraflow_splash_light.png`를 1200x630 비율로 맞춘 versioned PNG를 사용합니다.
-- 파일을 갱신할 때는 기존 파일을 덮어쓰는 대신 `*-vYYYYMMDD.png` 파일명으로 추가하고 `index.html`, `site.webmanifest`, manifest link query를 함께 갱신해 캐시 잔존을 줄입니다.
+- 현재 앱의 launcher 설정이 사용하는 원본은 `../noveraflow-app/assets/branding/mark_01_icon_1024.png`입니다.
+- 메인 랜딩의 favicon, 홈 화면 아이콘, manifest icon, JSON-LD logo, header brand mark와 OG는 같은 공식 원본에서 만든 `assets/landing/*-v20261017.*`을 사용합니다. 앱 원본은 수정하지 않습니다.
+- 로고 여백 축소·리사이즈 결과는 웹 전용 자산으로 보관합니다. 새 자산은 날짜가 포함된 이름으로 추가하고 HTML/manifest 참조도 함께 갱신합니다.
+- A/B 풍경, 모션, 스토어 링크, Production 배포 및 복구 절차는 [운영 기록](docs/HANDOVER_STATUS.md#2026-10-17--ab-landscape-landing-production-release)을 참고하세요.
