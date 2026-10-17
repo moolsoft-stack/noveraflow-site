@@ -618,3 +618,23 @@ scenery, content, store link, schedule or non-landing page was changed.
   and push `main`, or roll Pages back to that deployment; no reset/force-push.
 - Production revision, Pages deployment ID and public-domain verification are
   recorded below after the deployment completes.
+
+### Production result
+
+- Correction revision: `cfd420c6e0151fa95fdc39105808cb9511250487`;
+  pushed to `origin/main`.
+- Cloudflare Pages deployment `cd5395c9-53ff-4c36-bf97-fa861ec43412`
+  completed with `success`.
+- `https://noveraflow.com/` returns HTTP 200 and references
+  `landing.js?v=20261017d`; the public script contains the mobile guard.
+- The complete 36-case WebKit/Chrome mobile matrix passed again on the public
+  domain, including ko/en/ja and both scenes. Scene/session switching, the KST
+  boundary, reduced motion and desktop depth also passed.
+- On public Production at mobile scrollY=200, `--scroll-depth` is `0`, the far
+  depth wrapper remains the identity matrix, title document Y is 172.46875px,
+  and 19 independent scenic animations are still running. The corrective path
+  is therefore live without removing the intended mobile atmosphere.
+- No Production rollback was required. Physical iPhone Safari confirmation is
+  the remaining acceptance check; until that check, describe the deployed
+  trigger correction as verified in Production browser emulation rather than a
+  fully confirmed physical-device resolution.
