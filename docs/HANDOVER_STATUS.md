@@ -873,3 +873,88 @@ scene-isolation safeguards.
 - That rollback restores the preceding mobile isolation implementation and its
   explicit scene pause/resume behavior. It does not restore a proven fix for
   the Android clipping report.
+
+## 2026-10-17 — Android Chrome Hero foreground compositor correction
+
+This entry reopens and supersedes the completion claim above. The reporting
+Galaxy S22 was reconnected, the failure was captured on the physical device,
+and the correction was accepted on that same device before and after the
+Production deployment.
+
+### Physical-device reproduction evidence and cause
+
+- Device: Samsung Galaxy S22 (`SM-S901N`), Chrome 155, CSS viewport about
+  411x756 with browser chrome visible and 411x812 with it hidden.
+- On the existing Production tab at revision `cfb4992`, the visible first line
+  of `#hero-title` was cut by a horizontal scenic tile after the reported
+  scroll/time condition. A CDP screenshot preserved the failure before any
+  reload or style change.
+- At that exact failed frame the title was still at document Y `172.476px`, its
+  layout box was `122.119px` high, `clientHeight` equalled `scrollHeight`, and
+  its computed overflow was visible with no transform or clipping. Every
+  ancestor through `.hero-editorial`, `.land-hero`, `main`, `body`, and `html`
+  also had visible vertical overflow and no transform or clip. Hit testing in
+  the missing-pixel area returned `#hero-title` first. The title had therefore
+  neither moved nor been clipped by its own box or an ancestor.
+- Removing the Hero shade layer live, without reload, immediately repainted
+  the missing logo/editorial/title pixels. Restoring it left the corrected
+  paint until the next compositor cycle. A later sunset-scene sample likewise
+  showed foreground DOM present in layout and hit testing while an animated
+  full-Hero SVG tile was visible above it. These observations identify the
+  failure boundary as Android Chrome's raster/compositor ordering between the
+  animated SVG/shade layers and normal-flow foreground content. They do not
+  attribute the browser-internal defect to a specific Chromium source module.
+- Earlier changes corrected Hero geometry, mobile parallax, overflow and bulk
+  animation pause/resume. They could not resolve this failure because the
+  failed frame retained correct geometry and DOM stacking while the stale
+  scenic pixels were already being composited above it.
+
+### Minimal correction
+
+- `css/landing.css`
+  - On mobile only, the shade now belongs to `.land-scene::after`, inside the
+    decorative scene stacking context; the separate `.land-hero::after` layer
+    is disabled.
+  - The header, `.hero-editorial`, and `.hero-bottom` are promoted as complete
+    foreground layers with `translate3d(0,0,0)` and hidden backfaces. Their
+    layout remains normal-flow/positioned as before; no child text or button is
+    animated or translated.
+  - Existing sunrise/sunset SVG content and its subtle scenic animations stay
+    enabled. Desktop 2.5D behavior is outside the mobile media rule and is
+    unchanged.
+- `index.html`: the landing CSS cache key advanced from `20261017e` to
+  `20261017f`, preventing a returning Android tab from selecting the preceding
+  stylesheet.
+
+### Verification and Production result
+
+- `npm run build`, all five existing Node tests, and `git diff --check` passed.
+- Before deployment, the final files were served directly to the physical
+  Galaxy S22. Korean, English, and Japanese were each checked in both sunrise
+  and sunset scenes. Every combination completed three physical swipe cycles
+  fully past the Hero and back. The title returned to Y `172.476px`; Korean and
+  English retained a `122.119px` title box and Japanese retained its full
+  `179.988px` box. Screenshots showed every title line intact.
+- The same tab remained open for more than two minutes, then completed four
+  additional physical swipe cycles. The title remained intact at the same
+  coordinates. The 756/812px visual-viewport change from Chrome's address bar
+  was exercised by the physical gestures.
+- Production revision `cf93b46` (`fix(site):isolate-mobile-hero-foreground`)
+  was pushed to `origin/main`. The public site serves
+  `landing.css?v=20261017f` at `https://noveraflow.com/`.
+- The complete six-combination physical-device matrix was repeated against the
+  public Production domain, followed by the same two-minute hold and four more
+  swipe cycles. All title screenshots and measurements passed. This is the
+  same Galaxy S22/Chrome path on which the failure was captured, so the mobile
+  Hero title issue is accepted as resolved for the reported device.
+
+### Recovery
+
+- Recovery source revision is `cfb4992`. If this mobile-only compositor
+  correction regresses, revert commit `cf93b46` and push `main`, or select the
+  last successful `cfb4992` Cloudflare Pages deployment in the Pages dashboard.
+  Do not reset or force-push `main`.
+- After recovery, confirm the public HTML references
+  `landing.css?v=20261017e`, then check both scenes on the Galaxy S22. That
+  recovery restores the prior implementation and also restores its known title
+  clipping risk.
