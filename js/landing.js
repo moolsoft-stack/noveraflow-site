@@ -76,6 +76,16 @@
   };
   const i18n = window.NoveraFlowI18n;
   if (!i18n) return;
+  const sceneLabels = {
+    en: ['Landscape design', 'Design 1', 'Design 2'],
+    ko: ['풍경 디자인 선택', '디자인 1', '디자인 2'],
+    ja: ['風景デザイン', 'デザイン 1', 'デザイン 2'],
+  };
+  for (const [locale, labels] of Object.entries(sceneLabels)) {
+    Object.assign(translations[locale], {
+      'scene.label': labels[0], 'scene.one': labels[1], 'scene.two': labels[2],
+    });
+  }
   for (const [locale, messages] of Object.entries(translations)) {
     Object.assign(i18n.locales[locale].messages,
       Object.fromEntries(Object.entries(messages).map(([key, value]) => [`landing.${key}`, value])));
@@ -93,6 +103,35 @@
   const limited = navigator.connection?.saveData ||
     (navigator.deviceMemory && navigator.deviceMemory <= 4) ||
     (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2);
+  const hero = document.querySelector('.land-hero');
+  const scene = document.querySelector('.land-scene');
+  const pointer = matchMedia('(hover: hover) and (pointer: fine)');
+  let x = 0;
+  let y = 0;
+  let frame = 0;
+  function renderDepth() {
+    frame = 0;
+    const enabled = root.dataset.motion === 'on' && !reduced.matches && !limited;
+    const desktop = enabled && pointer.matches && !mobile.matches;
+    const rect = hero.getBoundingClientRect();
+    scene.style.setProperty('--pointer-x', desktop ? x.toFixed(3) : '0');
+    scene.style.setProperty('--pointer-y', desktop ? y.toFixed(3) : '0');
+    scene.style.setProperty('--scroll-depth', enabled ? Math.min(1, Math.max(0, -rect.top / rect.height)).toFixed(3) : '0');
+  }
+  function queueDepth() {
+    if (!frame) frame = requestAnimationFrame(renderDepth);
+  }
+  hero.addEventListener('pointermove', event => {
+    if (!pointer.matches || mobile.matches || root.dataset.motion !== 'on') return;
+    const rect = hero.getBoundingClientRect();
+    x = (event.clientX - rect.left) / rect.width * 2 - 1;
+    y = (event.clientY - rect.top) / rect.height * 2 - 1;
+    queueDepth();
+  }, { passive: true });
+  hero.addEventListener('pointerleave', () => { x = y = 0; queueDepth(); });
+  window.addEventListener('scroll', queueDepth, { passive: true });
+  window.addEventListener('resize', queueDepth, { passive: true });
+  pointer.addEventListener('change', queueDepth);
   function updateMotion() {
     const forced = reduced.matches || limited;
     if (forced) root.dataset.motion = 'off';
@@ -101,6 +140,7 @@
     const key = forced ? 'motion.reduced' : root.dataset.motion === 'off' ? 'motion.play' : 'motion.pause';
     toggle.firstElementChild.dataset.i18n = `landing.${key}`;
     toggle.firstElementChild.textContent = i18n.message(`landing.${key}`);
+    queueDepth();
   }
   toggle.addEventListener('click', () => {
     root.dataset.motion = root.dataset.motion === 'off' ? 'on' : 'off';
