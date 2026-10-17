@@ -454,3 +454,20 @@ or revert the mobile-fix commits and push `main`. Preserve unrelated work;
 no reset/force-push. Recheck the Hero, store links, languages and selector.
 No operating data, payment/auth service, app source or server configuration
 is changed by this release.
+
+### Production verification
+
+- Fix revision: `82cdd3b825ac365ea2fa2ce07b962f43160e9d80`; pushed to `origin/main`.
+- Cloudflare Pages deployment `09d19531-f73d-496a-84af-bcac4413d783` completed
+  with **success**. `https://noveraflow.com/` returns HTTP 200 and references
+  `landing.css?v=20261017d`.
+- Repeated the targeted 36-case mobile matrix on the actual public domain in
+  WebKit and Chrome: all passed. No heading glyph clipping or background
+  occlusion was detected at sampled animation phases, scroll positions and
+  changing viewport heights. Production screenshots were visually reviewed.
+- Production safe-area emulation, enlarged text, low-resource/reduced motion,
+  session selection, the open-page KST boundary and desktop parallax passed.
+- No regression requiring rollback found. This follow-up record changes no
+  application assets. Physical Mobile Safari's original intermittent symptom
+  remains unconfirmed without the user's device/screenshot; do not equate the
+  Windows WebKit verification with a real iPhone Safari test.
