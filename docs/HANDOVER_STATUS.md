@@ -471,3 +471,88 @@ is changed by this release.
   application assets. Physical Mobile Safari's original intermittent symptom
   remains unconfirmed without the user's device/screenshot; do not equate the
   Windows WebKit verification with a real iPhone Safari test.
+
+## 2026-10-17 — Recurrent iPhone Hero clipping investigation (OPEN)
+
+The user reports that the title is initially intact after refresh and later
+clips again on an actual iPhone. The preceding mobile layout release must
+**not** be treated as a verified fix for that intermittent device symptom.
+This follow-up requires a reproducible cause before another code change.
+
+### Baseline and source trace
+
+- Production baseline: `ec959c9`; Pages deployment
+  `24a33bfb-3f71-4129-ad30-ac0d7c72cbf1`; implementation `82cdd3b`.
+- Public `landing.css?v=20261017d`, `landing.js?v=20261017c` and
+  `landing-init.js?v=20261017b` return HTTP 200 and match the checked-out
+  files after line-ending normalization. This does not inspect the cache
+  on the reporting iPhone.
+- At <=640px, the title, editorial wrapper, Hero and main have no transform
+  or animation and use visible overflow. Hero height is content-driven with
+  a `clamp(790px,96svh,950px)` minimum. No JavaScript writes content height.
+- `renderDepth()` writes pointer/scroll variables only on `.land-scene`.
+  Mobile pointer depth is zero; mobile scroll depth still updates the SVG
+  wrappers. It does not directly transform the title or its ancestors.
+- Scene/shade/content use z-indices 0/1/2. Root/body retain computed
+  `overflow: hidden auto`; separate ancestor scrolling was investigated,
+  not assumed to be the cause. No `visualViewport` handler currently moves
+  content. The scene IntersectionObserver only pauses decorative animation.
+
+### New reproduction evidence and its limits
+
+- Temporary read-only browser harness outside the repository:
+  `D:\Development\Personal\tmp\mobile-hero-check\recurrence.mjs`.
+  Event traces/screenshots use the `recurrence-` prefix in that directory.
+  No diagnostic endpoint, telemetry or dependency was added to Production.
+- Windows WebKit 27.2 and installed Chrome, mobile emulation at 375x812
+  (iPhone 12 mini profile), on the public site: 12 engine/locale/scene cases
+  (ko/en/ja x A/B); repeated scroll positions 0/80/170/210/400/1100 and height
+  cycles 812/620/640. Collected window and visualViewport events, glyph
+  bounds, ancestor scroll positions, overflow, transform and stacking state.
+- Title document Y stayed at 172.46875px. Attempts to scroll body/main/Hero/
+  editorial separately did not produce an independent scroll offset.
+- Additionally let animations run for a real 120 seconds per engine (no
+  animation seeking), returning from scrollY=1200 to the top every 30 seconds.
+  The title position stayed stable and both final screenshots showed intact
+  text. This elapsed-time phase used ja/B; other cases had the shorter
+  repeated-scroll/resize sequence. No internal clipping was reproduced.
+- At scrollY=210 the title crosses the top of the viewport normally; this
+  is distinct from clipping inside a Hero while the title is in view.
+  This observation does **not** classify the user's symptom as normal.
+- Native iPhone Safari toolbar collapse, rubber-band scrolling and GPU
+  compositing are not reproduced by Windows WebKit viewport resizing.
+  `visualViewport.offsetTop` remained zero in these simulated cycles.
+  Physical Safari remote debugging is not connected in this environment.
+  **Direct cause unconfirmed; no verified recurrence fix yet.**
+
+### Required device evidence and next action
+
+- Ask for a screenshot/short recording before refreshing, iPhone/iOS version,
+  and whether the title remains clipped after returning fully to the top.
+- If a Mac is available, enable Safari Web Inspector on the iPhone, connect
+  it to the Mac, and select its NoveraFlow tab from Safari's Develop menu.
+  See [WebKit remote inspection instructions](https://webkit.org/web-inspector/enabling-web-inspector/).
+- At the failing state, compare heading `getBoundingClientRect().top`,
+  `scrollY`, their sum, `visualViewport.offsetTop/pageTop/height/scale`, and
+  the ancestor overflow/transform/scrollTop values with the refreshed state.
+  Capture pixels too: DOM bounds and hit testing alone cannot rule out a
+  compositor paint defect, particularly with pointer-events:none scenery.
+- Only after a failure is captured, isolate the mobile scroll transform or
+  offending clipping/compositing layer in the inspector and demonstrate
+  recovery without refresh. Apply that smallest proven change; retain the
+  existing scenic keyframes and desktop depth. Repeat the actual failing
+  device sequence before calling the issue resolved.
+
+### Changes, deployment and recovery
+
+- Repository change for this investigation: this document only. No further
+  padding, transform or viewport workaround has been applied without evidence.
+- No corrective Production deployment yet; baseline remains `ec959c9`.
+  Save the investigation with a `[CF-Pages-Skip]` documentation-only commit
+  so recording an open issue does not masquerade as a new fix release.
+  [Cloudflare documents this deployment-skip prefix](https://developers.cloudflare.com/pages/configuration/git-integration/github-integration/#skipping-a-build-via-a-commit-message).
+- For a later verified patch, use the existing `main` Pages integration.
+  Recovery point: deployment `24a33bfb-3f71-4129-ad30-ac0d7c72cbf1` /
+  `ec959c9`, or revert only the future patch and push; no reset/force-push.
+  A rollback to this baseline restores the current site, not a proven cure
+  for the reported iPhone defect. Site behavior and operating data unchanged.
