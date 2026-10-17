@@ -724,3 +724,25 @@ remove the remaining CSS clipping and SVG composition paths.
   this correction commit and push; never reset or force-push.
 - Production revision, deployment ID and public asset/browser verification are
   appended after completion.
+
+### Production result
+
+- Structural correction revision:
+  `5d6510409ba73a2495a5195282dcdb2b3a64bd64`; pushed to `origin/main`.
+- Cloudflare Pages deployment `a870de3e-dd06-4335-9368-fccf5894bcb5`
+  completed successfully.
+- `https://noveraflow.com/` returns HTTP 200 and references only
+  `landing.css?v=20261017e` (the preceding `v=20261017d` reference is absent).
+- The 36-case WebKit/Chrome matrix passed on the public domain. The concurrent
+  two-minute Production WebKit run also passed all ko/en/ja x A/B pages after
+  four scroll and viewport-height cycles. Title Y remained 172.46875px;
+  root/body were `clip/visible`; inactive full scenes remained `display:none`;
+  depth wrappers remained untransformed; and 13/17 scenic animations ran.
+- Mac mini access was retried at the currently observed local candidate and the
+  preserved external address; SSH timed out at both. No native iPhone Safari
+  remote-inspector evidence was available. The user must perform the short
+  physical-device acceptance sequence below before this is declared completely
+  resolved: open/reload once, repeat scroll down/back to top while the address
+  bar hides/shows, leave the page open over two minutes, and check both scenes.
+- No regression or condition requiring rollback was observed in Production.
+  Recovery remains the `cfd420c` deployment above or a revert of `5d65104`.
