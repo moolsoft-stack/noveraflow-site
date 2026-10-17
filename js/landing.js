@@ -116,7 +116,7 @@
     const rect = hero.getBoundingClientRect();
     scene.style.setProperty('--pointer-x', desktop ? x.toFixed(3) : '0');
     scene.style.setProperty('--pointer-y', desktop ? y.toFixed(3) : '0');
-    // Mobile Safari changes the visual viewport while its browser chrome moves.
+    // Mobile browsers change the visual viewport while their browser chrome moves.
     // Do not re-composite the full SVG depth stack during those scroll/resize cycles.
     scene.style.setProperty('--scroll-depth', enabled && !mobile.matches
       ? Math.min(1, Math.max(0, -rect.top / rect.height)).toFixed(3)
@@ -160,11 +160,26 @@
     updateMotion();
   }
   window.addEventListener('noveraflow:localechange', localizeScreens);
-  document.addEventListener('visibilitychange', () => root.classList.toggle('page-hidden', document.hidden));
-  // Stop the decorative hero while the visitor reads the rest of the page.
+  function syncPagePause() {
+    // Mobile Chrome already throttles background tabs. Explicitly pausing and
+    // resuming every animated SVG descendant forces a full scene recomposition.
+    root.classList.toggle('page-hidden', document.hidden && !mobile.matches);
+  }
+  document.addEventListener('visibilitychange', syncPagePause);
+  let heroInView = true;
+  function syncScenePause() {
+    scene.classList.toggle('page-hidden', !mobile.matches && !heroInView);
+  }
+  // Stop the decorative hero while desktop visitors read the rest of the page.
+  // On mobile, keep its compositor state stable while the browser chrome moves.
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(([entry]) => {
-      document.querySelector('.land-scene').classList.toggle('page-hidden', !entry.isIntersecting);
-    }).observe(document.querySelector('.land-hero'));
+      heroInView = entry.isIntersecting;
+      syncScenePause();
+    }).observe(hero);
   }
+  mobile.addEventListener('change', () => {
+    syncPagePause();
+    syncScenePause();
+  });
 })();
