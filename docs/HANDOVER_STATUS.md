@@ -353,3 +353,27 @@ If this refinement regresses, roll Pages back to deployment
 commits and push `main`. Do not reset/force-push. Verify the homepage, selector,
 language buttons, download links and policy routes after recovery. No database,
 payment, authentication, server configuration or app distribution change.
+
+### Production result
+
+- Implementation revision: `438731ddd53e77c37f014d9c3cb277dd9cfc7c76`.
+  Push to `origin/main` succeeded.
+- Cloudflare Pages deployment `6b613831-a2cf-4abe-b93c-af46c2326e6b` completed
+  with **success**. `https://noveraflow.com/` serves the new light grading and
+  numeric controls; desktop/mobile Production screenshots were reviewed.
+- All 18 Production main-page A/B/locale/viewport cases passed, including
+  numeric-only text, 44px circular controls, localized names and store links.
+- Public CSS/JavaScript, sitemap, robots and webmanifest returned HTTP 200 and
+  matched the local sources after normalizing line endings.
+- All 48 Production interior route/locale/viewport cases passed. Official
+  header/footer logos and unchanged policy/help pages remain intact.
+- Production manual selection survived reload and an About-page round trip.
+  Desktop hover showed the localized name while button text stayed numeric.
+  Simulated midnight resume expired the manual override; the open-page timer
+  crossed 16:00 KST and completed automatic selection and the fade.
+- Production mouse/scroll depth, fixed reading UI, mobile pointer exclusion,
+  language switching, reduced-motion/two-core static mode and no-JS fallback
+  all passed. Zero running animations in both reduced/static scenarios.
+- No blocking issue or required follow-up was found; rollback was unnecessary.
+  The follow-up documentation commit records these results without modifying
+  application assets. Browser/device and clock-simulation limits are noted above.
