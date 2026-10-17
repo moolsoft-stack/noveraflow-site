@@ -556,3 +556,65 @@ This follow-up requires a reproducible cause before another code change.
   `ec959c9`, or revert only the future patch and push; no reset/force-push.
   A rollback to this baseline restores the current site, not a proven cure
   for the reported iPhone defect. Site behavior and operating data unchanged.
+
+## 2026-10-17 — Mobile Safari recurrent Hero clipping correction
+
+Purpose: remove the mobile-only compositor trigger identified after the earlier
+height/safe-area change did not stop the intermittent iPhone symptom. This is a
+targeted follow-up to the open investigation above; no spacing, typography,
+scenery, content, store link, schedule or non-landing page was changed.
+
+### Direct cause and reproduction
+
+- `js/landing.js` registered both `scroll` and `resize` handlers for
+  `renderDepth()` at every viewport width. Although pointer depth was disabled
+  on mobile, `--scroll-depth` was still recalculated there.
+- Each mobile scroll/address-bar viewport cycle therefore transformed all
+  `.depth-layer` SVG groups and transitioned the large scene compositor layers.
+  The title box itself remained fixed, so the recurring visual cut was a scene
+  recomposition/paint-order condition rather than title geometry or insufficient
+  safe-area spacing. Refresh reset the transformed scene to scroll depth zero,
+  matching the reported temporary recovery.
+- Reproduced against the pre-fix Production page in a WebKit iPhone 12 mini
+  profile: at scrollY=200, `--scroll-depth` changed from `0.000` to `0.253` and
+  `.depth-far` changed from the identity matrix to Y=5.566px while title document
+  Y stayed 172.46875px. The patched local page kept both the variable and matrix
+  at zero under the identical sequence, with the same title document Y.
+
+### Minimal change
+
+- `js/landing.js`: mobile now always sets scene `--scroll-depth` to zero. A
+  media-query change queues one depth refresh so crossing 640px cannot retain a
+  stale desktop transform. Desktop pointer and scroll depth remain unchanged.
+- `index.html`: advance only the landing JavaScript cache key to
+  `landing.js?v=20261017d`.
+- The SVG scene, individual cloud/moon/city/water/foliage/petal/steam/cat/light
+  animations, the light grading, mobile automatic foreground movement, scene
+  selector, 8-hour KST schedule, content and buttons remain unchanged.
+
+### Verification before deployment
+
+- Static site verification, five existing tests and `git diff --check` pass.
+- Existing browser matrix passes all 36 cases: WebKit and Chrome; A/B scenes;
+  ko/en/ja; iPhone 12 mini 375x812, iPhone 390x844, WebKit 320x568, Chrome
+  375x812, Android 393x851 and Chrome 360x640.
+- The matrix covers animation phases, scroll, viewport shrink/restore, enlarged
+  text, selector/session persistence, the live 16:00 KST boundary, reduced
+  motion and low-resource behavior. Desktop pointer depth still changes with
+  pointer position while editorial bounds remain fixed.
+- Native iPhone Safari cannot be remotely inspected from this Windows host
+  because the recorded Mac mini SSH paths are unreachable. This release removes
+  the directly reproduced mobile transform trigger; per the user's rule, final
+  physical-device confirmation is still required before calling the visual
+  symptom completely resolved.
+
+### Deployment and recovery
+
+- Production delivery uses the existing Cloudflare Pages Git integration from
+  `main`; repository root is the publish directory.
+- Recovery baseline before this correction: deployment
+  `24a33bfb-3f71-4129-ad30-ac0d7c72cbf1`, site implementation `82cdd3b`, and
+  recorded repository revision `ec959c9`. Revert only this correction commit
+  and push `main`, or roll Pages back to that deployment; no reset/force-push.
+- Production revision, Pages deployment ID and public-domain verification are
+  recorded below after the deployment completes.

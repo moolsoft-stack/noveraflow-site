@@ -116,7 +116,11 @@
     const rect = hero.getBoundingClientRect();
     scene.style.setProperty('--pointer-x', desktop ? x.toFixed(3) : '0');
     scene.style.setProperty('--pointer-y', desktop ? y.toFixed(3) : '0');
-    scene.style.setProperty('--scroll-depth', enabled ? Math.min(1, Math.max(0, -rect.top / rect.height)).toFixed(3) : '0');
+    // Mobile Safari changes the visual viewport while its browser chrome moves.
+    // Do not re-composite the full SVG depth stack during those scroll/resize cycles.
+    scene.style.setProperty('--scroll-depth', enabled && !mobile.matches
+      ? Math.min(1, Math.max(0, -rect.top / rect.height)).toFixed(3)
+      : '0');
   }
   function queueDepth() {
     if (!frame) frame = requestAnimationFrame(renderDepth);
@@ -131,6 +135,7 @@
   hero.addEventListener('pointerleave', () => { x = y = 0; queueDepth(); });
   window.addEventListener('scroll', queueDepth, { passive: true });
   window.addEventListener('resize', queueDepth, { passive: true });
+  mobile.addEventListener('change', queueDepth);
   pointer.addEventListener('change', queueDepth);
   function updateMotion() {
     const forced = reduced.matches || limited;
