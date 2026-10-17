@@ -72,8 +72,16 @@
   [data-scene=A] .land-scene .scene-b,[data-scene=B] .land-scene .scene-a{display:none}
   [data-scene=A] .land-scene .scene-a,[data-scene=B] .land-scene .scene-b{display:block}
   .land-scene .depth-layer{transform:none!important;translate:none!important;transition:none!important;animation:none!important;filter:none!important;will-change:auto!important}
-  .land-hero:after{z-index:1}
+  /* Keep the mobile shade inside the decorative scene's stacking context.
+     Android Chrome can otherwise retain the separate Hero overlay tile above
+     normal-flow content after viewport/scroll compositor changes. */
+  .land-hero:after{display:none}
+  .land-scene:after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#1b203478 0%,#24283cb0 42%,#25283a00 76%,#1b203480 100%);pointer-events:none}
   .hero-editorial,.hero-bottom{position:relative;z-index:2;overflow:visible;contain:none;clip-path:none;transform:none;translate:none;filter:none;perspective:none;will-change:auto;animation:none;flex-shrink:0}
+  /* Promote the three foreground containers as complete layers above the
+     animated SVG. This preserves normal-flow layout while preventing Android
+     Chrome from reusing a scene tile over text after mobile viewport changes. */
+  .landing-page .site-header,.hero-editorial,.hero-bottom{transform:translate3d(0,0,0);backface-visibility:hidden}
   .hero-editorial{display:block;width:100%;margin:0;isolation:auto}
   .hero-editorial h1,.hero-description,.hero-editorial .store-row,.hero-editorial .store-status{position:relative;overflow:visible;contain:none;clip-path:none;transform:none;translate:none;filter:none;perspective:none;will-change:auto;animation:none}
   .hero-editorial h1{line-height:1.45;padding-block:.08em}
