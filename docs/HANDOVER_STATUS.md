@@ -794,3 +794,82 @@ remove the remaining CSS clipping and SVG composition paths.
    tab for a fresh-cache comparison. A pass requires the title to remain whole
    after warm-cache reload, fresh-cache load, resizing, repeated scrolling and
    the two-minute wait in all three languages and both scenes.
+
+## 2026-10-17 — Android Chrome Hero scene-resume correction
+
+The reporting device was corrected to Android Chrome; no matching iPhone
+Safari failure has been reported. This entry replaces the device assumption in
+the preceding investigation without reverting the useful mobile layout and
+scene-isolation safeguards.
+
+### Reproduction and cause boundary
+
+- Production baseline: revision `5d6510409ba73a2495a5195282dcdb2b3a64bd64`,
+  Pages deployment `a870de3e-dd06-4335-9368-fccf5894bcb5`.
+- A connected Samsung SM-S901N running Chrome 155 provided a real-device
+  pre-change trace. With browser chrome shown/hidden, the viewport height
+  changed from about 756px to 812px while the title document Y remained
+  172.476px. The title and Hero retained visible overflow and no transform;
+  normal scrolling moved the whole title outside the viewport as expected.
+- The USB debugging transport went offline before the reported visual failure
+  could be captured. Therefore the internal Android GPU paint defect is not
+  claimed as directly observed in DevTools.
+- The remaining deterministic site trigger was reproduced on the public page
+  with Chrome's Android mobile profile: when the Hero fully left the viewport,
+  its IntersectionObserver added `page-hidden`. Animated SVG descendants
+  changed from 521 running / 492 paused to 12 running / 1001 paused, then
+  returned to 521 / 492 together when the Hero re-entered. Title document Y
+  stayed 172.46875px. This explicit bulk pause/resume was the only remaining
+  scroll-driven full-scene compositor reset after the three earlier fixes and
+  matches the report that refresh is initially clean and scrolling triggers
+  the visual loss.
+- The confirmed cause fixed here is that site-authored bulk compositor reset.
+  Which Android Chrome raster/compositor tile produced the clipped pixels
+  remains unconfirmed until the failing physical device is inspected while the
+  symptom is visible.
+
+### Minimal change
+
+- `js/landing.js`: mobile no longer applies the explicit `page-hidden`
+  animation pause on Hero intersection or document visibility changes. Mobile
+  Chrome performs its own background throttling, so scenic animations retain a
+  stable compositor state across browser-chrome and scroll cycles. Desktop
+  offscreen pause behavior remains enabled.
+- `index.html`: advance only the landing JavaScript cache key to
+  `landing.js?v=20261017e`.
+- Existing normal-flow content, mobile scroll-depth disablement, scene
+  isolation, sunrise/sunset selection, KST schedule, store links, desktop 2.5D
+  depth and scenic keyframes are unchanged.
+
+### Verification and Production result
+
+- Static verification passed; all five existing tests passed. `git diff
+  --check` passed.
+- Local installed-Chrome verification passed at 411x756 for ko/en/ja x A/B.
+  Each case completed four scrollY=1000 Hero exit/return cycles and
+  756->812->756 viewport changes. The scene never acquired `page-hidden`,
+  506 (A) or 521 (B) scenic animations remained running, title document Y
+  stayed 172.46875px, title hit-testing returned `#hero-title`, and Hero
+  overflow remained visible. Desktop still paused the offscreen scene.
+- Production correction revision:
+  `cfb49926db5cee47982da6a3e7b8d10da8a6254b`; pushed to `origin/main`.
+  The Git-integrated Pages deployment is live at `https://noveraflow.com/` and
+  the public HTML references `landing.js?v=20261017e`.
+- The same six-case Android Chrome matrix and four exit/return cycles passed on
+  Production. The title remained at Y=172.46875px and desktop offscreen pause
+  remained functional.
+- The physical SM-S901N was no longer listed by ADB after deployment. No
+  post-change real-device pass is claimed. Per the acceptance rule, complete
+  visual resolution remains pending one user/device check: on that Android
+  Chrome, keep the existing tab/cache, fully scroll past the Hero and return
+  four times while the address bar hides/shows, wait two minutes, then check
+  both scenes and all three languages.
+
+### Recovery
+
+- If the Production change causes a regression, roll Pages back to deployment
+  `a870de3e-dd06-4335-9368-fccf5894bcb5` / revision `5d65104`, or revert only
+  `cfb4992` and push `main`; do not reset or force-push.
+- That rollback restores the preceding mobile isolation implementation and its
+  explicit scene pause/resume behavior. It does not restore a proven fix for
+  the Android clipping report.
