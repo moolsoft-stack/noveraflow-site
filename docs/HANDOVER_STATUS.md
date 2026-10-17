@@ -377,3 +377,80 @@ payment, authentication, server configuration or app distribution change.
 - No blocking issue or required follow-up was found; rollback was unnecessary.
   The follow-up documentation commit records these results without modifying
   application assets. Browser/device and clock-simulation limits are noted above.
+
+## 2026-10-17 — Mobile Hero content clipping protection
+
+User report: the top of the main title was clipped on a real phone, seemingly
+while the background moved. Preserve the accepted sunrise/sunset artwork,
+animations, desktop depth, selector, download links and public-page content.
+
+### Baseline, findings and scope
+
+- Clean starting revision: `3fa30b5`; implementation `438731d`.
+  Verified successful recovery deployment:
+  `72d107b4-ee38-45f5-962a-f19eb0d5eec6` (Cloudflare Pages `noveraflow-site`).
+- The title/editorial already had no transform or animation; JavaScript depth
+  variables are assigned only to `.land-scene`. Background motion affecting
+  the title's layout was **not** reproduced in the test engines.
+- Confirmed risks: mobile Hero had a fixed `96svh` height, 790px minimum,
+  950px maximum and `overflow:hidden`; the shared `main` overflow-x rule also
+  computed to `overflow-y:auto`. Background/overlay used negative z-indices.
+  There was no explicit safe-area allowance or flow space for bottom controls.
+- With 200% browser text adjustment in Chrome, the baseline Hero stayed 790px
+  tall while the content outgrew it. After the fix it grows to fit (1399.625px
+  in the recorded 375px-wide probe), rather than clipping the content.
+- The user's exact intermittent upper-title clipping was not reproduced on
+  Windows WebKit/Chrome at normal text size. A screenshot/browser detail was
+  requested. Do not describe this as a confirmed Safari engine defect or claim
+  physical-device verification; the change removes the identified clipping
+  and compositing risks with targeted regression coverage.
+
+### Minimal fix
+
+- Files: `css/landing.css`, `index.html` (CSS cache version only), this record.
+- Only at widths <=640px: use a content-sized column Hero, preserving the
+  normal 790–950px minimum-height appearance; remove its height ceiling and
+  content clipping. Keep `overflow:hidden` on the decorative scene itself.
+- Remove the landing main's implicit scroll/clip container. Put the scene,
+  shade and content at explicit z-indices 0/1/2; scene ignores pointer events.
+  Editorial/control wrappers have no transform or animation.
+- Use normal-flow bottom controls with at least 48px separation from copy.
+  Add safe-area padding to the Hero/header and a small title line-box allowance
+  (`line-height:1.45`, `.08em` block padding). Honor the existing viewport's
+  safe-area behavior without changing viewport-fit or disabling text zoom.
+- Existing SVG geometry, scenic keyframes, motion speeds, mobile background
+  parallax, desktop CSS, JavaScript, logo assets, store links and all other
+  pages are unchanged. The 8-hour schedule and session selection are unchanged.
+- Safe-area reference: [WebKit's official guidance](https://webkit.org/blog/7929/designing-websites-for-iphone-x/).
+
+### Local verification and limits
+
+- Static build, five existing policy/FAQ/schedule tests and whitespace check pass.
+- Temporary tooling outside Git: `tmp/mobile-hero-check/` (Playwright, Windows
+  WebKit 27.2 and installed Chrome). No site runtime dependency was added.
+- 36 scene/language/profile combinations passed: A/B x ko/en/ja, with WebKit
+  at 375x812 (iPhone 12 mini), 390x844 and 320x568; Chrome at 375x812,
+  393x851 (Android profile) and 360x640.
+- For every case: seek multiple background animation phases, scroll 100px,
+  shrink/restore viewport height, return to top, check glyph bounds and actual
+  hit testing for background occlusion, and check content/control separation.
+  Heading document position stays stable throughout these changes.
+- Enlarged text expands the Hero safely. Emulated +47px top / +34px bottom
+  safe-area values are honored and reset correctly. Reduced-motion and
+  two-core mode have zero ongoing animations after initial UI transitions.
+- Both engines: tap selector, reload and About-page round trip retain choice;
+  simulated 16:00 KST timer expires it and completes the automatic fade.
+  Desktop mouse parallax remains active with stationary editorial bounds.
+- Address-bar expansion/collapse is represented by viewport-height changes;
+  Windows WebKit is not Mobile Safari's native browser chrome. Physical iPhone
+  Safari/Android Chrome confirmation of the reported symptom remains a limit.
+
+### Deployment and recovery
+
+Use the existing `main` Git integration, repository-root publishing in Pages
+project `noveraflow-site`; local checkout `D:\Development\Personal\noveraflow-site`.
+Recovery: roll Pages back to `72d107b4-ee38-45f5-962a-f19eb0d5eec6` / `3fa30b5`,
+or revert the mobile-fix commits and push `main`. Preserve unrelated work;
+no reset/force-push. Recheck the Hero, store links, languages and selector.
+No operating data, payment/auth service, app source or server configuration
+is changed by this release.
