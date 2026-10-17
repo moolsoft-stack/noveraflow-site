@@ -638,3 +638,89 @@ scenery, content, store link, schedule or non-landing page was changed.
   the remaining acceptance check; until that check, describe the deployed
   trigger correction as verified in Production browser emulation rather than a
   fully confirmed physical-device resolution.
+
+## 2026-10-17 — Mobile Safari Hero structural isolation follow-up
+
+Purpose: prioritize stable iPhone title rendering after the physical device
+reproduced the clipping again on Production revision `cfd420c`. This entry
+supersedes the preceding claim that the JavaScript scroll-depth update alone
+was the direct cause. That update removed one compositor trigger but did not
+remove the remaining CSS clipping and SVG composition paths.
+
+### Rendering-path findings and uncertainty
+
+- Mobile DOM order is scene, editorial content, then bottom controls inside one
+  Hero. The scene is absolute; editorial content and bottom controls are normal
+  flow at <=640px. The site header is absolute. There are no fixed or sticky
+  elements inside the Hero, and the landing page disables the global fixed body
+  atmosphere pseudo-element.
+- The title/editorial nodes have no transform, filter, perspective, animation,
+  clip-path or clipping overflow. Their document coordinates stayed stable in
+  automated traces. The previous height/safe-area fix therefore addressed the
+  wrong failure class.
+- Global `overflow-x:hidden` on both `html` and `body` computed as
+  `overflow: hidden auto`, making the Safari viewport/root ancestors clipping
+  scroll containers. Previous work changed only Hero/main overflow and left
+  these two ancestors intact.
+- After `cfd420c`, JavaScript mobile scroll depth was zero, but CSS still gave
+  every SVG depth group a transform transition; the near groups still used the
+  mobile depth animation; and both full SVG scenes remained opacity/visibility
+  transition layers. These large composited layers shared the Hero stacking
+  context with the content.
+- The physical iPhone recurrence proves the earlier single-trigger conclusion
+  was incomplete. Without a reachable Mac/iPhone Web Inspector session, it is
+  still not possible to attribute the device paint failure to one specific
+  WebKit internal layer. The confirmed site-side risk is the combination of
+  root clipping scroll containers and residual full-scene composition layers.
+  This release removes both rather than claiming an unobserved browser-internal
+  mechanism as fact.
+
+### Minimal mobile-only structural correction
+
+- `css/landing.css`: landing `html` and `body` use `overflow-x:clip` and
+  `overflow-y:visible` on mobile, retaining horizontal protection without
+  creating vertical scroll containers.
+- Hero/content/controls explicitly use the normal document flow without
+  transform, filter, perspective, will-change, contain or clip-path. The Hero
+  no longer creates the additional mobile isolation layer.
+- The absolute scenic wrapper is paint-contained below the shade and content.
+  Full SVG scenes have no transform/filter/perspective/will-change/transition.
+  Only the active scene is displayed; mobile scene selection is an immediate
+  stable swap instead of a full-SVG opacity crossfade.
+- All mobile `.depth-layer` wrappers are static: no transform, individual
+  translate, transition or wrapper animation. JavaScript mobile scroll depth
+  remains zero. Desktop depth and crossfade rules are unchanged.
+- Safe individual SVG descendant animations remain: clouds, moonlight, city
+  lights, water, foliage, steam, cat and light trails. Existing mobile rules
+  still suppress petals and near-layer motion and lengthen the remaining
+  animation durations. Content, links, 8-hour scheduling and manual selection
+  are unchanged.
+- `index.html`: advance only the landing CSS cache key to
+  `landing.css?v=20261017e` so Safari cannot reuse the previous CSS asset URL.
+
+### Verification before deployment
+
+- Static verification, five existing tests and `git diff --check` pass.
+- Existing browser matrix passes all 36 WebKit/Chrome mobile cases: ko/en/ja,
+  A/B, iPhone 12 mini 375x812, iPhone 390x844, narrow 320x568, Android 393x851
+  and Chrome 360x640. Selector/session behavior, KST boundary, reduced motion,
+  low-resource behavior and desktop mouse depth pass.
+- A separate concurrent WebKit run kept all six ko/en/ja x A/B pages open for
+  over two minutes, applying scrollY=220 and viewport 812/620 changes every 30
+  seconds. Every title document Y remained 172.46875px; root/body computed to
+  `clip/visible`; inactive SVG was `display:none`; depth transforms stayed
+  `none`; and 13 (A) or 17 (B) scenic descendant animations remained running.
+- Windows WebKit viewport resizing is not native Safari browser chrome. Actual
+  iPhone validation remains the final acceptance check and must not be replaced
+  by these automated results.
+
+### Deployment and recovery
+
+- Production baseline for this correction: code revision `cfd420c`, Pages
+  deployment `cd5395c9-53ff-4c36-bf97-fa861ec43412`; repository record before
+  work `5acf57f`.
+- Deploy with the existing `main` Cloudflare Pages integration after local
+  verification. If needed, roll back to the baseline deployment or revert only
+  this correction commit and push; never reset or force-push.
+- Production revision, deployment ID and public asset/browser verification are
+  appended after completion.
