@@ -265,3 +265,29 @@ Preserve unrelated subsequent changes; never reset/force-push shared history.
 Verify homepage, A/B, language switching, official store links, `/privacy`,
 `/terms`, `/account-deletion`, `/faq.html` after rollback. No database, payment,
 authentication, nginx, PM2 or app distribution change is involved.
+
+### Production release
+
+- Implementation revision: `ee9d372c58179b90026eb19e290a35c9e2887d25`.
+  Push to `origin/main` succeeded through the existing Git integration.
+- Cloudflare Pages deployment `d9e52962-10f6-4afc-a839-5471a261b244`:
+  **completed / success**. Public URL: `https://noveraflow.com/`.
+- Public main page passed all 18 A/B, locale and viewport combinations.
+  Production desktop/mobile screenshots were visually reviewed.
+- New CSS/JavaScript, sitemap, robots and webmanifest returned HTTP 200 and
+  matched the checked-in sources (normalizing Windows line endings).
+- Public interior-page verification passed all 48 route/locale/viewport cases.
+  Cloudflare's existing `.html` to extensionless canonical redirects remain.
+- On the public domain, manual selection survived refresh and an About-page
+  round trip; midnight resume returned to automatic selection. An open-page
+  timer crossed the simulated 16:00 KST boundary and completed the B fade.
+- Production pointer/scroll checks confirmed independent depth transforms
+  with stationary text/buttons. Mobile pointer offsets remained zero; language
+  buttons localized the selector. Reduced/two-core modes had 0 animations,
+  and the JavaScript-disabled static fallback passed.
+- No blocking regression found; no rollback required. The follow-up commit
+  only records these verified results. Its normal Pages deployment publishes
+  identical application assets; `ee9d372` identifies the visual implementation.
+- Verification limits: mobile viewport emulation in Chrome, not a physical
+  iPhone/Safari session; schedule boundaries simulated without waiting 8 hours.
+  No further implementation or user action is required for this release.
