@@ -7,7 +7,7 @@
       scene = Math.random() < 0.5 ? 'A' : 'B';
       sessionStorage.setItem('noveraflow.landing.scene', scene);
     }
-  } catch { /* A remains the static fallback when storage is unavailable. */ }
+  } catch { scene = 'A'; }
   root.dataset.scene = scene || 'A';
   const limited = navigator.connection?.saveData ||
     (navigator.deviceMemory && navigator.deviceMemory <= 4) ||

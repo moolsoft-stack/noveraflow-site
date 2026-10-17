@@ -83,7 +83,7 @@ lazy-loaded below the hero. Marketing images retain their real app content.
 - First page load chooses A/B with equal probability and stores the choice in
   `sessionStorage['noveraflow.landing.scene']`. Refresh/navigation in the same
   tab session keeps it. An independent new tab session gets its own choice.
-  Storage failure and JavaScript-disabled HTML retain a static A fallback.
+  Storage failure always selects A. JavaScript-disabled HTML retains static A.
 - A: muted dusk, lake/city reflections, clouds, moonlight, flowers, foliage,
   coffee steam and a cat. B adds spring blossoms, summer foliage, autumn gold,
   snowy ridges and long flowing light paths connecting the landscape.
@@ -144,5 +144,27 @@ do not reset or force-push `main`. After rollback, verify the homepage and
 `/privacy`, `/terms`, `/account-deletion`, `/faq.html` on the public domain.
 Neither method touches nginx, PM2, databases, authentication or payment servers.
 
-Production release revision and postdeployment evidence are appended below
-after Cloudflare's deployment check and public browser checks complete.
+### Production result — 2026-10-17 19:52 KST
+
+- Landing release source: `cb58deff7916937c39a85d4abe61ee6c93e54f8f`.
+  `git push origin main` completed successfully.
+- Cloudflare Pages deployment
+  `b8edb256-815f-476b-9c2e-cf0e0568c3b0` completed with **success**.
+  Execution/publishing path remains Pages project `noveraflow-site`, repository
+  root, branch `main`; the dedicated host is not involved.
+- `https://noveraflow.com/` serves the new landing. Real Chrome checks on that
+  domain passed all 18 A/B/language/viewport combinations, refresh persistence,
+  pause, reduced motion (0 running animations), two-core static mode (0),
+  screenshot decoding, official store URLs, and all seven existing policy/help
+  routes (HTTP 200). Desktop and mobile Production screenshots were reviewed.
+- New CSS/JavaScript, official logo, OG asset and webmanifest all returned 200.
+  No broken visible images or untranslated keys remained; webfonts loaded.
+- JavaScript-disabled check: A, static, HTML heading and both store links stay
+  available. The storage-error fallback is explicitly A even when a browser
+  allows reads but denies sessionStorage writes.
+- No blocking issue found; rollback was unnecessary. Future maintenance is
+  limited to changing the iOS review-status copy when 1.0.80 is publicly live,
+  or the user's subsequent visual feedback.
+- A follow-up commit records these Production results and the storage-error
+  fallback. Its Pages build uses the same publishing path; the implementation
+  revision above identifies the complete visual release.
