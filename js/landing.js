@@ -77,9 +77,9 @@
   const i18n = window.NoveraFlowI18n;
   if (!i18n) return;
   const sceneLabels = {
-    en: ['Landscape design', 'Design 1', 'Design 2'],
-    ko: ['풍경 디자인 선택', '디자인 1', '디자인 2'],
-    ja: ['風景デザイン', 'デザイン 1', 'デザイン 2'],
+    en: ['Time of day', 'Sunrise', 'Sunset'],
+    ko: ['풍경 시간대 선택', '일출', '일몰'],
+    ja: ['風景の時間帯', '日の出', '日没'],
   };
   for (const [locale, labels] of Object.entries(sceneLabels)) {
     Object.assign(translations[locale], {

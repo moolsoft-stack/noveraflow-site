@@ -291,3 +291,65 @@ authentication, nginx, PM2 or app distribution change is involved.
 - Verification limits: mobile viewport emulation in Chrome, not a physical
   iPhone/Safari session; schedule boundaries simulated without waiting 8 hours.
   No further implementation or user action is required for this release.
+
+## 2026-10-17 — Sunrise / sunset light grading and numeric selector
+
+Purpose: refine the accepted scenery through light and color, and replace the
+internal "Design 1/2" labels with a quiet numeric control. Production deployment
+and Git push are authorized. The working tree was clean at `fc62c55` (visual
+implementation `ee9d372`). Verified recovery deployment:
+`1281b2d5-d31f-4fe7-9622-dc38f71203b0`, Cloudflare Pages **success**.
+
+### Minimal changes
+
+- Files: `index.html`, `css/landing.css`, `js/landing.js`, this operating record.
+- 1 / A = **Sunrise**: retained the dark pre-dawn foundation, with warm light
+  arriving from the right horizon, softened stars/moon, a thin haze and warm
+  water reflection. Added only gradient ellipses inside existing depth groups.
+  The new light opacity varies slowly over 40/46 seconds; mobile retains the
+  existing 60-second override. This is a quiet dawn impression, not a literal
+  solar-position simulation.
+- 2 / B = **Sunset**: deeper blue/violet sky and lake, cool soft moon halo,
+  gently emphasized stars and lower-saturation seasonal glow/light trails.
+  The intended mood is the calm transition from evening into night.
+- Existing paths, keyframes, animation durations, 2.5D transforms and fixed
+  text/button positions are preserved. No library, raster asset or app change.
+- Selector: two circular **44 x 44px** buttons with visible text **1 / 2** only.
+  Selection uses a subdued fill/border. Desktop hover and keyboard focus show
+  the localized accessible name: 일출/일몰, Sunrise/Sunset, 日の出/日没.
+  Touch users have accessible labels without permanently displayed descriptions.
+- `js/landing-init.js` is unchanged: KST 00/08/16 boundaries, continuous parity
+  across days, pre-paint selection, open-page transition and resume sync remain.
+  Manual session choice expires at the next slot, as documented above. Names
+  describe the visual concepts; they do not change the alternating schedule.
+- All eight interior HTML documents, common branding CSS, official logo assets,
+  shared translations, policy/terms text, sitemap and SEO schema are unchanged.
+  Download anchors and the public-version/1.0.80-review notice are unchanged.
+
+### Local verification
+
+- `npm run build`, 5 existing tests, syntax and whitespace checks passed.
+- Source comparison against `fc62c55` confirmed the preserved elements above.
+- Real Chrome: 18 main cases (A/B x ko/en/ja x 1440/390/320px), 48 interior
+  cases (8 routes x ko/en/ja x 1440/320px) passed; no overflow or missing logos.
+- Checked numeric text, localized accessible names, circular 44px hit areas,
+  hover tooltip, selected state, reload and page-navigation persistence.
+- Simulated KST boundaries: open-page timer changes scene, finishes its fade
+  and expires the manual override; midnight/resumed-tab behavior also passed.
+- Pointer/scroll depth remains independent across layers while reading UI stays
+  fixed. Reduced-motion and two-core fallback: 0 running animations. Mobile
+  pointer offsets: 0. JavaScript-disabled static A and download links passed.
+- Desktop/mobile screenshots reviewed for warm dawn vs cool evening, restrained
+  controls and readable copy. Mobile checks use Chrome viewport/touch emulation,
+  not physical iPhone/Safari. Time boundaries were simulated, not waited 8 hours.
+- Temporary browser evidence: `tmp/site-landing-20261017/sunlight-*`, outside Git.
+
+### Deployment and recovery
+
+Use the unchanged Cloudflare Pages `noveraflow-site` Git integration (`main`,
+repository-root publishing), local checkout `D:\Development\Personal\noveraflow-site`.
+If this refinement regresses, roll Pages back to deployment
+`1281b2d5-d31f-4fe7-9622-dc38f71203b0` / source `fc62c55`, or revert this release's
+commits and push `main`. Do not reset/force-push. Verify the homepage, selector,
+language buttons, download links and policy routes after recovery. No database,
+payment, authentication, server configuration or app distribution change.
