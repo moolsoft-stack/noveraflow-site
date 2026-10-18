@@ -1,84 +1,171 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://noveraflow.com/</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/" />
   </url>
   <url>
-    <loc>https://noveraflow.com/about.html</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/about.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/about.html" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/about.html" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/about.html" />
+    <loc>https://noveraflow.com/?lang=ko</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/" />
   </url>
   <url>
-    <loc>https://noveraflow.com/philosophy.html</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/philosophy.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/philosophy.html" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/philosophy.html" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/philosophy.html" />
+    <loc>https://noveraflow.com/?lang=ja</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/" />
   </url>
   <url>
-    <loc>https://noveraflow.com/faq.html</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/faq.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/faq.html" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/faq.html" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/faq.html" />
+    <loc>https://noveraflow.com/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/about" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/about?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/about?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/about" />
+  </url>
+  <url>
+    <loc>https://noveraflow.com/about?lang=ko</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/about" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/about?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/about?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/about" />
+  </url>
+  <url>
+    <loc>https://noveraflow.com/about?lang=ja</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/about" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/about?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/about?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/about" />
+  </url>
+  <url>
+    <loc>https://noveraflow.com/philosophy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/philosophy" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/philosophy?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/philosophy?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/philosophy" />
+  </url>
+  <url>
+    <loc>https://noveraflow.com/philosophy?lang=ko</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/philosophy" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/philosophy?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/philosophy?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/philosophy" />
+  </url>
+  <url>
+    <loc>https://noveraflow.com/philosophy?lang=ja</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/philosophy" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/philosophy?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/philosophy?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/philosophy" />
+  </url>
+  <url>
+    <loc>https://noveraflow.com/faq</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/faq" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/faq?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/faq?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/faq" />
+  </url>
+  <url>
+    <loc>https://noveraflow.com/faq?lang=ko</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/faq" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/faq?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/faq?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/faq" />
+  </url>
+  <url>
+    <loc>https://noveraflow.com/faq?lang=ja</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/faq" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/faq?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/faq?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/faq" />
+  </url>
+  <url>
+    <loc>https://noveraflow.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/contact" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/contact?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/contact?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/contact" />
+  </url>
+  <url>
+    <loc>https://noveraflow.com/contact?lang=ko</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/contact" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/contact?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/contact?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/contact" />
+  </url>
+  <url>
+    <loc>https://noveraflow.com/contact?lang=ja</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/contact" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/contact?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/contact?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/contact" />
   </url>
   <url>
     <loc>https://noveraflow.com/privacy</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/privacy" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/privacy?lang=en" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/privacy" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/privacy?lang=ko" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/privacy?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/privacy" />
+  </url>
+  <url>
+    <loc>https://noveraflow.com/privacy?lang=ko</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/privacy?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/privacy?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/privacy" />
+  </url>
+  <url>
+    <loc>https://noveraflow.com/privacy?lang=ja</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/privacy?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/privacy?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/privacy" />
   </url>
   <url>
     <loc>https://noveraflow.com/terms</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/terms" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/terms?lang=en" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/terms" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/terms?lang=ko" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/terms?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/terms" />
   </url>
   <url>
-    <loc>https://noveraflow.com/contact.html</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/contact.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/contact.html" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/contact.html" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/contact.html" />
+    <loc>https://noveraflow.com/terms?lang=ko</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/terms" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/terms?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/terms?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/terms" />
   </url>
   <url>
-    <loc>https://noveraflow.com/account-deletion</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/account-deletion" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/account-deletion?lang=en" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/account-deletion?lang=ko" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/account-deletion?lang=ja" />
+    <loc>https://noveraflow.com/terms?lang=ja</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/terms" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/terms?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/terms?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/terms" />
+  </url>
+  <url>
+    <loc>https://noveraflow.com/account-deletion/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/account-deletion/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/account-deletion/?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/account-deletion/?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/account-deletion/" />
+  </url>
+  <url>
+    <loc>https://noveraflow.com/account-deletion/?lang=ko</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/account-deletion/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/account-deletion/?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/account-deletion/?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/account-deletion/" />
+  </url>
+  <url>
+    <loc>https://noveraflow.com/account-deletion/?lang=ja</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noveraflow.com/account-deletion/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://noveraflow.com/account-deletion/?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://noveraflow.com/account-deletion/?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://noveraflow.com/account-deletion/" />
   </url>
 </urlset>

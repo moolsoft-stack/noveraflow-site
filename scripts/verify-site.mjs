@@ -1,6 +1,8 @@
 import { access, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import {pages} from './site-config.mjs';
+import {verifySeo} from './verify-seo.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -20,6 +22,8 @@ function internalTarget(href) {
   if (pathname === '/privacy') return 'privacy/index.html';
   if (pathname === '/terms') return 'terms.html';
   if (pathname === '/account-deletion') return 'account-deletion/index.html';
+  const page = pages.find(page => page.route === pathname);
+  if (page) return page.source;
   return pathname.replace(/^\//u, '');
 }
 
@@ -153,12 +157,12 @@ export async function verifySite() {
   requireMatch(privacyRoute, /no automatic time-based expiry/, 'privacy policy must state the implemented unbounded retention behavior');
   requireMatch(terms, /Google or Apple reauthentication/, 'terms must explain account deletion reauthentication');
   requireMatch(terms, /href="\/privacy"/, 'terms must link to privacy');
-  requireMatch(terms, /href="\/account-deletion"/, 'terms must link to account deletion');
+  requireMatch(terms, /href="\/account-deletion\/"/, 'terms must link to account deletion');
   requireMatch(accountDeletion, /href="\/privacy"/, 'account deletion must link to privacy');
   requireMatch(accountDeletion, /href="\/terms"/, 'account deletion must link to terms');
   requireMatch(
     privacyRoute,
-    /href="\/account-deletion"/,
+    /href="\/account-deletion\/"/,
     'privacy policy must link to account deletion instructions',
   );
   requireMatch(privacyRoute, /href="\/terms"/, 'privacy policy must link to terms');
@@ -168,18 +172,9 @@ export async function verifySite() {
     'sitemap must include account deletion',
   );
   requireMatch(sitemap, /https:\/\/noveraflow\.com\/terms<\/loc>/, 'sitemap must use the canonical terms URL');
-  for (const route of ['privacy', 'terms', 'account-deletion']) {
-    for (const locale of ['en', 'ko', 'ja']) {
-      requireMatch(
-        sitemap,
-        new RegExp(`https:\\/\\/noveraflow\\.com\\/${route}\\?lang=${locale}`),
-        `sitemap must include ${route} ${locale} alternate`,
-      );
-    }
-  }
   for (const html of [home, about, philosophy, faq, contact, privacyRoute, terms, accountDeletion]) {
     requireMatch(html, /<meta name="viewport" content="width=device-width, initial-scale=1" \/>/, 'every public page must retain a mobile viewport');
-    requireMatch(html, /<script src="\/js\/i18n\.js\?v=20260902"><\/script>/, 'every localized public page must load the current versioned translations');
+    requireMatch(html, /<script src="\/js\/i18n\.js\?v=20261018a"><\/script>/, 'every localized public page must load the current versioned translations');
   }
   requireMatch(styles, /@media \(max-width: 520px\)/, 'mobile styles are missing');
   requireMatch(styles, /\.account-deletion-page/, 'account deletion styles are missing');
@@ -216,6 +211,7 @@ export async function verifySite() {
     throw new Error('public copy still describes a released capability as future work');
   }
   new Function(i18n);
+  await verifySeo();
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

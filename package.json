@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/verify-site.mjs",
-    "test": "node --test test/*.test.mjs"
+    "build": "node scripts/build-site.mjs && node scripts/verify-site.mjs",
+    "test": "node --test --experimental-test-isolation=none test/*.test.mjs",
+    "preview": "node scripts/preview-site.mjs"
   }
 }

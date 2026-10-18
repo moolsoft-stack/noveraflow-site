@@ -39,7 +39,7 @@ Hero 이미지, 배경 자연 이미지, 공기감, 빛, 계절, 이미지 생�
 - [01-site-philosophy.md](01-site-philosophy.md): 공식 사이트 경험 방향
 - [02-brand-and-marketing.md](02-brand-and-marketing.md): 브랜드/마케팅 방향
 - [03-brand-summary.md](03-brand-summary.md): 브랜드 요약 기준
-- [04-seo-direction.md](04-seo-direction.md): SEO 상세 기준
+- [04-seo-direction.md](04-seo-direction.md): SEO 상세 기준, 통합 진단·문구·개선 설계와 21절 Phase 1 로컬 구현·기능 판정·검증·배포/복구 기준. Production 미배포
 - [05-seo-summary.md](05-seo-summary.md): SEO 요약 기준
 - [NOVERAFLOW_GLOSSARY.md](NOVERAFLOW_GLOSSARY.md): 사이트 핵심 용어집
 - [SITE_I18N_STATUS.md](SITE_I18N_STATUS.md): 사이트 언어 구조와 검수 상태

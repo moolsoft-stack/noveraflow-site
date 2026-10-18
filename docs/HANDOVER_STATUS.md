@@ -1,6 +1,47 @@
 # Handover Status
 
-Last updated: 2026-10-17
+Last updated: 2026-10-18
+
+## 2026-10-18 — SEO·AI 검색 Phase 1 로컬 구현
+
+현재 상태: **로컬 배포 후보 / Production 미배포 / commit·push 미실행**.
+이 항목 아래의 Production 완료 기록은 이전 작업의 이력이며 이번 변경의 배포 승인이 아니다.
+
+- SSOT: [SEO 방향 문서 21절](04-seo-direction.md#21-2026-10-18-phase-1-로컬-구현).
+  실제 기능과 출시 구분, 변경 파일 목록, 공식 구조화 데이터 기준, 크롤러·개인정보 영향,
+  검증 명령·결과·남은 확인과 복구 절차를 이 문서 한 곳에서 관리한다.
+- 기존 조사 MD 3개의 미커밋 내용을 보존해 확장했다. 실제 공통 문서 경로는
+  `../projects-docs`이며 요청의 `noveraflow-projects-docs`는 존재하지 않는다.
+- 공개 iOS는 KR/US/JP 모두 1.0.61로 다시 확인했다. 1.0.80(81) 심사 상태는 사용자 제공
+  사실로 유지하며 공개 기능과 분리한다. Android 신규 기능의 배포 버전은 확정하지 않았다.
+- 연간 요약은 실제 생성·조회 경로를 확인하지 못해 제공 중 혜택에서 제외했다.
+  AI 대화·자동 클라우드 백업은 지원 버전과 로그인/Premium 조건·심사 경계를 명시했다.
+  About/Contact 출시 전 문구, FAQ 서버 처리, 오해를 주는 Premium 이미지도 정정했다.
+- 기능 상태를 다음처럼 고정한다: Android 공개판은 AI 대화·클라우드 자동 백업의 일반
+  제공을 확인하지 못함, iOS 공개 1.0.61은 두 기능의 제공을 확인하지 못함, iOS 심사
+  1.0.80(81)은 두 기능의 구현·접근 경로가 확인되지만 공개판이 아님. 기본 일기와
+  로컬 ZIP 백업은 무료 공개 범위, Premium capability는 심사·권한 정책에 존재하나
+  플랫폼별 공개 여부를 확정하지 않음. 앱 언어 코드는 더 많지만 홈페이지의 확정 지원은
+  한국어·영어·일본어로 제한한다. 상세 매트릭스는 SEO 21.1절에 있다.
+- 기존 쿼리 언어 URL을 유지하는 24개 정적 HTML과 `_worker.js`/`_routes.json`을 추가했다.
+  최종 canonical, 24 URL sitemap, 308 이전 URL 호환, 404와 내부 경로 404/noindex를 적용했다.
+  기존 SVG·KST 스케줄·모바일 compositor 보정은 유지한다.
+- `robots.txt`와 학습용 크롤러 정책, 앱·인증·DB·스토어·서버 설정은 변경하지 않았다.
+- 로컬 확인: build·12개 테스트, 실제 Wrangler Pages의 24 GET/HEAD·41 연결 자산·8 이전 URL·
+  12개 404, Chrome/WebKit 36개 언어/풍경/화면 조합, JS 켬/끔 48개 페이지와 추가 동작 검사.
+  증거 위치와 상세 한계는 SEO 21.8절에 기록한다. 실물 기기·실제 봇 IP·색인·AI 추천 검증은 별도다.
+  120초 유지 검사와 최종 교체 카드의 18개 조합 재검증도 PASS했다.
+- 향후 문구 수정 후 `npm run build`로 산출물과 sitemap을 함께 갱신한다.
+  기존 Pages Git 게시 루트는 저장소 루트이므로 `_localized/` HTML을 함께 보관한다.
+  사용자 배포 승인 전에는 main에 push하거나 Pages deploy를 실행하지 않는다.
+- 후속 승인 후 배포 방법: 기존 `main` Git 통합으로 Worker·HTML·산출물·자산·문서를 함께 게시한다.
+  설정 변경은 하지 않는다. 복구는 직전 성공 Pages deployment 또는 이번 변경만 revert한 전체 묶음이다.
+  reset/force-push로 기존 조사나 다른 변경을 지우지 않는다.
+
+`IMPLEMENTATION: COMPLETE` / `VALIDATION: PASS` /
+`PRODUCTION_DEPLOY: NOT_EXECUTED` / `READY_FOR_DEPLOY: YES`.
+
+아래 `Completed`/`Notes`와 2026-10-17 기록은 그 날짜의 이력으로 유지한다.
 
 ## Completed
 

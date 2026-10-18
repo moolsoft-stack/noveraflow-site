@@ -216,7 +216,7 @@ a {
   background: rgba(250, 252, 247, 0.42);
 }
 
-.language-switch button {
+.language-switch [data-locale] {
   min-width: 42px;
   min-height: 30px;
   padding: 0 9px;
@@ -230,7 +230,7 @@ a {
   font-weight: 700;
 }
 
-.language-switch button.is-active {
+.language-switch [data-locale].is-active {
   background: rgba(68, 93, 77, 0.9);
   color: #fbfff7;
 }
@@ -1494,3 +1494,8 @@ html[lang="ja"] .locale-copy-ja {
 #supportFaq button { margin: 4px 6px 4px 0; }
 #supportFaq :focus-visible { outline: 2px solid #385f4d; outline-offset: 3px; }
 @media(max-width: 500px) { .faq-search > *, .faq-search input, .faq-search select { flex-basis: 100%; width: 100%; box-sizing: border-box; } }
+
+/* Native locale links preserve the existing language control appearance. */
+.language-switch a { text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+.breadcrumbs { margin-bottom: 24px; font-size: .85rem; overflow-wrap: anywhere; }
+.download-links { overflow-wrap: anywhere; }

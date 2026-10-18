@@ -25,15 +25,27 @@ NoveraFlow 공식 사이트와 랜딩 페이지 프로젝트입니다.
 
 ## 로컬 검증
 
-정적 파일만 사용하며 별도 의존성 설치는 필요하지 않습니다.
+Node.js 24에서 기존 HTML과 `js/i18n.js`를 사용해 언어별 정적 HTML을 생성합니다.
+기본 build/test에는 별도 의존성 설치가 필요하지 않습니다.
 
 ```text
 npm run build
 npm test
+npm run preview
 ```
 
-검증기는 `/account-deletion`의 비리다이렉트 공개 안내, 외부 요청 경로,
-3개 언어, Privacy 번역 키, sitemap 및 모바일 스타일 계약을 확인합니다.
+검증기는 24개 언어별 HTML, canonical/hreflang, JSON-LD, sitemap, Privacy·삭제 안내,
+404와 이전 URL 호환성을 확인합니다. `npm run preview`는 `http://127.0.0.1:4173`에서
+동일한 Worker 라우팅을 실행합니다. HTTP 검사는 `node scripts/check-http.mjs`로 실행합니다.
+
+공개 URL은 기존 `?lang=ko/en/ja` 형식을 유지합니다. 문구는 `js/i18n.js`, 구조는 기존
+HTML, 경로는 `scripts/site-config.mjs`와 `_worker.js`에서 관리합니다.
+`_localized/`의 24개 HTML과 `sitemap.xml`은 직접 편집하지 말고 build 결과를 함께 보관합니다.
+기존 Cloudflare Pages 게시 루트가 저장소 루트이므로 산출물을 저장소에 포함합니다.
+
+2026-10-18 Phase 1은 **로컬 구현 상태이며 Production 배포·push는 하지 않았습니다.**
+실제 기능 판정, Cloudflare 로컬 런타임·브라우저 검증, 새 파일 관리, 후속 승인 후 배포와
+복구 방법은 [SEO 구현 기록](docs/04-seo-direction.md#21-2026-10-18-phase-1-로컬-구현)을 따릅니다.
 
 ## Site icon 기준
 
