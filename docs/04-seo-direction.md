@@ -1360,3 +1360,53 @@ VALIDATION: PASS
 PRODUCTION_DEPLOY: NOT_EXECUTED
 READY_FOR_DEPLOY: YES
 ```
+
+## 22. 2026-10-18 Production 배포 및 운영 검증
+
+21절의 배포 후보를 commit `37e4d276957cc4002ac3fe386cc6351a63a85ccf`로
+`origin/main`에 일반 push했고, 기존 Cloudflare Pages Git 통합이 repository root를
+Production에 게시했다. 배포 전 원격 `main`은 로컬 기준점 `4d95d6b`와 같았으며
+force-push나 인프라 설정 변경은 없었다. 배포 직전 운영 source revision은 `cf93b46`이다.
+
+Cloudflare deployment identifier는 `fb72a1a5-d818-4d70-81f4-30063da16dda`이다.
+Cloudflare Pages GitHub check run `117542071908`은 source `37e4d27`,
+`Deployed successfully`, preview URL `https://fb72a1a5.noveraflow-site.pages.dev`를
+반환했다. 광범위한 Cloudflare OAuth를 사용하지 않고 공개 GitHub Checks API로
+확인했으며 인증정보를 기록하지 않았다.
+
+Production `https://noveraflow.com` 검증 결과는 다음과 같다.
+
+- 8개 페이지 × 3개 언어인 24개 canonical 문서의 GET/HEAD와 연결 자산 42개가 200이다.
+  각 문서는 요청 URL에 맞는 `Content-Language`, HTML `lang`, canonical, reciprocal
+  hreflang, metadata와 parse 가능한 JSON-LD를 반환한다.
+- sitemap은 200이며 24개 정식 URL과 언어 alternate만 포함한다. 이전 호환 URL 8개는
+  query를 보존해 308로 이동한다. 없는 경로와 `/admin`, 내부 API, 문서·생성물 직접 경로
+  등 12개는 404와 `X-Robots-Tag: noindex`를 반환한다.
+- Chrome/WebKit 36개 언어·장면·viewport 조합과 JavaScript 켬/끔 48개 페이지 방문이
+  통과했다. 기존 Hero 애니메이션, 모바일/PC 레이아웃, 스크롤·viewport 복귀, 모션 제어,
+  desktop depth/offscreen pause와 언어 링크가 정상이다. JavaScript가 꺼져도 주요 제품
+  정보, FAQ, 정책, 다운로드 링크가 최초 HTML에 남는다.
+- Google Play는 200, App Store는 공식 상세 URL로 이동한 뒤 200이다. 두 링크의 대상과
+  스토어 등록정보는 변경하지 않았다.
+- 운영 `robots.txt`의 wildcard Allow와 sitemap 지시는 저장소와 텍스트가 같다.
+  OAI-SearchBot·Googlebot·bingbot·PerplexityBot·GPTBot User-Agent 문자열 검사는 200이나,
+  실제 crawler IP의 WAF 통과·색인·AI 검색 노출이나 추천을 확정하지 않는다.
+- 공개 Worker는 사용자 일기·대화·계정·백업, 관리자 경로, 내부 API와 repository 문서를
+  노출하지 않는다. 앱 인증·인가와 운영 데이터는 변경하지 않았다.
+
+배포 후 중대 오류가 없어 rollback은 실행하지 않았다. 복구가 필요하면 Pages dashboard에서
+배포 직전 source `cf93b46`인 성공 deployment를 선택하거나 `37e4d27`만 revert해 일반
+push한다. reset·force-push는 하지 않으며 Worker·24개 정적 HTML·sitemap·HTML/JS/CSS를
+함께 복구한 뒤 200/308/404, 세 언어, 스토어 링크와 개인정보 경계를 다시 확인한다.
+
+남은 과제는 Android 공개 version과 대화·클라우드 capability 확인, iOS 1.0.80(81) 공개 후
+문구 재검토, Google/Bing 색인·성과와 실제 crawler/WAF 로그 확인, Core Web Vitals 추적이다.
+검색 노출과 추천은 이 배포만으로 보장하지 않는다.
+
+```text
+GIT: PASS
+DEPLOY: PASS
+PRODUCTION_VERIFY: PASS
+ROLLBACK: NOT_REQUIRED
+DOCUMENTATION: PASS
+```

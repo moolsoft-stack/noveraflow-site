@@ -2,10 +2,53 @@
 
 Last updated: 2026-10-18
 
+## 2026-10-18 — SEO·AI 검색 Phase 1 Production 배포
+
+현재 상태: **Production 배포 및 운영 검증 완료 / rollback 불필요**.
+
+- 구현 commit 및 Production source revision:
+  `37e4d276957cc4002ac3fe386cc6351a63a85ccf`
+  (`feat(site):publish-SEO-AI-search-phase-one`). `origin/main` push 성공 후 기존
+  Cloudflare Pages Git 통합이 repository root를 게시했다.
+- Cloudflare deployment identifier:
+  `fb72a1a5-d818-4d70-81f4-30063da16dda`. Cloudflare Pages GitHub check run
+  `117542071908`은 source `37e4d27`, `Deployed successfully`, preview URL
+  `https://fb72a1a5.noveraflow-site.pages.dev`를 반환했다. 광범위한 Cloudflare OAuth를
+  사용하지 않고 공개 GitHub Checks API로 확인했으며 인증정보를 기록하지 않았다.
+- 배포 직전 Production source는 `cf93b46`이었고, 이 revision의 직전 정상 Pages
+  deployment가 복구 지점이다. 문제가 생기면 Pages dashboard에서 source `cf93b46`인
+  성공 deployment를 선택하거나 SEO commit `37e4d27`만 revert해 일반 push한다.
+  reset·force-push는 사용하지 않으며 Worker, 24개 정적 HTML, sitemap, HTML/JS/CSS를
+  한 묶음으로 복구한다.
+- 배포 대상은 한국어·영어·일본어 24개 정적 HTML, 정확한 제품 설명과 FAQ 12개,
+  metadata·canonical·hreflang·JSON-LD, sitemap, 명시적 404와 이전 URL 308 Worker다.
+  앱·스토어 등록정보·AI backend·DB·인증·학습용 crawler 정책은 변경하지 않았다.
+- Production HTTP 검사: 24/24 canonical 문서 GET/HEAD 및 연결 자산 42개 200,
+  이전 URL 8개 308, 없는 경로와 `/admin`·내부 API·문서 등 12개 404/noindex.
+  각 언어 `Content-Language`, canonical, JSON-LD parse와 sitemap 24 URL이 통과했다.
+- Production 브라우저 검사: Chrome/WebKit의 36개 언어·장면·viewport 조합과
+  JavaScript 켬/끔 48개 공개 페이지 방문이 통과했다. Hero 애니메이션, 화면 크기 변경,
+  스크롤 복귀, 모션 토글·reduced motion, 저장소 제한, desktop depth/offscreen pause,
+  언어 링크와 본문 접근성을 확인했다.
+- Google Play 링크는 최종 200, App Store 링크는 공식 US 상세 URL로 301 후 200이다.
+  `robots.txt`의 wildcard Allow와 sitemap 지시는 저장소와 운영 응답에서 텍스트가 같다.
+  OAI-SearchBot·Googlebot·bingbot·PerplexityBot·GPTBot 문자열의 공개 페이지 응답은
+  200이지만 실제 봇 IP/WAF 통과나 색인·AI 추천을 보장하는 근거로 사용하지 않는다.
+- rollback 조건에 해당하는 주요 화면·다국어·스토어 링크·개인정보 경계 회귀가 없어
+  rollback은 실행하지 않았다. 운영 증거는
+  `../tmp/seo-phase1-20261018/production-browser/results.json`과 같은 디렉터리의
+  screenshot, HTTP 실행 출력으로 보관한다.
+- 다음 단계는 Android 공개 version과 신규 Premium capability 확인, iOS 1.0.80(81)
+  심사 완료 후 문구 재검토, Google/Bing 색인·성과 및 실제 crawler/WAF 로그 확인,
+  Core Web Vitals 추적이다. App Store·Google Play 등록정보 변경은 별도 승인 작업이다.
+
+`GIT: PASS` / `DEPLOY: PASS` / `PRODUCTION_VERIFY: PASS` /
+`ROLLBACK: NOT_REQUIRED` / `DOCUMENTATION: PASS`.
+
 ## 2026-10-18 — SEO·AI 검색 Phase 1 로컬 구현
 
-현재 상태: **로컬 배포 후보 / Production 미배포 / commit·push 미실행**.
-이 항목 아래의 Production 완료 기록은 이전 작업의 이력이며 이번 변경의 배포 승인이 아니다.
+이 절은 Production 배포 전 로컬 완료 시점의 기록이다. 현재 운영 상태는 바로 위
+Production 배포 절을 따른다.
 
 - SSOT: [SEO 방향 문서 21절](04-seo-direction.md#21-2026-10-18-phase-1-로컬-구현).
   실제 기능과 출시 구분, 변경 파일 목록, 공식 구조화 데이터 기준, 크롤러·개인정보 영향,

@@ -43,9 +43,12 @@ HTML, 경로는 `scripts/site-config.mjs`와 `_worker.js`에서 관리합니다.
 `_localized/`의 24개 HTML과 `sitemap.xml`은 직접 편집하지 말고 build 결과를 함께 보관합니다.
 기존 Cloudflare Pages 게시 루트가 저장소 루트이므로 산출물을 저장소에 포함합니다.
 
-2026-10-18 Phase 1은 **로컬 구현 상태이며 Production 배포·push는 하지 않았습니다.**
-실제 기능 판정, Cloudflare 로컬 런타임·브라우저 검증, 새 파일 관리, 후속 승인 후 배포와
-복구 방법은 [SEO 구현 기록](docs/04-seo-direction.md#21-2026-10-18-phase-1-로컬-구현)을 따릅니다.
+2026-10-18 Phase 1은 커밋 `37e4d276957cc4002ac3fe386cc6351a63a85ccf`로
+Cloudflare Pages deployment `fb72a1a5-d818-4d70-81f4-30063da16dda`에 배포되어
+운영 검증을 통과했습니다. 실제 기능 판정, Cloudflare 런타임·브라우저 검증,
+새 파일 관리와 복구 방법은
+[SEO 구현 기록](docs/04-seo-direction.md#21-2026-10-18-phase-1-로컬-구현)과
+[운영 기록](docs/HANDOVER_STATUS.md)을 따릅니다.
 
 ## Site icon 기준
 
