@@ -1433,6 +1433,8 @@ deployment `663c49c3-2b5f-4f4a-aad5-e3e293d6b495`가 성공했다. 배포 완료
 JSON-LD는 유지됐다. 운영 robots.txt는 200이며 저장소 내용과 같고, sitemap은 200,
 24 URL이며 저장소 내용과 같다. Naver Search Advisor 콘솔의 최종 **소유확인 실행은
 사용자가 직접 해야 하며 이번 배포 성공만으로 인증 완료를 선언하지 않는다.**
+아래 24절의 `meta 없음`은 이번 배포 전 10:42~10:48 KST 조사 시점 기록이며,
+현재 운영 상태는 이 22.1절의 배포 후 검증 결과를 따른다.
 
 배포 직전 정상 revision은 `8ecfe87460891b77cbf3b87eeccc21240ffa937e`, Pages deployment는
 `a9ee77d5-71b3-4a4c-abb1-764feaa768ce`다. 회귀 시 Pages dashboard에서 이 deployment로
