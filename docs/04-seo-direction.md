@@ -1411,6 +1411,36 @@ ROLLBACK: NOT_REQUIRED
 DOCUMENTATION: PASS
 ```
 
+### 22.1 2026-10-18 Naver Search Advisor 소유확인 태그 배포
+
+Naver Search Advisor가 JavaScript 없이 첫 HTML 응답에서 소유확인 값을 읽도록 홈의
+공통 정적 생성 과정에 `naver-site-verification` meta를 추가했다. 값은 사용자가 제공한
+공개 인증값을 그대로 사용한다. `scripts/build-site.mjs`가 영어 원본과 en/ko/ja 홈
+산출물에 태그를 정확히 한 번 생성하며, 이미 생성된 태그는 먼저 제거해 반복 빌드의
+결정성을 유지한다. `scripts/verify-seo.mjs`와 `test/seo-routing.test.mjs`가 세 언어 홈의
+값·중복·실제 Worker 응답을 검사한다. 비홈 페이지, Google 인증 방식, canonical,
+hreflang, JSON-LD, robots.txt, sitemap과 crawler 정책은 변경하지 않았다.
+
+`npm run build`, 기존 12개 테스트, `git diff --check`가 통과했다. 로컬 Pages 호환 HTTP
+응답도 `/`, `/?lang=ko`, `/?lang=ja`에서 각각 200, 올바른 `Content-Language`, 태그 1개를
+반환했다. 구현 commit 및 Production revision은
+`da28d1bd32ffea0cc1d5cacc636f59514ba15a9b`이고, 기존 `main` Git 통합의 Cloudflare Pages
+deployment `663c49c3-2b5f-4f4a-aad5-e3e293d6b495`가 성공했다. 배포 완료 시각은
+2026-10-18 12:40:35 KST이며 preview는 `https://663c49c3.noveraflow-site.pages.dev`다.
+
+운영 세 언어 홈은 모두 200이고 HTML `lang`·`Content-Language`·self-canonical이 요청
+언어와 일치한다. 인증 태그는 각 첫 HTML에 정확히 1개, hreflang은 기존 4개,
+JSON-LD는 유지됐다. 운영 robots.txt는 200이며 저장소 내용과 같고, sitemap은 200,
+24 URL이며 저장소 내용과 같다. Naver Search Advisor 콘솔의 최종 **소유확인 실행은
+사용자가 직접 해야 하며 이번 배포 성공만으로 인증 완료를 선언하지 않는다.**
+
+배포 직전 정상 revision은 `8ecfe87460891b77cbf3b87eeccc21240ffa937e`, Pages deployment는
+`a9ee77d5-71b3-4a4c-abb1-764feaa768ce`다. 회귀 시 Pages dashboard에서 이 deployment로
+rollback하거나 `da28d1b`만 revert해 일반 push한다. 이후 세 언어 첫 HTML의 200·태그
+제거 상태·canonical/hreflang과 robots/sitemap을 재검증한다. reset·force-push 및
+Cloudflare/DNS/Search Advisor 설정 변경은 하지 않는다. 현재 회귀가 없어 rollback은
+실행하지 않았다.
+
 ## 23. 2026-10-18 Google Play ASO 최종 업로드 준비
 
 21.10에 남았던 Android 공개 버전을 공식 Google Play 공개 HTML로 다시 확인했다.

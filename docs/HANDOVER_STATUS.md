@@ -45,6 +45,33 @@ Last updated: 2026-10-18
 `GIT: PASS` / `DEPLOY: PASS` / `PRODUCTION_VERIFY: PASS` /
 `ROLLBACK: NOT_REQUIRED` / `DOCUMENTATION: PASS`.
 
+## 2026-10-18 — Naver Search Advisor 소유확인 태그 Production 배포
+
+- 구현 commit/Production revision:
+  `da28d1bd32ffea0cc1d5cacc636f59514ba15a9b`. 기존 `main` Git 통합에 일반 push했다.
+- Cloudflare Pages deployment:
+  `663c49c3-2b5f-4f4a-aad5-e3e293d6b495`, check run `117577878657`, 완료
+  2026-10-18 12:40:35 KST, preview `https://663c49c3.noveraflow-site.pages.dev`.
+- `scripts/build-site.mjs` 공통 생성기에 Naver 공개 인증값을 추가했고, 영어 원본
+  `index.html`과 `_localized/{en,ko,ja}/home/index.html`을 생성했다.
+  `scripts/verify-seo.mjs`와 `test/seo-routing.test.mjs`가 값과 중복을 자동 검사한다.
+- 로컬 `npm run build`, 12개 테스트, `git diff --check`가 통과했다. Pages 호환 로컬
+  HTTP의 세 언어 홈도 200, 언어 일치, 인증 태그 1개를 반환했다.
+- 운영 `/`, `/?lang=ko`, `/?lang=ja`는 모두 200이며 언어별 첫 HTML에 정확한 태그가
+  1개 있다. `Content-Language`, HTML `lang`, self-canonical, hreflang 4개와 JSON-LD가
+  유지됐다. robots.txt는 200/저장소 동일, sitemap은 200/24 URL/저장소 동일이다.
+- Google 소유권 인증과 SEO metadata, canonical/hreflang, 구조화 데이터, robots,
+  sitemap, Worker 라우팅, 앱·스토어·DB·인증정보는 변경하지 않았다. Search Advisor
+  콘솔의 최종 소유확인 버튼은 사용자가 직접 실행해야 한다.
+- 배포 직전 정상 revision/deployment는
+  `8ecfe87460891b77cbf3b87eeccc21240ffa937e` /
+  `a9ee77d5-71b3-4a4c-abb1-764feaa768ce`다. 회귀 시 Pages dashboard에서 이 deployment로
+  rollback하거나 `da28d1b`만 revert해 일반 push한 뒤 세 언어 HTML과 robots/sitemap을
+  재검증한다. reset·force-push는 사용하지 않는다. rollback은 필요하지 않았다.
+
+`GIT: PASS` / `DEPLOY: PASS` / `PRODUCTION_VERIFY: PASS` /
+`ROLLBACK: NOT_REQUIRED` / `DOCUMENTATION: PASS`.
+
 ## 2026-10-18 — SEO·AI 검색 Phase 1 로컬 구현
 
 이 절은 Production 배포 전 로컬 완료 시점의 기록이다. 현재 운영 상태는 바로 위
