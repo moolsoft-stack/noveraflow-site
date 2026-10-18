@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import worker from '../_worker.js';
+import {naverSiteVerification} from '../scripts/build-site.mjs';
 import {assets} from '../scripts/preview-site.mjs';
 import {pages,languages,localizedUrl} from '../scripts/site-config.mjs';
 
@@ -13,6 +14,10 @@ test('every public locale returns static localized content, metadata and canonic
     const html=await response.text();
     assert.match(html,new RegExp(`<html[^>]+lang="${lang}"`));
     assert.ok(html.includes(`href="${localizedUrl(page.route,lang)}"`));
+    if(page.key==='home') {
+      assert.equal(html.match(/<meta name="naver-site-verification"/g)?.length,1);
+      assert.ok(html.includes(`<meta name="naver-site-verification" content="${naverSiteVerification}" />`));
+    }
     const head=await worker.fetch(new Request(localizedUrl(page.route,lang),{method:'HEAD'}),{ASSETS:assets});
     assert.equal(head.status,200);assert.equal(await head.text(),'');
   }

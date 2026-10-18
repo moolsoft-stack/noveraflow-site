@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {pages,languages,origin,localizedUrl,artifactPath,stores} from './site-config.mjs';
-import {root,readLocales,renderPage} from './build-site.mjs';
+import {naverSiteVerification,root,readLocales,renderPage} from './build-site.mjs';
 import path from 'node:path';
 
 const read = relative => readFile(path.join(root,relative),'utf8');
@@ -39,6 +39,8 @@ export async function verifySeo() {
     assert.equal(pageNode.inLanguage,language);
     const visible = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'').replace(/<svg\b[\s\S]*?<\/svg>/g,'');
     if (page.key==='home') {
+      assert.equal(html.match(/<meta name="naver-site-verification"/g)?.length,1,prefix+' one Naver ownership tag');
+      assert.ok(html.includes(`<meta name="naver-site-verification" content="${naverSiteVerification}" />`),prefix+' Naver ownership value');
       assert.ok(visible.includes(locales[language].messages['landing.intro.copy']));
       assert.ok(!html.includes('data-screen="5_p"'),prefix+' misleading annual screenshot removed');
       assert.ok(!html.includes('data-screen="2_m"'),prefix+' unreleased conversation screenshot removed from mood description');

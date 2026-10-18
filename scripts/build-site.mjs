@@ -5,6 +5,7 @@ import vm from 'node:vm';
 import {origin, languages, pages, localizedUrl, artifactPath, stores} from './site-config.mjs';
 
 export const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+export const naverSiteVerification = '923881d3947ef3832e8f3dd7d8516f590d294d0f';
 const escape = value => String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 export async function readLocales() {
   const context = {document: {documentElement: {dataset: {}}, addEventListener() {}},
@@ -30,7 +31,8 @@ export function renderPage(template, page, language, locales, {preserveLocales =
     .replace(/data-site-url="[^"]*"/g, `data-site-url="${url}"`)
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${escape(meta.title)}</title>`)
     .replace(/<link rel="canonical"[^>]*>/g, `<link rel="canonical" href="${escape(url)}" />`)
-    .replace(/\s*<link rel="alternate"[^>]*>/g, '');
+    .replace(/\s*<link rel="alternate"[^>]*>/g, '')
+    .replace(/\s*<meta name="naver-site-verification"[^>]*>/g, '');
   if (page.key === 'accountDeletion' && !preserveLocales) {
     html = html.replace(/<article class="locale-copy locale-copy-(en|ko|ja)"[\s\S]*?<\/article>/g, (article, lang)=>lang===language ? article : '');
     html = html.replace(/^[ \t]+$/gm, '');
@@ -77,6 +79,9 @@ export function renderPage(template, page, language, locales, {preserveLocales =
     ['twitter:image',`${origin}/assets/landing/og-v20261017.png`],
     ['og:image:alt',copy.messages['common.brand.home'],true], ['twitter:image:alt',copy.messages['common.brand.home']],
   ]) html = metadata(html, name, value, property);
+  if (page.key === 'home') {
+    html = metadata(html, 'naver-site-verification', naverSiteVerification);
+  }
   html = html.replace(/\s*<meta property="og:locale:alternate"[^>]*>/g, '');
   html = html.replace('</head>', languages.filter(lang=>lang!==language).map(lang=>`    <meta property="og:locale:alternate" content="${locales[lang].meta[page.key].locale}" />\n`).join('')+'  </head>');
   html = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\s*/g, '');
