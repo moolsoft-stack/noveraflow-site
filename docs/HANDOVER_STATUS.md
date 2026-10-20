@@ -1,5 +1,62 @@
 # Handover Status
 
+## 2026-10-20 — 문의 Production 배포 승인·진행
+
+Gmail 직접 SMTP 테스트 접수·실제 수신은 사용자 확인 완료다. 인증을 재발급/재입력/재발송하지 않는다.
+현재 승인 범위는 기존 backend 우선 배포, 문의 gate 활성화, 기존 Pages main Git 통합 1회 배포와
+공개 폼 TEST 1건이다. 아래 인증 대기/미배포 기록은 이전 준비 이력이다.
+`8aa38cf` 운영 구조로 main을 fast-forward한 뒤 기존 문의 변경을 통합했다.
+공개 canonical은 `/contact?lang=ko`이고 `/contact.html?lang=ko`는 기존 308 호환 URL을 유지한다.
+Worker의 `/js/contact.js` 허용, 문의 페이지 전용 자산 버전, 3언어 contact 산출물만 추가한다.
+기존 SEO/랜딩/앱 스토어 안내를 덮어쓰지 않는다. 완료한 테스트를 다시 실행하지 않고 필요한 산출물만 생성했다.
+rollback은 배포 직전 정상 Pages deployment로 되돌리는 기존 방법을 사용한다.
+backend는 `fdd385084d521e1a5b4fb7a11392b119d574dedc`,
+`/opt/noveraflow-releases/admin-fdd3850-site-contact-20261020-release`로 배포·활성화됐다.
+2026-10-20 18:12:10 KST, gate=true, health/readiness 내부·공개 200, 문의 preflight 204.
+기존 RTDN gate=true 및 문의 외 코드/설정은 유지했다. managed backup 18:11:58 KST와 이전 release/PM2 snapshot을 확보했다.
+사이트 직전 정상 Pages 복구 지점은 `663c49c3-2b5f-4f4a-aad5-e3e293d6b495` / source `da28d1b`(이후 docs-only skip commit 포함 main `8aa38cf`)다.
+공개 전송 결과 및 최종 사이트 release/배포 ID는 완료 후 이 절에 기록한다.
+
+## 2026-10-20 — 사이트 직접 문의 폼 구현 (미배포)
+
+목적: 이전 문의 안내 대신 사용자가 사이트에서 작성·전송하고 현재 NoveraFlow Admin backend가
+고정 지원 주소로 메일을 보내도록 구현했다. 기존 디자인·ko/en/ja 및 앱 내부 1:1 문의는 유지한다.
+상태: **로컬 구현·검증 완료 / Gmail 인증 입력 준비 완료 / 앱 비밀번호 발급·입력 대기 / 실제 발송 0건 / 운영 미배포 / commit·push 안 함**.
+아래 출시 안내 조사/마케팅 변경은 기존 사용자 변경으로 보존했으며 이 작업으로 배포하지 않았다.
+
+- 변경 경로: `contact.html`, `js/contact.js`, `js/i18n.js`, `css/styles.css`,
+  `scripts/verify-site.mjs`, `test/contact.test.mjs`, 이 문서.
+  문의 페이지의 CSS/i18n/contact.js는 `20261020` 버전으로 캐시를 구분한다.
+- 유형: 일반/기능/오류/제휴/광고/기타. 유형·회신 이메일·제목·내용 필수, 이름/회사명 선택.
+  플랫폼/버전은 기능·오류 문의에만 표시·전송한다. mailto를 제거했다.
+- 공개 연결: `POST https://admin.noveraflow.com/api/public/site-contact`, 쿠키/인증정보 없음.
+  받는 주소 `moolsoft+help@gmail.com`, `[제휴문의]` 등 한국어 제목 태그는 서버가 고정한다.
+  브라우저에는 SMTP 설정/발신 비밀을 넣지 않는다. 성공은 SMTP 접수 확인 후에만 표시한다.
+- 전송 중 입력/버튼 잠금, 동일 요청 키 재사용. 실패/접수 미확인은 입력을 유지하고 중복 재전송 주의를 표시한다.
+  15분 메모리 중복 방지는 재시작·여러 backend process를 넘는 영구 exactly-once 보장이 아니다.
+- backend 변경/환경변수/안전한 no-echo 주입/단발 메일 검증/중단·복구 절차의 공식 기록:
+  `D:/Development/Personal/noveraflow-admin/docs/10-operations-runbook.md`의 **2026-10-20 — 사이트 문의 메일 구현** 절.
+  설정 이름은 `SITE_CONTACT_ENABLED`, `SITE_CONTACT_SMTP_HOST`, `SITE_CONTACT_SMTP_PORT`,
+  `SITE_CONTACT_SMTP_USER`, `SITE_CONTACT_SMTP_PASSWORD`, `SITE_CONTACT_MAIL_FROM`,
+  `SITE_CONTACT_TRUST_LOOPBACK_PROXY`. 운영 보관 위치는 기존 root 소유 `0600`
+  `/opt/noveraflow-admin/backend/.env`와 release symlink다. 이번에는 추가/변경하지 않았다.
+- 후속 선택: Gmail SMTP USER/From `moolsoft@gmail.com`, 서버 고정 To `moolsoft+help@gmail.com`.
+  서버에서 465는 timeout, 587 STARTTLS 연결·인증서 검증은 PASS여서 **`smtp.gmail.com:587` STARTTLS 필수**로 준비했다.
+  기존 backend/운영 환경에 SMTP credential이 없으므로 사용자가 Google에서 앱 비밀번호를 신규 발급해야 한다.
+  2단계 인증 및 앱 비밀번호 제공 조건/공식 URL/정확한 PowerShell no-echo 입력 명령은 Admin Runbook의 Gmail 절을 따른다.
+  root 전용 `/opt/noveraflow-ops/site-contact-gmail-20261020`에 기존 발송 모듈과 설정·단발 검증 도구가 준비됐으며
+  `--check`만 실행해 입력 가능 상태를 확인했다. 앱 배포/인증 입력/SMTP 발송은 아직 하지 않았다.
+  해당 도구는 AUTH 성공 후에만 기존 보호 `.env`의 발송 설정을 저장하고 gate=false를 유지하며 테스트 1건만 전송한다.
+  실제 가상 메일 **0건**이므로 공급자 발송 접수와 Gmail 수신 모두 미확인이다.
+- 검증: `npm test` **6/6 PASS**(신규 문의 UI 4개 + 기존 2개), `npm run build` PASS.
+  backend 문의 테스트 **10/10 PASS** 및 server syntax PASS. mock/stream MIME 검증은 실제 발송이 아니다.
+  로컬 Chrome에서 ko/en/ja 전환과 오류문의 선택 입력, 좁은 viewport의 입력 넘침 없음을 확인했다.
+- 남은 조건: Gmail 앱 비밀번호 발급·no-echo 입력 → 보호 설정 저장 및 지정 수신자로 테스트 1건(제목/본문 TEST) →
+  접수/실제 수신 구분 확인 → 별도 승인된 운영 배포. 기존 main/origin 차이는 아래 조사 기록을 참고해
+  배포 전에 사용자 변경을 보존하며 통합 검토한다. 이번에는 checkout/pull/merge/deploy하지 않았다.
+- 운영 장애는 backend 전용 gate OFF로 발송만 중단(503), 사이트 이전 정적 release로 복구한다.
+  이미 접수된 메일은 회수하지 못한다. 실제 발송/배포 시 이 절과 Admin Runbook에 날짜·검증 범위·남은 조건을 함께 갱신한다.
+
 Last updated: 2026-10-18
 
 ## 2026-10-18 — SEO·AI 검색 Phase 1 Production 배포

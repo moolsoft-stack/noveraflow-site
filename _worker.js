@@ -6,7 +6,7 @@ const routes = new Map([
 ]);
 const files = new Set(['/robots.txt', '/sitemap.xml', '/site.webmanifest',
   '/css/styles.css', '/css/brand.css', '/css/landing.css',
-  '/js/i18n.js', '/js/main.js', '/js/landing.js', '/js/landing-init.js', '/js/support-faq.js']);
+  '/js/i18n.js', '/js/main.js', '/js/landing.js', '/js/landing-init.js', '/js/support-faq.js', '/js/contact.js']);
 const aliases = new Map([
   ['/index.html', '/'], ['/privacy/index.html', '/privacy'],
   ['/account-deletion', '/account-deletion/'], ['/account-deletion/index.html', '/account-deletion/'],
