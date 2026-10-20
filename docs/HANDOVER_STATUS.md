@@ -1,6 +1,6 @@
 # Handover Status
 
-## 2026-10-20 — 문의 Production 배포 승인·진행
+## 2026-10-20 — 문의 Production 배포 완료 / 공개 폼 접수 PASS
 
 Gmail 직접 SMTP 테스트 접수·실제 수신은 사용자 확인 완료다. 인증을 재발급/재입력/재발송하지 않는다.
 현재 승인 범위는 기존 backend 우선 배포, 문의 gate 활성화, 기존 Pages main Git 통합 1회 배포와
@@ -15,7 +15,31 @@ backend는 `fdd385084d521e1a5b4fb7a11392b119d574dedc`,
 2026-10-20 18:12:10 KST, gate=true, health/readiness 내부·공개 200, 문의 preflight 204.
 기존 RTDN gate=true 및 문의 외 코드/설정은 유지했다. managed backup 18:11:58 KST와 이전 release/PM2 snapshot을 확보했다.
 사이트 직전 정상 Pages 복구 지점은 `663c49c3-2b5f-4f4a-aad5-e3e293d6b495` / source `da28d1b`(이후 docs-only skip commit 포함 main `8aa38cf`)다.
-공개 전송 결과 및 최종 사이트 release/배포 ID는 완료 후 이 절에 기록한다.
+사이트 운영 source는 `86114a059b6581cd42e8cbe89a0a470c4969f059`,
+Pages deployment `8f314b9e-7b43-426e-be7e-ed9b6dbfa78e`이며 GitHub Cloudflare Pages check completed/success를 확인했다.
+별도 직접 deploy를 하지 않았다. 이 결과를 적는 후속 docs commit은 `[CF-Pages-Skip]`로 중복 배포를 피한다.
+
+### 실제 공개 폼 검증·남은 조건
+
+- 공개 URL `https://noveraflow.com/contact?lang=ko`(en `/contact`, ja `/contact?lang=ja`).
+  ko/en/ja, 6가지 유형, bug/feature 앱 정보 표시 및 partnership에서 숨김, 모바일 입력 넘침 없음을 확인했다.
+- **2026-10-20 18:16:32 KST**, 실제 Chrome 폼 버튼 **1회** 클릭 → 운영 API POST **202**(nginx 관측 POST1건).
+  전송 중/입력·버튼 잠금 → 성공 안내 → 입력 초기화를 확인했다.
+  배포된 backend는 SMTP의 고정 수신자 accepted 이후에만 이 성공 응답을 반환한다. 직접 SMTP 테스트를 반복하지 않았다.
+- 실제 폼 입력과 운영 메일 조립 함수 확인: 제목 `[제휴문의] [TEST] 공개 문의 폼 배포 검증 20261020`,
+  From/Reply-To `moolsoft@gmail.com`, 서버 고정 수신 `moolsoft+help@gmail.com`.
+  본문에도 TEST/가상/회신 불필요를 명시했다. 수신 원문 헤더를 조회한 확인은 아니다.
+- 이번 TEST 메일의 Gmail 검색 UI가 응답하지 않아 **실제 Gmail 수신·수신 원문 헤더 확인은 사용자 대기**다.
+  기존 직접 SMTP 테스트는 사용자 수신 확인 완료지만 이번 공개 폼 메일과 별개다. 중복 발송하지 않는다.
+- 전송 후 backend health/readiness 내부·공개 모두 200. 기존 RTDN·결제·Premium·AI·백업·앱 1:1 문의 소스/설정 보존,
+  DB migration·실제 결제·기타 운영 변경 없음. backend의 모든 main 변경을 배포하지 않고 기존 운영 revision 위 문의 변경만 반영했다.
+- 서버 비밀값 없는 증거와 보호된 복구 설정: `/opt/noveraflow-ops/contact-deploy-20261020/`.
+  root `0700`, metadata/PM2 복구 설정 `0600`이며 내용/credential을 Git·로그에 노출하지 않는다.
+  SMTP 장기 보관·no-echo 갱신/회수와 backend 이전 release/managed backup은 Admin Runbook의 같은 날짜 완료 절을 따른다.
+  개인정보 없는 성공 화면은 `D:/Development/Personal/tmp/contact-deploy-20261020/public-contact-success.jpg`(Git 제외).
+- rollback이 필요하지 않았다. 장애 시 backend 문의 gate OFF 후 이전 release,
+  사이트는 위 정상 Pages deployment로 Worker·3언어 HTML·JS/CSS를 한 묶음으로 복구한다.
+  수신 확인 시 이 절과 Admin Runbook만 갱신하고 재발송하지 않는다.
 
 ## 2026-10-20 — 사이트 직접 문의 폼 구현 (미배포)
 
