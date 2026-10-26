@@ -1159,3 +1159,11 @@ Pages WEB_APP_ENABLED 기본 OFF: false/미설정에서 /app은503 및 noindex,n
 예정 주소 https://noveraflow.com/app/, callback https://noveraflow.com/app/auth/callback, API https://admin.noveraflow.com/api/app/web-records. 기존 운영 Supabase 프로젝트를 재사용하되 실제 callback allowlist/OAuth E2E·키 독립 백업 복원·서버 migration/배포 검토가 끝나기 전 ON 금지. 공개 URL/publishable key만 웹 입력 가능하며 서버 .env/service-role/keyring을 정적 bundle/Pages에 넣지 않는다. 별도 API 프록시/외부 서비스 추가 없음.
 
 복구는 Pages WEB_APP_ENABLED OFF 후 이전 검증된 immutable Pages deployment로 라우팅/asset 복원한다. 새 DB schema/암호문·키·최신 삭제 ledger는 지우지 않는다. 실제 쓰기 이후 서버 fallback에도 웹 계정 삭제 hook을 유지해야 한다. 현재 운영 revision은 변경하지 않았다. 상세 통합 절차와 남은 조건은 공식 웹 계획50절/관리자 Runbook을 따른다. 실제 도메인 새 앱 접속/reload/OAuth 검증은 배포 전이므로 NOT_RUN이며 로컬 worker3PASS로 대체하지 않는다.
+
+## 2026-10-27 Cloudflare owner/project verified — no operational changes
+
+Existing browser login resolves account **83573c9038e1ef594dd009b639a6ba56 (Moolsoft@gmail.com's Account)**. Pages **noveraflow-site** and **noveraflow.com active/SSL** belong to this account. Current member has **Super Administrator - All Privileges / entire account**; settings and deployment detail views are readable. No deployment/settings write probe, token creation, DNS change or new project.
+
+Current Production is **8f314b9e-7b43-426e-be7e-ed9b6dbfa78e**, main/source **86114a059b6581cd42e8cbe89a0a470c4969f059**, success. Main docs6af6359 and prepared preview2f611f7 are skipped, not deployed. Keep8f314b9e as current Pages recovery point. Repo moolsoft-stack/noveraflow-site, main auto-deploy, repository-root publication with no build command/output/root override; build-system version3, no hooks. WEB_APP_ENABLED is not shown in Production variables; no secret values inspected.
+
+After separate execution approval, reuse Git integration, include approved public web bundle at app/ with worker/routes, preserve homepage/domain/native OAuth settings, and use staged gates/actual account acceptance. Cloudflare will not build Flutter from source under the current config. Existing inactive archive remains OFF-only. No main push/merge, deployment, callback/gate edit, DB/migration/key generation or real account test performed. User login alone is not release approval. Target binding/remaining scopes are in Admin ops/web-records/cloudflare-target.review.json and projects-docs plan section54. This handoff-only commit uses [CF-Pages-Skip].
