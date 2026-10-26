@@ -1150,3 +1150,12 @@ Production deployment.
   `landing.css?v=20261017e`, then check both scenes on the Galaxy S22. That
   recovery restores the prior implementation and also restores its known title
   clipping risk.
+## 2026-10-26 웹 앱 /app 배포 준비 — NOT deployed
+
+원본 main6af6359와 원본 dirty docs를 보존하고 .worktrees/web-app-preparation-20261026, dev/web-app-preparation-20261026에서 준비했다. _worker.js의 /app 분기와 test/web-app-routing.test.mjs, 이 기록만 변경한다. branch push는 [CF-Pages-Skip] commit으로 자동 배포를 건너뛴다. main merge/push, Pages 환경 변경·직접 deploy·bundle 복사는 하지 않았다.
+
+Pages WEB_APP_ENABLED 기본 OFF: false/미설정에서 /app은503 및 noindex,nofollow/no-store. 추후 승인된 true일 때 /app→/app/308, /app/auth/callback·deep link/reload는 /app/index.html, assets는 /app/ 내부 실제 경로로 처리한다. Flutter base href /app/ 필수. 홈페이지 메뉴/버튼/본문·sitemap은 수정하지 않는다. 기존 홈페이지/lang/sitemap 라우팅 유지3PASS(OFF/SPA·assets/기존 라우팅). 숨긴 URL/색인 제외는 권한 검사가 아니며 API의 실제 사용자 인증·owner 검사를 유지한다.
+
+예정 주소 https://noveraflow.com/app/, callback https://noveraflow.com/app/auth/callback, API https://admin.noveraflow.com/api/app/web-records. 기존 운영 Supabase 프로젝트를 재사용하되 실제 callback allowlist/OAuth E2E·키 독립 백업 복원·서버 migration/배포 검토가 끝나기 전 ON 금지. 공개 URL/publishable key만 웹 입력 가능하며 서버 .env/service-role/keyring을 정적 bundle/Pages에 넣지 않는다. 별도 API 프록시/외부 서비스 추가 없음.
+
+복구는 Pages WEB_APP_ENABLED OFF 후 이전 검증된 immutable Pages deployment로 라우팅/asset 복원한다. 새 DB schema/암호문·키·최신 삭제 ledger는 지우지 않는다. 실제 쓰기 이후 서버 fallback에도 웹 계정 삭제 hook을 유지해야 한다. 현재 운영 revision은 변경하지 않았다. 상세 통합 절차와 남은 조건은 공식 웹 계획50절/관리자 Runbook을 따른다. 실제 도메인 새 앱 접속/reload/OAuth 검증은 배포 전이므로 NOT_RUN이며 로컬 worker3PASS로 대체하지 않는다.
