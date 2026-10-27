@@ -1150,3 +1150,15 @@ Production deployment.
   `landing.css?v=20261017e`, then check both scenes on the Galaxy S22. That
   recovery restores the prior implementation and also restores its known title
   clipping risk.
+
+## 2026-10-27 Web Production deployed/enabled — actual-account acceptance pending
+
+Explicit whole-scope execution approved. Correct existing Cloudflare account83573c9038e1ef594dd009b639a6ba56/project noveraflow-site reused; no new project/token. **Actual code source9bc94d87622fd59316688f0f767995151dc964d7**, repo main/Git integration. Existing homepage/static source unchanged; prepared/app worker routing and approved public Flutter output at app/ added. App web source **f8c0536** adds Apple selection only to web controller/gateway/UI; tests10PASS/analyze clean. Flutter desktop registrant side effects restored, no mobile release changes. Auth build input is canonical public SUPABASE_URL/PUBLISHABLE_KEY only; no server key/env input. Base/app/ verified,21 text files actual private-key/secret-value pattern0. Generated vendor NOTICES/minified whitespace warnings preserved as emitted.
+
+Initial Pages OFF deployment **9dd43ba8-2a34-47f5-8edb-a056e7c33df8** success/app503/noindex/no-store; then Production text variable **WEB_APP_ENABLED=true** saved and same source retried. Final active deployment **f8ad9394-efc4-442e-a08a-237cf93853f5**, success, alias **https://noveraflow.com/app/**200. /app308, callback/reload/JS/Wasm correct MIME200/noindex,nofollow/no-store. Browser title NoveraFlow 웹, logged-out state and Google/Apple buttons verified. No homepage/menu/sitemap app link added.
+
+Existing Supabase exact web callback appended once, original native2 redirects/Site URL/Google/Apple credentials preserved. API active at https://admin.noveraflow.com/api/app/web-records; actual public no/invalid token401, foreign Origin403, exact site preflight204. Backend/DB/key specifics and complete recovery sequence: projects-docs plan **section55**, Admin Runbook and ops/web-records/production-status.json. Existing health/ZIP automatic readiness remained200/true.
+
+**Actual Google/Apple OAuth, record save/read/search, real two-account isolation and deletion-only cleanup NOT_RUN:** designated account identities/sessions were unavailable, no substitute personal account/account deletion used. Do not call successful public rendering or local auth fixtures actual-account acceptance. User needs to designate Google/Apple test accounts plus separate deletion-only account and log in directly at the preserved public web tab; no passwords/tokens in chat.
+
+Recovery: Production WEB_APP_ENABLED=false then redeploy or rollback to tested OFF **9dd43ba8** and confirm/app503. Original pre-web **8f314b9e** remains historical rollback point. Pair with backend **new candidate.off.config** to retain deletion hook/keys/ciphertext/deletion authority; do not return to an old server without web cleanup after user writes. Never delete schema/keys/data as rollback. This documentation-only commit uses **[CF-Pages-Skip]**; latest main Git SHA is distinct from active Production source9bc94d8.
