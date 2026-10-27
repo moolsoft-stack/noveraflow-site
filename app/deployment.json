@@ -1,13 +1,13 @@
 {
-  "release": "web-20261027-refresh-v2",
-  "webSource": "a8d0fc6c53b3982d4b3cd70f20d030702278343b",
-  "backendWebSource": "d7a2e56",
-  "builtAt": "2026-10-27T01:56:35.209Z",
+  "release": "web-20261027-linked-records-v1",
+  "webSource": "15e5bce81c4a929d83dbfdae62ff1f3279cc5e48",
+  "backendWebSource": "518ea9b7ef9bcb8b3722f748f416c0f427e14537",
+  "builtAt": "2026-10-27T06:34:20.413Z",
   "baseHref": "/app/",
   "oauthProviders": [
     "google",
     "apple"
   ],
-  "refreshRegressionTests": 14,
-  "actualSessionRefreshAcceptance": "pending_authorized_test_session"
+  "linkedMobileScope": "test_app_account_scoped_linked_records_only_legacy_diaries_unchanged",
+  "actualBidirectionalAccountAcceptance": "pending_same_account_mobile_login"
 }
