@@ -1,12 +1,13 @@
 {
-  "release": "web-20261027-v1",
-  "webSource": "f8c0536",
+  "release": "web-20261027-refresh-v2",
+  "webSource": "a8d0fc6c53b3982d4b3cd70f20d030702278343b",
   "backendWebSource": "d7a2e56",
-  "builtAt": "2026-10-27T00:26:37.027Z",
+  "builtAt": "2026-10-27T01:56:35.209Z",
   "baseHref": "/app/",
   "oauthProviders": [
     "google",
     "apple"
   ],
-  "actualOAuthAcceptance": "pending_designated_test_sessions"
+  "refreshRegressionTests": 14,
+  "actualSessionRefreshAcceptance": "pending_authorized_test_session"
 }
