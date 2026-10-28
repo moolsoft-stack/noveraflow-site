@@ -52,7 +52,7 @@ Cloudflare Pages deployment `fb72a1a5-d818-4d70-81f4-30063da16dda`에 배포되�
 
 ## Site icon 기준
 
-- 현재 앱의 launcher 설정이 사용하는 원본은 `../noveraflow-app/assets/branding/mark_01_icon_1024.png`입니다.
+- 현재 앱의 launcher 설정이 사용하는 원본은 `../app/assets/branding/mark_01_icon_1024.png`입니다.
 - 메인 랜딩의 favicon, 홈 화면 아이콘, manifest icon, JSON-LD logo, header brand mark와 OG는 같은 공식 원본에서 만든 `assets/landing/*-v20261017.*`을 사용합니다. 앱 원본은 수정하지 않습니다.
 - 로고 여백 축소·리사이즈 결과는 웹 전용 자산으로 보관합니다. 새 자산은 날짜가 포함된 이름으로 추가하고 HTML/manifest 참조도 함께 갱신합니다.
 - A/B 풍경, 모션, 스토어 링크, Production 배포 및 복구 절차는 [운영 기록](docs/HANDOVER_STATUS.md#2026-10-17--ab-landscape-landing-production-release)을 참고하세요.
