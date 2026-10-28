@@ -1188,3 +1188,43 @@ Actual site source **acb66c7adb4d233a084d4b96d0fcaab8abdad846**, web source15e5b
 API two-file overlay518ea9b is active in original full-layout cwd, no schema/keys/provider change; new encrypted document boolean tombstone hidden in default list, owner-authenticated includeDeleted=1 for sync. Health200/ZIP automatic=true/anonymous401. Initial separate-layout startup failed and rolled back before final successful overlay; see Runbook. Web copy now directs users to **test app Settings → 웹·앱 연동 기록**, not ordinary home/history auto-sync. Existing local mobile records/ZIP are not migrated. Android1.0.85-test/code1085 built/installed in separate .test package, no store release; new fixture7/API11PASS, real same-account device roundtrip remains NOT_RUN pending user login. No new operational trial or old data deletion, held duplicate production test not repeated. Old web trial1793070463156000 retained. Source, storage/backup limits, test artifact and failure/recovery evidence: plan57/Runbook/app handoff.
 
 Recovery may return Pages to previous7192bd14/sourcefb23e35 or tested OFF snapshot. After tombstones exist preserve the new API's default-list deletion filter/deletion fence/keys/data; use current API OFF or forward repair rather than exposing tombstones with old server code. This handoff commit uses **[CF-Pages-Skip]**, keeping actual public sourceacb66c7. Personal github-personal:moolsoft-stack identity verified; no adcomlab credentials or global login switch.
+
+## 2026-10-28 — web-first homepage entry prepared / production deployment held
+
+The user fixed acceptance to: home→web signup/login; standalone web text CRUD,
+search and offline use without app signup/install; same-account new record/edit
+bidirectional acceptance. The current public home has no /app/ entry, while
+https://noveraflow.com/app/ is HTTP200 with marker
+web-20261027-linked-records-v1/webSource15e5bce. Do not treat that older online
+web as the new durable offline candidate.
+
+This preparation adds same-origin /app/ navigation and hero entry in Korean,
+English and Japanese, preserving the existing Google Play/App Store links and
+free/Premium copy. The home i18n cache version is increased. Related entry/worker
+routing tests4 PASS, generated localized output/site verification PASS, and the
+localhost home preview visibly exposes both entry links. No production click
+through/new OAuth signup was performed. CRLF-only build differences were
+normalized for deterministic generation; no unrelated page content is changed.
+
+The companion app web source adds first-signup guidance and UUID-scoped
+transactional IndexedDB plus the existing sync engine. Candidate web assets stay
+in the app's ignored .dart_tool/web-standalone-20261028 folder; this site change
+DOES NOT replace app/main.dart.js or imply a new live deployment.16 related
+Flutter tests, real browser storage fixture and shell-cache boundary checks pass;
+actual provider-first-signup and full operating offline acceptance remain pending.
+
+Publish only after approval: existing Moolsoft account83573c9038e1ef594dd009b639a6ba56 /
+Pages noveraflow-site / noveraflow.com, existing main Git integration. Reconfirm
+provider target/current production before publishing. Deploy new public /app/
+bundle including offline-shell.js atomically with home+3 localized home files
+and i18n; preserve WEB_APP_ENABLED and current exact OAuth callbacks. No DB,
+API, OAuth or key change is currently needed. This commit goes to a separate
+personal dev branch with [CF-Pages-Skip], never production main.
+
+Rollback: retain current production assets/marker+home bundle, restore them or
+use the existing app gate OFF, preserving the compatible API, keys, tombstones,
+owner records and outboxes. A forward repair may unregister only offline-shell
+and its public shell cache; do not wipe IndexedDB/SDK credentials/user records.
+Android code90 stays preserved/unuploaded; app update is held. Latest phone ZIP
+protection remains UNCONFIRMED. Official cross-project status/acceptance and
+verification limits are expansion plan64.
