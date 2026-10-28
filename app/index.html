@@ -123,6 +123,14 @@
     * https://docs.flutter.dev/platform-integration/web/initialization
   -->
   <script src="flutter_bootstrap.js" async=""></script>
+  <script>
+    if ('serviceWorker' in navigator && location.pathname.startsWith('/app/') &&
+        !location.pathname.startsWith('/app/auth/')) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/app/offline-shell.js', {scope: '/app/'}).catch(function () {});
+      });
+    }
+  </script>
 
 
 </body></html>
