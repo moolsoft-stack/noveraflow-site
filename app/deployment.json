@@ -1,8 +1,8 @@
 {
-  "release": "web-20261028-standalone-v1",
-  "webSource": "94888938fcd671cb4f8de229c5ccaf0e9485b4d6",
+  "release": "web-20261031-mobile-design-v1",
+  "webSource": "d756ac8c668babd6bd44a3c027ef079f6b3efaa9",
   "homepageSource": "01b3d449d998d42e80e051bab2855117dbfbfaf3",
-  "siteBase": "1a59e7a21aa1272043588ea3832e268158f7a5a6",
+  "siteBase": "48c12507bd56aa60ed1dad09146d5703e3803360",
   "backendWebSource": "518ea9b7ef9bcb8b3722f748f416c0f427e14537",
   "baseHref": "/app/",
   "oauthProviders": [
@@ -11,5 +11,8 @@
   ],
   "actualStandaloneSignupAcceptance": "NOT_RUN",
   "actualOfflineAcceptance": "NOT_RUN",
-  "actualBidirectionalAccountAcceptance": "NOT_RUN"
+  "actualBidirectionalAccountAcceptance": "NOT_RUN",
+  "mainSha256": "b0d27f55050616cbfc4c01c3a8fa51be4d7ee51ef8a0c5720981e6e7973c267d",
+  "previousRelease": "web-20261028-standalone-v1",
+  "actualPostDeploymentAcceptance": "NOT_RUN"
 }

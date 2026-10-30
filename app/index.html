@@ -21,13 +21,13 @@
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="aidiary">
+  <meta name="apple-mobile-web-app-title" content="NoveraFlow">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <title>aidiary</title>
+  <title>NoveraFlow</title>
   <link rel="manifest" href="manifest.json">
   
   
@@ -94,7 +94,7 @@
 
     @media (prefers-color-scheme: dark) {
       body {
-        background-color: #120A2D;
+        background-color: #F7F3ED;
           }
     }
   </style>
@@ -107,10 +107,9 @@
   </script>
 </head>
 <body>
+  <div id="records-loading" role="status" aria-live="polite" style="position:fixed;left:0;right:0;top:68%;text-align:center;font:16px sans-serif;color:#777;z-index:10">화면을 불러오고 있습니다.</div>
   <picture id="splash">
-      <source srcset="splash/img/light-1x.png 1x, splash/img/light-2x.png 2x, splash/img/light-3x.png 3x, splash/img/light-4x.png 4x" media="(prefers-color-scheme: light)">
-      <source srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x, splash/img/dark-4x.png 4x" media="(prefers-color-scheme: dark)">
-      <img class="center" aria-hidden="true" src="splash/img/light-1x.png" alt="">
+      <img class="center" style="width:240px;max-width:60vw" aria-hidden="true" src="official-mark-v20261017.webp" alt="">
   </picture>
   
   
@@ -122,6 +121,7 @@
     For more details:
     * https://docs.flutter.dev/platform-integration/web/initialization
   -->
+  <script>window.addEventListener("flutter-first-frame", function(){removeSplashFromWeb(); document.getElementById("records-loading")?.remove();}, {once:true});</script>
   <script src="flutter_bootstrap.js" async=""></script>
   <script>
     if ('serviceWorker' in navigator && location.pathname.startsWith('/app/') &&
