@@ -3,7 +3,7 @@ import {writeFile} from 'node:fs/promises';
 import {pages,languages,origin,localizedUrl} from './site-config.mjs';
 import {startPreview} from './preview-site.mjs';
 
-const server=process.env.SITE_CHECK_BASE ? null : await startPreview(0,{webAppEnabled:true});
+const server=process.env.SITE_CHECK_BASE ? null : await startPreview();
 const base=process.env.SITE_CHECK_BASE || `http://127.0.0.1:${server.address().port}`;
 const checks=[];
 const local=url=>url.replace(origin,base);

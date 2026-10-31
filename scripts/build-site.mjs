@@ -26,7 +26,7 @@ export function renderPage(template, page, language, locales, {preserveLocales =
   const meta = copy.meta[page.key];
   if (!meta) throw Error(`Missing metadata: ${page.key}/${language}`);
   const url = localizedUrl(page.route, language);
-  let html = template.replace(/\r\n/g, '\n').replace(/(<html\b[^>]*\blang=)"[^"]*"/, `$1"${language}"`)
+  let html = template.replace(/(<html\b[^>]*\blang=)"[^"]*"/, `$1"${language}"`)
     .replace(/data-default-locale="[^"]*"/, `data-default-locale="${language}"`)
     .replace(/data-site-url="[^"]*"/g, `data-site-url="${url}"`)
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${escape(meta.title)}</title>`)
@@ -39,7 +39,6 @@ export function renderPage(template, page, language, locales, {preserveLocales =
   }
   const alternates = [...languages, 'x-default'].map(lang => `<link rel="alternate" hreflang="${lang}" href="${escape(localizedUrl(page.route, lang === 'x-default' ? 'en' : lang))}" />`).join('\n    ');
   html = html.replace('</head>', `    ${alternates}\n  </head>`);
-  html = html.replace(/href="\/app\/\?lang=(?:en|ko|ja)"/g, `href="/app/?lang=${language}"`);
   // These elements contain translated text only; decorative SVG trees are untouched.
   html = html.replace(/(<([a-z][a-z0-9-]*)\b[^>]*data-i18n="([^"]+)"[^>]*>)[\s\S]*?(<\/\2>)/g,
     (_, open, tag, key, close) => {
@@ -73,7 +72,7 @@ export function renderPage(template, page, language, locales, {preserveLocales =
   html = html.replace(/<img\b[^>]*data-screen="([^"]+)"[^>]*>/g, (tag, screen) => tag.replace(/src="[^"]*"/, `src="/assets/landing/${language}-${screen}-v20261017.webp"`).replace(/alt="[^"]*"/, `alt="${escape(copy.messages[`landing.screen.${screen}`])}"`));
   html = html.replace(/alt="NoveraFlow official mark"/g, `alt="${escape({en:'NoveraFlow official mark',ko:'NoveraFlow 공식 로고',ja:'NoveraFlow公式ロゴ'}[language])}"`);
   const contactAssetVersion = page.key === 'contact' ? '20261020' : '20261018a';
-  html = html.replace(/href="css\//g, 'href="/css/').replace(/\/js\/i18n\.js\?v=[^"]+/g, '/js/i18n.js?v=20261031en').replace(/\/js\/landing\.js\?v=[^"]+/g, '/js/landing.js?v=20261018a').replace(/\/css\/styles\.css(?:\?v=[^"]*)?/g, `/css/styles.css?v=${contactAssetVersion}`).replace(/\/css\/landing\.css\?v=[^"]+/g, '/css/landing.css?v=20261018a');
+  html = html.replace(/href="css\//g, 'href="/css/').replace(/\/js\/i18n\.js\?v=[^"]+/g, `/js/i18n.js?v=${contactAssetVersion}`).replace(/\/js\/landing\.js\?v=[^"]+/g, '/js/landing.js?v=20261018a').replace(/\/css\/styles\.css(?:\?v=[^"]*)?/g, `/css/styles.css?v=${contactAssetVersion}`).replace(/\/css\/landing\.css\?v=[^"]+/g, '/css/landing.css?v=20261018a');
   for (const [name, value, property] of [
     ['description',meta.description], ['og:title',meta.ogTitle || meta.title,true], ['og:description',meta.ogDescription || meta.description,true],
     ['og:url',url,true], ['og:locale',meta.locale,true], ['twitter:card','summary_large_image'],

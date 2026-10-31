@@ -1,8 +1,8 @@
 # Handover Status
 
-## 2026-10-31 — Phase2 영어 사이트·언어 경로 운영 배포 완료
+## 2026-10-31 — 완료 판정 취소·기록 보호 미검증으로 영어 개선 롤백 진행
 
-Site53c5501 / web0eaca55 / Pages7e9b009d. 공개 HTTP·3언어 PC/모바일 홈→로그인·callback 언어 유지 PASS. 실제 계정/기록 쓰기는 미실행이다. [상세 실행·복구·한계](04-seo-direction.md#phase2-english-release-20261031)를 따른다. 기존 날짜의 배포 기록은 이력으로 보존한다.
+Site53c5501 / web0eaca55 / Pages7e9b009d의 공개 UI 검증은 기록 미표시 W1의 안전성 검증이 아니다. 기존 목록11개만으로 완전성을 입증할 수 없어 배포 완료 판정을 취소했다. 문서 외41개 변경을 site d922b19 / web d756ac8로 복구해 main Git 통합으로 롤백한다. 실제 사용자 기록 생성·수정·삭제/DB 변경/새 빌드/전체 회귀 재실행0. W1의 계정·기대 기록 범위 및 읽기 전용 원인/영향 확인 전에는 영어 개선 릴리스를 완료·재게시하지 않는다. 실제 롤백 결과와 기존 증거는 [상세 실행 기록](04-seo-direction.md#phase2-english-release-20261031)을 따른다. 아래 과거 PASS/rollback 불필요 기록은 당시의 공개 검사 이력이며 최신 판정이 아니다.
 
 ## 2026-10-20 — 문의 Production 배포 완료 / 공개 폼 접수 PASS
 
@@ -1196,7 +1196,7 @@ Recovery may return Pages to previous7192bd14/sourcefb23e35 or tested OFF snapsh
 <a id="phase2-english-release-20261031"></a>
 ## 2026-10-31 Phase 2 첫 영어 공개 사이트·웹 언어 경로 개선
 
-현재 상태: **운영 배포·공개 검증 PASS / 실제 계정 인증·쓰기 동기화는 NOT_RUN**.
+현재 상태: **완료 판정 취소 / 기록 보호 검증 미충족으로 영어 개선 릴리스 롤백 진행**.
 
 - 기존 글로벌 성장 로드맵 Phase2·SEO25절의 시장/경쟁 조사를 재사용했다. 핵심 Journaling App, 보조 Free Journaling App / Self Reflection App은 초기 실행 가설이다. 미국 월 검색량·KD·수요 규모는 여전히 미확보다. 검색량 확보를 배포 선행 조건으로 삼지 않는다.
 - 영어 title은 Journaling App for Everyday Reflection | NoveraFlow, H1은 A journaling app. Room to reflect.다. 일기·생각 정리·자기 성찰, 무료 기본 기록, 모바일 로컬 ZIP과 웹의 무료 텍스트/기본 동기화 범위를 구분했다. 기존 Android/iOS 링크와 디자인·모션을 유지한다. 신규 유료 분석·SDK·이벤트는 추가하지 않고 기존 Cloudflare Web Analytics를 재사용한다. 실제 CTA 클릭→가입/설치/첫 기록 연결 계측은 여전히 미구현이다.
