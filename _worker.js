@@ -1,12 +1,13 @@
 // Cloudflare Pages advanced mode: serve prebuilt HTML for the existing ?lang URLs.
 // No API proxy, credentials, account data or UA-specific rendering belongs here.
+import {conversionResponse} from './scripts/conversion-receiver.mjs';
 const routes = new Map([
   ['/', 'home'], ['/about', 'about'], ['/philosophy', 'features'], ['/faq', 'faq'],
   ['/contact', 'contact'], ['/privacy', 'privacy'], ['/terms', 'terms'], ['/account-deletion/', 'accountDeletion'],
 ]);
 const files = new Set(['/robots.txt', '/sitemap.xml', '/site.webmanifest',
   '/css/styles.css', '/css/brand.css', '/css/landing.css',
-  '/js/i18n.js', '/js/main.js', '/js/landing.js', '/js/landing-init.js', '/js/support-faq.js', '/js/contact.js']);
+  '/js/i18n.js', '/js/main.js', '/js/landing.js', '/js/landing-init.js', '/js/support-faq.js', '/js/contact.js', '/js/conversions.js']);
 const aliases = new Map([
   ['/index.html', '/'], ['/privacy/index.html', '/privacy'],
   ['/account-deletion', '/account-deletion/'], ['/account-deletion/index.html', '/account-deletion/'],
@@ -15,6 +16,7 @@ const aliases = new Map([
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (url.pathname === '/_events/conversion') return conversionResponse(request, env);
     if (!['GET', 'HEAD'].includes(request.method)) return new Response(null, {status:405,headers:{Allow:'GET, HEAD'}});
     // Separate app gate, default OFF. No API proxy or credentials in this worker.
     if (url.pathname === '/app' || url.pathname.startsWith('/app/')) {

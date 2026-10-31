@@ -1,7 +1,7 @@
 {
-  "release": "web-20261031-english-entry-v2",
-  "webSource": "0eaca551769cddfcfd55fe4a50ecccff926a2995",
-  "siteBase": "e183767bcacd36b175965f835094c63f4b11eeea",
+  "release": "web-20261031-conversions-v1",
+  "webSource": "83b40612160d84b1be589774ec823766b9265cba",
+  "siteBase": "9b79c63f92fcb94ca0e8bd8f3e63baf6783b1b49",
   "backendWebSource": "518ea9b7ef9bcb8b3722f748f416c0f427e14537",
   "baseHref": "/app/",
   "oauthProviders": [
@@ -11,12 +11,14 @@
   "actualStandaloneSignupAcceptance": "NOT_RUN",
   "actualOfflineAcceptance": "NOT_RUN",
   "actualBidirectionalAccountAcceptance": "NOT_RUN",
-  "mainSha256": "0f88ca2828ca57a64ec9f47225de0e7a75cbe31a4234a7e66430b3471aaab690",
-  "previousRelease": "web-20261031-mobile-design-v1",
+  "mainSha256": "47f0176308f81a45c558f1d754c95936ce172f3e238f0e9c30d48817101ae507",
+  "previousRelease": "web-20261031-english-entry-v2",
   "actualPostDeploymentAcceptance": "NOT_RUN",
   "englishLocaleAcceptance": "SYNTHETIC_TEST_PASS",
   "homepageBaseline": "01b3d449d998d42e80e051bab2855117dbfbfaf3",
   "resumeAfterRollback": "80bf84569458a2f1258d21dd9541542ceec8d192",
   "preDeploymentReadOnlyAcceptance": "AUTHENTICATED_UI12_API12_PASS",
-  "recordStorageAndSync": "UNCHANGED_FROM_D756AC8"
+  "recordStorageAndSync": "CORE_LOGIC_UNCHANGED_FROM_0EACA55",
+  "conversionObservation": "CONSENT_REQUIRED_FIRST_SERVER_ACK_IN_PAGE",
+  "actualConversionAcceptance": "CANDIDATE_CTA3LANG_ACK_SUCCESS_FAILURE_PASS"
 }

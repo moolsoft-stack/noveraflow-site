@@ -82,6 +82,8 @@ export function renderPage(template, page, language, locales, {preserveLocales =
     ['og:image:alt',copy.messages['common.brand.home'],true], ['twitter:image:alt',copy.messages['common.brand.home']],
   ]) html = metadata(html, name, value, property);
   if (page.key === 'home') {
+    html = html.replace(/\s*<script defer src="\/js\/conversions\.js[^\"]*"><\/script>/g, '');
+    html = html.replace('</head>', '    <script defer src="/js/conversions.js?v=20261031v1"></script>\n  </head>');
     html = metadata(html, 'naver-site-verification', naverSiteVerification);
   }
   html = html.replace(/\s*<meta property="og:locale:alternate"[^>]*>/g, '');
