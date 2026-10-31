@@ -7,6 +7,53 @@ direction.
 
 # NoveraFlow SEO 방향 기준
 
+<a id="phase2-search-expansion-20261031"></a>
+## 2026-10-31 Phase 2 미국 영어 검색 의도별 기존 공개 페이지 개선 — 운영 PASS
+
+**최신 공개 사이트 배포는 Site 9c709e1c3693f9ae4e267e49903a3e4907cba5f2 / Pages 02aad47d-1a0e-4bc7-aa80-f45fd59d6a4d / GitHub check124428754058 success**다. Web **83b40612160d84b1be589774ec823766b9265cba**는 유지했다. 아래 4a77364 운영 표기는 이번 변경 전 이력이며, 기존 전환 계측·동기화 증적/미검증 경계는 계속 유효하다. 신규 공개 URL0·앱 빌드0·DB/사용자 기록 쓰기0·롤백 필요0.
+
+### 검색 의도 비교와 변경 URL
+
+기존 25절 키워드/제품 조사와 Phase2 기준을 재사용했다. 신규 시장·경쟁 조사는 하지 않았으며 세 키워드는 잠정 선정, **미국 월 검색량/KD 미확보**를 유지한다. 의도가 겹치는 제품 소개/기능/무료 사용 질문이 이미 있어 별도 키워드 랜딩 페이지를 만들지 않았다.
+
+| 공개 URL / 타깃 | 기존 내용의 간극 | 이번 최소 개선 |
+| --- | --- | --- |
+| https://noveraflow.com/ / Journaling App | 기존 title·H1·무료 소개와 시작 CTA는 목적에 맞음. 더 자세한 플랫폼/성찰 설명 연결이 약함 | title Journaling App for Everyday Reflection 유지. 소개에서 기능·자기 성찰과 무료 플랫폼 FAQ로 문맥 링크 추가. MobileApplication featureList의 모바일/Web·AI·백업 범위를 새 본문과 일치시킴 |
+| https://noveraflow.com/philosophy / Self Reflection App | Features 제목과 AI 기능 목록 중심이라 짧게 기록하고 돌아보는 사용 의도 설명 부족 | title Self-Reflection App Features / description·OG·Twitter 정리. H1 A journaling practice for self-reflection, 일상 한 장면→느낀 점→이전 글 다시 읽기의 수동 사용 예시, 모바일/Web 기능 표, 무료 FAQ·홈·영어 Web 시작 링크 |
+| https://noveraflow.com/faq / Free Journaling App | 일반 FAQ title, 무료/Premium 답변과 저장 설명이 플랫폼별 경계를 충분히 드러내지 못함 | title Free Journaling App FAQ / description·OG·Twitter 정리. 무료 범위·서버/기기 저장·시작 방법 답변 개선, 무료/플랫폼/백업 anchor와 기능 안내·영어 Web CTA. 기존12개 FAQPage 문답을 보이는 답변과 일치시킴 |
+
+/philosophy는 기존 기능 URL을 그대로 쓴다. 새 예시 질문은 **일반 텍스트에 사용자가 직접 쓰는 방법**이며 내장 prompt library/치료·코칭·진단 기능 출시가 아니다. 키워드 반복·중복·빈약한 신규 페이지/가짜 리뷰·평점·검색 성과 수치0.
+
+### 실제 기능 대조·측정/개인정보
+
+기존 운영·웹/모바일 기능 검토 증적을 재사용했다. 무료 기본 기록, **모바일의 지원되는 로컬 ZIP 내보내기/복원**과 **Google/Apple 로그인 후 무료 Web 텍스트 작성·보기·수정·검색·기본 sync**를 구분했다. 모바일 사진/음성/심볼을 무제한 무료로 표현하지 않는다. AI 기록 피드백/주간·월간 성찰은 지원 모바일 버전·조건 충족 기록·연결·접근/사용 제한이 필요하며 Web에는 없다. AI 대화/자동 cloud backup은 지원 모바일 버전·로그인·Premium 조건이며 자동 backup을 실시간 sync라 광고하지 않는다. Web AI/사진/음성/ZIP backup·restore, 연간 요약을 제공 기능으로 추가하지 않았다. 최신 스토어 모든 버전의 실기기 수용 시험을 새로 했다는 뜻은 아니다.
+
+스토어 href는 기존 Google Play id=com.moolsoft.noveraflow / App Store id6792970947 그대로이며 새 Web CTA는 **/app/?lang=en**이다. 영어 기능/FAQ의 새 CTA는 기존 js/conversions.js만 재사용한다. 기존 페이지 단위 동의 off·GPC/DNT 차단·식별자 없는 한정 범주 수집 계약/receiver는 변경0. 새 ID·쿠키·추적 저장·유료 도구0, 기록 본문/제목/email/UUID/인증정보 전송 추가0. 새 CTA에서는 기존 집계 UI로 해당 페이지에서 동의해야 계측된다. source=internal로 분류되면 원래 검색 유입과 계정 단위로 연결할 수 없으며 URL별 분석 차원을 새로 수집하지 않는다.
+
+### 변경 범위 검증과 개인 기록 보호
+
+- 공개 생성기 실행: 기존24문서/사이트맵 유지. 신규 범위 test/phase2-search-intent.test.mjs **2/2 PASS**: 단일 H1, title·schema 정합, canonical/4개 alternate, FAQ12 visible 문답, anchor/내부 목적지, script1회, ko/ja 템플릿에 영어 guide 누출0·재생성 중복0. 영어 변경3페이지의 번역 JS cache version만 20261031search로 갱신했다.
+- 다른 **21개 localized 문서(ko/ja16+나머지 영어5)는 HEAD 비교 동일**(CRLF 정규화). app/, _worker.js, robots.txt, sitemap.xml, scripts/site-config.mjs, 기존 conversion script/receiver, CSS diff0. 앱 저장/인증/sync·모바일·DB·결제 변경0.
+- 격리 Chrome **3페이지×1440/320px=6 PASS**, 실제 운영 동일 **6 PASS**, 가로 넘침0·page exception0·모든 Web href 영어 유지·스토어 href 유지. 앱/API·외부/비GET 요청을 차단한 익명 새 프로필에서 공개 페이지만 열었다. 기록·인증·동기화 회귀 검사를 반복하지 않았다.
+- 운영 HTTP **10항목 PASS**: 세 페이지200/후보 HTML 일치·canonical/alternate4/JSON-LD, robots/sitemap 원문 동일, /app/ 및 /app/auth/callback HEAD200 **noindex,nofollow / no-store**, Web source와 main hash 유지, Googlebot/OAI-SearchBot 문자열로 새 공개 본문200. 최초 검사 도구의 hreflang 총7 계산은 nav언어 링크3을 포함한 조건 오류였고 rel=alternate4로 정정해 PASS; 제품 수정은 없었다.
+- sitemap24에는 /app/가 없고 개인 기록/인증정보를 공개 HTML/schema에 넣지 않았다. wildcard crawler 접근과 GPTBot 정책은 그대로다. 문자열 UA200은 실제 crawler IP/WAF 통과·Google/ChatGPT 색인/추천 증거가 아니다.
+- 기존 UI12/API12·서버/IndexedDB ID/revision/hash 일치·pending/conflict/tombstone0 및 sync 근거는 재사용만 했다. 실제 모바일 왕복·과거 로컬 전체 대조는 여전히 별도 미검증이며 이번 공개 SEO 배포 조건으로 확장하지 않았다.
+
+### 배포·백업·복구·증적
+
+기존 개인 Git main→Cloudflare Pages 절차로 source9c709e1 배포, check124428754058 completed/success, **Pages02aad47d-1a0e-4bc7-aa80-f45fd59d6a4d**. 실제 Web release web-20261031-conversions-v1 / main.dart.js SHA256 **47f0176308f81a45c558f1d754c95936ce172f3e238f0e9c30d48817101ae507** 불변. 기록/인증 코드 배포·앱 빌드 없음.
+
+백업 **D:/Development/Personal/noveraflow/phase2-evidence-20261031/site-c17ceb3-before-search-expansion.tar**, **65,464,320 bytes**, SHA256 **5531358c899b912e953d086eddda4333fc7ad5f4b62f0c4422c02a5147ad6b4b**. c17ceb3은 정상 source4a77364에 문서만 추가한 배포 직전 main이다. 배포 전 실제 운영 및 **https://c8144034.noveraflow-site.pages.dev/app/deployment.json**의 Web83b4061/main hash 일치를 확인했다. 공개 페이지 회귀면 Pages 정상 **c8144034-80f7-4c5d-8502-70564558789f**로 복구하거나 **git revert 9c709e1c3693f9ae4e267e49903a3e4907cba5f2** 검토 후 main 일반 push로 복구한다. force/reset·DB복원·OAuth/모바일 변경은 하지 않는다. 이번 롤백0.
+
+로컬 증적은 같은 phase2-evidence-20261031의 **search-candidate-browser/report.json, search-live-browser/report.json, search-production-http.json**이다. 원문 기록/계정/token/cookie/인증 응답을 저장하지 않았다. 개인 GitHub API owner=moolsoft-stack/User, origin git@github-personal:moolsoft-stack/noveraflow-site.git, SSH Hi moolsoft-stack 확인. source9c709e1 author/committer moolsoft-stack <moolsoft@gmail.com>, push/원격SHA 일치 확인. 회사 adcomlab 자원 혼용0. 후속 기존 MD만 [CF-Pages-Skip]으로 push하여 중복 배포하지 않는다.
+
+### 이후 측정·남은 사항
+
+기준선 **GSC 미국 Web 10/1~28 노출11/클릭0**, 기존 CF 미국 직접 **46visits(고유 사람 아님)** 유지. 새 문구의 색인·순위·노출/클릭 상승은 **미확인**이다. GSC 재수집 후 이 세 URL의 URL검사/선택 canonical과 US/페이지/검색어/동일 기간의 노출·클릭·CTR을 비교한다. 7~14일 후 초기 관측, 충분한 표본/28일 후 비교하되 적은 표본·비공개 검색어를 수요 확정으로 보지 않는다. 기존 미색인17 분류는 앞 절 증적을 재사용하며 새 문제가 생겼다고 추정하지 않는다.
+
+전환은 기존 WAE에서 blob6=production, blob2=en, blob3=US로 제한하고 event/source 범주별 SUM(_sample_interval*double1), 저장 표본수·최대 sample_interval·동의 coverage/unknown을 함께 보고한다. test와 이번 익명 검사 제외, 페이지 간 퍼널 연결/신규가입/계정 최초·고유사용자10/30/100/재방문은 **미측정**이다. 월 검색량·신규 영어 문구 색인·실제 성장 효과·실기기 모바일 범위는 남은 과제이며 이 공개 개선 완료와 구분한다.
+
+
 <a id="sync-regression-83b4061-20261031"></a>
 ## 2026-10-31 전환 계측 배포 동기화 회귀 근거 보완 (문서만)
 

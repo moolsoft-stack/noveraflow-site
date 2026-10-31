@@ -1,5 +1,19 @@
 # Handover Status
 
+<a id="phase2-search-expansion-20261031"></a>
+## 2026-10-31 미국 영어 검색 노출용 공개 페이지 개선 배포 PASS
+
+운영 Site **9c709e1c3693f9ae4e267e49903a3e4907cba5f2**, Pages **02aad47d-1a0e-4bc7-aa80-f45fd59d6a4d**, check **124428754058 success**. Web **83b40612160d84b1be589774ec823766b9265cba**, JS hash **47f0176308f81a45c558f1d754c95936ce172f3e238f0e9c30d48817101ae507** 불변. 정상 공개 SEO 변경만 Git 통합으로 게시했고 rollback0이다.
+
+변경 URL은 / (Journaling App 내부 링크), /philosophy (Self Reflection 의도/수동 기록 예시/플랫폼 표), /faq (Free Journaling App 메타·무료/Premium·저장/시작 안내)다. 신규 URL0, canonical/hreflang/FAQ12 schema 정합, robots/sitemap24/GPTBot 정책·/app/ noindex/no-store 보호. 지원하지 않는 Web AI/media/backup을 제공 기능으로 쓰지 않는다. 영어 CTA /app/?lang=en, 기존 store href, 기존 동의 기반 집계만 재사용한다.
+
+신규 범위2검사 PASS·후보 공개 Chrome6/운영6 PASS·운영 HTTP10 PASS, 다른 localized21문서 동일·app/worker/계측 receiver/CSS diff0. 앱/API/비GET 차단 공개 브라우저만 사용, 기록/인증/sync 회귀 재실행·실제 사용자 기록/DB 쓰기0. 기존12건 및 합성 sync 증적은 재사용이며 실기기 모바일 왕복/과거 로컬 대조는 미검증 유지.
+
+backup **D:/Development/Personal/noveraflow/phase2-evidence-20261031/site-c17ceb3-before-search-expansion.tar** (65,464,320bytes / SHA256 **5531358c899b912e953d086eddda4333fc7ad5f4b62f0c4422c02a5147ad6b4b**). 정상 **Pagesc8144034-80f7-4c5d-8502-70564558789f**와 운영 marker의 Web83/hash 일치를 배포 전 확인했다. 회귀면 해당 Pages로 복구 또는 source9c709e1 revert 검토→main 일반push. 이전 Web0eaca55로 내리는 과거 복구점 대신 이번 직전 정상 Web83을 유지한다. DB/모바일/OAuth복구 없음.
+
+증적: phase2-evidence-20261031/search-candidate-browser/report.json, search-live-browser/report.json, search-production-http.json. 원문 기록/인증정보 보관0. 개인 owner/remote/SSH moolsoft-stack 및 명시적 author/committer moolsoft-stack <moolsoft@gmail.com>, source9c709e1 원격SHA 확인·회사혼용0. 후속 MD만 [CF-Pages-Skip] 사용. [SEO 상세 비교/근거와 이후 측정·미완료](04-seo-direction.md#phase2-search-expansion-20261031)를 따른다. 미국11/0 및 직접46visits 기준선 유지, 새 색인/성장·고유 첫사용자는 미확인이다.
+
+
 ## 2026-10-31 Web83b4061 동기화 회귀 증적 보완 — 운영 유지/문서만
 
 Site **4a77364** / Web **83b4061** / Pages **c8144034-80f7-4c5d-8502-70564558789f** 유지. 기존 core sync/client/controller/persistence/Auth diff0과 ACK 이후 계측 wrapper 연결을 분석했다. 이미 통과한 배포·전체 검사를 반복하지 않고 부족한 wrapper+durable 경계3건만 격리 메모리/가짜 서버에서 검증하여 **3PASS/FAIL0**이다. 새 결함 재현0·수정안 없음·제품 코드/빌드/운영 배포/DB·사용자 기록 접근/강제 sync0.

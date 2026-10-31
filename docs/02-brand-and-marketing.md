@@ -7,6 +7,16 @@ brand/marketing direction for the public site.
 
 # Brand And Marketing
 
+<a id="phase2-search-expansion-20261031"></a>
+## 2026-10-31 미국 영어 검색 의도별 기존 콘텐츠 개선 — 운영 배포
+
+Site **9c709e1** / Pages **02aad47d-1a0e-4bc7-aa80-f45fd59d6a4d** 배포·공개 검증 PASS, Web **83b4061** 불변. Journaling App은 홈의 기존 명확한 소개에 기능/무료 범위 링크를 보완하고, Self Reflection App은 기존 /philosophy에서 짧게 쓰기→다시 읽기와 플랫폼 기능 비교로, Free Journaling App은 기존 /faq에서 무료/Premium·모바일/Web 차이로 응답한다. 새 URL0·키워드 반복/새 시장조사0. 실제 기능 조건과 제한을 유지하며 수동 글쓰기 예시를 내장 prompt/치료 기능으로 홍보하지 않는다.
+
+무료 모바일 ZIP·Web 무료 텍스트/검색/기본sync 로그인 조건, 모바일 AI의 지원 버전/연결/접근·사용 제한, Premium 대화/cloud backup과 Web 미지원 범위를 구분했다. 기존 store 목적지와 영어 Web CTA를 재사용하며 새 ID/추적 저장/유료 서비스0. 기존 consent 기반 집계만 재사용한다.
+
+미국11노출/0클릭·직접46visits(고유 사용자 아님) 기준선 유지, 검색량 미확보·잠정 키워드 유지. 새 문구 색인/성장 효과·계정 최초10/30/100명 미측정. GSC US/세URL/검색어를 재수집 후 같은 기간으로 관측하고 기존 WAE production/en/US·가중치/coverage로 범주 이벤트를 구분한다. [URL별 비교·실제 기능·검증·백업/복구·측정 정의](04-seo-direction.md#phase2-search-expansion-20261031)가 최신 상세 근거다.
+
+
 ## 2026-10-31 최소 전환 계측 운영 보완 완료
 
 최신 운영은 Site **4a77364** / Pages **c8144034-80f7-4c5d-8502-70564558789f**, Web **83b4061**이다. 기존 개인 Cloudflare 무료 집계에 Android/iOS CTA·Web 시작·서버 확인 후 페이지별 첫 신규 기록 관측을 연결하고 실제 test 수신·SQL 저장을 확인했다. 3언어 선택 동의 전에는 off이며 방문자 식별자/추적 저장·기록 내용/제목/email/UUID/인증정보 전송0이다. 최초 기록은 계정 생애 최초/고유 사용자가 아니며10/30/100명은 미측정이다.
