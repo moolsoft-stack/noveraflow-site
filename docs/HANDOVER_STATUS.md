@@ -1,5 +1,14 @@
 # Handover Status
 
+## 2026-10-31 Phase 2 미국 검색·유입 측정 준비 완료
+
+문서 조사 범위 완료이며 성장 목표 달성/계측 구현 완료를 뜻하지 않는다. 개인 GSC 접근 확인: index28/not-index17(10/23), 영어 root 색인됨(최종crawl10/30), sitemap24 성공(10/29); 미국10/1~28 노출11/클릭0. 기존 CF root host/US/최근7일46 visits·직접46, 대부분 Unknown UA로 사람 수 판단 불가. Web CTA lang=en 유지·스토어200, 스토어 언어 고정은 미보장. 공개24문서 canonical/hreflang/언어와 robots/sitemap 유지, OAI UA200은 실제 bot 접근/ChatGPT 색인 증거가 아니며 GPTBot 변경0이다.
+
+[기존 SEO 문서의 새 관측·계측 표·10/30/100 최소안](04-seo-direction.md#phase2-search-measurement-20261031)을 운영 근거로 사용한다. GSC/CF 기간 차이·admin host 혼입·Native locale 국가 대리값과 Web emitter 공백·로그인≠신규 가입을 구분한다. 남은 조건: 새 영어 문구 색인, 미색인 원인 URL, 공식 봇 IP 접근, 스토어 캠페인 보고, Web CTA/가입/최초 성공·D1/D7 계측 및 실제 적격 사용자 수. 모바일 과거 기록 전체 대조는 별도 이전 과제다.
+
+이번 코드·빌드·배포·DB·사용자 기록·모바일·결제·스토어 제출·광고 변경0; 기존20/44·UI12/API12 재검사0. 실제 운영은 Site e4cbe8d/Web0eaca55/Pages69535c7e 유지. 백업/복구는 아래 완료 절의 site-e183767-before-english-resume.tar 및 Pages752537f5 그대로다. 개인 owner/remote/SSH 검증 후 문서만 push하며 Site [CF-Pages-Skip]을 사용한다.
+
+
 <a id="phase2-english-resume-completed-20261031"></a>
 ## 2026-10-31 영어권 웹 개선 운영 재배포 완료 — 실제 UI12/API12 사후 확인
 

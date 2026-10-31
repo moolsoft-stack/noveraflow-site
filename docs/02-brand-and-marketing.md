@@ -7,6 +7,12 @@ brand/marketing direction for the public site.
 
 # Brand And Marketing
 
+## 2026-10-31 미국 영어권 측정 준비
+
+기존 잠정 키워드 Journaling App / Free Journaling App / Self Reflection App와 실제 무료 기능·플랫폼 안내를 유지한다. 미국 월 검색량은 미확보다. 개인 기존 GSC의 미국 Web 검색10/1~28은 노출11·클릭0, 공개 query는 novoflow 3노출/0클릭이며 이번10/31 영어 배포 효과는 아직 판단하지 않는다. CF 공용 host/US/최근7일46 visits는 모두 직접 유입이고 실제 사람/첫 기록 수가 아니다. 실제 첫 기록10→30→100명은 미측정이다.
+
+측정 기준선·스토어 언어 한계·Web 이벤트 공백·최소 후속안의 단일 근거는 [SEO 측정 준비](04-seo-direction.md#phase2-search-measurement-20261031)다. 첫 후속은 동일 기간 기준선과 최소 CTA/첫 성공 계측 설계이며 유료 광고/새 SDK/개인 기록 수집을 추가하지 않는다. 이번은 문서만 갱신하고 코드·배포·스토어·결제 변경0이다.
+
 ## 2026-10-31 미국·영어권 첫 사용자 확보 방향 — Confirmed
 
 Phase2 첫 조사 추천은 **journaling app(핵심), free journaling app / self reflection app(보조)**다. [SEO25절](04-seo-direction.md#phase2-keyword-evidence-20261031)에 원본 근거·미국 검색량의 기간 미확인/배제·경쟁 비교·공개 사이트 문제·영어 문구/CTA 검토안을 기록했다. 검색량/저경쟁 검증이나 사용자 채택 완료가 아니며 이 문구를 아직 공개 사이트에 게시하지 않았다. 조용한 짧은 기록·상징·성찰 경험의 조합은 차별화 **가설**이며 경쟁사에 없는 독점 기능으로 표현하지 않는다. 현재 미국 iOS 공개판1.0.81 조회와 사이트의 오래된 심사 안내, 영어 방문자의 한국어 웹 로그인 화면 단절을 우선 개선 후보로 둔다. 무료/Premium·기존 기능은 유지한다.

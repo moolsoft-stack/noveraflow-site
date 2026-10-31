@@ -7,6 +7,78 @@ direction.
 
 # NoveraFlow SEO 방향 기준
 
+<a id="phase2-search-measurement-20261031"></a>
+## 2026-10-31 Phase 2 미국 검색·유입 측정 준비 — 실제 관측 기준선
+
+### 범위와 관측 조건
+
+운영 Site **e4cbe8d94ef0d0ac3ce058b157c74376582a9718** / Web **0eaca551769cddfcfd55fe4a50ecccff926a2995**를 읽기 전용으로 확인했다. 개인 Google 계정의 기존 Search Console 도메인 속성 `noveraflow.com`과 개인 Cloudflare 기존 Web Analytics를 사용했다. 아래 실측은 과거의 “접근/실측 미확보”를 갱신하며 과거 배포 이력을 변경하지 않는다. 코드·계측·운영 배포·DB·사용자 기록·모바일·결제·스토어 제출·광고 변경0, 신규 서비스/SDK/시장·경쟁 재조사0. 기존 사이트20/Web44 및 실제 UI12/API12·영어 callback 검증은 재사용하고 반복하지 않았다.
+
+### Google Search Console: 색인과 미국 검색
+
+| 항목 | 실제 관측 | 해석/제약 |
+| --- | --- | --- |
+| 페이지 색인 보고서 | 마지막 업데이트 **2026-10-23**, 색인28 / 미색인17 | 최신 공개 영어 문구의 색인 완료 증거가 아님 |
+| 미색인 사유 | redirect7, 사용자 canonical 없는 중복4, noindex2, 적절한 canonical 대체2, redirect error1, 404 1. 발견/크롤링 후 미색인 각0 | 정상 제외와 오류를 구분. redirect error1·중복4의 개별 URL/원인 후속 확인 필요 |
+| 영어 홈 URL 검사 | `https://noveraflow.com/` Google에 등록/색인됨. 마지막 크롤링 UI **2026-10-30 오전2:34:28**, Googlebot 스마트폰, 크롤링·색인 허용, 가져오기 성공 | 사용자 canonical=root, Google canonical=검사 URL. 실시간 테스트/색인 요청하지 않음; UI 시간대 별도 미확인 |
+| Sitemap 보고서 | `/sitemap.xml` 제출10/18, 마지막 읽기10/29, 성공, 발견24 / 동영상0 | URL 검사 세부의 sitemap “일시적 처리 오류” 표시는 별개로 남김. 제출 실패로 단정/재제출하지 않음 |
+| Web 검색, 미국, 최근28일 | 차트 명시 기간 **2026-10-01~10-28**, 노출**11**, 클릭**0**, CTR0%, 평균 게재순위21.5 | 국가=미국 필터. 확인 당시 최종 업데이트4.5시간 전. 배포10/31 이전 자료 |
+| 미국 공개 검색어 행 | **novoflow**, 노출3 / 클릭0, 표시1행 | 전체11 중 나머지8은 공개 query에 귀속 불가. 비공개/집계 제한을 고려; 전 검색어 목록으로 간주하지 않음 |
+| 동일28일 전체 국가 | 노출44 / 클릭3 / CTR6.8% / 평균11.3 | 미국 값과 혼합하지 않음 |
+
+`Journaling App` 핵심, `Free Journaling App`·`Self Reflection App` 보조는 잠정 실행 키워드로 유지한다. 해당 미국 query 행은 관측되지 않았으며 검색량0/수요없음으로 해석하지 않는다. **미국 월 검색량은 여전히 미확보**다. GSC는 시장 전체 검색량이 아니라 속성 실적이며, 이번 영어 배포의 효과·새 문구 색인·인과관계는 아직 미확인이다. [Google 실적 보고서 정의](https://support.google.com/webmasters/answer/7576553?hl=en).
+
+### 공개 검색 설정과 ChatGPT 검색 크롤러
+
+- 운영 robots200: `User-agent: *` / `Allow: /` / `Sitemap: https://noveraflow.com/sitemap.xml`, 저장소 원문 동일. sitemap200·24 URL·저장소 동일·앱 경로 제외. 공개24문서 모두 canonical·Content-Language·4개 hreflang 일치(24/24).
+- OAI-SearchBot **User-Agent 문자열을 사용한 홈 GET200**. robots는 접근을 허용한다. 실제 OpenAI IP의 WAF 통과/방문 로그·ChatGPT 색인·노출·인용은 **미확인**이며 문자열 응답만으로 보장하지 않는다. 필요 시 기존 Cloudflare 집계/보안 로그에서 공식 IP 범위와 대조하는 읽기 확인을 후속으로 수행한다.
+- **GPTBot 정책 변경0**. 현재 wildcard 정책을 그대로 유지했다. 검색용 OAI-SearchBot과 학습용 GPTBot은 별개다. [OpenAI 공식 bot 안내](https://developers.openai.com/api/docs/bots).
+- `/app/?lang=en`200 + `X-Robots-Tag: noindex,nofollow` / `Cache-Control: no-store` 유지. 개인 기록·인증 경로 보호는 기존 배포 검증을 재사용하며 성장 측정에 기록/토큰을 반출하지 않는다.
+
+### 영어 CTA 실제 목적지와 언어
+
+| CTA | 운영 href / 실제 응답 | 언어 및 측정 한계 |
+| --- | --- | --- |
+| Android | `https://play.google.com/store/apps/details?id=com.moolsoft.noveraflow`, GET200·동일 최종 URL | 명시적 hl=en 없음. 영어 요청에서도 계정/브라우저/스토어 설정에 따른 표시 가능; 영어 UI 강제 보장 불가 |
+| iOS | `https://apps.apple.com/app/id6792970947`, GET200 → `https://apps.apple.com/us/app/noveraflow/id6792970947` | 관측 요청은 en-US. href에 명시적 언어값 없음; 모든 사용자의 영문 스토어 표시 보장 불가 |
+| Web | `/app/?lang=en`, 영어 홈3개 시작 링크, GET200 | 영어 명시 전달. 직전 실제 영어 홈→CTA→로그인/기록 및 lang 없는 OAuth callback 영어 유지 PASS 재사용. 이번 새 로그인/가입 조작0 |
+
+무료 일기·생각 정리·자기 성찰 및 실제 플랫폼 안내는 기존 개선분을 유지한다. 스토어 href에 캠페인 식별자 없고 `js/landing.js`·언어 스크립트에 CTA click 이벤트 없다. 링크 정상 응답은 이동 횟수·설치·가입·첫 기록의 증거가 아니다. OAuth 공급자 자체 화면 언어와 앱 복귀 후 영어 상태를 구분한다.
+
+### 기존 분석 도구: 무엇을 실제 측정할 수 있는가
+
+Cloudflare Web Analytics 기존 태그는 admin 하위 도메인도 포함한다. 관측 당시 최근24시간(GMT+9), 봇 제외=Yes 전체21방문 중 root host18 / admin3이므로 **Host equals noveraflow.com** 필터가 필수다. 공용 host 최근24시간 미국5방문은 모두 직접 유입, 경로 `/privacy`3·`/`1·`/account-deletion/`1, 브라우저/OS Unknown5였다.
+
+필터 **Host=noveraflow.com / Country=United States / bots excluded Yes / 최근7일(GMT+9)**의 안정화된 화면은 **46방문**, 직접46, 경로 `/privacy`30·`/account-deletion/`9·`/`7, 브라우저 Unknown42/ChromeDerivative4, OS Unknown42/Linux4, Desktop46이었다. 이 기간의 표시 referrer에 검색 엔진이 없지만 referrer 유실·분류 한계를 고려하며 검색 유입 전체0으로 단정하지 않는다. 운영자/테스트 제외 coverage 미확인이고 visits는 실제 고유 사람 수가 아니므로 **46명의 미국 사용자/실제 첫 기록 사용자로 집계하지 않는다**. GSC10/1~28과 rolling7일은 기간·시간대·정의가 달라 전환율 계산 금지. [Cloudflare 지표](https://developers.cloudflare.com/web-analytics/data-metrics/high-level-metrics/), [차원](https://developers.cloudflare.com/web-analytics/data-metrics/dimensions/).
+
+| 지표 | 현재 재사용 가능한 근거 | 구현/확인 필요 |
+| --- | --- | --- |
+| 미국 방문 | CF 국가·host·경로·referrer·기간별 visits 실측 가능 | 실제 사람/내부 테스트 제외·영어 UI별 분리 미확인. US IP 집계는 거주 확인 아님 |
+| 검색 유입 | GSC 미국 노출/클릭/query; CF referrer 분류 | 서로 다른 정의/기간. 사용자 단위 여정 join 없음; query 비공개 영역 unknown |
+| 스토어 이동 | 목적지 응답/기존 스토어 자체 보고 경로 | CTA 클릭/채널별 outbound 계측 없음. Store Connect/Play 실제 캠페인 보고 권한·수치는 이번 미확인 |
+| 웹 시작 | CF `/app/` 경로 도착은 대리 지표 | 직접 방문/북마크 포함; 시작 CTA 클릭 및 locale별 전환과 같지 않음. 미국7일 표시에 app 경로 없음도 가입0 증거 아님 |
+| 신규 가입 | Native `account_auth_controller.dart`에 `auth_sign_in` emitter 존재 | 과거 “emitter0” 설명 정정. stage/outcome/provider는 로그인/복원과 신규 계정을 구분 못함. 공개 버전별 runtime coverage·신규 가입 수 미확인 |
+| 첫 기록 | Native 저장 성공 후 best-effort `record_created`; `first_open`·`history_opened` 재사용 후보 | `EventLogger`는 kIsWeb이면 전송하지 않음. Web 전용 entry에도 해당 emitter 없음. 설치/이벤트 수는 계정별 첫 성공 사용자 아님; ACK·retry 중복·cohort 계측 필요 |
+| 재방문 | Native history 이벤트의 관측 범위 집계 후보 | CF visits는 사용자 유지율 아님. 계정 cohort D1/D7·전체 활동 coverage·공개판 실제 집계 미확인 |
+
+현재 Native 국가 분석은 익명 설치 ID와 **최신 기기 locale 국가 접미사**의 대리값이다. en-US≠미국 거주/위치이며 재설치·기기별 중복/guest-login 미구분을 유지한다. Admin `usage-statistics.js`도 가입/계정DAU·WAU·MAU/실제 국가/세션 리텐션을 unavailable로 명시한다. auth aggregate의 **최소20 표본·365일 보존** 등 기존 보호를10명 목표 때문에 낮추지 않는다. 이 소스 확인은 실제 운영 이벤트 수/공개판 coverage 확인을 대신하지 않는다. 실제 적격 첫 기록 사용자 **10/30/100 모두 미측정**, 기존 운영자 연결 기록12건은 사용자12명이 아니다.
+
+### 10 → 30 → 100명을 위한 최소 후속 개선안 (이번 미구현)
+
+1. **기준선 운영:** 같은 기간·시간대·root host·US 필터로 GSC/CF를 주기 비교하고 브랜드/비브랜드·Unknown·내부/시험 제외 여부를 별도 표기한다. 새 영어 문구 색인은 후속 URL 검사에서 확인한다. redirect error1/중복4의 URL부터 읽기 확인한다. 검색량 미확보는 배포/실험 차단 조건으로 추가하지 않는다.
+2. **가장 작은 전환 계측:** 기존 인프라로 Android/iOS/Web CTA·배치·UI언어의 최소 집계 가능성을 먼저 설계한다. 공식 스토어 발급 캠페인 링크/보고를 우선 검토하고 Apple token을 추측하지 않는다. 도착/클릭/설치/가입을 별개로 보고, 기존 내비게이션·인증·저장/동기화를 막지 않는다. 실제 추가 구현은 별도 승인 범위이며 이번 링크/코드 수정0이다.
+3. **10명:** Web 한 경로부터 신규 계정과 기존 로그인, 최초 성공 저장(로컬 durable commit과 서버 ACK 상태 별도), 재시도/가져오기/복원/수정/시험 제외 기준을 정하고 기존 계정 식별을 내부 집계에만 재사용하는 최소안을 검토한다. 미국/영어 적격 근거 없으면 US unknown으로 남긴다. 필요 시 자발적 동의 파일럿의 국가 확인 방식을 별도 검토하며 이번 개인정보 수집0. 비운영 검증·coverage 확인 뒤 실제 첫 성공10명을 판단하고 막힘/자발적 의견을 우선 개선한다.
+4. **30명:** 같은 정의의 첫 기록 cohort에서 관측기간이 찬 D1/D7 재방문·새 두 번째 기록·이탈/지원 시간을 비교한다. 결측/미성숙 cohort 제외를 명시하고 반복된 가장 큰 장애 한 가지를 개선한다.
+5. **100명:** 중복/내부/봇/시험을 제외한 적격 첫 기록100명과 coverage·재방문·재작성·지원 비용을 함께 검토해 계속/수정/중단을 결정한다. 방문/설치/로그인 수로 목표를 대체하거나 성공 시점을 약속하지 않는다.
+
+기록 본문·감정·AI 대화·email·raw UID·인증정보·상세IP·fingerprint·민감 URL query를 성장 이벤트/외부 분석에 추가하지 않는다. 기존 동의·보존·삭제 정책과 최소 표본을 유지하며 새 SDK/유료 서비스 없이 가능한 범위를 우선한다. 미국 거주/최초 기록/재방문 실제 실측과 모바일 과거 로컬 기록 전체 대조는 남은 과제다. 후자는 별도 이전 과제이며 검색 준비의 필수 조건이 아니다.
+
+### 문서·Git 및 운영 인계
+
+개인 GitHub API owner `moolsoft-stack`/User, Site·Docs origin의 `github-personal:moolsoft-stack` namespace 및 실제 SSH 인사 `Hi moolsoft-stack`를 확인했다. author/committer는 `moolsoft-stack <moolsoft@gmail.com>`로 명시한다. 회사 adcomlab 자원 접근/혼용0. 원래 dirty worktree는 보존하고 clean worktree의 관련 문서만 commit·push한다. Site 문서 commit은 **[CF-Pages-Skip]**으로 운영 배포를 방지하며 Docs의 기존 roadmap JSON은 MASTER 출처 commit 갱신용 문서 투영만 재생성한다.
+
+이번 운영 변경/새 백업/새 배포0. 기존 운영 Pages **69535c7e-6266-4dd6-b324-6cbc07a2f562**와 정상 archive `D:/Development/Personal/noveraflow/phase2-evidence-20261031/site-e183767-before-english-resume.tar` 및 rollback Pages **752537f5-36b9-4e5d-91b7-892d0073013f**(source80bf845/webd756ac8)를 유지한다. 상세 SHA/복구 절차는 기존 배포 완료 절을 따른다. 현재 조사에서 숫자/coverage가 없는 항목은0이 아니라 미확인이다.
+
 <a id="phase2-english-resume-completed-20261031"></a>
 ## 2026-10-31 영어권 웹 개선 운영 재배포 완료 — 실제 UI12/API12 사후 확인
 
