@@ -7,6 +7,15 @@ direction.
 
 # NoveraFlow SEO 방향 기준
 
+<a id="phase2-english-resume-20261031"></a>
+## 2026-10-31 영어 개선 재개 — 실제 운영 UI12·인증 API12 확인
+
+최신 사용자 범위에 따라 **모바일 과거 로컬 기록 전체 대조는 별도 이전 과제**이며 이번 영어 사이트 배포의 필수 조건에서 제외한다. 아래 이전 모바일 대조 차단/재배포 보류는 이 결정 전 이력이다. 현재 정상 web d756ac8에서 실제 Default Chrome의 기존 로그인 세션으로 기록 메뉴만 열어 **12개의 기록·빈 검색어·더 보기0·표시 날짜2026-10-27~31·서버 확인 완료·전송 대기0·충돌0**을 읽었다. 같은 브라우저 메모리의 기존 세션을 사용한 records **GET200 / records12·active12·삭제표식0·nextCursor null / q 빈값·after0·includeDeleted1 / ID오름차순**을 확인했고 API↔캐시 ID/revision12개와 세션↔캐시 owner가 일치했다. token/UID/본문은 브라우저 밖으로 내보내지 않았으며 입력·저장·수정·삭제0이다. 서버·IndexedDB12건 내용SHA 일치·삭제/누락/대기/충돌0의 앞선 결과를 재사용한다.
+
+영어 홈페이지/title/description·무료/지원 범위·Android/iOS/Web CTA·언어 전달을 포함한 기존 site53c5501의 문서 외41개 경로와 web source **0eaca551769cddfcfd55fe4a50ecccff926a2995**를 재사용한다. 새 기능 코드·기록 client/store/sync·OAuth provider/PKCE/callback·모바일 공통 코드·DB·결제·구독 수정0. 새 웹 main SHA256은 기존 검증본 **0f88ca2828ca57a64ec9f47225de0e7a75cbe31a4234a7e66430b3471aaab690**와 일치하며 빌드·기존 사이트20건/웹44건은 반복하지 않는다. 배포 marker만 v2·재개 근거/직전 기준으로 갱신한다. 배포 전 운영 경로 집계는 `phase2-evidence-20261031/operational-path-before-redeploy.json`이다.
+
+현재 정상본 전체 archive: **D:/Development/Personal/noveraflow/phase2-evidence-20261031/site-e183767-before-english-resume.tar**, **64,983,040 bytes**, SHA256 **80aea21d5acda58a614c5f4a7cd4b7198bb447e230665d3096cc109208388579**. 기존 d922b19 archive도 보존했다. 실제 접근한 정상 Pages **752537f5-36b9-4e5d-91b7-892d0073013f / source80bf845 / web d756ac8 / JS b0d27f55**와 일치한다. 중요 인증·12건 조회 회귀 시 해당 정상 Pages로 복구하거나 이번 배포 commit만 revert하여 일반 main push한다. 개인 main Git 통합만 사용하고 운영 설정/DB/키/사용자 기록은 복구 대상으로 쓰지 않는다. 배포 revision과 실제 운영 사후 결과는 확인 후 이 절에 추가한다.
+
 <a id="phase2-record-scope-readonly-20261031"></a>
 ## 2026-10-31 기록 범위 읽기 전용 조사 — 웹 12건 정합 / 모바일 과거 기록 대조 대기 / 재배포 없음
 
