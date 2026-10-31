@@ -7,6 +7,36 @@ direction.
 
 # NoveraFlow SEO 방향 기준
 
+<a id="phase2-record-scope-readonly-20261031"></a>
+## 2026-10-31 기록 범위 읽기 전용 조사 — 웹 12건 정합 / 모바일 과거 기록 대조 대기 / 재배포 없음
+
+최신 판정: **조사한 계정의 서버↔브라우저 12건 정합 PASS / 모바일 과거 기록 미표시 원인 최종 확정은 BLOCKED / 영어 개선 재배포 안 함**. 아래 이전 완료·롤백 기록을 이 판정으로 대체하며 이력은 보존한다. 기존 영어 소스0eaca55·사이트53c5501은 후보로 보존하고 운영은 rollback80bf845 / web d756ac8을 유지한다. 사이트20건·웹44건과 기존 빌드/브라우저 전체 검사는 반복하지 않았다. 제품/모바일/인증/DB/결제/구독 코드 수정과 운영 사용자 기록 생성·수정·삭제·강제 가져오기는 없다.
+
+### 확인한 원인과 범위 차이
+
+| 구분 | 실제 확인 | 판정/한계 |
+| --- | --- | --- |
+| 로그인 계정 연결 | 서버 registry 한 계정, Supabase 기존 관리 GET200의 user와 owner 일치, 비익명 Google·Apple identity2개. 해당 owner와 브라우저 owner namespace도 일치 | 서버/저장소의 계정 대응 확인. 현재 브라우저 token의 유효성·새 OAuth 로그인 완료를 대신하지 않음. UUID/email/token은 출력·저장하지 않음 |
+| 현재 서버 기록/이력 | READ ONLY로 current12건·revision13건·고유 record ID12개. 12건 복호화 성공/실패0, 대응 revision·내용 일치12, 이력에만 있고 current에 없는 ID0, current 대응 revision 누락0, 삭제 표식0 | 관측한 연결 기록12건의 이력 정합과 보존 확인. 모바일에만 존재하는 과거 원본의 완전성까지 증명하지 않음 |
+| 이전 목록11건과 현재12건 | 기존 UI 관측 시각2026-10-31 08:04:48 KST까지 처음 저장된 ID11개, 그 이후 처음 저장된 ID1개·revision1개. 현재12개와 일치 | **11→12 차이는 서로 다른 관측 시점의 추가1건으로 설명됨**. 이번 조사에서는 쓰기0. 이전 UI에 보인11개만으로 누락이나 완전성을 판단한 방식은 폐기 |
+| API 반환/페이지네이션 | 실제 운영 records.js/routes.js/runtime.js의 LF SHA가 기존 로컬 소스와 일치. record_id 오름차순으로101개 읽고100개 반환하며 continuation을 유지, 삭제/검색은 복호화 후 적용. 현재12건은 첫 페이지 한도 미만, 빈 q 기대 반환12·nextCursor null | **인증된 HTTP 응답 본문의 반환 건수를 이번에 직접 캡처한 것은 아님**. 최근 제한된 access log에서 collection GET200 49회 확인; body/건수는 로그에 없음. 코드·SQL 기대12와 실제 HTTP 응답 건수는 구분 |
+| 웹 IndexedDB | Default의 NoveraFlow origin DB만 인증정보 없이 임시 격리 복사, 외부 요청 차단·readonly transaction. owner 일치, 캐시12/서버12, ID12·revision12·정규화 JSON 내용 SHA12 일치. 서버에만 있는 기록0/캐시에만 있는 기록0 | **현재 캐시에 서버 연결 기록의 조회 누락·내용 차이 없음**. 원본 DB 파일 SHA 전후 불변. 임시 기록 사본은 제거하고 비식별 집계만 보존 |
+| 정렬·필터·동기화 | 검색어는 IndexedDB에 저장하지 않는 controller 메모리 상태이며 실제 열린 화면의 검색어는 미관측. 빈 검색어로 투영하면12건. createdAt 내림차순/동일 시 id 내림차순. syncScanComplete=true/cursor 없음, pending0/conflict0/blocked0/localOnly0/paused=false, 미저장 초안 차이 없음 | 캐시에 미완료 동기화는 없음. 실제 화면의 비어 있지 않은 검색어로 가려졌을 가능성은 이 캐시 조사만으로 배제하지 않음 |
+| 모바일 로컬 과거 기록 | 서버/웹12건의 createdAt 범위2026-10-27~31, 서버 첫 저장일 이전 createdAt0. 기존 안정 bulk-copy ID 범위의 서버 기록0. 소스의 legacy device archive와 계정 연결 저장소는 분리되어 있고, 과거 기록은 명시적 가져오기/동의 후 사본으로 연결. 사진·음성·이벤트/비지원 문서·충돌 등은 제외 또는 보존/격리 | **미이전/미지원에 의한 범위 차이 가능성이 소스로 확인됨**. 그러나 연결 모바일 기기0이고 실제 과거 원본·가져오기 상태를 읽지 못했으므로 제보 원인을 미이전으로 확정하거나 데이터 유실을 전면 부정하지 않음 |
+
+계정 NF device link11행은 기기ID 연계 행 수이며 물리 기기11대나 기록11건이라는 뜻이 아니다. 실제 사용 기기 수/전체 모바일 원본 수로 해석하지 않는다.
+
+### 보호·검증 및 실제 차단 조건
+
+- 운영 호스트는 기존 전용 개인 SSH key와 NoveraFlow release 경로로 확인했다. 실제 Admin cwd는 `/opt/noveraflow-releases/admin-b9e6bb4-usage-tabs-20261030-release/backend`이며 과거518ea9b 경로를 현재 런타임으로 오인하지 않았다. records/routes/runtime의 현행 해시는 대조 일치, Auth verifier 파일 전체는 이전 소스와 다르므로 동일 파일이라고 주장하지 않는다. 현행 코드는 관리형 Auth의 검증된 user.id를 subject로 사용함을 확인했다. 서버 재시작/배포/설정 변경0.
+- 모든 운영 SQL은 **BEGIN READ ONLY**와5초 statement timeout에서 SELECT만 수행했다. 기존 key loader로 호스트 메모리 안에서만 복호화/해시 비교하고 키를 제거했으며 본문·ID·UID·secret·cookie/token을 로그/MD/Git으로 내보내지 않았다. Supabase도 기존 사용자 조회 GET만 사용했고 token 발급·새 로그인·계정 변경0이다.
+- 추가 검증은 이12건의 현재 집계·이력 대조·원본 불변 IndexedDB 격리 사본 대조뿐이다. 원본 브라우저를 띄워 자동 동기화를 실행하지 않았고 격리 브라우저에는 쿠키/LocalStorage/Auth를 복사하지 않았다. 읽기 요약은 `D:/Development/Personal/noveraflow/phase2-evidence-20261031/read-only-indexeddb-summary.json`, 재현 절차는 같은 위치의 `read-only-indexeddb.mjs`다. 민감한 임시 사본은 제거됐다.
+- 기존20/44 PASS는 영어 UI/인증 callback·합성 기록/저장·오프라인/충돌 회귀의 기존 증거로만 재사용한다. 0eaca55는 웹 전용 언어/UI와 관련 테스트 변경이며 기록 client/store/sync·모바일 공통 코드 수정이 아니다. 이번에 재현된 제품 결함이 없어 추측 수정·추가 빌드·동일 검사를 실행하지 않았다. 기존 승인 비운영 계정의 새 실제 OAuth/쓰기 시험은 실행하지 않았다.
+- **재배포를 막는 실제 조건:** 제보된 모바일 과거 기록의 날짜/개수·원본 존재·로그인 owner·연결 시점·가져오기 version/진행/제외/오류를 대조할 기기 또는 기존 승인된 읽기 자료가 없다. 또한 인증된 실제 records HTTP 응답 건수·현재 로그인 경로를 직접 관측할 지원 연결이 없다. 저장/동기화가 필요한 추가 수용은 기존 승인된 비운영 계정만 사용하며 해당 인증 연결 없이 임의 계정 생성·운영 쓰기로 대체하지 않는다.
+- **해결 순서:** 먼저 제보가 ‘모바일 과거 기록만 웹에 없음’인지 ‘이전에 웹에 있던 연결 기록이 사라짐’인지와 날짜 범위를 확인한다. 전자는 원본을 수정하지 않고 legacy/연결 이후 기록·bulkImport/mapping/excluded/blocked/pending 상태를 집계해 미이전·미지원 여부를 확정한다. 후자는 해당 ID의 기존 이력/서버/캐시·필터/커서와 API 응답을 읽기 전용으로 대조한다. 결함이 확인될 때만 최소 수정과 기존 승인 비운영 계정 검증을 수행한다. **운영 강제 이전/입력/삭제는 해결책으로 사용하지 않는다.**
+- 운영 배포 조건 미충족이므로 **영어 개선 재배포0**. 현재 운영 marker는 web d756ac8 / b0d27f55050616cbfc4c01c3a8fa51be4d7ee51ef8a0c5720981e6e7973c267d이며 기존 rollback80bf845 / Pages752537f5를 유지한다. 보존된 site-d922b19-before.tar64,911,360 bytes와 기존 SHA/설정 복구 경로는 이전 절을 재사용한다. 새 운영 백업/DB 복원/배포/롤백을 실행하지 않았다.
+- 개인 소유권: 새 SSH 응답 Hi moolsoft-stack, Site 공식 GitHub owner=moolsoft-stack/User, Site/App/Docs/Admin 원격은 github-personal:moolsoft-stack namespace다. 기존 개인 작성자와71.54.5의 private repo 소유권 증거를 재사용하며 회사 adcomlab 자원 사용0. 이번 MD 변경만 기존 개인 branch에 commit/push하고 원격 SHA를 확인한다.
+
 > Phase2 첫 조사·공개 영어 사이트 실측과 추천 실행안은 [25절](#phase2-keyword-evidence-20261031)이다. 24절의 초기 미조사 상태와 구분한다.
 > 2026-10-31 최신 실행 우선순위는 [24절 미국 Journaling App 진입](#us-journaling-growth-20261031)과 [글로벌 마스터](https://github.com/moolsoft-stack/noveraflow-docs/blob/docs/global-growth-20261031/MASTER_ROADMAP.md#global-growth-20261031)다. 21절은 로컬 구현 기록,22절은 당시 Production 적용 기록이며 서로 다른 날짜/범위로 보존한다. 아래 과거의 ‘미배포’ 문장을 현재 전체 사이트 상태로 재사용하지 않는다.
 
