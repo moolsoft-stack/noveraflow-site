@@ -1,5 +1,18 @@
 # Handover Status
 
+## 2026-10-31 최소 전환 계측 운영 수집·SQL 조회 PASS
+
+최종SQL200(03:02:04Z): 범주index의4종 **각1건·sample_interval1** 저장, test/en/KR/google(합성source) 확인. 실제 미국/검색 사용자로 세지 않는다. 임시 초기화 자원 부재=true. 운영수집/저장 근거는 conversions-live.json 및 conversions-index-production-sql.json이다.
+
+**요청한 미완료 계측 보완 완료.** Site **4a77364e7571a040c445e683251808a03123e60d** / Pages **c8144034-80f7-4c5d-8502-70564558789f** / check124421940944 success. Web **83b40612160d84b1be589774ec823766b9265cba**, mainSHA **47f0176308f81a45c558f1d754c95936ce172f3e238f0e9c30d48817101ae507**. 앞선 cd99435/Pages5dc86536에서 3언어 CTA9+실제 컴파일된 ACK hook1의 test POST204×10과 SQL4종 저장을 확인했다. 최종 receiver는 허용 범주별 index로 표본화를 분리했고 관련2검사/4종test POST를 확인했다. 표본 가중 합계는 사람 수가 아니다.
+
+동의 전 off·현재 페이지 메모리만·GPC/DNT 차단·3개월 보존 고지·필드 allowlist/credentials omit/no-referrer를 적용했다. 신규 visitor ID/추적 저장·본문/제목/email/계정 UUID/인증정보 전송0. 기록 성공은 같은 verified scope에서 HTTP200·expectedRevision0/revision1·문서일치 후 페이지당1회이며, 계정 최초/고유 사용자10/30/100은 미측정이다. 실제 기존 운영 **UI12/API12·캐시 ID/revision 정합·pending/conflict0·삭제0·빈 필터·cursor없음**을 읽기 확인했다. 운영 기록 쓰기·DB·모바일·결제 변경0, 기존20/44 재실행0이다.
+
+개인 CF 쓰기 gate로 초기 게시가 실패하는 동안 이전 정상본을 유지했다. 공개 경로/쓰기 없는 일회성 binding 초기화 후 같은 소스로 게시했고 임시 Worker는 삭제200/GET404 확인했다. 새 token 생성은 자동 검토에서 거부되어 수행하지 않았고 기존 개인 세션 SQL200을 사용했다. 정상 backup **phase2-evidence-20261031/site-9b79c63-before-conversions.tar**(65,413,120bytes/SHA256 **76a4265b621283c72027c86531efbf497b3435de9b860eed1c8f670a40c617b4**). 전체 복구는 **Pages4dce72da/source761a353/Web0eaca55** 또는4a77364→cd99435 코드 revert 일반main push, index만 복구할 때는 직전5dc86536도 사용 가능하다. DB 복원/force push 금지, 이번 rollback 필요0.
+
+[기존 SEO 최신 기록](04-seo-direction.md#phase2-conversion-live-20261031)에 SQL/원인/검증/증거 위치·복구 절차가 있다. 이전 SEO/17개 미색인 분류·검색11/0·직접46visits 기준선은 재사용했다. 남은 성장 지표는 실제 동의 표본·고유 첫 사용자·신규 가입/재방문·새 영어 색인 반영이며 수집 미구현과 다르다. 아래 과거 미수집/보류 기록은 이번 보완 전 상태다. 후속 MD는 [CF-Pages-Skip]으로 배포하지 않는다.
+
+
 ## 2026-10-31 최소 SEO 운영 배포 PASS / 전환 계측 수집 미활성
 
 Site **761a3534e89e37c3b1a9bc85155b9f1deac920a9**, Pages **4dce72da-074f-40d8-aab2-aa37debf69be**, check124414022669 success. 영어 홈 schema 설명 한 필드를 실제 Journaling App 소개와 일치시켰다. Web **0eaca55 / main SHA0f88ca2828ca57a64ec9f47225de0e7a75cbe31a4234a7e66430b3471aaab690** 불변. 신규 SEO1검사 PASS, 운영 schema·3언어 CTA·ko/ja HTML·robots/sitemap·app/callback noindex/no-store·비인증 API401 PASS. 사용자 기록/DB·인증·sync runtime·모바일 변경0, 기존20/44 및 UI12/API12는 재사용했다.

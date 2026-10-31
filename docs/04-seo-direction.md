@@ -7,6 +7,80 @@ direction.
 
 # NoveraFlow SEO 방향 기준
 
+<a id="phase2-conversion-live-20261031"></a>
+## 2026-10-31 완료 보완 — 최소 전환 계측 운영 수집·SQL 조회
+
+**이 절이 최신 상태다. 아래의 저장 경로 선택 대기/운영 미수집은 보완 전 이력이다.** Android·iOS store CTA, Web 시작 CTA, 서버 ACK 이후 Web 신규 기록 관측을 기존 개인 Cloudflare의 무료 Analytics Engine에 연결했다. 이벤트 종류·언어·대략적 국가·유입 유형으로 SQL 집계할 수 있다. 성장 성과/고유 사용자10·30·100명 달성을 뜻하지 않는다. 기존 **미국 Google 노출11·클릭0(10/1~28)** 및 **미국 직접 visits46(고유 사용자 아님)** 기준선은 유지한다. 완료된 SEO/시장 조사·기존20/44 전체 검사는 반복하지 않았다.
+
+### 운영 revision과 실제 수신 근거
+
+- 최종 Site **4a77364e7571a040c445e683251808a03123e60d**, Pages **c8144034-80f7-4c5d-8502-70564558789f**, Cloudflare GitHub check **124421940944 / success**. Web **83b40612160d84b1be589774ec823766b9265cba**, release **web-20261031-conversions-v1**, 실제 main.dart.js SHA256 **47f0176308f81a45c558f1d754c95936ce172f3e238f0e9c30d48817101ae507**.
+- 최초 수집 연결은 Site **cd99435** / Pages **5dc86536-a106-41e8-8482-9db67ddb5159** / check124420646537 success에서 검증했다. 3언어별 Android/iOS/Web CTA 각1회, ACK1회, **총10 test 이벤트·응답204×10**, 중복 click/refresh 추가0, 실제 컴파일된 Dart→JS hook PASS. 모든 Auth/records 요청은 격리 Chrome에서 합성 응답으로 가로채 실제 운영 기록 쓰기0이었다. 전환 POST만 실제 운영 수집기에 전달했다.
+- 기존 개인 대시보드 세션으로 **SQL200·4종 저장·country=KR·source=direct·traffic=test**를 직접 읽었다. 이는 한국에서 수행한 합성 검증이며 미국 사용자/검색 유입 증거가 아니다. 최초 조회의 빈 결과와 후속 저장 조회를 구분한다. 수락204는 저장 조회를 대신하지 않는다.
+- 단일 index에서 일부 SQL 행의 `_sample_interval=2`를 관측했다. 입력 중복이 아니라 표본 가중치였다. 범주별 작은 집단이 섞이지 않게 **이미 허용한 event/language/country/source/scope/traffic 범주 조합**으로 index를 나눴다(4a77364). 같은 범주는 모든 방문자에게 같은 값이며 방문자/계정/이벤트 ID를 새로 만드는 것이 아니다. 관련 receiver 검사2건만 추가 확인했고 Web 재빌드·3언어 전체 재실행0이다. 최종 receiver에 4종 test POST204도 확인했다.
+
+### 이벤트와 첫 기록 판정
+
+**최종 SQL 확인 시각 2026-10-31T03:02:04Z:** 범주 index(`v1|...`)의4종 `store_android/store_ios/web_start/record_created`가 **각1건**, 저장 표본 각1 / 최대 `_sample_interval` 각1로 조회됐다(SQL200). locale=en / country=KR / source=google / traffic=test이며 google은 receiver 진단을 위한 **합성 fixture 값**, 실제 검색 유입이 아니다. 별도 실제 컴파일 브라우저 검증10건은 direct/test였다. 초기 조회에서 일부 행이 늦게 나타났으므로 POST 수락 시각과 SQL 가시화 시각을 구분한다. helperAbsent=true도 재확인했다. 원본은 conversions-index-production-sql.json이다.
+
+| 이벤트 | 실제 발생 조건 | 집계 범위 |
+| --- | --- | --- |
+| `store_android` | 동의한 페이지에서 실제 Google Play CTA click | 링크 클릭 의도. 스토어 도착/설치 아님 |
+| `store_ios` | 동의한 페이지에서 실제 App Store CTA click | 링크 클릭 의도. 스토어 도착/설치 아님 |
+| `web_start` | 동의한 페이지의 같은 origin `/app/` 시작 링크 click | 새 가입/로그인 성공 아님 |
+| `record_created` | 기존 save의 HTTP200·JSON 처리 후 신규 expectedRevision0 / 반환 revision1 / 요청과 반환 document 깊은 동등 / 같은 verified auth scope / 삭제 아님 | **현재 페이지에서 첫 서버 ACK 신규 생성**, `scope=first_ack_in_page`. 로컬 저장/대기열 등록/저장 버튼 click에는 발생하지 않음 |
+
+Web observer는 기존 client를 감싸고 요청·응답·idempotency·공유 sync 동작을 바꾸지 않는다. observer scope/sink 예외는 원래 저장 응답에 영향을 주지 않는다. 최초 관측 여부·클릭 debounce는 현재 페이지 메모리에만 있다. HTTP401/409/503·network/parse/timeout·ACK mismatch·edit/delete·계정 전환은 제외한다. 같은 페이지의 중복 ACK/추가 create/refresh는 추가 집계하지 않는다. reload/다른 기기/과거 pending ACK를 계정 생애 이력으로 중복 제거하지 않으므로 **계정 최초 기록·고유 사용자·실제 적격10/30/100명은 미측정**이다. 계정 UUID를 외부 분석에 보내 이 공백을 채우지 않는다.
+
+### 개인정보·동의 확인 후 활성화
+
+- 공개 홈 footer 및 Web 기존 로그인/설정 카드에 **선택적 이용 집계** 버튼을 추가했다. en/ko/ja 고지 후 직접 허용한 현재 페이지에서만 수집한다. 기본 off, 강제 팝업/동의 없는 전송0, 철회 즉시 향후 전송 중단. 동의 선택을 cookie/LocalStorage/SessionStorage에 저장하지 않아 페이지 이동/OAuth 복귀 후 다시 off다. 기존 필수 인증/언어/기록 저장소는 건드리지 않았다.
+- Global Privacy Control / Do Not Track은 client와 receiver에서 차단한다. 허용하지 않거나 차단/실패/광고차단이 있으면 수집되지 않으므로 전체 방문을 대표하는 전환율로 간주하지 않는다. 기존 Cloudflare Web Analytics 방문 분석과 이 선택적 전환 집계는 별개임을 고지했다.
+- client POST는 event/언어/source/scope/test·production/동의 버전의 허용 값만 전송한다. `credentials:omit`·`referrerPolicy:no-referrer`이며 Authorization을 보내지 않는다. receiver는 예상 필드 외 값/임의 source URL/Authorization/다른 origin/512byte 초과를 거부한다.
+- **기록 본문·제목·email·계정 UUID·기록/operation ID·인증정보·IP 원문·전체 URL/query/referrer·fingerprint를 분석 payload/index에 포함하지 않는다.** callback은 내용/인자 없이 언어만 JS bridge에 전달한다. auth scope 비교는 기존 값으로 메모리 안에서만 한다.
+- 국가 bucket은 request.cf.country의 US/KR/JP/other/unknown이며 거주 확인이 아니다. referrer는 direct/google/bing/chatgpt/social/internal/other/unknown으로만 분류하고 원문은 저장하지 않는다. google은 referrer 분류이지 검색어/미국 검색 수요 증명이 아니다. OAuth를 넘는 원래 획득 경로를 저장/연결하지 않으므로 기록 이벤트가 internal/other/direct로 보일 수 있다.
+- 기존 개인 계정의 **무료 Analytics Engine** 기능/전용 dataset `noveraflow_web_conversions_v1`·Pages binding `NF_CONVERSIONS`만 사용한다. [무료 한도/가격](https://developers.cloudflare.com/analytics/analytics-engine/pricing/)과 [3개월 보존](https://developers.cloudflare.com/analytics/analytics-engine/limits/)을 확인하고 고지에 반영했다. 유료 plan upgrade·결제정보·유료 분석 SDK 추가0. 새 visitor ID/추적 저장소/browser 식별자0. 운영 기록 DB는 이 분석 저장소와 별개이며 변경0이다.
+
+### 집계 방법과 해석
+
+WAE blob1=event, blob2=언어, blob3=국가 bucket, blob4=source, blob5=scope, blob6=traffic class, double1=1. index1은 `v1|`+위 허용 범주 조합(96byte 이하)이다. 분석자 권한이 있는 기존 개인 Cloudflare 세션에서 SQL API200으로 읽었다. 새 API token은 생성하지 않았다. 실제 지표는 반드시 `blob6='production'`을 적용하고 합성 시험은 `test`로 제외한다. 운영자/봇의 자동 식별과 개인별 연결은 제공하지 않는다.
+
+미국·영어 최근7일 집계 예시(UTC 기간, 진단용 개인 ID/원문 조회 금지):
+
+```sql
+SELECT blob1 AS event_name, blob4 AS source_type,
+       SUM(_sample_interval * double1) AS estimated_events,
+       COUNT() AS stored_samples, MAX(_sample_interval) AS max_sample_interval
+FROM noveraflow_web_conversions_v1
+WHERE blob6 = 'production' AND blob2 = 'en' AND blob3 = 'US'
+  AND timestamp >= NOW() - INTERVAL '7' DAY
+GROUP BY event_name, source_type
+ORDER BY event_name, source_type
+LIMIT 100
+```
+
+WAE는 [쓰기/조회 표본화](https://developers.cloudflare.com/analytics/analytics-engine/sampling/)를 사용하므로 `COUNT()`를 전체 이벤트 수로 쓰지 않고 `_sample_interval` 가중 집계와 표본수를 함께 제시한다. 범주별 index도 무표본·정확한 사람 수를 보장하지 않는다. 빈 관측 행은 해당 범위의 이벤트 미관측이며 사용자가0명이라는 뜻이 아니다. GSC28일·기존CF rolling7일·이번 수집 개시 이후 자료는 기간/정의가 달라 직접 전환율을 계산하지 않는다. 실제 사용자10→30→100 판단은 별도 내부 첫 성공/국가/시험 제외 근거가 필요하다.
+
+### 변경 범위 검증·기록 보호
+
+- 신규 client/receiver5검사 PASS: 4종 허용 필드/국가, 동의·민감 필드·origin·크기 거부, GPC/DNT, 3언어 CTA/중복/저장 접근0, 철회 차단. 신규 sync 연결1 PASS: ACK 유실/재시도 명령 동일·pending 보존→ACK후 해제·수정 revision 보존. 기존 observer6 PASS와 기존20/44를 재사용했다.
+- 실제 Web release compile 및 scoped analyze clean. 기본 Flutter Chrome test launcher 대기는 종료하고 기존 CDP 격리 방식으로 **실제 컴파일된 bridge·auth/records 연결**을 검증했다. test mock Auth/PUT은 네트워크에서 모두 차단·대체했고, 실제 사용자 기록 생성/수정/삭제/강제 이전0이다.
+- 실제 운영 기존 계정의 새 Web **영어 UI12 / 인증 GET200·active12 / nextCursor null / 캐시 ID·revision12 정합 / 같은 owner / 필터 빈값 / 날짜10/27~31 / pending0·conflict0 / tombstone0** PASS. 실제 token/UUID/본문은 브라우저 밖으로 반출하지 않았다. core Auth/client/controller/공유 sync source는0eaca55와 동일하며 Web 전용 observer와 선택 버튼만 연결했다. 한국어/일본어 CTA는 새 브라우저 검사로 확인했고 기존 로그인/언어 수용을 재사용했다.
+- 새 receiver GET enabled=true·noindex, 실제 bundle hash 일치, app/callback200/noindex/no-store·비인증 records API401, robots/sitemap 불변 PASS. 이전 SEO761a353의 Journaling App HTML/메타데이터·canonical/hreflang·24 URL 및 GPTBot 정책을 보존했다. 미색인17개 상세 분류와 새 영어 콘텐츠 Google 색인 미확인은 이전 조사 그대로 유지한다.
+
+### 게시 장애 해결·복구·Git
+
+초기 Pages 게시3회는 계정 Analytics Engine 쓰기 초기화 오류로 실패했으며 당시 정상761a353/Web0eaca55를 유지했다. 무료 SQL 활성화/빈 dataset 생성 후에도 Pages 쓰기 gate가 남았다. 동일 개인 계정에서 **공개 경로·데이터 쓰기 없는 404 임시 Worker**로 동일 binding을 초기화한 뒤, 같은 검증된 소스로 새 Pages 배포가 성공했다(5dc86536). 임시 Worker `noveraflow-conversion-init-20261031`는 finally 삭제200 및 후속 GET404로 제거 확인했다. 새 유료 서비스/Worker 상시 운영/결제 변경0이다.
+
+새 읽기 토큰 생성은 자동 검토가 명시적 승인 없는 자격 증명 변경으로 거부하여 수행하지 않았다. **기존 개인 세션 SQL200**으로 해결했다. 실제 records GET은 초기 미검사 스크립트 거부 후 전체 내용을 검사하고 SHA256 **86fe1839b9556c6f8faf197e79a3269f52c48897ac7361ae2c07ff91d92bc2d3**로 고정해 허용된 읽기만 실행했다. 남은 자격 증명 승인 차단은 없다.
+
+정상본 backup **D:/Development/Personal/noveraflow/phase2-evidence-20261031/site-9b79c63-before-conversions.tar**, **65,413,120bytes / SHA256 76a4265b621283c72027c86531efbf497b3435de9b860eed1c8f670a40c617b4**. 당시 main9b79c63은 실제 운영761a353과 문서만 달랐으며 Web0eaca55를 포함한다. 복구는 정상 **Pages4dce72da-074f-40d8-aab2-aa37debf69be**(761a353/Web0eaca55)로 rollback하거나, **4a77364 → cd99435 순서로 코드 revert 후 일반 main push**한다. 수집기 index만 되돌리면 직전 정상5dc86536도 복구점이다. 운영 DB/기록 복원·force/reset을 하지 않는다. 이번 기록 회귀/rollback 필요0이다.
+
+증거는 기존 phase2-evidence-20261031의 conversions-predeploy.json, conversions-live.json, conversions-index-live.json, conversions-production-sql.json, conversions-index-production-sql.json, conversions-production-record-list.json, conversions-production-records-api.json이다. 실제 고객 본문/UUID/token/cookie를 기록하지 않았다. 개인 moolsoft-stack 소유권/remote/SSH 및 작성자·committer를 확인했고 회사 adcomlab 혼용0. 관련 App feature/Site main/기존 Docs 브랜치만 push한다. 후속 Site MD는 **[CF-Pages-Skip]**으로 중복 배포하지 않는다.
+
+남은 성장 과제는 실제 동의 표본 축적, 국가/유입 unknown 및 표본 coverage 관리, 계정 최초·고유 사용자/신규 가입/재방문 지표, 새 영어 문구 색인 반영이다. 모바일 과거 로컬 기록 전체 대조는 별도 이전 과제다. 이것들을 운영 전환 이벤트 미구현과 혼동하지 않는다.
+
+
 <a id="phase2-minimal-conversion-seo-20261031"></a>
 ## 2026-10-31 최소 전환 계측 준비·영어 SEO 수정 — 수집 활성화 대기
 

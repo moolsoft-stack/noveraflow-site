@@ -7,6 +7,13 @@ brand/marketing direction for the public site.
 
 # Brand And Marketing
 
+## 2026-10-31 최소 전환 계측 운영 보완 완료
+
+최신 운영은 Site **4a77364** / Pages **c8144034-80f7-4c5d-8502-70564558789f**, Web **83b4061**이다. 기존 개인 Cloudflare 무료 집계에 Android/iOS CTA·Web 시작·서버 확인 후 페이지별 첫 신규 기록 관측을 연결하고 실제 test 수신·SQL 저장을 확인했다. 3언어 선택 동의 전에는 off이며 방문자 식별자/추적 저장·기록 내용/제목/email/UUID/인증정보 전송0이다. 최초 기록은 계정 생애 최초/고유 사용자가 아니며10/30/100명은 미측정이다.
+
+합성 시험은 traffic=test로 실제 지표에서 제외하고, 표본 가중치·동의 coverage·국가/유입 unknown을 함께 보고한다. 미국 Google11노출/0클릭·미국 직접46visits(사람 수 아님) 기준선과 기존 Journaling App SEO를 유지하며 새 문구 색인/성장 효과를 주장하지 않는다. [계측 정의·실제 검증·개인정보·SQL·배포/복구](04-seo-direction.md#phase2-conversion-live-20261031)가 최신 단일 근거다. 아래 운영 미수집/저장 경로 선택 대기는 보완 전 이력이다.
+
+
 ## 2026-10-31 최소 SEO 배포·전환 계측 활성화 대기
 
 영어 홈의 구조화 데이터 설명을 현재 free journaling app 소개와 맞추는 최소 수정만 Site **761a353** / Pages **4dce72da-074f-40d8-aab2-aa37debf69be**에 배포했다. 보이는 제목/소개·무료 기능·CTA 목적지와 다른 언어는 유지했다. Google 미국 노출11/클릭0·CF 미국 직접 visits46(고유 사용자 아님) 기준선 및 미확보 검색량/잠정 키워드3개를 유지한다. 새 schema Google 색인·순위/유입 상승은 미확인이다.
