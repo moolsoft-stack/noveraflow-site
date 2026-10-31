@@ -1,5 +1,9 @@
 # Handover Status
 
+## 2026-10-31 — Phase2 영어 사이트·언어 경로 운영 배포 완료
+
+Site53c5501 / web0eaca55 / Pages7e9b009d. 공개 HTTP·3언어 PC/모바일 홈→로그인·callback 언어 유지 PASS. 실제 계정/기록 쓰기는 미실행이다. [상세 실행·복구·한계](04-seo-direction.md#phase2-english-release-20261031)를 따른다. 기존 날짜의 배포 기록은 이력으로 보존한다.
+
 ## 2026-10-20 — 문의 Production 배포 완료 / 공개 폼 접수 PASS
 
 Gmail 직접 SMTP 테스트 접수·실제 수신은 사용자 확인 완료다. 인증을 재발급/재입력/재발송하지 않는다.
@@ -1192,7 +1196,7 @@ Recovery may return Pages to previous7192bd14/sourcefb23e35 or tested OFF snapsh
 <a id="phase2-english-release-20261031"></a>
 ## 2026-10-31 Phase 2 첫 영어 공개 사이트·웹 언어 경로 개선
 
-현재 상태: **로컬 구현·검증 / 운영 배포 결과는 아래 후속 기록으로 갱신**.
+현재 상태: **운영 배포·공개 검증 PASS / 실제 계정 인증·쓰기 동기화는 NOT_RUN**.
 
 - 기존 글로벌 성장 로드맵 Phase2·SEO25절의 시장/경쟁 조사를 재사용했다. 핵심 Journaling App, 보조 Free Journaling App / Self Reflection App은 초기 실행 가설이다. 미국 월 검색량·KD·수요 규모는 여전히 미확보다. 검색량 확보를 배포 선행 조건으로 삼지 않는다.
 - 영어 title은 Journaling App for Everyday Reflection | NoveraFlow, H1은 A journaling app. Room to reflect.다. 일기·생각 정리·자기 성찰, 무료 기본 기록, 모바일 로컬 ZIP과 웹의 무료 텍스트/기본 동기화 범위를 구분했다. 기존 Android/iOS 링크와 디자인·모션을 유지한다. 신규 유료 분석·SDK·이벤트는 추가하지 않고 기존 Cloudflare Web Analytics를 재사용한다. 실제 CTA 클릭→가입/설치/첫 기록 연결 계측은 여전히 미구현이다.
@@ -1205,3 +1209,13 @@ Recovery may return Pages to previous7192bd14/sourcefb23e35 or tested OFF snapsh
 - 운영 절차: 기존 개인 Cloudflare83573c9038e1ef594dd009b639a6ba56/noveraflow-site의 main Git 통합만 사용한다. 배포 전 remote/source drift가 없음을 확인하고 일반 push한다. 주요 인증/기록 회귀면 중단 또는 이번 단일 site 배포 commit revert→일반 push로 d922b19 자산 전체 복구; Pages dashboard에서는 보존된 정상 fc191fb6를 선택할 수 있다. reset/force push·DB 복원·OAuth 설정 변경은 하지 않는다. 이전9b206bc5 복구 배포도 공개 marker200으로 보존 확인했다.
 - 개인 Git: SSH 실제 Hi moolsoft-stack, github-personal→github.com/git/IdentitiesOnly yes/개인 key를 확인했다. Site의 공식 GitHub API owner= moolsoft-stack/User 및 세 개인 origin을 대조했다. private app/docs는 같은 SSH로 ref 접근/ push 및 기존71.54.5의 소유권 증거를 재사용한다. 이번 Git author/committer는 moolsoft-stack <moolsoft@gmail.com>. 회사 adcomlab 자원 사용0. 기존 미커밋 작업은 별도 worktree로 보존했다.
 - 미완료: 실제 provider 로그인/가입/로그아웃 및 계정 기록/동기화 실사용, 과거 기록 미표시 W1 원인과 기존 표식 결과, 최신 공개판 모바일 기능 수용, 미국 검색량·GSC/전환/재방문 성과. 기존 NF-WEB-DESIGN-VERIFY-20261031-76f00bdb를 재시도하지 않았다.
+
+### 운영 배포·최종 검증 완료 (2026-10-31 KST)
+
+- **DEPLOY PASS / PUBLIC_VERIFY PASS / ROLLBACK NOT_REQUIRED.** 기존 main Git 통합으로 게시한 실제 site source는 **53c55014a9174528dbbad33d235d41720532b3b1**, 웹 source는 **0eaca551769cddfcfd55fe4a50ecccff926a2995**다. Cloudflare Pages Production **7e9b009d-ed62-454a-be98-f575c2c04939**, GitHub check **124399193680 / completed / success / Deployed successfully**와 운영 marker/JS SHA256 **0f88ca2828ca57a64ec9f47225de0e7a75cbe31a4234a7e66430b3471aaab690**를 대조했다. 후속 Site MD commit은 [CF-Pages-Skip]으로 중복 배포하지 않는다.
+- 운영 HTTP **24/24 문서 GET/HEAD·연결 자원47개·이전 URL8개308·없는/내부 경로12개404/noindex PASS**. canonical/hreflang·JSON-LD·Content-Language, robots/sitemap 원문 불변을 확인했다. crawler 문자열5종200은 실제 IP/WAF 통과·색인·추천의 증거로 확대하지 않는다.
+- 운영 Chrome **1440/390/320px × en/ko/ja 9조합**에서 홈→시작 CTA→해당 언어 Google/Apple 로그인 화면 PASS, header/하단 control 겹침·가로 넘침0. lang 없는 기존 callback의 영어 title/control 및 저장 언어 유지도 PASS(총10그룹), page exception0. 후보 검사도 같은10그룹 PASS. 처음 도구 대기는 생성 기본 loader와 기존 local CanvasKit 차이·callback의 코드 없는 인증 재확인 화면·Flutter aria-label과 textContent 차이로 실패했으며 기존 로더 보존/검사 조건 정정 후 최종 미해결 실패0이다. 기존 인증/기록 로직을 이 때문에 변경하지 않았다.
+- /app/, /app/?lang=en, /app/auth/callback, /app/login, /app/records 모두200 + **noindex,nofollow / no-store**. backend health200, 인증정보 없는 records API401. 실제 provider 인증/가입·기존 사용자 기록 읽기·생성/수정/삭제·쓰기 sync0이다. **로그인 후 영어 기록 화면은 합성 인증/controller로 확인했으며 실제 운영 계정 왕복 검증은 NOT_RUN**으로 남긴다. marker의 actualPostDeploymentAcceptance/actualStandaloneSignupAcceptance/actualOfflineAcceptance/actualBidirectionalAccountAcceptance도 NOT_RUN을 유지한다.
+- 정상본 d922b19의 archive와 원래 JS blob SHA256이 배포 전 정상 marker b0d27f55와 일치한다. 문제가 생기면 **git revert 53c55014a9174528dbbad33d235d41720532b3b1**을 검토해 일반 main push하거나 Pages의 정상 **fc191fb6-5a5c-425e-bb8b-683e730ec4d7**로 복구한다. 정상 archive·기존 설정 백업·이전9b206bc5 복구점은 보존했다. DB/OAuth/모바일 앱/결제 rollback은 필요하지 않다.
+- 증거 위치: **D:/Development/Personal/noveraflow/phase2-evidence-20261031/** 의 preflight.json, site-d922b19-before.tar, deployment.json, production-http.json, candidate-browser/report.json, live-browser/report.json과 공개 화면 PNG. 원문 기록/UID/token/cookie/인증 응답 본문은 저장하지 않았다. 기존 개인 Chrome/계정을 열거나 사용하지 않았고 별도 익명 프로필만 사용했다.
+- 미완료는 실제 계정 provider 로그인·가입/로그아웃·허용된 기록 실사용/동기화, W1·기존 표식 미해결, 미국 검색량/GSC 및 전환·재방문 계측과 최신 모바일 기능 수용이다. 이번 배포가 이 과제나 Phase2 전체를 완료한 것은 아니다. 새 유료 분석/SDK/스토어 변경/DB/실제 사용자 기록 조작은 없다.
