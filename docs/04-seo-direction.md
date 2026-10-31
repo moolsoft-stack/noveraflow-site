@@ -7,6 +7,47 @@ direction.
 
 # NoveraFlow SEO 방향 기준
 
+<a id="phase2-index-channels-stop-20261031"></a>
+## 2026-10-31 검색 색인·미국 유입 채널 조사 — 사용자 요청으로 오늘 작업 종료
+
+**진행 중 조사 중단 / 전체 조사 미완료.** 운영 기준 Site **9c709e1** / Web **83b4061** 유지. 중단 지시 후 추가 검색·색인 조회/요청·검증·테스트·빌드·운영 배포를 하지 않는다. 기존 정상 서비스와 이전 증적을 그대로 보존한다. 이번 진행분은 기존 개인 Search Console 조회·공개 채널 자료 열람이며 코드/DB/모바일/결제 변경·외부 가입/홍보 게시/광고0이다.
+
+### 중단 전 완료된 Search Console 확인
+
+기존 개인 Google 계정의 noveraflow.com 도메인 속성에서 아래 세 URL을 조회했다. UI 날짜/시간을 그대로 기록하며 UI 시간대는 별도 미확인이다.
+
+| URL | 조회 당시 색인 | 사용자 선언 canonical / Google 선택 | 마지막 크롤링 UI | 이번 요청 결과 |
+| --- | --- | --- | --- | --- |
+| https://noveraflow.com/ | Google 등록/색인됨 | root / 검사된 URL(동일 root) | 2026-10-30 오전2:34:28 | 갱신 요청1회, 우선순위 크롤링 대기열 추가 수락 |
+| https://noveraflow.com/philosophy | Google 등록/색인됨 | /philosophy / 검사된 URL(동일 URL) | 2026-10-19 오전1:08:08 | 갱신 요청1회, 우선순위 크롤링 대기열 추가 수락 |
+| https://noveraflow.com/faq | Google 등록/색인됨 | /faq / 검사된 URL(동일 URL) | 2026-10-20 오후4:03:15 | 갱신 요청1회, 우선순위 크롤링 대기열 추가 수락 |
+
+세 URL 모두 Googlebot 스마트폰·크롤링/색인 허용·가져오기 성공 표시였다. Google canonical 값은 UI의 '검사된 URL' 표시를 기록한 것이며 접근성 트리의 중간 null 요소를 canonical URL로 해석하지 않았다. 각 요청의 '색인 생성 요청됨 / URL이 우선순위 크롤링 대기열에 추가되었습니다' 확인을 읽었고 같은 URL을 다시 요청하지 않았다. **기존 URL 색인 확인과 갱신 요청 수락은 완료했지만, Site9c709e1 새 본문/제목의 재크롤링·실제 색인 반영 완료는 미확인**이다. 모든 마지막 크롤링이 개선 배포 전이다. 요청 자체가 성공·순위/유입 증가를 보장하지 않는다. [Google 재크롤링 안내](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl).
+
+기존 sitemap **https://noveraflow.com/sitemap.xml**은 제출2026-10-18 / 마지막 읽기2026-10-29 / 성공 / 발견24페이지·동영상0 / 제출된 sitemap1행이다. 이미 성공한 동일 sitemap이므로 **새 제출/재제출0**이다. 기존 미색인17 분류·미국11노출/0클릭·직접46visits(고유 사용자 아님) 기준선은 재사용하고 다시 검증하지 않았다.
+
+### 미완료 채널 조사 메모 — 추천 확정/실행 전
+
+아래는 중단 전 공개 원문에서 확인한 단서만 보존한 것이다. 공개 피드의 상대 시간은 검색 도구의 캐시를 포함하므로 실시간 활동량·미국 비중·전환 성과로 보지 않는다. 미국 월 검색량은 미확보이며 기존 잠정 키워드 Journaling App / Free Journaling App / Self Reflection App을 유지한다.
+
+- [r/Journaling](https://www.reddit.com/r/Journaling/)은 종이 기록 중심으로 앱·AI 및 앱 홍보/시장조사를 금지한다. [r/digitaljournaling](https://www.reddit.com/r/digitaljournaling/)은 글/댓글에서 만든 앱 홍보를 금지하며 추천 질문에 답하는 형태도 예외가 아니다. [r/selfimprovement](https://www.reddit.com/r/selfimprovement/)은 제품 언급/링크·홍보를 금지한다. 관련성이 있어도 유입용 게시 후보로 취급하지 않는다.
+- [r/androidapps](https://www.reddit.com/r/androidapps/)는 개발자 홍보·테스터 모집을 금지하고 별도 [r/droidappshowcase](https://www.reddit.com/r/droidappshowcase/)로 안내한다. 후자는 공개 피드에 수시간 내 Showcase 게시가 있고 완성된 Android 제품 소개를 허용한다. 1계정 주1회, 24시간 이상 계정·합산karma2 이상·인증email, 홍보전용/교차스팸 금지, 테스터 모집은 별도 sub라는 조건을 확인했다. [공식 템플릿](https://www.reddit.com/r/droidappshowcase/wiki/suggested-post-template/)과 [허용 도메인](https://www.reddit.com/r/droidappshowcase/wiki/approved-domains/)은 가격·기능 설명과 공식 Play 링크를 요구한다. noveraflow.com은 허용 도메인으로 확인하지 않았으므로 임의 링크 승인으로 간주하지 않는다. **가벼운 첫 실행 후보를 검토 중이었으나 추천/실험 확정 전 중단**했다. 계정 자격·미국 방문/설치 집계 접근은 미확인이다.
+- [r/ProductivityApps](https://www.reddit.com/r/ProductivityApps/)는 자기홍보 월1회·커뮤니티karma10, 테스터/설문 금지·vibe coded 앱 금지 조건이 있다. [r/iosapps](https://www.reddit.com/r/iosapps/)의 일반 피드 조건과 [10월 App Shelf](https://www.reddit.com/r/iosapps/comments/1wvvq6p/megathread_the_app_shelf_october_2026/)의 낮은karma/AI 앱 예외·ABC 형식·30일 제한은 별도다. 단순히 '홍보 가능'이라 결론내리지 않았으며 미래 실행 때 현행 thread/규칙·자격을 다시 확인해야 한다.
+- [Product Hunt 공식 가이드](https://www.producthunt.com/launch/how-product-hunt-works): 개인 계정으로 무료 제출 가능, 회사/브랜드 계정·유료 투표/트래픽 유도 금지. 공개 홈에 당일 제품/투표 활동이 있으나 미국 비중·유입 효과는 미확인이다. 기존 등록/출시 이력과 준비·응답 부담, 차별성 심사 비교는 미완료다. 가입/제출하지 않았다.
+- [AlternativeTo FAQ](https://alternativeto.net/faq/): 영어 앱·심사형 표준 제출, email 확인 필요. 무료 일반 대기열은 매우 길고 심사 시점을 보장하지 않는다. 유료 우선심사는 선택이며 승인 보장이 아니다. [Day One 대안 페이지](https://alternativeto.net/software/day-one/)에 일기 앱 비교/활동이 있지만 NoveraFlow의 기존 등록 유무·승인·미국 유입은 미확인이다. 무료의 낮은 비용과 늦은 실행 결과를 비교 중이었고 제출하지 않았다.
+- 무료 디렉터리 [AppDirectory 제출 안내](https://appdirectory.org/get-listed)는 무료/free-tier Web 제품·정확한 무료 범위 설명·중복 제출 금지·선별 심사를 명시한다. 최근 등록 활동·미국 수요는 미확인이다. [The Tool Directory](https://thetooldirectory.com/submit-a-tool/)는 무료 표준 심사를 안내하고 [공개 목록](https://thetooldirectory.com/tools/)에 도구가 있으나 노출·실사용 유입 효과는 미확인이다. 두 곳 모두 제출하지 않았다.
+- 앱 리뷰 [148Apps 제출 안내](https://www.148apps.com/pages/submit-app-review/)는 iOS 앱 소개·차별점·스크린샷/영상 링크를 요구하고 게재를 보장하지 않는다. 현재 홈은 모바일 게임 중심이라 일기 앱 관련성은 낮을 수 있다. 비용은 확정하지 않았다. [Zapier 일기 앱 편집 리뷰](https://zapier.com/blog/best-journaling-apps/)는 2026-09-01 기사와 유료 게재를 받지 않는 편집 원칙을 확인했지만 개발자 제출/채택 절차는 미확인이다. 연락/리뷰 요청0이다.
+
+### 다음 재개 지점·보존
+
+1. 이 절을 먼저 읽고 세 URL의 요청을 다시 제출하지 말 것. 재개 시 GSC에서 마지막 크롤링/Google canonical 및 새9c709e1 문구 반영 여부부터 확인한다. sitemap은 성공·24건이므로 오류/변경 필요가 확인되기 전 중복 제출하지 않는다.
+2. 현재 제품의 영어 공개 안내·로그인 경로 및 무료/Premium/AI/backup/platform 경계와 이전 검증을 재사용한다. 새로운 기능 없이 작은 유입을 받을 수 있는지 평가하되 모바일 전기기 왕복/고유 첫기록 사용자 확보까지 입증된 것으로 확대하지 않는다.
+3. 위 채널의 실제 활동/홍보 규칙/비용/운영 부담/관련성/실패 위험 비교를 마무리하고 **추천 최대3개·첫 후보1개·$0 수준의 작은 검증 실험**을 확정한다. 초안 검토 방향은 droidappshowcase의 1회 정직한 완성 제품 소개와 짧은 관측 기간이며 아직 실행안/추천 확정이 아니다. 직접 Play 유입과 기존 Web 동의 집계의 채널 연결/모바일 첫 기록 한계를 구분한다.
+4. 사용자 결정이 필요한 것은 기존 개인 외부 계정 사용 여부/자격, 향후 단1회 수동 게시 허용, 공개 가격·지원 범위와 응답 담당/시간 예산이다. **현재는 외부 가입·게시가 금지된 상태**이며 재개만으로 게시 권한이 생기는 것은 아니다.
+
+Site/Docs 격리 작업트리는 종료 기록 전 clean이었다. 원래 다른 worktree의 미커밋 작업/로컬 증적은 삭제·reset·stash하지 않고 보존한다. 실행 중인 이번 조사용 Node/빌드 프로세스는 없었고 공유 Chrome·운영 서비스는 종료하지 않았다. 개인 GitHub owner=moolsoft-stack/User·두 origin github-personal:moolsoft-stack·SSH Hi moolsoft-stack을 중단 전 확인했다. 종료 문서 commit의 author/committer는 moolsoft-stack <moolsoft@gmail.com>로 명시하며 회사 adcomlab 자원 혼용0. 기존 MD만 commit/push하고 Site는 **[CF-Pages-Skip]** 적용, 테스트/생성기/빌드/배포0. Admin snapshot 계약은 변경하지 않았고 roadmap.json 재생성도 사용자 종료 지시에 따라 실행하지 않는다.
+
+
 <a id="phase2-search-expansion-20261031"></a>
 ## 2026-10-31 Phase 2 미국 영어 검색 의도별 기존 공개 페이지 개선 — 운영 PASS
 
