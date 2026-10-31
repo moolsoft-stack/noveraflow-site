@@ -7,6 +7,8 @@ direction.
 
 # NoveraFlow SEO 방향 기준
 
+> 2026-10-31 최신 실행 우선순위는 [24절 미국 Journaling App 진입](#us-journaling-growth-20261031)과 [글로벌 마스터](https://github.com/moolsoft-stack/noveraflow-docs/blob/docs/global-growth-20261031/MASTER_ROADMAP.md#global-growth-20261031)다. 21절은 로컬 구현 기록,22절은 당시 Production 적용 기록이며 서로 다른 날짜/범위로 보존한다. 아래 과거의 ‘미배포’ 문장을 현재 전체 사이트 상태로 재사용하지 않는다.
+
 > 2026-10-18 Phase 1 로컬 구현: [21절](#21-2026-10-18-phase-1-로컬-구현)이 이번 변경의 기능 판정·구현·검증 기준이다.
 > 10~20절은 구현 전 조사 기록으로 보존한다. Production에는 아직 적용하지 않았다.
 
@@ -1480,3 +1482,68 @@ AI 대화, 클라우드 자동 백업, 연간 AI 요약은 구현·권한 코드
 표본과 검색어가 확인된 뒤 현지화 실험에서 한 번에 한 요소만 시험한다. 이번 작업에서
 Google Play Console 수정·게시, Android 빌드·출시, 사이트 Production 배포는 수행하지
 않았다.
+
+<a id="us-journaling-growth-20261031"></a>
+## 24. 2026-10-31 US Journaling App
+
+### 24.1 역할·상태·자료 구분
+
+이번은 기존 브랜드/SEO 문서 재사용과 미국 진입 실행안 정리다. **마케팅/측정/Store/robots/HTML 구현·게시0**이다. 사업 방향과 Phase0~7·사용자100명/예산·결정은 [MASTER_ROADMAP](https://github.com/moolsoft-stack/noveraflow-docs/blob/docs/global-growth-20261031/MASTER_ROADMAP.md#global-growth-20261031), 플랫폼 실제 지원은 [현재 기능표](https://github.com/moolsoft-stack/noveraflow-docs/blob/docs/global-growth-20261031/NOVERAFLOW_CURRENT_STATUS.md#platform-capabilities-20261031), 톤은 [브랜드/마케팅](02-brand-and-marketing.md), 운영 적용/복구는 기존 웹 계획71.54.5와21~22절이 소유한다. 같은 전략/기능표를 새 문서로 복제하지 않는다.
+
+**확정:** 첫 시장 미국/영어권, 첫 범주 Journaling App, 기존 ko/en/ja 유지, 실제 기능만 소개, 유료 광고는 초기 필수 아님. **가설:** 이 검색 의도가 NoveraFlow의 짧은 기록·자기 성찰 가치와 맞을 수 있음. **미확보:** 실제 US 검색량·유기적 SEO 경쟁 강도·검색 순위·US 유입/가입·첫 기록·retention·유료 전환 값. 이번 웹 문서 조회는 공식 정책 확인이며 제품 수요를 검증한 실험이 아니다.
+
+### 24.2 키워드별 가설과 조사 준비
+
+| 키워드 | 검토 검색 의도 | 주장/기능 경계 | 이번 검색량 / 경쟁 |
+| --- | --- | --- | --- |
+| Journaling App | 일상 기록 서비스를 찾는 범주 진입 | 우선 진입점. 실제 사용 가능한 플랫폼/버전·기록 기능으로 안내 | **미측정 / 미측정** |
+| Free Journaling App | 무료로 시작할 기록 공간 | 기존 무료 범위/조건만 설명. Premium/AI 제한이나 웹 미지원 기능을 숨기지 않음 | **미측정 / 미측정** |
+| AI Journal | 기록 기반 AI 도움 | 지원 버전의 다른 시선·주간/월간 등 확인된 경로만. 연간/웹 AI는 제공 중으로 표현하지 않음 | **미측정 / 미측정** |
+| AI Diary | 일기와 AI 피드백 | 사용자가 요청하는 기존 기능·조건을 명시. 분석 정확성/치료 효과 보장 금지 | **미측정 / 미측정** |
+| Self Reflection App | 생각 정리·자기 성찰 | 조용한 기록 경험을 설명. 새로운 코칭/진단 기능이 있는 것으로 만들지 않음 | **미측정 / 미측정** |
+| Mood Tracker | 감정 기록/돌아보기 | 기존 감정·상징 기록과 실제 미구현 정량 차트/의학적 추적을 구분. 검색어 선정이 기능 구현 승인이 아님 | **미측정 / 미측정** |
+
+후속 조사 기록에는 **확인일·도구/원본 링크·US 지역·언어 조건·기간·검색어/주제 구분·실제 값/범위·불확실성**을 함께 둔다. Google Trends는 표본을 정규화한 상대 관심도이며 월 절대 검색량으로 환산하지 않는다[S1]. 기존 권한이 있는 Keyword Planner를 선택적으로 쓰더라도 반올림/유사어·지역/네트워크 조건을 보존하고, **광고주 경쟁 지표를 유기적 SEO 난이도로 부르지 않는다**[S2]. 계정/billing 설정이 필요한 도구는 이번에 새 계정/결제수단을 만들지 않으며 광고 집행을 자료 확보의 필수 조건으로 두지 않는다.
+
+유기적 경쟁은 이후 동일 날짜/US·영어 조건에서 검색 결과의 제품/스토어/콘텐츠 구성과 실제 지원 주장, 관측 방법을 기록해 비교한다. 조사가 없으면 높음/낮음·틈새 우위·예상100명 유입 기간을 임의 수치로 채우지 않는다. 보유 Search Console 값은 해당 사이트의 노출/클릭이지 전체 시장 수요가 아니다[S3].
+
+### 24.3 기존 영어 진입점·검색/크롤러 준비
+
+| 준비 항목 | 기존 자산/다음 작업 | 완료 판단과 제한 |
+| --- | --- | --- |
+| 공식 영어 소개 | 기존 영어 canonical `https://noveraflow.com/`와21~22절의 정적 다국어 HTML·번역/Store 자산 재사용. `?lang=en` 호환, `?lang=ko/ja` 유지 | 영어 본문·기능/플랫폼·무료 조건·CTA가 현재 기능표와 일치하는 검토안. 이번 HTML/copy 변경 없음 |
+| Google 색인/SEO | 기존 title/description·검색 가능 HTML·canonical/hreflang/sitemap·공개 링크/404를 owner 자료로 점검하는 후속 작업 | 기존 Search Console 권한에서 URL 검사/US 비브랜드 기준선을 확인. 계정/권한·색인/노출 수는 현재 미확보. 접근 가능이 색인·순위 보장은 아님[S3][S4][S5] |
+| ChatGPT 검색 | 공개 소개 페이지의 OAI-SearchBot 접근과 실제 IP/WAF 경계를 후속 확인 | OAI-SearchBot은 검색용, GPTBot은 학습용 별도 제어. ChatGPT-User는 사용자 요청 동작이며 자동 검색 crawler 허용의 대체 증거가 아님. 허용해도 노출/추천을 보장하지 않음[S6] |
+| 개인 기록 비공개 | `/app/`의 기존 noindex/no-store와 로그인·owner 검증을 유지. 본문·메모·AI 대화·callback·인증 API를 공개 콘텐츠/분석 URL에 넣지 않음 | robots.txt만으로 개인정보를 보호하지 않음. 인증/권한이 보호 경계이며 noindex는 검색 노출 제어. crawl 차단으로 noindex를 읽지 못하게 하는 영향도 변경 전에 검토[S4] |
+| 기존 crawler 설정 | d922b19의 추적 `robots.txt`는 `User-agent: * / Allow: /`와 sitemap이다.12/21~22절의 과거 관측 재사용 | GPTBot 별도 정책 선택은 사용자 미결정. robots/WAF/학습 정책은 이번 수정0. 과거 UA 문자열200은 실제 crawler IP/색인/ChatGPT 인용 증거가 아님 |
+| App Store 영어 metadata | 기존 App Store Preparation의 en-US 문구/이미지 재사용 후보. 실제 공개/심사/미업로드 build84·플랫폼 기능과 대조 | 현재 미국 Store 제공판과 문구/스크린샷·이용 조건 확인 후 별도 게시. 심사판/미구현 연간/모든 플랫폼 동일 기능을 현재 기능처럼 약속하지 않음[S7] |
+| Google Play 영어 metadata | 기존23절/앱 ASO 자료·공개 기능에 맞는 title/short/full description/스크린샷 후보 재사용 | 실제 US 제공·공개 track/기능과 대조. 기존 local draft를 이미 게시된 Store 문구로 표시하지 않음. 이번 Console 수정/제출0[S8] |
+| 실제 기능 기반 콘텐츠 | 첫 기록 시작·기존 기록 찾기·자기 성찰 사용법과 공개 지원 범위 설명. 비민감 합성 예시만 사용 | 기존 사용자 원문/계정/사진을 marketing 증거로 쓰지 않음. 미지원 웹 메모/마음결/백업을 앱과 같은 기능으로 소개하지 않음 |
+| 무료 진입·전환 | 기존 도메인/서비스/Store 링크 중 안전한 첫 기록 경로 선정, 새 PG·광고·계정 없이 시작 | signup/설치만이 아니라 첫 기록 성공과 재방문까지 확인할 계획. 실제 저장 수용이 미확인인 경로는 그 한계 해결 전 대규모 홍보하지 않음 |
+
+### 24.4 측정과 첫 실행 순서
+
+지표·분모·10/30/100 checkpoint·US/영어 cohort·중복/테스트 제외는 [마스터의 측정 계약](https://github.com/moolsoft-stack/noveraflow-docs/blob/docs/global-growth-20261031/MASTER_ROADMAP.md#growth-metrics-20261031)을 따른다. 검색 노출/클릭→방문→가입 또는 설치→첫 기록→재방문/재작성→유료 전환의 공백을 별도로 표시한다. 기존 App `first_open`/`record_created`/`history_opened` 및 Admin 집계를 먼저 대조하며, `auth_sign_in`은 emitter가 없는 계약일 뿐이다. Web signup/first-record coverage나 외부 SDK가 이미 켜졌다고 가정하지 않는다.
+
+첫 후속 실행은 **①6개 키워드 근거표/기존 영어 소개·CTA 주장 대조 → ②기존 Search Console/Store 권한과 검색 기준선 확인 → ③가장 신뢰 가능한 첫 기록 플랫폼/계측 경로 및 안전 결함 확인 → ④별도 승인된 최소 공개 변경·자발적10명 유입 관측**이다. Phase3의 P0는 어느 시점에서도 먼저 처리한다. 이번은 이 순서를 문서화했으며 위 실제 작업·사용자 기록 쓰기를 실행하지 않았다. 작은 표본에서 A/B 승자·보장 전환율·검색 성공을 선언하지 않는다.
+
+계측/유입 준비 비용은 기존 인프라·무료 자료 재사용의 **추가 현금0원 우선 가정**이다. 영어 교정·콘텐츠/문의 대응 시간, 사용량 증가의 서버/AI 변동비는 실제로 남으며 미집계다. 새 도구/외주/광고·결제수단 등록·수집 항목/retention 변경은 필요성과 예산/개인정보 검토 후 별도로 정한다. 신규 수집에 journal/감정·AI 대화 내용, raw token/callback/query, 광고 fingerprint를 추가하지 않는다.
+
+### 24.5 수익/정책 검토와 공식 출처
+
+웹 직접 결제는 마스터 Phase6의 후보 비교다. 글로벌 정기결제/지원 국가·통화·정산, 기존 계정/무료·Premium 공유 entitlement, 수수료/환전/세금, 환불·해지·지원과 서버/AI 비용을 확인해야 한다. Apple/Google의 지역·프로그램별 예외와 조건은 바뀔 수 있으므로 실제 연동 시 다시 확인한다[S9][S10]. 지금 일률적인 외부 결제 허용/금지나 수수료·법인 필요 시점을 확정하지 않는다. 기존 가격/권한/판매 설정·PG 계약·법인/채용 변경0이다.
+
+2026-10-31 공식 원문 확인. 아래는 정책/측정 방식의 근거이며 실제 NoveraFlow 검색량/성과 수치의 근거가 아니다.
+
+- [S1 Google Trends 데이터 FAQ](https://support.google.com/trends/answer/4365533?hl=en): 표본·정규화된 상대 관심도.
+- [S2 Keyword Planner의 예측/과거 지표](https://support.google.com/google-ads/answer/3022575?hl=en): 검색량 집계 조건/반올림, 광고주 경쟁의 의미, 접근의 billing 설정 조건.
+- [S3 Search Console 검색 성과 보고서](https://support.google.com/webmasters/answer/7576553?hl=en&edition=starter): query/page/country/date별 사이트 성과 집계.
+- [S4 Google 개발자 검색 가이드](https://developers.google.com/search/docs/fundamentals/get-started-developers): 검색 가능 본문/링크·인증/noindex와 robots 구분.
+- [S5 Google 다국어·다지역 사이트](https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites): 언어별 URL·hreflang/canonical.
+- [S6 OpenAI Crawlers](https://developers.openai.com/api/docs/bots): OAI-SearchBot/GPTBot의 별도 제어 및 ChatGPT-User 역할.
+- [S7 Apple Product Page](https://developer.apple.com/app-store/product-page/): 제품 페이지/현지화 자료.
+- [S8 Google Play 앱/등록정보 설정](https://support.google.com/googleplay/android-developer/answer/9859152?hl=en): 언어별 이름·소개/등록정보.
+- [S9 Apple App Review Guidelines 3.1](https://developer.apple.com/app-store/review/guidelines/#in-app-purchase): 결제/구독·지역별 조건 검토 기준.
+- [S10 Google Play Payments](https://support.google.com/googleplay/android-developer/answer/9858738?hl=en): 결제 정책 및 해당 예외/프로그램 검토 기준.
+
+이번 변경의 구현·운영/Store 배포·계측 활성화·광고0. 문서 링크/정합성만 검사하고 개인 문서 브랜치에 **[CF-Pages-Skip]** commit으로 push한다. site main/d922b19와 기존 공개 HTML·Worker·robots·sitemap·운영 사용자 데이터는 유지한다. 기능 검증/백업·복구 이력은 기존 owner 문서에서 보존한다.
