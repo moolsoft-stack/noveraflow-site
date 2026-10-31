@@ -7,6 +7,58 @@ direction.
 
 # NoveraFlow SEO 방향 기준
 
+<a id="phase2-minimal-conversion-seo-20261031"></a>
+## 2026-10-31 최소 전환 계측 준비·영어 SEO 수정 — 수집 활성화 대기
+
+### 결과와 범위
+
+기준선은 아래 기존 조사 그대로 **미국 Google 노출11/클릭0(10/1~28)**, **미국 직접 visits46(최근7일 GMT+9)**이며 후자는 고유 사용자46명이 아니다. 실제 첫 기록 사용자10/30/100은 미측정이다. 이번에는 기존20/44·운영 기록12건 대조를 반복하지 않았다. 운영 DB·사용자 기록 쓰기/실제 시험 기록 생성·삭제·모바일·결제·스토어 제출 변경0이다.
+
+영어 홈 `MobileApplication.description`이 현재 visible Journaling App 소개가 아닌 과거 AI 중심 FAQ 설명을 사용하고 있었다. 생성기의 영어 홈 한 필드만 현재 `landing.intro.copy`에 맞췄다. Site source **761a3534e89e37c3b1a9bc85155b9f1deac920a9**. 제목/description·canonical·hreflang·sitemap/robots·GPTBot 정책·CTA href·한국어/일본어 HTML·Web bundle은 그대로다. 새 schema 테스트1 PASS, en HTML은 해당 설명 외 byte동일(줄바꿈 정규화), ko/ja HTML byte동일. 키워드 추가 나열·새 URL/페이지·실제 미제공 기능 주장0이다. 공개 HTML은 직접 영어를 제공하지만 GSC 마지막 root crawl은10/30이므로 **10/31 새 문구/schema의 Google 재수집·색인 반영은 미확인**이다.
+
+### GSC 미색인17개 실제 URL 분류 (10/23 보고서)
+
+| 보고 사유 / 개수 | 실제 상세 URL | 현재 읽기 확인과 처리 |
+| --- | --- | --- |
+| redirect7 | `/contact.html`, `/terms.html`, `/account-deletion`, `/philosophy.html`, `http://noveraflow.com/`, `/faq.html`, `/account-deletion?lang=ko` | 각각1회301/308→200. 현재 의도한 최종 canonical 경로로 이동하며 lang=ko 보존. 오류/색인 필요17개로 해석하지 않음 |
+| 사용자 canonical 없는 중복4 | `https://admin.noveraflow.com/?lang=ja`, `?lang=en`, `?lang=ko`, `/admin-legacy/events` | 현재 비인증 HEAD200 모두 `X-Robots-Tag:noindex`. 관리자 검색 제외 의도, 공개 홈 canonical을 붙이거나 색인 해제하지 않음 |
+| noindex2 | `https://admin.noveraflow.com/`, `/roadmap` | 현재 HEAD200/noindex. 관리자 의도적 제외 유지 |
+| 적절한 canonical 대체2 | `https://noveraflow.com/terms?lang=en`, `/privacy?lang=en` | 현재 GET200, 각각 쿼리 없는 `/terms`, `/privacy` canonical. 의도한 영어 기본 URL 중복 통합 |
+| redirect error1 | `https://noveraflow.com/about.html` | 현재308→`/about`200,1회·루프없음. 과거 보고서의 실패 원인은 현재 재현되지 않으며 당시 edge 응답 원인까지 확정하지 못함. 재수집 후 상태 확인 필요 |
+| 404 1 | `https://noveraflow.com/cdn-cgi/l/email-protection` | 현재404. Cloudflare 예약 이메일 보호 경로이며 콘텐츠 페이지가 아님. 홈으로 soft404 이동시키거나 sitemap 추가하지 않음 |
+
+사유 분류 합계17/17이며 Google의 과거 제외 사유가 현재 상태로 즉시 갱신됐다는 뜻은 아니다. root 검색 노출과 admin URL은 별개다. 비공개 `/app/?lang=en`·callback HEAD200/noindex,nofollow/no-store를 확인했고 기존 API/기록 보호 결과는 재사용한다. 공개 sitemap24·기존 canonical/hreflang을 유지하며 색인 요청/관리자 noindex 해제0이다.
+
+### 기존 수집 경로 확인과 활성화 차단 조건
+
+- 기존 CF Web Analytics는 country/host/path/referrer 집계에는 사용하지만 **custom events 및 UTM query 수집은 지원하지 않는다**. SPA pageview나 가짜 경로로 CTA/저장을 대신하지 않는다. [공식 FAQ](https://developers.cloudflare.com/web-analytics/faq/).
+- 기존 Native 이벤트는 `first_open`/`record_created`/`auth_sign_in` 계약이 있으나 설치 식별자를 요구하고 Web 전송은 제외한다. 기존 식별자 없는 Web을 Native 설치처럼 등록하거나 고정 가짜 사용자 ID로 이벤트/사용자 수를 오염시키지 않는다.
+- 기존 Pages console 로그는 영구 저장되지 않아 전환 추이 집계 저장소로 사용하지 않는다. [Pages 로그 한계](https://developers.cloudflare.com/pages/functions/debugging-and-logging/).
+- 따라서 Android/iOS store CTA·Web 시작·Web 저장 ACK의 **운영 이벤트 수집은 아직 미구현/미활성**이다. 국가/유입 집계는 기존 CF 기준선을 유지하지만 전환별 국가/유입 연계·고유 사용자·최초 가입·D1/D7은 미측정이다. source callback 준비를 수집 완료로 표시하지 않는다.
+
+사용자의 “신규 식별자나 추적 저장이 필요하면 개인정보 및 동의 요건을 먼저 확인하고 임의 활성화하지 말라”는 조건에 따라 새 저장 경로를 선택하기 전 활성화하지 않았다. 기존 승인된 무식별 집계 경로가 있다면 그 경로를 우선 지정받는다. 대안인 기존 개인 Cloudflare 계정의 Analytics Engine은 [무료 범위/가격](https://developers.cloudflare.com/analytics/analytics-engine/pricing/) 및 [3개월 보존](https://developers.cloudflare.com/analytics/analytics-engine/limits/)을 확인했지만 **dataset/binding/API token 생성·요금제 변경·데이터 쓰기0**이다. 무료 범위를 넘는 유료 사용을 자동 허용하지 않는다.
+
+**검토 가능한 최소 payload 제안(미활성):** event enum(Android store CTA / iOS store CTA / Web start / first create ACK observed in page), UI language(en/ko/ja/unknown), country bucket(US/KR/JP/other/unknown), source bucket(direct/search_google/search_bing/chatgpt/social/internal/other/unknown). 서버 timestamp 외 고유 식별자 없음. country는 기존 edge 국가의 대리값이며 거주 확인이 아니다. full referrer/URL/query/UTM·기록 ID/본문/제목·email·계정 UUID·operation ID·인증정보·IP 원문·fingerprint를 payload/index로 쓰지 않는다. country/source 수집 방식과 누락, 공개 고지의 목적·보존·제공자·권리 및 적용 동의/GPC/DNT 처리부터 확정해야 한다. 무쿠키라는 이유만으로 동의 불필요를 단정하지 않는다. callback provider referrer를 원래 검색 획득 경로로 바꾸거나 OAuth를 넘는 추적 저장을 임의 추가하지 않는다.
+
+### Web 첫 기록 성공 판정 준비 (운영 연결0)
+
+별도 개인 App branch **feat/web-conversion-observer-20261031**, source **dc4ed015d7348d6a5d9e94217b4a0af3ca1607ed**에 Web 전용 `ObservedWebRecordsClient`와 신규 격리 검사만 보존했다. main entry/client/controller/공유 sync·모바일 파일은 수정하지 않았고 import/주입·새 웹 빌드·운영 bundle 교체0이다. 외부 전송·식별자 생성·browser storage 추가0.
+
+제안 관측은 기존 `save()`의 인증 PUT200 및 JSON 파싱 성공 **이후**, 같은 기존 auth scope이고 신규 생성 expectedRevision0/revision1·반환 document가 요청과 깊은 동등·삭제가 아닌 경우에만 내용/인자를 받지 않는 callback을 호출한다. scope는 요청 중 메모리에서만 비교하고 sink에 전달하지 않는다. `_reported`는 현재 client 인스턴스 메모리에만 있어 중복 ACK/추가 create에 페이지당1회이며 새 추적 식별자나 저장 표식이 아니다. HTTP/network/parse/timeout·mismatch·수정·삭제·계정 변경에는 집계0, 분석 scope/sink 예외는 기존 저장 응답을 바꾸지 않는다.
+
+**중요한 범위:** 이것은 “현재 페이지에서 처음 관측한 서버 확인 신규 생성”이며 **계정 생애 최초 기록/고유 첫 기록 사용자 수가 아니다**. reload/다른 기기/과거 pending ACK·삭제 이력 등은 이 메모리만으로 완전히 중복 제거할 수 없다. 10/30/100 목표를 계산하려면 기존 서버 계정 이력에 대한 별도 승인된 내부 집계 근거가 필요하며 계정 UUID를 외부 이벤트로 보내 해결하지 않는다. 아직 수집도 연결하지 않았으므로 운영 이벤트/실제 고유 사용자 모두 미측정이다.
+
+신규 격리 테스트 **6 PASS**, scoped Dart analyze clean: ACK 전0/정상 ACK후1/재수신 중복0, HTTP401/409/503·offline/parse·mismatch0, edit/delete/owner 전환0, timeout 뒤 늦은 응답0, 관측 scope 예외와 sink 예외에서 저장 결과 유지. 합성 메모리 transport만 사용했고 운영 사용자/API 쓰기0. 기존20/44 전체 반복0, 기존 인증·기록·동기화 runtime 소스 diff0 및 운영 Web marker/hash 동일을 확인한다.
+
+### 배포·백업·복구 및 남은 조건
+
+**실제 SEO 운영 배포 완료:** Site **761a3534e89e37c3b1a9bc85155b9f1deac920a9**, Pages **4dce72da-074f-40d8-aab2-aa37debf69be**, GitHub Cloudflare Pages check **124414022669/completed/success**. 영어 schema 현재 소개와 일치, en/ko/ja 홈200·언어·각3개 Web CTA 및 store href PASS, ko/ja HTML은 배포 전과 동일, robots/sitemap 원문 동일, app/callback200/noindex/no-store, 비인증 records API401 PASS. 운영 Web source **0eaca55** 및 실제 main.dart.js SHA **0f88ca2828ca57a64ec9f47225de0e7a75cbe31a4234a7e66430b3471aaab690** 불변으로 기존 인증·기록·동기화 runtime 변경0 확인. 실제 기록 쓰기·새 provider 인증 조작0, 기존 실제 UI12/API12 증거 재사용. regression/rollback 필요0. **전환 계측 운영 배포는 하지 않았으며 이번 전체 계측 목표는 미완료**다.
+
+SEO 한 필드의 기존 Git→Pages 배포만 실행하며 전환 계측 준비 코드는 운영에 포함하지 않는다. 정상 source archive **D:/Development/Personal/noveraflow/phase2-evidence-20261031/site-8cb4c05-before-measurement.tar**, **65,402,880 bytes / SHA256 b495cb6a633550ddb0c0ab45b7097761840644e4c9e89fc18b9a48b496382f9d**. 실제 운영 기준 e4cbe8d/Web0eaca55와 복구 Pages **69535c7e-6266-4dd6-b324-6cbc07a2f562**의 marker/main SHA **0f88ca2828ca57a64ec9f47225de0e7a75cbe31a4234a7e66430b3471aaab690** 일치를 배포 전 확인했다. archive는 코드 복구본이며 DB/기록 백업으로 주장하지 않는다.
+
+회귀 시 Pages 정상69535c7e로 rollback하거나 **git revert 761a3534e89e37c3b1a9bc85155b9f1deac920a9** 후 개인 main 일반 push한다. DB/사용자 기록 복원·reset/force push는 하지 않는다. 남은 조건: 저장 경로 선택과 개인정보/동의 검토·최소 CTA 수신/집계 구현·관측 hook 연결·변경 부분의 이벤트 언어/중복/ACK 및 통합 회귀·운영 수신 검증. 실제 첫 사용자 수·새 영어 색인 반영은 계속 미측정/미확인이다.
+
+
 <a id="phase2-search-measurement-20261031"></a>
 ## 2026-10-31 Phase 2 미국 검색·유입 측정 준비 — 실제 관측 기준선
 

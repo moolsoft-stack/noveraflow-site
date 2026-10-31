@@ -1,5 +1,14 @@
 # Handover Status
 
+## 2026-10-31 최소 SEO 운영 배포 PASS / 전환 계측 수집 미활성
+
+Site **761a3534e89e37c3b1a9bc85155b9f1deac920a9**, Pages **4dce72da-074f-40d8-aab2-aa37debf69be**, check124414022669 success. 영어 홈 schema 설명 한 필드를 실제 Journaling App 소개와 일치시켰다. Web **0eaca55 / main SHA0f88ca2828ca57a64ec9f47225de0e7a75cbe31a4234a7e66430b3471aaab690** 불변. 신규 SEO1검사 PASS, 운영 schema·3언어 CTA·ko/ja HTML·robots/sitemap·app/callback noindex/no-store·비인증 API401 PASS. 사용자 기록/DB·인증·sync runtime·모바일 변경0, 기존20/44 및 UI12/API12는 재사용했다.
+
+Web 전용 관측 준비 **dc4ed01**, 개인 별도 branch feat/web-conversion-observer-20261031에 source/test만 push했다. 운영 import/주입/빌드·전송·신규 ID/추적 저장0. ACK 후 신규 create만 페이지당1회 관측하는 격리6검사/analyze PASS이나 계정 생애 최초/고유 사용자 수는 미측정이다. CF custom events 부재·Native 식별 계약 때문에 신규 무식별 저장 경로 선택과 개인정보/동의 검토가 남아 있고 사용자의 임의 활성화 금지 조건을 따른다. 따라서 **전환 계측 전체 목표는 미완료**다.
+
+새 정상 backup `D:/Development/Personal/noveraflow/phase2-evidence-20261031/site-8cb4c05-before-measurement.tar`,65,402,880bytes,SHA256 **b495cb6a633550ddb0c0ab45b7097761840644e4c9e89fc18b9a48b496382f9d**. 즉시 복구는 정상 Pages **69535c7e-6266-4dd6-b324-6cbc07a2f562**(e4cbe8d/Web0eaca55) 또는 `git revert 761a353` 일반main push이며 DB 복원/force push 금지. 이번 rollback 불필요. 실제 GSC17개 URL 분류·과거 about redirect 오류의 현재 미재현·신규 색인 미확인·payload와 남은 조건은 [기존 SEO](04-seo-direction.md#phase2-minimal-conversion-seo-20261031)에 기록했다. 후속 MD push는 [CF-Pages-Skip]으로 재배포하지 않는다.
+
+
 ## 2026-10-31 Phase 2 미국 검색·유입 측정 준비 완료
 
 문서 조사 범위 완료이며 성장 목표 달성/계측 구현 완료를 뜻하지 않는다. 개인 GSC 접근 확인: index28/not-index17(10/23), 영어 root 색인됨(최종crawl10/30), sitemap24 성공(10/29); 미국10/1~28 노출11/클릭0. 기존 CF root host/US/최근7일46 visits·직접46, 대부분 Unknown UA로 사람 수 판단 불가. Web CTA lang=en 유지·스토어200, 스토어 언어 고정은 미보장. 공개24문서 canonical/hreflang/언어와 robots/sitemap 유지, OAI UA200은 실제 bot 접근/ChatGPT 색인 증거가 아니며 GPTBot 변경0이다.

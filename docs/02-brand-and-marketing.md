@@ -7,6 +7,13 @@ brand/marketing direction for the public site.
 
 # Brand And Marketing
 
+## 2026-10-31 최소 SEO 배포·전환 계측 활성화 대기
+
+영어 홈의 구조화 데이터 설명을 현재 free journaling app 소개와 맞추는 최소 수정만 Site **761a353** / Pages **4dce72da-074f-40d8-aab2-aa37debf69be**에 배포했다. 보이는 제목/소개·무료 기능·CTA 목적지와 다른 언어는 유지했다. Google 미국 노출11/클릭0·CF 미국 직접 visits46(고유 사용자 아님) 기준선 및 미확보 검색량/잠정 키워드3개를 유지한다. 새 schema Google 색인·순위/유입 상승은 미확인이다.
+
+기존 CF는 custom events를 지원하지 않고 Native 이벤트는 설치 식별자를 요구한다. 새 추적 저장의 임의 활성화를 금지한 사용자 조건에 따라 운영 전환 수집은 보류했다. Web 페이지별 첫 서버 ACK 관측 준비6검사 PASS는 계정 최초 기록/고유 사용자 지표가 아니다. 실제 첫 기록10/30/100은 미측정이다. [기존 SEO의 실제 미색인17개 분류·payload/개인정보·선택 대기·배포/복구](04-seo-direction.md#phase2-minimal-conversion-seo-20261031)를 단일 근거로 사용하며 전환 목표 완료/새 도구 도입 완료로 광고하지 않는다.
+
+
 ## 2026-10-31 미국 영어권 측정 준비
 
 기존 잠정 키워드 Journaling App / Free Journaling App / Self Reflection App와 실제 무료 기능·플랫폼 안내를 유지한다. 미국 월 검색량은 미확보다. 개인 기존 GSC의 미국 Web 검색10/1~28은 노출11·클릭0, 공개 query는 novoflow 3노출/0클릭이며 이번10/31 영어 배포 효과는 아직 판단하지 않는다. CF 공용 host/US/최근7일46 visits는 모두 직접 유입이고 실제 사람/첫 기록 수가 아니다. 실제 첫 기록10→30→100명은 미측정이다.
