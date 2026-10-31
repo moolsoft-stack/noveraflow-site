@@ -7,6 +7,7 @@ direction.
 
 # NoveraFlow SEO 방향 기준
 
+> Phase2 첫 조사·공개 영어 사이트 실측과 추천 실행안은 [25절](#phase2-keyword-evidence-20261031)이다. 24절의 초기 미조사 상태와 구분한다.
 > 2026-10-31 최신 실행 우선순위는 [24절 미국 Journaling App 진입](#us-journaling-growth-20261031)과 [글로벌 마스터](https://github.com/moolsoft-stack/noveraflow-docs/blob/docs/global-growth-20261031/MASTER_ROADMAP.md#global-growth-20261031)다. 21절은 로컬 구현 기록,22절은 당시 Production 적용 기록이며 서로 다른 날짜/범위로 보존한다. 아래 과거의 ‘미배포’ 문장을 현재 전체 사이트 상태로 재사용하지 않는다.
 
 > 2026-10-18 Phase 1 로컬 구현: [21절](#21-2026-10-18-phase-1-로컬-구현)이 이번 변경의 기능 판정·구현·검증 기준이다.
@@ -1547,3 +1548,111 @@ Google Play Console 수정·게시, Android 빌드·출시, 사이트 Production
 - [S10 Google Play Payments](https://support.google.com/googleplay/android-developer/answer/9858738?hl=en): 결제 정책 및 해당 예외/프로그램 검토 기준.
 
 이번 변경의 구현·운영/Store 배포·계측 활성화·광고0. 문서 링크/정합성만 검사하고 개인 문서 브랜치에 **[CF-Pages-Skip]** commit으로 push한다. site main/d922b19와 기존 공개 HTML·Worker·robots·sitemap·운영 사용자 데이터는 유지한다. 기능 검증/백업·복구 이력은 기존 owner 문서에서 보존한다.
+
+
+<a id="phase2-keyword-evidence-20261031"></a>
+## 25. Phase 2 첫 조사 — 미국 키워드·영어 진입 경로 (2026-10-31 KST)
+
+### 25.1 범위·판정·기존 작업 확인
+
+- 목적: 기존 자산으로 미국 영어권 첫 기록 사용자 확보에 연결할 키워드와 최소 실행안을 정한다. **추천/실행안 작성 완료, 미국 월 검색량 확정 미완료, 구현·배포 미실행**이다. 추천은 검색량 순위나 낮은 경쟁이 입증된 선택이 아니라 제품 적합성과 확인된 경쟁의 정성 판단이다.
+- 먼저 MASTER_ROADMAP / DOCUMENT_INDEX / CURRENT_STATUS와 브랜드02·SEO24절, DEV_WORKFLOW를 읽었다. 이 작업 루트와 docs/site 범위에서 적용할 AGENTS.md는 발견되지 않았다. 기존 개발·검증·백업/복구 이력을 보존한다.
+- 기존 문서 브랜치 docs/global-growth-20261031의 docs 05a4393(원문34ca776), site 9b7e479는 시작 시 원격 SHA 일치·작업 트리 clean이었다. 원격 docs main 0a418609와 site main d922b199도 별도 확인했으며 main을 합치거나 덮어쓰지 않았다.
+- 개인 GitHub /user와 docs/site 실제 owner는 moolsoft-stack(User), fetch/push remote는 git@github-personal:moolsoft-stack/noveraflow-{docs,site}.git, SSH 인사는 moolsoft-stack이다. 이번 commit author/committer는 moolsoft-stack <moolsoft@gmail.com>로 범위 지정한다. 기본 작성자 Codex/codex@local·MOOISOFT의 기존 설정/이력은 보존하며 회사 adcomlab 계정·remote·key는 사용하지 않는다.
+- 공개 자료·HTTP GET/HEAD·새 익명 en-US Chrome만 사용했다. 브라우저 비조회 요청3개를 차단했고 로그인·입력·사용자 기록 생성/수정/삭제·유료 도구 가입·광고·Store 수정·DB/결제/운영 변경은 없다. 임시 익명 profile은 종료 후 제거했으며 새 조사 파일/스크린샷/도구 설치는 만들지 않았다.
+
+### 25.2 키워드 수요 근거와 채택할 수 없는 수치
+
+**조회 방법:** 2026-10-31 KST에 여섯 키워드의 영어 공개 검색 결과와 경쟁사 공식 페이지/미국 Store를 조사했다. 검색 도구의 결과는 미국 IP·Google US 순위가 고정된 SERP가 아니므로 순위·점유율·국가별 검색량으로 사용하지 않는다. 실제 미국 사용자의 수요 크기·전환 의향을 검증한 조사도 아니다. 미국 조건이 명시된 값은 아래 공개 API의 country=us 응답뿐이며, 그 값도 집계 기간이 빠져 수치 근거로 채택하지 않았다.
+
+| 키워드 | 미국 공개 조회 근거 | cached_at 날짜(집계 기간 아님) | 수치 채택 판정 |
+| --- | --- | --- | --- |
+| journaling app | [seodata 미국 요청](https://api.seodata.dev/v1/keyword?q=journaling%20app&country=us) HTTP200 | 2026-05-20 UTC | 측정 시작/종료월 미제공 → 월 검색량 미확인 |
+| free journaling app | [seodata 미국 요청](https://api.seodata.dev/v1/keyword?q=free%20journaling%20app&country=us) HTTP200 | 2026-09-13 UTC | 동일. 무료 검색 의도가 유료 기능 무제한 수요라는 뜻 아님 |
+| AI journal | [seodata 미국 요청](https://api.seodata.dev/v1/keyword?q=AI%20journal&country=us) HTTP200 | 2026-05-18 UTC | 동일. 앱과 학술지 의도 혼재도 별도 문제 |
+| AI diary | [seodata 미국 요청](https://api.seodata.dev/v1/keyword?q=AI%20diary&country=us) HTTP200 | 2026-06-18 UTC | 동일. AI 자동 작성/대화 등 기대 범위 확인 필요 |
+| self reflection app | [seodata 미국 요청](https://api.seodata.dev/v1/keyword?q=self%20reflection%20app&country=us) HTTP200 | 2026-10-12 UTC | 동일. 긴 꼬리라는 이유만으로 저경쟁/수요량 추정 금지 |
+| mood tracker | [seodata 미국 요청](https://api.seodata.dev/v1/keyword?q=mood%20tracker&country=us) HTTP200 | 2026-05-12 UTC | 동일. 앱 외 printable/일별 chart 의도도 혼재 |
+
+[제공자 문서](https://www.seodata.dev/llms.txt)는 월 검색량/CPC/광고 경쟁·국가별 응답을 설명하고, [공개 키워드 설명](https://www.seodata.dev/keyword/journal-apps)은 Google Ads API 기반 미국 월평균이라고 주장한다. 그러나 이번6개 응답/문서에는 시작/종료월·언어·네트워크·유사어 집계 조건이 없다. cached_at은 캐시 시각이지 검색 측정 기간이 아니다. **원시 volume/CPC/competition을 확정 수치나 SEO 난이도로 표에 옮기지 않았고, 최신성·동일 기간 비교·독립 검증을 보장하지 않는다.**
+
+Google Trends는 US·영어 검색어·Web Search·2025-10-31~2026-10-30 조건으로 첫5개 비교를 시도했으나 공개 조회 HTTP429라 시계열/CSV를 얻지 못했다. 차단 우회·로그인·반복 요청을 하지 않았고 mood tracker를 포함한 후속 비교도 중단했다. [재현할 공개 explore](https://trends.google.com/trends/explore?date=2025-10-31%202026-10-30&geo=US&q=journaling%20app,free%20journaling%20app,AI%20journal,AI%20diary,self%20reflection%20app)는 조건 확인용이며 결과값 증거가 아니다. Trends는 [상대 정규화 지표](https://support.google.com/trends/answer/4365533?hl=en)이지 월 절대 검색량이 아니다.
+
+기존 Google Ads/Keyword Planner·Search Console 계정의 허용된 내보내기는 이번에 확보하지 못했다. [Google의 지표 정의](https://support.google.com/google-ads/answer/3022575?hl=en)에 따라 검색량의 기간/지역/유사어·네트워크 조건과 광고 경쟁을 구분해야 한다. MicroSaaSHQ 등 검색 결과의 월 수요·경쟁/매출 추정도 국가/기간/산출 근거가 부족해 사용하지 않았다. AI 추천 횟수/빈도·순위도 측정하지 않았다. 미확인 값은 0이나 수요 부재로 해석하지 않는다.
+
+**정량 조사 완료 기준 / 남은 항목:** 여섯 검색어 각각 원본·조회일·미국·언어·시작/종료월·검색 네트워크·산출 방식/유사어 조건·실제 값/범위가 확인된 자료를 확보하고 같은 조건끼리 비교해야 한다. 기존 권한의 무료 내보내기부터 검토하며 새 유료 도구/광고 계정/결제수단이 선행 조건은 아니다. 이번에는 이 조건을 충족하는 미국 월 검색량이 없어 정량 수요 확정은 미완료다.
+
+### 25.3 제품 적합성·경쟁 비교와 추천
+
+다음 높음/중간~높음은 공식 제품의 범위·무료 대안·의도 혼재를 보고 내린 **정성적 경쟁 부담 판단**이다. Google US 실제 순위, SEO KD, 광고 경쟁 점수나 성공 확률을 뜻하지 않는다. 정확한 경쟁 강도는 미측정이다.
+
+| 키워드 | 확인된 검색 의도/경쟁 근거 | NoveraFlow 활용·격차 | 판단 |
+| --- | --- | --- | --- |
+| journaling app | 일상 글쓰기/보관·되돌아보기. Day One·Apple Journal·Journey와 비교 콘텐츠가 있는 범주 | 기존 기본 기록·조회·감정/상징·사진/음성·지원 버전의 AI 활용 가능. 기존 웹 저장·동기화 수용은 별도 미확인 | 적합성 높음 / 경쟁 부담 높음. **핵심1개 추천** |
+| free journaling app | 무료 기본 기록·유료 제한/설치 장벽 확인. Apple Journal·Day One·Clearful의 무료 진입 제공 | 현재 기본 기록/로컬 ZIP 무료 정책 활용. 무료 AI 무제한·웹 완전 지원으로 확대 금지 | 적합성 높음 / 경쟁 부담 높음. **보조1 추천**, CTA/무료 조건 설명에 사용 |
+| self reflection app | 생각·감정을 돌아보는 목적. stoic·Reflection의 안내형 글쓰기/일상 성찰 제공 | 짧은 기록·상징과 지원 버전의 되돌아보기로 정체성 유지. 치료·코칭/진단·새 prompt library를 약속하지 않음 | 적합성 높음 / 경쟁 부담 중간~높음, 저경쟁 입증 아님. **보조2 추천** |
+| AI journal | AI 피드백 앱 외 [AI 학술지](https://aij.ijcai.org/about-the-artificial-intelligence-journal/) 의도도 혼재. Rosebud·Mindsera·Reflection의 강한 AI 제품 포지션 | 지원판의 다른 시선/요약 등 활용 가능하나 현재 웹 AI 없음, 공개판별 기능 확인 필요 | 적합성 조건부 / 경쟁 부담 높음 + 의도 혼재. 지금 핵심에서 제외, 본문 보조 설명 후보 |
+| AI diary | AI가 답하거나 대신 쓰는 일기 기대. Reflectly·Dayora 등의 서비스와 경쟁 | 기존 요청형 피드백은 가능 범위이나 자동 작성/무제한 대화/웹 AI를 기대하게 할 위험 | 적합성 조건부 / 경쟁 부담 높음. 기본 기록 경로 정합성 확보 뒤 재검토 |
+| mood tracker | 감정/활동 check-in·그래프/상관관계와 printable도 탐색. Daylio 전문 기능과 경쟁 | 기존 감정/상징은 활용하되 정량 mood chart/의료 평가를 제공 중이라고 할 수 없음 | 적합성 부분 / 경쟁 부담 높음 + 기능 기대 차이. 첫 목표에서 제외 |
+
+핵심 **journaling app**, 보조 **free journaling app / self reflection app**를 한 영어 진입 페이지에서 자연스럽게 설명한다. 같은 의도로 URL3개를 새로 만들거나 키워드 반복을 늘리지 않는다. 범주 자체는 경쟁이 높으므로 ‘짧은 일상 기록으로 시작해 다시 돌아보는 경험’이라는 구체적 사용 장면을 먼저 전달한다. 이는 **추천안**이며 검색량 기반 우선순위/시장 공백이 확정됐다는 뜻은 아니다. 정량 기준선·실제 첫 기록/재방문 결과에 따라 바꿀 수 있다.
+
+| 경쟁 앱 / 1차 출처 | 공식 페이지에서 확인한 주요 특징 | NoveraFlow에 주는 판단 |
+| --- | --- | --- |
+| [Day One](https://dayoneapp.com/) / [미국 Store](https://apps.apple.com/us/app/day-one-daily-journal-diary/id1044867788) | 무료 진입, 다양한 매체 기록, 과거 날짜 되돌아보기, 암호화/백업·내보내기 설명 | 기록·사진·privacy만으로 독점 차별화 주장 불가. 기록 찾기와 신뢰성이 기본 기대 |
+| [Apple Journal 미국 Store](https://apps.apple.com/us/app/journal/id6447391597) | 무료, 멀티미디어/제안·검색·기록 습관·Apple 생태계 연계 | iOS 무료 대안이 이미 있음. NoveraFlow의 Android 포함 기존 자산과 성찰 경험을 알리되 동기화 수용을 과장하지 않음 |
+| [Clearful](https://clearful.com/) | 무료 디지털 기록 시작, 자기 성찰/개인 성장과 글쓰기 안내 | 짧고 쉬운 시작은 경쟁사에도 있음. 독특함 대신 실제 이해·첫 기록 성공 여부를 검증 |
+| [stoic](https://www.getstoic.com/) / [Reflection](https://www.reflection.app/) | 일상 성찰·안내형 기록과 선택적 AI, 기기/웹 경로·감정/습관 관련 기능 설명 | self reflection도 빈 시장이 아님. 의료/치료 표현·추가 코칭 기능을 따라 만들 필요 없음 |
+| [Rosebud](https://www.rosebud.app/) / [Mindsera](https://mindsera.com/) | AI 질문/통찰·음성/성장 지원과 요약/패턴을 전면 소개 | AI라는 단어만으로 차별화되지 않음. 기존 선택형 기능의 실제 조건과 데이터 처리 설명이 필요 |
+| [Reflectly 미국 Store](https://apps.apple.com/us/app/reflectly-journal-ai-diary/id1241229134) / [Dayora](https://www.dayora.ai/ai-diary-app) | AI 질문/일기 반응·감정/습관; Dayora는 무료 AI와 음성 등을 홍보 | 무료 경쟁을 따라 기존 quota/가격을 바꾸지 않음. 경쟁사 주장일 뿐 기능 실사용/보안의 독립 검증은 아님 |
+| [Daylio](https://daylio.net/) | 감정/활동 선택, 통계·그래프/상관관계, 메모·사진/음성 | mood tracker의 정량 기능 기대가 큼. NoveraFlow를 동등한 통계 추적기로 홍보하지 않음 |
+
+위 경쟁사 기능은2026-10-31 공식 소개 관측이며 직접 설치/결제/보안 시험을 하지 않았다. 매출·다운로드·별점은 시장 수요나 NoveraFlow의 예상 성과로 사용하지 않는다. **차별화 가능성은 ‘한 줄부터 시작하는 조용한 기록·감정/상징·부담 없는 성찰’의 조합을 이해하기 쉽게 전달하는 가설**이다. 유일한 기능·더 안전함·더 나은 AI라고 입증한 결과가 아니다.
+
+### 25.4 현재 공개 영어 사이트 — 확인 결과와 개선안 분리
+
+검사일2026-10-31 KST. 직접 HTTP GET/HEAD와 기존 추적 소스, 새 익명 en-US Chrome을 사용했다. Search Console/실제 크롤러 로그·가입/기록 쓰기 실험은 하지 않았다.
+
+| 항목 | 실제 확인 | 문제/미확인 | 최소 개선안·완료 기준 |
+| --- | --- | --- | --- |
+| 영어 title/description | [홈](https://noveraflow.com/) HTTP200, lang=en·Content-Language=en, index/follow. title은 **NoveraFlow \| AI Diary & Mood Journal for Android and iPhone**. description은 텍스트·사진·음성 기록과 AI 피드백/주간·월간 돌아보기 소개 | title·H1에서 journaling app 범주/무료 시작이 선명하지 않음. H1은 감성적 흐름 표현 중심 | 기존 영어 원본의 범주·가치를 먼저 설명하고 title/description/OG/JSON-LD·실제 표시 정합성 확인. 같은 문구를 모든 플랫폼 기능 보장으로 확대하지 않음 |
+| 크롤링/색인 접근 | 본문·다운로드 링크가 서버 HTML에 존재. Googlebot/OAI-SearchBot 문자열 HEAD200, noindex 헤더 없음. 공개 검색 도구의 site:noveraflow.com 질의에 홈·FAQ·약관 반환 | 검색 도구 노출은 Google US 순위/전체 색인·노출수·ChatGPT 추천 빈도 증거 아님. 실제 crawler IP/WAF·Google URL 검사 미확인 | 기존 Search Console 접근으로 홈 URL/US 비브랜드 기준선·원인 확인. 실제 bot IP 접근은 별도 읽기 근거 확보, 접근 허용을 노출 보장으로 쓰지 않음 |
+| robots | [robots.txt](https://noveraflow.com/robots.txt) HTTP200, 전체 UA 허용과 sitemap 선언 | OAI 검색용 접근을 막는 robots 규칙은 관측되지 않음. GPTBot 학습 별도 선택은 미결정 | 현재 허용은 유지. 필요 시 검색/학습 정책을 구분해 사용자 결정 후 변경. 이번 robots/WAF 수정0 |
+| sitemap | [sitemap.xml](https://noveraflow.com/sitemap.xml) HTTP200, 공개24 URL, app/auth/token URL0 | 제출/실제 처리·발견 건수 미확인 | 공개 URL만 유지. 도구 권한 확보 후 제출/처리 상태 확인, 새 파일/페이지 대량 생성 불필요 |
+| canonical/hreflang | 영어 /, ko /?lang=ko, ja /?lang=ja 각각 자기 canonical·en/ko/ja/x-default 상호 연결. /?lang=en은200이며 /를 canonical로 가리킴 | 기술적 기본선 정상. 언어 쿼리라는 이유만으로 고칠 결함 아님 | 기존 URL/번역을 유지하며 다음 문구 수정에서도 동등한 언어 링크·메타 보존 |
+| Google/ChatGPT 준비 | 공개 본문/색인 허용·sitemap·기본 구조화 데이터 존재. [Google 가이드](https://developers.google.com/search/docs/fundamentals/get-started-developers)와 [OpenAI Crawlers](https://developers.openai.com/api/docs/bots)의 기본 접근 요건과 대조 | OAI-SearchBot은 검색, GPTBot은 학습, ChatGPT-User는 사용자 요청. 문자열200은 실제 crawler IP 통과나 인용 증거가 아님 | AI 전용 신규 페이지/llms 파일/추천 수치보다 현재 공개 설명·접근성을 우선. 학습 허용을 검색 노출의 필수 조건으로 삼지 않음 |
+| Store 연결 | 기존 Android package com.moolsoft.noveraflow·iOS id6792970947 링크 존재, 미국 영어 Play 페이지 HTTP200·영어 제품 설명, 미국 Apple lookup HTTP200 | 연결/소개 확인이지 설치·영어 UI·계정·저장 성공 확인 아님. Play 공개 build 번호 미확인 | 기존 두 링크 유지, 공개판·설치 조건·무료 범위 설명 대조. Store 수정은 이번 범위 밖 |
+| iOS 안내 최신성 | [Apple 미국 lookup](https://itunes.apple.com/lookup?id=6792970947&country=us)은 **1.0.81**, release2026-10-26T15:11:35Z, 무료 다운로드/USD, EN 메타 응답. 검색 도구의 [미국 Store 페이지](https://apps.apple.com/us/app/noveraflow/id6792970947)는 캐시상1.0.80 | 사이트는 여전히1.0.80(81) 심사 중·공개1.0.61 기준 안내. 현재 직접 응답과 불일치. 공개1.0.81에서 마음결/클라우드 실사용 성공은 별도 미검증 | 심사 중이라는 고정 문장을 현재 공개 근거로 갱신하고 지원판 조건을 명시하는 후속 문구 작업. 공개 version만으로 모든 Premium 검증 완료라고 쓰지 않음 |
+| 무료 시작/실제 경로 | 홈 CTA Use web은 /app/. en-US 익명 Chrome에서도 웹 title/메뉴·Google/Apple 로그인 문구가 한국어로 표시. 기존 app d756ac8은 로그인 과정에서 계정 생성 후 계정별 텍스트 기록 UI로 진입하는 소스 | 영어 방문자의 언어 단절·무료 범위/계정 필요 여부·다음 행동 설명 부족. 실제 가입/저장 수용은 실행하지 않았음 | 앱 시작을 먼저 안내하고 웹은 현재 한국어/지원 범위를 명시하는 보조 경로로 제안. 앱의 첫 기록은 설치 후 기본 기록 경로를 검증해 설명하고 불필요한 별도 가입 단계를 추가하지 않음 |
+| 기능 주장 | 기본 기록·로컬 ZIP 무료, AI/클라우드 지원판/권한·제한 안내 존재. 임상 mood 평가·연간 제공을 약속하지 않는 점은 유지 가능 | 모바일의 사진/음성/AI/백업 설명 옆 Use web이 동일 제공처럼 읽힐 위험. 웹은 텍스트 중심·메모/마음결 안내·AI/ZIP 미지원 근거. 마음결/백업 문구는 새 공개판 수용과 대조 필요 | 짧은 플랫폼별 범위 안내와 정확한 무료 조건 추가. 기본 기능을 임의 변경하거나 웹 AI/복구를 새로 약속하지 않음 |
+| 개인 기록/인증 비공개 | /app/ GET200과 /app/auth/callback·/app/login HEAD200 모두 X-Robots-Tag=noindex,nofollow·Cache-Control=no-store. sitemap 제외. 토큰 없는 기존 web-records API는401, 응답 본문/사용자 기록 미열람 | 인증 HTML200은 사용자 기록 공개가 아니라 SPA shell. noindex/robots는 접근 제어가 아님. owner 간 격리/전체 Auth·보안 감사는 미실행 | 기존 auth/owner 보호·비색인·검색/개인 공간 분리를 유지. 공개 사이트로 기록/토큰/개인 query를 내보내지 않음 |
+
+### 25.5 비용을 최소화한 첫 실행안 — 구현은 별도
+
+**추천 순서:** 검색에서 범주 이해 → 가치/실제 지원 이해 → 무료 시작 경로 → 첫 기록/재방문 집계. 이번은 아래 구현안을 문서화했을 뿐 공개 문구·설정·계측을 바꾸지 않았다.
+
+| 작업 | 최소 변경/재사용 | 선행 조건 | 완료 기준 | 비용·부담 / 미확인 |
+| --- | --- | --- | --- | --- |
+| P2-A 근거/안전 gate | 기존 Search Console·Store 자료와 기능표 대조, 첫 대상 공개판/첫 기록 경로 선정. 기존 과거 기록/동기화 P0 위험 분류 | 기존 개인 도구 권한·허용된 시험 범위. 이번 실제 기록 쓰기는 금지 | 확인된 무료 기본 경로·영어 지원·미확인 수용/계측 목록을 분리. 정량 미확보면 명시하고 작은 실험의 보류/진행 판단 | 새 현금0 우선, 운영자 검토. Search Console 권한/집계 기간·실제 쓰기 수용은 미확인 |
+| P2-B **첫 구현 묶음** | 기존 영어 홈 title/description·짧은 첫 화면 범주 설명·무료 조건/플랫폼 안내·CTA 보조 문구만 수정하는 안. 오래된 iOS 심사 안내 갱신. 기존 ko/ja·HTML 구조·Store 링크 재사용 | P2-A의 사실 근거와 아래 영어 문구/CTA 방향 사용자 결정. 실제 구현·배포는 후속 별도 작업 | HTML/표시/meta/구조화 데이터의 주장이 일치, 기존 링크/언어·개인 영역 noindex 보존. 가입/첫 기록 성공을 버튼 클릭만으로 PASS 처리하지 않음 | 새 서비스/서버/도메인/광고0, 소규모 콘텐츠·기존 사이트 검증 부담. 이번 빌드/소스 변경0 |
+| P2-C 무료 시작 이탈 완화 | 두 기존 Store 링크를 명확한 무료 시작 경로로 안내. Web은 한국어/텍스트 중심의 보조 진입으로 설명. 설치→기본 기록→다시 열기의 짧은 설명 사용 | 실제 공개판의 영어 첫 기록 경로 확인. 모든 기능/플랫폼 동일 제공 약속 금지 | 영어 방문자가 플랫폼·무료 조건·로그인 필요 여부를 이해하고 맞는 경로 선택. 실제 이탈률은 후속 관측 전 미측정 | 기존 링크·문구 우선, 새 가입 화면/결제/딥링크/웹 번역 기능 개발을 선행하지 않음 |
+| P2-D 최소 측정 | 기존 App first_open/record_created/history_opened 계약과 보유 Admin 집계, 허용된 Search Console/Store 집계를 대조. 작은 주간 수동 집계부터 | coverage·동의/보존·운영/시험 제외·중복·US 근거를 확인. auth_sign_in은 아직 emitter 없는 계약 | 노출→클릭→방문→가입/설치→첫 기록→D1/D7/새 두 번째 기록을 측정/미측정으로 구분, 분모·관측 기간 기록. 미국 적격 첫 기록10→30→100 기준 준수 | 새 SDK/유료 분석0 우선. cohort 연결/가입/Web 저장 이벤트·US 실제 인원 집계 미완료, 변경 필요 시 계약/개인정보 검토부터 |
+
+영어 문구 **검토안/미게시**:
+
+- Title: **Journaling App for Everyday Reflection | NoveraFlow**
+- 첫 화면 범주: **A journaling app for small moments and self-reflection.**
+- Description: **Start with a short daily entry. Keep everyday thoughts and feelings, then return to reflect. Basic journaling is free; features vary by platform and version.**
+- 앱 CTA 후보: **Start free on Android / Start free on iPhone**. 다운로드/설치가 먼저임을 보조 문구로 설명하고, 버튼을 실제 첫 기록 완료로 집계하지 않는다.
+- 웹 보조 CTA 후보: **Web preview — Korean interface**. 기능의 베타 상태/공개 명칭·우선순위는 사용자 결정이며 지금 버튼이나 서비스 상태를 바꾸지 않는다.
+
+**사용자 결정:** 첫 추천 키워드3개와 위 영어 표현 채택 여부, 앱 우선/웹 보조 CTA 방향·첫 대상 플랫폼/공개판, 기존 Search Console/Keyword Planner 내보내기 접근·기간, US cohort/비로그인 중복·관측 기간/최소 집계 범위, GPTBot 학습 정책. 무료/Premium 가격·권한·유료 도구/광고·PG는 이번 결정/실행 대상으로 올리지 않는다.
+
+### 25.6 완료 기록·미완료·자원/복구
+
+- 작업1: 여섯 키워드의 공개 조회·의도/제품 적합성·정성 경쟁·대표 앱 비교와1+2 추천 작성 완료. **미국 월 검색량/통제된 US SERP·KD·AI 추천 빈도·수요 크기 확정은 미완료**다. 확인 가능한 공식/원본 링크와 배제 사유를 위에 기록했다.
+- 작업2: 공개 영어 HTML·새 익명 Chrome·robots/sitemap/canonical/hreflang·Store/입구·개인/인증 비색인·비인증 API 보호 확인 완료. 실제 가입·설치/로그인·저장/재방문·기존 사용자 기록·최신 공개판 AI/백업 수용·Search Console 상태/진짜 crawler IP는 미확인이다.
+- 작업3: 최소 콘텐츠/CTA 변경·완료 기준/선행 조건·측정 공백·운영 부담을 정리했다. 구현·빌드·배포·Store 변경·새 이벤트/계정/도구/광고/DB/결제 작업0. 고정 인프라 비용·운영자 시간·실사용 증가의 AI 비용은 남으며 실제 총비용0이라고 보고하지 않는다.
+- 문서 검사: 새 로컬 링크/anchor4개·교차 docs/site 링크/anchor2개와 두 저장소 git diff --check PASS. 원시 검색량 숫자를 추천 근거에 옮기지 않았음을 확인했다. 기존 테스트의 과거 phase/고정 날짜 fixture3건 실패는 앞선 문서 기록대로 남고, 이번 코드/fixture 수정·전체 테스트 재실행은 하지 않았다.
+- 작업4: 기존 MASTER·CURRENT_STATUS·브랜드02·이 SEO25절만 갱신한다. MASTER 원문 commit 후 기존 roadmap.json 문서 snapshot만 생성기로 동기화하며 Admin runtime에는 복사하지 않는다. 새 MD/조사 artifact/앱 테스트/사이트 빌드는 만들지 않는다.
+- 복구/사용자 영향: 문서만 변경하므로 사용자 데이터/서비스 영향0. 기존 웹 계획71.54.5의 백업/복구·Production 기준은 보존하며 새 운영 release를 만들지 않는다. 문서 복구는 관련 문서 commit 검토 후 revert다. 개인 문서 branch만 push하며 site commit은 [CF-Pages-Skip]으로 main/preview 운영 배포를 제외한다. 비밀값은 기록하지 않는다.
