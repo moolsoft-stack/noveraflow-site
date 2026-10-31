@@ -1,5 +1,21 @@
 # Handover Status
 
+<a id="phase2-english-resume-completed-20261031"></a>
+## 2026-10-31 영어권 웹 개선 운영 재배포 완료 — 실제 UI12/API12 사후 확인
+
+**이번 합의 범위 완료: DEPLOY PASS / AUTHENTICATED_READ_PATH PASS / RECORD_PROTECTION PASS(연결12건) / ROLLBACK NOT_REQUIRED.** Site **e4cbe8d94ef0d0ac3ce058b157c74376582a9718**, web **0eaca551769cddfcfd55fe4a50ecccff926a2995**, Pages **69535c7e-6266-4dd6-b324-6cbc07a2f562**, GitHub Cloudflare check **124405410233 / success**. 실제 운영 release는 **web-20261031-english-entry-v2**, main SHA256 **0f88ca2828ca57a64ec9f47225de0e7a75cbe31a4234a7e66430b3471aaab690**다. 후속 Site 문서 commit은 [CF-Pages-Skip]으로 중복 배포하지 않는다. 아래 과거 모바일 대조 차단/미배포/롤백 기록은 이 재개 결정 전 이력이다.
+
+- **실제 운영 브라우저:** 기존 로그인된 Default Chrome의 별도 NoveraFlow 창에서 en/ko/ja 각각 홈의 언어별 시작 CTA→기록 메뉴를 확인했다. **각12건 / 검색어 비어 있음 / 더 보기0 / 실제 스크롤로 표시 날짜2026-10-27~31 / 서버 확인 완료 / 전송 대기0·충돌0 / 로그인 상태 유지**가 모두 PASS다. 기록 선택·본문 입력·저장·삭제·로그아웃은 조작하지 않았다. 현재 창은 영어 기록 목록으로 남겼다.
+- **인증된 운영 API:** 배포 전·후 동일 브라우저 세션을 브라우저 안에서만 사용한 **GET200 / records12·active12·삭제표식0 / nextCursor null / q 빈값·after0·includeDeleted1 / ID오름차순 / createdAt2026-10-27~31**를 직접 읽었다. 세션↔캐시 owner와 API↔캐시 ID/revision12개 일치. token/UID/본문을 브라우저 밖으로 내보내지 않았다. 예전의 SQL 기대12·로그GET200만으로 판정한 한계를 이번 직접 응답으로 보완했다.
+- **기록 보호:** 앞서 확인한 서버·IndexedDB12건 ID/revision/내용SHA 일치·삭제/누락/충돌/전송 대기0을 재사용한다. 이번 운영 READ ONLY 사후 집계도 **current12 / revision13 / 배포 전 실제 읽기 시작(2026-10-31T01:43:16Z) 이후 기록 revision 추가0**이다. 운영 사용자 기록 생성·수정·삭제·강제 이전0, 운영 DB/키/모바일 앱/결제/구독 변경0.
+- **영어 로그인·OAuth 언어:** 별도 익명 프로필에서 운영 영어 Google/Apple 로그인 버튼과 lang 없는 기존 callback의 영어 유지 PASS. 실제 기존 사용자 세션의 en/ko/ja 계정 접근·목록·인증 GET PASS. 새 provider 로그인/가입·로그아웃·운영 저장/양방향 쓰기 시험은 수행하지 않았다. provider/PKCE/callback 및 기록 client/store/sync는 d756ac8과 동일한 로직이다. 기존20/44 PASS와 빌드 결과를 재사용했고 재실행·재빌드0이다. marker의 과거 actualStandaloneSignup/Offline/Bidirectional/actualPostDeploymentAcceptance NOT_RUN 필드는 이 미실행 수용 범위를 유지하며, 이번 실제 읽기 경로 PASS는 이 절과 운영 증거로 별도 관리한다.
+- **공개 사이트/검색:** 기존 영어 홈페이지·일기/생각 정리/자기 성찰·무료/플랫폼 범위·Android/iOS/Web CTA·제목/description을 재적용했다. 실제 en/ko/ja 홈200·각 언어 CTA, canonical/hreflang 유지, robots/sitemap 원문 불변, 앱/callback/records 비색인/no-store, API health200·비인증401 PASS. 새 SDK/유료 분석/시장·경쟁 조사 없음. 키워드3개는 잠정 선정·미국 검색량 미확보 유지, Phase2 전체 성장 성과 완료를 뜻하지 않는다.
+- **백업·복구:** D:/Development/Personal/noveraflow/phase2-evidence-20261031/site-e183767-before-english-resume.tar, **64,983,040 bytes / SHA256 80aea21d5acda58a614c5f4a7cd4b7198bb447e230665d3096cc109208388579**. 배포 전 전체 정상 source e183767의 Git archive이며 사용자 기록/DB backup으로 주장하지 않는다. 기존 d922b19 archive도 보존했다. 복구점 **Pages752537f5-36b9-4e5d-91b7-892d0073013f / site80bf845 / web d756ac8 / JS b0d27f55**의 실제 marker 접근을 재확인했다. 중대한 회귀면 해당 Pages 정상본으로 즉시 복구하거나 새 site commit **e4cbe8d94ef0d0ac3ce058b157c74376582a9718**의 코드 변경만 되돌려 일반 main push한다. 후속 문서 충돌이 있으면 현재 운영 증거를 보존하고 코드만 복구한다. force/reset·DB 복원/원본 overwrite는 하지 않는다. 이번 rollback0이다.
+- **증거/도구:** 기존 phase2-evidence-20261031 아래 operational-path-before-redeploy.json, operational-path-after-redeploy.json, english-resume-preflight.json, english-resume-deployment.json, english-resume-anonymous/report.json. 실제 기록 화면 캡처나 원문/계정/token은 남기지 않고 집계만 보존했다. 도구의 로컬 경로·예약 변수·로드 완료 대기·접근성 null·다른 Chrome 창 구분/콘솔 응답 대기를 보정한 뒤 최종 미해결 검증 실패0이며, 제품이나 기록 로직을 이를 이유로 수정하지 않았다.
+- **범위 변경/남은 과제:** 최신 사용자 결정으로 **모바일 과거 로컬 기록 전체 대조는 별도 이전 과제이며 이번 영어 배포 gate가 아니다**. 모바일 원본의 전체 날짜/개수·가져오기/제외/미지원 범위는 여전히 미대조다. 실제 신규 provider 로그인·가입/로그아웃·운영 쓰기·실기기 동기화는 미실행으로 남기고 추가 쓰기 시험은 기존 승인된 비운영 계정만 사용한다. 기존11건 이후 최초 저장1건으로 현재12건 차이가 설명됨과 모바일 과거 기록의 원인을 혼동하지 않는다.
+- **개인 Git:** SSH Hi moolsoft-stack, Site 공식 owner=moolsoft-stack/User와 개인 Site/App/Docs/Admin namespace·기존 작성자를 확인했다. 이번 작성자/committer도 moolsoft-stack <moolsoft@gmail.com>, 회사 adcomlab 사용0. 기존 미커밋 변경은 격리 worktree로 보존했고 이번 배포/문서만 commit/push하여 원격 SHA를 확인한다. 앱 소스0eaca55는 기존 feature branch에 그대로 보존하며 모바일 main은 변경하지 않는다.
+
+
 ## 2026-10-31 — 기록 범위 읽기 조사: 서버·웹12건 정합, 모바일 대조 차단으로 재배포 없음
 
 최신 owner는 [SEO 읽기 조사](04-seo-direction.md#phase2-record-scope-readonly-20261031)다. 서버 current12/revision13·삭제표식0, IndexedDB owner/ID/revision/내용SHA12/12 일치·누락0, pending/conflict/blocked0·무필터 투영12·scan완료(실제 열린 화면 검색어는 미관측)를 실제 READ ONLY/원본 불변 격리 사본으로 확인했다. 이전08:04:48 KST 목록11건 이후 처음 저장1건으로 현재12건 차이가 설명된다. 이 관측을 모바일 전체 기록 완전성으로 확대하지 않는다.
