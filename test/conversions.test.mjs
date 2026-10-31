@@ -14,7 +14,7 @@ test('all four consented counters have only bounded fields; country comes from e
     assert.equal((await conversionResponse(request({...good, event, scope: event === 'record_created' ? 'first_ack_in_page' : 'click'}), env)).status, 204);
   }
   assert.equal(points.length, 4);
-  for (const p of points) { assert.equal(p.blobs[2], 'US'); assert.deepEqual(p.indexes, ['web_v1']); assert.deepEqual(p.doubles, [1]); assert.equal(p.blobs.length, 6); }
+  for (const p of points) { assert.equal(p.blobs[2], 'US'); assert.deepEqual(p.indexes, [['v1', ...p.blobs].join('|')]); assert.ok(p.indexes[0].length <= 96); assert.deepEqual(p.doubles, [1]); assert.equal(p.blobs.length, 6); }
 });
 test('rejects no consent, arbitrary/private fields, spoofed origin, oversize and unsupported enum', async () => {
   let count = 0; const env = {NF_CONVERSIONS: {writeDataPoint: () => count++}};

@@ -37,7 +37,9 @@ export async function conversionResponse(request, env) {
   const country = ['US', 'KR', 'JP'].includes(rawCountry) ? rawCountry : /^[A-Z]{2}$/.test(rawCountry || '') && rawCountry !== 'XX' ? 'other' : 'unknown';
   try {
     env.NF_CONVERSIONS.writeDataPoint({
-      indexes: ['web_v1'], // Constant schema partition, never a visitor identifier.
+      // Bounded, shared categories preserve small subgroups when WAE samples.
+      // No visitor, account, record or event identifier is generated or stored.
+      indexes: [['v1', body.event, body.language, country, body.source, body.scope, body.traffic].join('|')],
       blobs: [body.event, body.language, country, body.source, body.scope, body.traffic],
       doubles: [1],
     });
