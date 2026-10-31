@@ -93,7 +93,9 @@ export function renderPage(template, page, language, locales, {preserveLocales =
     {'@type':page.key==='about'?'AboutPage':page.key==='contact'?'ContactPage':'WebPage', '@id':url+'#page', url, name:meta.title, description:meta.description, inLanguage:language, isPartOf:{'@id':`${origin}/#website`}},
   ];
   if (page.key === 'home') graph.push({
-    '@type':'MobileApplication', '@id':`${origin}/#app`, name:'NoveraFlow', url, description:copy.messages['faq.q1.copy'],
+    '@type':'MobileApplication', '@id':`${origin}/#app`, name:'NoveraFlow', url,
+    // Match the current visible English introduction instead of the older AI-led FAQ copy.
+    description:copy.messages[language === 'en' ? 'landing.intro.copy' : 'faq.q1.copy'],
     applicationCategory:'LifestyleApplication', operatingSystem:['Android','iOS'], inLanguage:languages,
     publisher:{'@id':`${origin}/#organization`}, installUrl:stores,
     featureList:[copy.messages['features.record.copy'],copy.messages['features.feedback.copy'],copy.messages['features.backup.copy']],
