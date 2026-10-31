@@ -21,11 +21,11 @@ export const assets = {
     }
   },
 };
-export async function startPreview(port=0) {
+export async function startPreview(port=0, {webAppEnabled=false}={}) {
   const server = http.createServer(async (req,res)=>{
     try {
       const request = new Request(`http://${req.headers.host}${req.url}`,{method:req.method,headers:req.headers});
-      const response = await worker.fetch(request,{ASSETS:assets});
+      const response = await worker.fetch(request,{ASSETS:assets,WEB_APP_ENABLED:webAppEnabled ? 'true' : undefined});
       res.writeHead(response.status,Object.fromEntries(response.headers));
       res.end(Buffer.from(await response.arrayBuffer()));
     } catch (error) {

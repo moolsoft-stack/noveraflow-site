@@ -174,9 +174,7 @@ export async function verifySite() {
   requireMatch(sitemap, /https:\/\/noveraflow\.com\/terms<\/loc>/, 'sitemap must use the canonical terms URL');
   for (const html of [home, about, philosophy, faq, contact, privacyRoute, terms, accountDeletion]) {
     requireMatch(html, /<meta name="viewport" content="width=device-width, initial-scale=1" \/>/, 'every public page must retain a mobile viewport');
-    const translations = html === contact
-      ? /<script src="\/js\/i18n\.js\?v=20261020"><\/script>/
-      : /<script src="\/js\/i18n\.js\?v=20261018a"><\/script>/;
+    const translations = /<script src="\/js\/i18n\.js\?v=20261031en"><\/script>/;
     requireMatch(html, translations, 'every localized public page must load its current versioned translations');
   }
   requireMatch(styles, /@media \(max-width: 520px\)/, 'mobile styles are missing');

@@ -7,6 +7,22 @@ brand/marketing direction for the public site.
 
 # Brand And Marketing
 
+## 2026-10-31 미국·영어권 첫 사용자 확보 방향 — Confirmed
+
+Phase2 첫 조사 추천은 **journaling app(핵심), free journaling app / self reflection app(보조)**다. [SEO25절](04-seo-direction.md#phase2-keyword-evidence-20261031)에 원본 근거·미국 검색량의 기간 미확인/배제·경쟁 비교·공개 사이트 문제·영어 문구/CTA 검토안을 기록했다. 검색량/저경쟁 검증이나 사용자 채택 완료가 아니며 이 문구를 아직 공개 사이트에 게시하지 않았다. 조용한 짧은 기록·상징·성찰 경험의 조합은 차별화 **가설**이며 경쟁사에 없는 독점 기능으로 표현하지 않는다. 현재 미국 iOS 공개판1.0.81 조회와 사이트의 오래된 심사 안내, 영어 방문자의 한국어 웹 로그인 화면 단절을 우선 개선 후보로 둔다. 무료/Premium·기존 기능은 유지한다.
+
+이번 사용자 결정에 따라 **기존 제품을 활용한 실제 사용자 확보와 수요 검증**을 신규 기능 확대보다 앞에 둔다. 브랜드는 NoveraFlow이며 일상 기록·감정 이해·생각 정리·자기 성찰을 돕는 글로벌 개인 기록 서비스다. 조용한 기록/반성의 철학과 한국어·영어·일본어 지원 방향은 유지한다. 아래 기존 표현 원칙은 이 방향 안에서 계속 적용하며 의료/진단/성과 보장으로 바꾸지 않는다.
+
+- 첫 시장은 **미국 및 영어권**, 첫 검색 범주는 **Journaling App**이다. 감각적인 브랜드 표현과 함께 어떤 기록 서비스인지·지원 플랫폼·이용 조건을 분명하게 설명한다.
+- 첫 목표는 실제 첫 기록까지 완료한 사용자 **10명→30명→100명**이다. 달성/성공 예측이 아니다. 정확한 모수·기간·중복/미국 cohort·계측 공백은 [글로벌 마스터 로드맵](https://github.com/moolsoft-stack/noveraflow-docs/blob/docs/global-growth-20261031/MASTER_ROADMAP.md#growth-metrics-20261031) 한 곳에서 관리한다.
+- Free Journaling App, AI Journal, AI Diary, Self Reflection App, Mood Tracker는 **검색 의도 가설**이다. 검색량/경쟁이 검증됐다는 의미가 아니며 실제 mood chart/AI 대화/웹 백업 기능이 자동으로 있다는 뜻도 아니다. 키워드별 근거·조사는 [SEO24절](04-seo-direction.md#us-journaling-growth-20261031)이 소유한다.
+- [현재 플랫폼 기능표](https://github.com/moolsoft-stack/noveraflow-docs/blob/docs/global-growth-20261031/NOVERAFLOW_CURRENT_STATUS.md#platform-capabilities-20261031)의 소스/공개판/실사용 경계를 확인해 플랫폼별 지원 기능만 소개한다. Android/iOS 심사·로컬 후보를 모든 공개판 기능으로 홍보하지 않는다. 웹 메모·마음결은 현재 안내 화면이며, 웹 저장 실사용은 미확인이다.
+- 무료 사용자를 충분히 확보하는 방향과 기존 무료/Premium·quota 정책을 유지한다. `Free`는 지원되는 무료 범위와 조건을 함께 설명하며 AI 무제한·모든 플랫폼 기능 무료·모든 기록의 완전 복구를 약속하지 않는다. 연간 AI 요약은 실제 생성/조회 구현 근거가 없어 현재 혜택처럼 사용하지 않는다.
+- 기존 공식 영어 페이지·3언어 자산·Store 자료·도메인/인프라·지원 경로를 재사용한다. 유료 광고, 새 외부 계정/SDK/도메인/구독 도구는 초기 필수 조건이 아니다. 방문/다운로드만 늘리고 첫 기록·재방문을 확인하지 않는 캠페인을 성공으로 판정하지 않는다.
+- 1인+AI 운영을 유지한다. 웹 직접 결제는 Phase6 검토, 시장/법인/채용 확대는 Phase7의 사용자 결정이며 시점을 확정하지 않는다.
+
+이번은 **문서 방향 정비만**이다. 웹 문구/metadata·Store 등록정보를 실제 수정/게시하거나 광고·분석 수집·결제·운영 배포를 실행하지 않았다. 다음 후속 작업은 SEO24절의 키워드 근거표와 기존 영어 소개/CTA의 실제 기능 주장 대조다. 사업/개발 Phase는 위 마스터, 실제 구현/불확실성은 현재 상태, 이 문서는 공개 표현/마케팅 원칙을 소유한다. 중복 성장 전략 문서를 만들지 않는다.
+
 > Current role: active brand/marketing document for `noveraflow-site`.
 > Source philosophy: `C:\projects\projects-docs\OFFICIAL_DOCUMENT_SYSTEM.md`
 > and `C:\projects\noveraflow-app\docs\BRAND_MANIFESTO.md`.
@@ -244,3 +260,7 @@ NoveraFlow는 강한 광고 효율형 앱보다 시간이 지날수록 감성, �
 - 앱의 태도가 믿을 만하다.
 
 NoveraFlow의 마케팅은 사용자의 시간을 빼앗기 위한 경쟁보다, 사용자가 자기 흐름으로 돌아올 수 있는 조용한 입구를 만드는 일에 가깝다.
+
+## 2026-10-31 Phase2 첫 영어 웹 구현
+
+기존 미국 영어권 키워드/경쟁 조사와 브랜드 톤을 재사용했다. 일기·생각 정리·자기 성찰이라는 제품 범주를 영어 첫 화면/title/description에 명시하고 무료 기본 기록과 모바일/웹 지원 범위를 나눴다. 현재 지원하지 않는 웹 AI·사진/음성·백업/복원은 제공 기능으로 안내하지 않는다. Google/Apple 기존 로그인·최초 계정 생성 과정과 언어 전달을 웹 전용 화면에서 개선한다. 한국어·일본어와 기존 디자인을 보존하며 검색량/유입 증가는 주장하지 않는다. 실제 배포·검증·복구·남은 과제는 [SEO 실행 기록](04-seo-direction.md#phase2-english-release-20261031)이 owner다.
