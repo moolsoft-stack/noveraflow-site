@@ -22,6 +22,12 @@ function metadata(html, name, value, property = false) {
 }
 
 export function renderPage(template, page, language, locales, {preserveLocales = false} = {}) {
+  // Existing English pages share source templates with ko/ja. Keep the English
+  // search guide out of those translations, without adding duplicate URLs.
+  if (language !== 'en') {
+    template = template.replace(/<!-- english-search-guide:start -->[\s\S]*?<!-- english-search-guide:end -->/g, '');
+    if (page.key === 'faq') template = template.replace(/ id="(?:record-storage|backup-and-restore|ai-conversations|free-journaling|platforms)"/g, '');
+  }
   const copy = locales[language];
   const meta = copy.meta[page.key];
   if (!meta) throw Error(`Missing metadata: ${page.key}/${language}`);
@@ -73,7 +79,8 @@ export function renderPage(template, page, language, locales, {preserveLocales =
   html = html.replace(/<img\b[^>]*data-screen="([^"]+)"[^>]*>/g, (tag, screen) => tag.replace(/src="[^"]*"/, `src="/assets/landing/${language}-${screen}-v20261017.webp"`).replace(/alt="[^"]*"/, `alt="${escape(copy.messages[`landing.screen.${screen}`])}"`));
   html = html.replace(/alt="NoveraFlow official mark"/g, `alt="${escape({en:'NoveraFlow official mark',ko:'NoveraFlow 공식 로고',ja:'NoveraFlow公式ロゴ'}[language])}"`);
   const contactAssetVersion = page.key === 'contact' ? '20261020' : '20261018a';
-  html = html.replace(/href="css\//g, 'href="/css/').replace(/\/js\/i18n\.js\?v=[^"]+/g, '/js/i18n.js?v=20261031en').replace(/\/js\/landing\.js\?v=[^"]+/g, '/js/landing.js?v=20261018a').replace(/\/css\/styles\.css(?:\?v=[^"]*)?/g, `/css/styles.css?v=${contactAssetVersion}`).replace(/\/css\/landing\.css\?v=[^"]+/g, '/css/landing.css?v=20261018a');
+  const i18nVersion = language === 'en' && ['home', 'features', 'faq'].includes(page.key) ? '20261031search' : '20261031en';
+  html = html.replace(/href="css\//g, 'href="/css/').replace(/\/js\/i18n\.js\?v=[^"]+/g, `/js/i18n.js?v=${i18nVersion}`).replace(/\/js\/landing\.js\?v=[^"]+/g, '/js/landing.js?v=20261018a').replace(/\/css\/styles\.css(?:\?v=[^"]*)?/g, `/css/styles.css?v=${contactAssetVersion}`).replace(/\/css\/landing\.css\?v=[^"]+/g, '/css/landing.css?v=20261018a');
   for (const [name, value, property] of [
     ['description',meta.description], ['og:title',meta.ogTitle || meta.title,true], ['og:description',meta.ogDescription || meta.description,true],
     ['og:url',url,true], ['og:locale',meta.locale,true], ['twitter:card','summary_large_image'],
@@ -81,9 +88,11 @@ export function renderPage(template, page, language, locales, {preserveLocales =
     ['twitter:image',`${origin}/assets/landing/og-v20261017.png`],
     ['og:image:alt',copy.messages['common.brand.home'],true], ['twitter:image:alt',copy.messages['common.brand.home']],
   ]) html = metadata(html, name, value, property);
-  if (page.key === 'home') {
-    html = html.replace(/\s*<script defer src="\/js\/conversions\.js[^\"]*"><\/script>/g, '');
+  html = html.replace(/\s*<script defer src="\/js\/conversions\.js[^\"]*"><\/script>/g, '');
+  if (page.key === 'home' || language === 'en' && ['features', 'faq'].includes(page.key)) {
     html = html.replace('</head>', '    <script defer src="/js/conversions.js?v=20261031v1"></script>\n  </head>');
+  }
+  if (page.key === 'home') {
     html = metadata(html, 'naver-site-verification', naverSiteVerification);
   }
   html = html.replace(/\s*<meta property="og:locale:alternate"[^>]*>/g, '');
