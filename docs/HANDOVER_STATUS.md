@@ -1,5 +1,23 @@
 # Handover Status
 
+## 2026-10-31 Web83b4061 동기화 회귀 증적 보완 — 운영 유지/문서만
+
+Site **4a77364** / Web **83b4061** / Pages **c8144034-80f7-4c5d-8502-70564558789f** 유지. 기존 core sync/client/controller/persistence/Auth diff0과 ACK 이후 계측 wrapper 연결을 분석했다. 이미 통과한 배포·전체 검사를 반복하지 않고 부족한 wrapper+durable 경계3건만 격리 메모리/가짜 서버에서 검증하여 **3PASS/FAIL0**이다. 새 결함 재현0·수정안 없음·제품 코드/빌드/운영 배포/DB·사용자 기록 접근/강제 sync0.
+
+| 항목 | 결과 및 근거 |
+| --- | --- |
+| ACK 후 저장 반영 | PASS(합성): 기존 wiring1/compiled 브라우저503→ACK/pending 처리 증적 재사용 |
+| 웹·서버 revision | PASS: 기존 API/cache12 ID·revision 읽기 정합 재사용 + 추가G3의 가짜 서버/웹rev1·재개 후 보존 |
+| 대기열/네트워크 재시도 | PASS(합성): 기존 lostACK wiring1 및 추가G3 offline/재생성/ACK유실/동일 command/pending1→0 |
+| 기록 중복 방지 | PASS(합성): G3 동일 command 재시도·서버 문서1/rev1·추가 관측0 |
+| 충돌 | PASS(합성): G1 base/local/remote·서버rev2 보존, 재생성 후 conflict1 |
+| 삭제 표식 | PASS(합성): G2 삭제ACK rev2·원문/표식 유지, 목록 제외·빈 remote 후 부활0 |
+| 재접속 후 유지 | PASS(합성 객체 재개 및 기존 실제 reload 읽기): G3 문서/revision/futureField/pending, 기존 UI12/빈필터·대기/충돌0 |
+| 실제 모바일 왕복·실제 프로세스 종료/오프라인 왕복 | **미검증**: 이번 버전 실기기 증거 없음. 합성 mobile 이름을 실기기 PASS로 해석하지 않음 |
+
+상세검증 owner는 [기존 웹 동기화 계획](https://github.com/moolsoft-stack/noveraflow-docs/blob/docs/global-growth-20261031/docs/planning/NOVERAFLOW_WEB_WINDOWS_EXPANSION_PLAN.md#sync-regression-83b4061-20261031), Site 대응은 [SEO 근거](04-seo-direction.md#sync-regression-83b4061-20261031)다. 임시 ignored 드라이버의 실제 Observed client+Durable store+공유 sync 검사는 VM뿐이고 운영 HTTP/DB/실제 IndexedDB/모바일을 사용하지 않았다. 기존 초기 실패 로그와 최종 PASS 로그를 구분했다. 운영12건 보호와 백업/복구는 아래 배포 절의 기존 증거를 재사용하며 새 데이터 완전성/모바일 archive 대조로 확대하지 않는다. 개인 moolsoft-stack owner/remote/author/SSH 확인 후 관련 MD만 push, **[CF-Pages-Skip]**으로 운영배포 없음. MASTER·snapshot/모바일/결제/분석설정 변경0이다.
+
+
 ## 2026-10-31 최소 전환 계측 운영 수집·SQL 조회 PASS
 
 최종SQL200(03:02:04Z): 범주index의4종 **각1건·sample_interval1** 저장, test/en/KR/google(합성source) 확인. 실제 미국/검색 사용자로 세지 않는다. 임시 초기화 자원 부재=true. 운영수집/저장 근거는 conversions-live.json 및 conversions-index-production-sql.json이다.

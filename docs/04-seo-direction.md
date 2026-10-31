@@ -7,6 +7,26 @@ direction.
 
 # NoveraFlow SEO 방향 기준
 
+<a id="sync-regression-83b4061-20261031"></a>
+## 2026-10-31 전환 계측 배포 동기화 회귀 근거 보완 (문서만)
+
+운영 Site **4a77364** / Web **83b4061** / Pages **c8144034-80f7-4c5d-8502-70564558789f** 유지. Web0eaca55→83b4061 diff에서 기본 HTTP client/controller/인증/저장/persistence/공유 sync는 불변이고, 실제 save ACK 뒤 계측하는 하위 client만 연결됐다. 이번에는 기존 증적을 재사용하고 부족한 wrapper+durable 충돌·삭제·재접속3건만 VM 메모리/가짜 서버에서 추가하여 **3 PASS/FAIL0**이다. 제품 수정·빌드·운영 배포/기록·DB 접근/강제 동기화0이다.
+
+| 항목 | 결과 | 근거/경계 |
+| --- | --- | --- |
+| ACK 후 저장 반영 | PASS(합성) | 기존 wiring1 및 conversions-live.json의503→ACK/pending 반영. 운영 사용자 쓰기는 미검증 |
+| 웹·서버 revision | PASS(합성/기존 운영 읽기) | 기존 API/cache12 ID/revision 정합 + 추가G3의 가짜 서버/웹rev1 및 재개 후 유지 |
+| 대기열 | PASS(합성) | 기존 wiring1·추가G3 pending1→동일 command 재시도→ACK후0. 기존 운영 pending0도 재사용 |
+| 네트워크 재시도 | PASS(합성) | G3 offline→객체 재생성→ACK 유실→동일 operation 요청 재시도 |
+| 기록 중복 방지 | PASS(합성) | G3 command 동일·서버 문서1/revision1·계측1. 분석 중복 억제만으로 기록 중복 PASS를 주장하지 않음 |
+| 충돌 | PASS(합성) | G1 base/local/remote 및 server rev2 불변·재개 후 conflict 보존 |
+| 삭제 표식 | PASS(합성) | G2 tombstone/원문/rev2 유지·가시 목록 제외·빈 remote 목록 후 부활0 |
+| 재접속 유지 | PASS(합성 객체 재개/기존 실제 reload 읽기) | G3 문서/revision/pending 보존, 기존 실제 브라우저 reload 후 UI12/API12. 프로세스 재시작과 다름 |
+| 실제 모바일↔Web 왕복·프로세스 재시작 | **미검증** | 이번 릴리스 실기기 증적 없음. 이름에 mobile이 있는 가짜 Remote 검사도 실기기 검증이 아님 |
+
+상세 diff·기존 최종 PASS 로그·G1~G3 assert/명령/드라이버 hash·남은 조건은 [기존 웹 동기화 계획](https://github.com/moolsoft-stack/noveraflow-docs/blob/docs/global-growth-20261031/docs/planning/NOVERAFLOW_WEB_WINDOWS_EXPANSION_PLAN.md#sync-regression-83b4061-20261031)에 기록했다. 초기 english-tests.log의 실패를 최종 PASS처럼 인용하지 않고 최종 english-retest.log 및 이번 배포 기록을 구분했다. 기존 서버/IndexedDB12 정합·보호 증적은 재사용한 것으로 이번 운영 쓰기/실기기 시험으로 보고하지 않는다. 새 결함 재현0이므로 수정/재배포하지 않는다. 개인 owner/remote/작성자/SSH 확인·회사 자원 혼용0. 이 SEO/HANDOVER와 기존 sync 계획의 MD만 commit/push하며 Site **[CF-Pages-Skip]**을 적용한다. 기존 전환 계측·SEO·백업/복구·성장 미측정 범위는 변경하지 않는다.
+
+
 <a id="phase2-conversion-live-20261031"></a>
 ## 2026-10-31 완료 보완 — 최소 전환 계측 운영 수집·SQL 조회
 
