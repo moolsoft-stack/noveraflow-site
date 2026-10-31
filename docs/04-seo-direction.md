@@ -1582,6 +1582,26 @@ Google Trends는 US·영어 검색어·Web Search·2025-10-31~2026-10-30 조건�
 
 **정량 조사 완료 기준 / 남은 항목:** 여섯 검색어 각각 원본·조회일·미국·언어·시작/종료월·검색 네트워크·산출 방식/유사어 조건·실제 값/범위가 확인된 자료를 확보하고 같은 조건끼리 비교해야 한다. 기존 권한의 무료 내보내기부터 검토하며 새 유료 도구/광고 계정/결제수단이 선행 조건은 아니다. 이번에는 이 조건을 충족하는 미국 월 검색량이 없어 정량 수요 확정은 미완료다.
 
+<a id="phase2-demand-signal-supplement-20261031"></a>
+### 25.2.1 완료 보완 — 미국·영어 설정의 Google 실검색 기반 신호
+
+**이번 추가 조사:** 2026-10-31 KST에 Google 공개 자동완성을 비로그인 HTTP GET으로 각 검색어1회씩 조회했다. 공통 조건은 `client=firefox&hl=en&gl=us`이며6개 모두 HTTP200/JSON 응답을 받았다. 아래는 응답에서 입력어 그대로의 반복을 제외한 확장어 예시다. 원본 URL의 q만 다르고 같은 방법으로 조회했다. 새 코드/조사 파일·스크린샷·유료 계정은 만들지 않았다.
+
+| 입력 키워드 | 실제 관측한 확장어 일부 | 의도와 첫 실행 판단 | 원본 |
+| --- | --- | --- | --- |
+| journaling app | journaling app free / journaling app android | 무료·기기별 기본 기록 앱 의도가 나타남. 기존 Android/iOS 기록 기능과 맞아 핵심으로 유지 | [Google 응답](https://suggestqueries.google.com/complete/search?client=firefox&hl=en&gl=us&q=journaling%20app) |
+| free journaling app | free journaling app for iphone / free journaling apps for android | 무료 시작·기기 호환 의도. 기존 무료 기본 기록 범위를 정확히 설명할 보조 키워드로 유지 | [Google 응답](https://suggestqueries.google.com/complete/search?client=firefox&hl=en&gl=us&q=free%20journaling%20app) |
+| AI journal | ai journal app / ai journal that writes back | 앱·응답형 AI 의도도 실제 관측됨. 기존 학술지 혼재 근거만으로 앱 의도가 없다고 단정하지 않음. 현재 공개판별 AI 지원/웹 미지원 격차 때문에 첫 핵심에서는 제외 | [Google 응답](https://suggestqueries.google.com/complete/search?client=firefox&hl=en&gl=us&q=AI%20journal) |
+| AI diary | ai diary generator / ai diary that talks back | 자동 작성·대화 기대가 드러남. 기본 기록 중심 초기 약속과 맞지 않는 기대를 만들 수 있어 후순위 | [Google 응답](https://suggestqueries.google.com/complete/search?client=firefox&hl=en&gl=us&q=AI%20diary) |
+| self reflection app | self reflection app free / self reflection appraisal sample | 앱·무료 의도와 인사 평가 등 다른 의도가 혼재. 서비스 정체성에 맞는 성찰 문맥의 보조어로만 유지, 독립 페이지/저경쟁 가정 없음 | [Google 응답](https://suggestqueries.google.com/complete/search?client=firefox&hl=en&gl=us&q=self%20reflection%20app) |
+| mood tracker | mood tracker app / mood tracker printable | 앱과 인쇄물 의도가 혼재. 정량 추적 기능 기대와의 차이를 고려해 초기 핵심/보조에서 제외 | [Google 응답](https://suggestqueries.google.com/complete/search?client=firefox&hl=en&gl=us&q=mood%20tracker) |
+
+**근거와 제한:** [Google 공식 자동완성 설명](https://support.google.com/websearch/answer/7368877?hl=en)은 실제 검색·언어·위치·관심 변화와 웹의 단어 패턴 등이 예측에 반영되며 단순 인기 검색어 목록은 아니라고 설명한다. 따라서 이번 자료는 미국·영어 **요청 설정에서 관측한 실검색 기반의 방향성 신호**다. gl=us가 응답의 미국 거주자 전용 표본/실제 요청 IP 위치를 보증하지 않으며, 미국 한정 검색 발생·시장 규모를 독립 검증한 자료로 부르지 않는다. 관측 기간은2026-10-31의 단일 조회 시점이고 집계 시작/종료월은 제공되지 않는다. 응답 개수·순서·반복 횟수로 월 검색량·수요 크기·상대 인기/성장률·SEO 난이도·AI 추천 빈도를 계산하지 않는다. 같은 seed를 넣어 받은 echo를 새 수요 증거로 세지도 않았다. 이전 seodata 숫자 배제와 Trends429 제한은 그대로다.
+
+**선정 결과:** 이 방향성 신호와25.3의 기존 제품 적합성·경쟁 비교를 결합해 이번 **첫 콘텐츠 실행 권고안**은 핵심 **journaling app**, 보조 **free journaling app / self reflection app**로 정한다. 이는 실제 유입 실험에 사용할 추천 키워드 선택을 마친 것이며 미국 정량 수요/저경쟁/성과를 확정한 결과가 아니다. 사용자에게 제시할 무료·기기별 시작과 짧은 기록/성찰 문구에만 활용하고 실제 전환 결과로 재평가한다. 초기 실행안 선택을 위해 검증되지 않은 월 검색량을 필수 수치로 채우지 않는다.
+
+**보완 완료 범위:** 부족했던 검색 의도·방향성 근거를 원본/날짜/요청 국가·언어/측정 방법/한계와 함께 기록했다. 기존 영어 사이트 점검·경쟁 앱 조사·실행안·문서4개와 기존 docs0cae4a0/site04b1ab4 push 결과는 누적 완료 이력으로 유지하며 재실행하지 않았다. 앞선 보완 최종 응답의 ‘파일·Git 변경 없음’은 그 보완 턴에만 해당하며 전체 작업의 문서 반영/push가 없었다는 뜻이 아니다. 국가·기간이 완비된 미국 월 검색량 검증은 여전히 미완료다. 해당 수치까지 필수인 판단/성과 보고에는 기존 개인 계정의 허용된 원자료가 추가로 필요하다.
+
 ### 25.3 제품 적합성·경쟁 비교와 추천
 
 다음 높음/중간~높음은 공식 제품의 범위·무료 대안·의도 혼재를 보고 내린 **정성적 경쟁 부담 판단**이다. Google US 실제 순위, SEO KD, 광고 경쟁 점수나 성공 확률을 뜻하지 않는다. 정확한 경쟁 강도는 미측정이다.
