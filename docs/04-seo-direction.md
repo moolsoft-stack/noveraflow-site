@@ -7,6 +7,27 @@ direction.
 
 # NoveraFlow SEO 방향 기준
 
+<a id="first-record-admin-authenticated-20261101"></a>
+## 2026-11-01 Admin 익명 집계 접근 완료 — 저장 실측/최초 기록 구분
+
+사용자 로그인 완료 후 `16bee37`과 기존 이벤트/집계 기록을 재사용했다. 기존 개인 Admin 탭에서 cookie 세션을 그대로 사용한 **집계 GET만** 실행, 자격증명/식별자/이벤트 원문 출력0. 아래 unauthorized는 과거 상태이며 이번 **HTTP200**으로 해소됐다. CF100visits/GSC13노출·0클릭/WAE0행은 재조회하지 않았다.
+
+| 기존 보고 | 실제 반환값 | 기간·단위·한계 |
+| --- | --- | --- |
+| `/api/admin3/operations/analytics`의 `last30Days.firstRecordUsers` | **95**, status=available, unit=observed_installations | 서버 generatedAt **2026-11-01T07:57:35.813Z**. 범위 **2026-10-02T15:00Z~11-01T07:57:35.813Z**(KST10/3 00:00~11/1 16:57). 요청10/4~31과 달라 그 기간의 최초 기록 수로 채택하지 않음 |
+| 기존 `/api/admin3/operations/read-model-v2` 맞춤 기간 저장 이벤트 | **257건**, status=VERIFIED | `period=custom&from=2026-10-04&to=2026-11-01&event_type=record_created&dimension=country&limit=100`. 서버 반환 current는 **10/4 00:00Z 이상~11/1 00:00Z 미만**, 즉10/4~31 **UTC**. query timezone 표시는 Asia/Seoul이지만 실제 반환 경계를 기준으로 기록 |
+| 같은 맞춤 보고의 저장한 설치 | **95개**, unit=pseudonymous_installations | activeInstallations: 해당 기간 record_created가 관측된 설치. 생애 최초 기록/고유 사람 아님. 위 다른 기간의 firstRecordUsers95와 숫자가 같아도 같은 지표가 아님 |
+| 같은 맞춤 보고의 country=US 행 | **저장14건·설치11개** | country는 **event locale의 국가**. 실제 미국 유입/거주·영어 사용자·설치별 첫 기록11명이라는 증거가 아님 |
+| 같은 맞춤 보고의 UNKNOWN 국가 | 저장7건·설치3개 | 미분류를 미국에 배분하지 않음. 국가 행의 설치 수를 합해 사람 수를 만들지 않음 |
+
+맞춤 보고 generatedAt은 **2026-11-01T07:58:03.518Z**, `readOnly=true`, `rawPayloadReturned=false`, `existingDataMutated=false`다. coverage는 **PARTIAL**, sourceTruncated=false, collectionStartedAt=2026-08-22T11:05:07.350Z, lastObservedAt=2026-11-01T07:27:32.006Z, retentionGuarantee=`not_defined_observed_range_only`. 기존 집계의 제외/정규화가 실제 공개판 전체 coverage나 운영/내부/시험 완전 분리를 보증하지 않는다. 기존 analytics도 productionBoundary=`external_confirmation_required`다. 고유 ID·본문 없이 이미 계산된 숫자/상태/범위만 읽었다.
+
+**새로 확보한 범위와 없는 연결:** 이전의 단순 국가 표 외에 기존 맞춤 v2 보고는 **국가(locale)×기간 중 기록 저장 이벤트/설치 수**까지 실제 제공했다. 그러나 이 조회의 recordsCreated는 이벤트 건수, activeInstallations는 저장한 설치 수이고 newObservedInstallations도 설치의 최초 eligible 이벤트 기준이지 최초 record_created가 아니다. **지정28일의 설치별 최초 기록×언어(en)×실제 미국 획득×시험 제외** 교차 집계는 반환되지 않았다. 기존 firstRecordUsers는 today/7일/30일 창이므로 날짜가 다른95를28일 수치로 변환하거나 임의 asOf로 재계산하지 않았다. locale-US11을 미국 첫 사용자10명 달성으로 바꾸지 않는다.
+
+**결론/최소 조건:** 요청 기간의 전체 저장257/설치95와 locale-US14/11은 보조 지표로 기록 완료. **요청 기간 최초 기록 작성자·미국 최초 기록 작성자는 미측정, 적격 미국10명 입증 불가** 유지. 인증 연결에 필요한 추가 사용자 조치는 없다. 목표 판정을 위해서는 해당 기간·최초 저장·영어·실제 미국 유입·중복/시험 제외 근거를 함께 제공하는 **기존 익명 집계 보고/승인된 자료**가 필요하다. 그런 자료가 없으면 현재 읽기 범위에서 더 산출할 수 없으며 추가 로그인이나 반복 조회로 해결하지 않는다. 새 개인정보 조회/식별자 추출·SQL 원장 조회·측정 개발/이벤트 추가·배포는 하지 않았다.
+
+기존 SEO/HANDOVER MD2개만 개인 moolsoft-stack/github-personal에 `[CF-Pages-Skip]` commit/push·원격 SHA 확인. 회사 adcomlab·Google Play 심사/Reddit 접근0, 서버/DB/결제/앱·웹 운영 변경0.
+
 <a id="first-record-existing-aggregate-read-20261101"></a>
 ## 2026-11-01 기존 첫 기록 집계 조회 — 미국 작성자 미측정 유지
 
