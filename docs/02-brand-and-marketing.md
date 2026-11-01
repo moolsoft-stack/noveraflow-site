@@ -7,6 +7,87 @@ brand/marketing direction for the public site.
 
 # Brand And Marketing
 
+<a id="play-sixth-candidate-20261101"></a>
+## 2026-11-01 미국 Play 6번째 이미지 교체 후보1개 준비 — 미업로드
+
+**후보 제작·문구/규격 확인 완료 / Google Play 적용 없음.** 최신 Store 점검/마감 기록을 먼저 읽고 완료된 진단·SEO 조사·기능 검증을 재사용했다. 이번은6번째 이미지 후보 준비만 수행했으며 Console 로그인/업로드·게시·앱 빌드·서버/DB 변경0이다.
+
+### 원본 위치·보존과 결과물
+
+- **대응 원본:** `D:/Development/Personal/noveraflow/app/assets/IOS_K_E_J_img/e5_p_aos.png`, **1440×2880 PNG**, SHA256 `1b8b705af88488185bcb71b116a4484bcb60206d190e3284346705e3c164edb1`. 기존 미국 공개 조회의 `screenshot-06.png`(720×1440 파생본)와 제목/본문/배경/Premium 카드 내용을 시각 대조해6번째 원본으로 식별했다. 파일명 숫자5는0부터 시작하는 자산명이며 공개 순서6과 구분한다. 원본은 앱 저장소의 기존 미추적 사용자 자료로서 이번 수정/이동/커밋하지 않았다.
+- **최종 후보1개:** [06-basic-journaling-candidate-v1.png](assets/play-us-20261101/06-basic-journaling-candidate-v1.png), 절대 경로 `D:/Development/Personal/noveraflow/site-us-english/docs/assets/play-us-20261101/06-basic-journaling-candidate-v1.png`. **1440×2880,1:2,24bit RGB PNG,4,089,200 bytes**, SHA256 `1d9f4dbff51f1445f6be0a942071c228f94d2048372a49d083e53789ed772b19`.
+- **방식:** 내장 image_gen 편집1회. 원본풍 자주색 황혼 배경/크림색 카드·브랜드 분위기를 참고해 재생성했다. 도구 실제 출력887×1774를 확인한 뒤 같은1:2 비율로 고품질 보간하여 원본 규격1440×2880으로 정규화했다. 원본 픽셀을 그대로 보존한 편집/새1440 원생 렌더로 표현하지 않는다. 생성 원본 사본은 기존 로컬 증적 폴더의 `06-candidate-generated-source.png`에 보관하고 최종 후보만 Git에 포함한다.
+- **보존:** `e0_on_aos`, `e1_h_aos`, `e2_m_aos`, `e3_w_aos`, `e4_m_aos`, `e5_p_aos`, `e6_pb_aos`, `e7_d_aos`의 PNG **8개 전체 SHA256 작업 전후 일치**. 원본6번째와 다른7개 이미지 모두 유지했고 기존 공개 다운로드8개/HTML도 덮어쓰지 않았다. 다른 언어/iOS/앱 asset·화면·설정 변경0이다.
+
+### 공개 제공 근거와 문구 변경
+
+기존 [미국 공개 Store 점검과8장 증적](#play-us-listing-review-20261101), [기존 실제 기능표](https://github.com/moolsoft-stack/noveraflow-docs/blob/docs/global-growth-20261031/NOVERAFLOW_CURRENT_STATUS.md#platform-capabilities-20261031), [완료된 기능/무료 경계 대조](04-seo-direction.md#phase2-search-expansion-20261031)를 재사용했다. 공개 영문 상세의 짧은 text·symbol·편집/다시 읽기와 공개1·2·8번 화면, 기존 무료 기본 기록 근거가 일치하는 **기록 작성·사용 가능한 상징 선택·저장 기록 읽기/수정**만 채택했다. 최신 앱 설치/기능 실행 검증을 새로 했다는 뜻은 아니다.
+
+| 원본 주장 | 후보에서의 처리 / 근거 |
+| --- | --- |
+| 연간 AI review 및 한 해 성찰 제공 | 문구/영역 전체 제거. 사용자 생성/조회 경로 미구현이라는 기존 확정 근거 유지. 기능을 개발해 광고에 맞추지 않음 |
+| 자동 cloud backup을 sync처럼 설명 | cloud/backup/sync 관련 문구 전체 제거. 최신 공개판 제공 조건이 미확인인 유료 backup을 다른 표현으로 우회 홍보하지 않음 |
+| AI대화·정확한 Free/Premium quota·확장 혜택/데이터 보장 | 전부 제외. 현재 공개판 수용/판매 조건이 불명확하므로 대체 숫자·가격·무제한/보안/영구 보존 보장을 추가하지 않음 |
+| Premium 중심 화면 | **BASIC JOURNALING** 중심의 마케팅 설명 카드로 변경. 가짜 Premium/앱 UI·버튼/가상 기능을 만들지 않음. 책/잎 장식은 기능 목록이나 실제 앱 상징 catalogue를 재현한 것이 아님 |
+
+**최종 후보의 전체 문구(아래 외 기능/가격/효과 주장 없음):**
+
+```text
+BASIC JOURNALING
+Your words.
+Your own pace.
+Write a little. Return when you want.
+
+Start with a moment
+Write a short text entry.
+
+Make it yours
+Choose an available symbol.
+
+Come back to your words
+Read and edit saved entries.
+
+Basic journaling is free.
+Premium is optional.
+NoveraFlow
+```
+
+### 후보 검토·적용 전 남은 조건
+
+- [x] 최종 PNG를 직접 열어 전체 영어 문구·철자·시각 잘림 없음 확인. 연간/AI/cloud/backup/sync·quota/가격 문구가 이미지 어디에도 남지 않았음을 시각 확인. 자동 OCR/앱 기능 시험은 실행하지 않았다.
+- [x] 실제 파일 decode로1440×2880·24bit RGB PNG 확인, SHA256/용량 기록. 원본8개 SHA256 일치로 보존 확인. 후보는1개만 납품한다.
+- [x] 중앙 카드는 **홍보용 기능 설명 그래픽**이며 실제 앱 화면 캡처가 아님을 기록. 기존 입력/기록 화면을 변경한 것처럼 주장하지 않음.
+- [ ] 사용자 디자인/영어 문구 승인. 확대 보간된 글자/장식의 최종 업로드 크기 선명도와 같은8장 세트에서의 조화를 검토. 하단 장식 점의 강조/위치도 적용 순서에 맞게 최종 검토하며 앱 기능으로 해석하지 않음.
+- [ ] 향후 별도 Store 수정 허용 후 미국 영어 등록정보의6번째 슬롯만 대상으로 후보/기존 이미지 구분·지역/기기별 미리보기/이미지 요건 확인. 미확인 유료 혜택은 다시 넣지 않음. 이번 Console 접근/업로드/게시0이다.
+- [ ] 실제 적용 후 설치 전환 효과는 [기존 측정안](04-seo-direction.md#first-record-measurement-readiness-20261101)의 같은 기간 Store 방문/획득 자료로 관측. 현재 개선율/성과는 미측정이다.
+
+이번 변경은 기존 마케팅/HANDOVER MD2개와 `docs/assets/play-us-20261101/`의 최종 후보 PNG1개에 한정한다. 개인 moolsoft-stack author/committer·github-personal 원격의 기존 main 추적 경로로 `[CF-Pages-Skip]` commit/push·원격 SHA 확인한다. 앱 저장소/회사 adcomlab/운영 Pages·서버/DB에는 변경하지 않으며 원본/기존 미커밋/복구점 보존. 적용 자산을 자동 배포 경로에 연결하지 않았다.
+
+### 사용한 최종 편집 프롬프트 (내장 image_gen)
+
+```text
++Use case: text-localization / precise-object-edit.
+Asset type: ONE replacement candidate for the sixth US Google Play promotional screenshot of NoveraFlow.
+Edit target: the attached original e5_p_aos.png, 1440 x 2880 pixels. Output EXACTLY 1440 x 2880 pixels, portrait 1:2, opaque PNG. This is a project asset, not a new app feature.
+Keep the original dusk plum/burgundy landscape, subtle paper texture, warm cream typography, landscape composition, bottom NoveraFlow wordmark and eight navigation dots. Preserve the sixth highlighted dot. Keep the visual style of this screenshot family.
+Replace ALL existing Premium promotional text AND the entire fake in-app Premium panel with the following honest basic journaling marketing content. There must be NO surviving yearly review, year reflection, cloud, backup, sync, AI conversations, AI quota, numeric price or benefit claims. We only have evidence for basic text entry creation, available symbol choice, and reading/editing saved entries.
+The central cream area must be a clearly editorial marketing feature card, NOT an app screenshot or app interface: no navigation bar, back arrow, buttons, toggles, device frame, fake interface, fictitious controls or sample user data. Use three spacious typographic feature blocks with simple small decorative existing-style motifs. Keep readable, elegant spacing. It may be shorter than the original dense panel.
+ALL visible text must be exactly the following, no extra words:
+Top small label: "BASIC JOURNALING"
+Large headline on two lines: "Your words." / "Your own pace."
+Subheading: "Write a little. Return when you want."
+Central feature block 1 heading: "Start with a moment"
+Central feature block 1 text: "Write a short text entry."
+Central feature block 2 heading: "Make it yours"
+Central feature block 2 text: "Choose an available symbol."
+Central feature block 3 heading: "Come back to your words"
+Central feature block 3 text: "Read and edit saved entries."
+Below blocks: "Basic journaling is free."
+Next line: "Premium is optional."
+Bottom brand wordmark: "NoveraFlow"
+Use consistent polished English typography matching the reference and ensure text is perfectly spelled and not clipped. No added logo, badges, ratings, annual/AI/cloud/sync or performance claims. Deliver ONE candidate only.
+```
+
 <a id="play-us-listing-review-20261101"></a>
 ## 2026-11-01 미국 Google Play 설치 전환 점검 — 공개 조회·권장안만
 

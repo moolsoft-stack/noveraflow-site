@@ -1,5 +1,14 @@
 # Handover Status
 
+<a id="play-sixth-candidate-20261101"></a>
+## 2026-11-01 미국 Play 6번째 이미지 후보 제작 마감 — 미업로드
+
+**교체 후보1개 준비 완료 / 운영 적용 없음.** [마케팅 MD의 원본/최종 경로·문구·근거·검토/남은 조건·프롬프트](02-brand-and-marketing.md#play-sixth-candidate-20261101)가 상세 owner다. 원본 `app/assets/IOS_K_E_J_img/e5_p_aos.png`1440×2880을 기존 미국 공개6번째 증적과 시각 대조했다. 최종은 [06-basic-journaling-candidate-v1.png](assets/play-us-20261101/06-basic-journaling-candidate-v1.png),1440×2880/24bit RGB PNG,4,089,200bytes/SHA256 `1d9f4dbff51f1445f6be0a942071c228f94d2048372a49d083e53789ed772b19`다. 내장 image_gen의887×1774 출력을 동일 비율 보간해 규격 정규화했으며 실제 앱 화면이 아닌 홍보용 기능 카드로 구분한다.
+
+미구현 연간 리뷰·backup/sync·현재 공개판 미확인 AI대화/quota·유료 혜택 주장을 전부 제거했다. 확인된 기본 text 기록·사용 가능한 상징·저장 기록 읽기/수정과 무료 기본 기록/선택 Premium만 담았다. 전체 문구/잘림 시각 확인·최종 파일 decode 규격 확인, 원본6번째/다른7개 Android 원본의 작업 전후 SHA256 **8/8 일치**. 원본/다른 이미지·기존 공개 증적/사용자 미커밋은 수정·커밋하지 않았다.
+
+남은 조건은 사용자 디자인/문구 승인·확대 보간 선명도/하단 장식/세트 조화 검토, 별도 미국 Store 수정 허용·6번째 슬롯/미리보기 확인이다. 이번 Console 로그인/업로드/게시·앱 실행/빌드·새 기능·서버/DB/운영 배포0, 완료된 스토어 진단/SEO/기능 검증 반복0. 기존 MD2개+후보 PNG1개만 명시적 개인 moolsoft-stack author/committer·github-personal 원격으로 `[CF-Pages-Skip]` commit/push·원격 SHA 확인해 마감한다. 회사 계정/자원 혼용0·기존 운영/복구점 유지.
+
 <a id="play-us-listing-review-20261101"></a>
 ## 2026-11-01 미국 Google Play 설치 전환 점검 마감 — 권장안만
 
