@@ -34,10 +34,12 @@ FREE BASIC JOURNALING
 These basic journaling features are free and do not require a Premium subscription.
 
 OPTIONAL PREMIUM
-Premium is an optional paid subscription. You can keep using the free features above without subscribing. Before subscribing, review the Premium features, access and usage limits, price, and billing period shown on the purchase screen in your installed app.
+Premium is an optional paid subscription that increases the daily and monthly usage limits for individual-entry AI feedback. It is not required for basic journaling, local ZIP backup and restore, or access to weekly and monthly reflections. Check the purchase screen in your installed app for current limits, price, and billing terms.
 
-AI REFLECTIONS
-Individual-entry AI feedback and weekly or monthly reflections are subject to access and usage limits. An internet connection is required. Weekly and monthly reflections need enough eligible entries from the completed period. You request each reflection; it is not an automatic scheduled report. Check the app for the access available to you.
+AI REFLECTIONS ON FREE AND PREMIUM
+• Individual-entry AI feedback is available on Free within usage limits. Premium provides higher daily and monthly limits for this feedback.
+• Weekly and monthly reflections are available without Premium, subject to enough eligible entries from the completed period and applicable service and usage limits. Premium's higher individual-entry feedback limits do not extend to these reflections.
+An internet connection is required for AI features. You request each weekly or monthly reflection; it is not an automatic scheduled report.
 
 YOUR RECORDS
 Journal data is stored on your device by default. When you request an AI feature, the record content needed for that request is sent to the service. Read the privacy policy for details. AI responses do not replace medical diagnosis or professional advice.
@@ -45,7 +47,7 @@ Journal data is stored on your device by default. When you request an AI feature
 Available in English, Korean, and Japanese.
 ```
 
-문안은 1492자(줄바꿈 포함)로 기존4000자 기준 안이다. 핵심 journaling app·free 기본 기능·self-reflection이라는 기존 검색 의도와 조용한 브랜드 톤을 자연스럽게 유지했다. 키워드 반복·새 검색량/순위 주장·기능 추가는 없다.
+문안은 줄바꿈 포함4000자 기준 안이다. 핵심 journaling app·free 기본 기능·self-reflection이라는 기존 검색 의도와 조용한 브랜드 톤을 자연스럽게 유지했다. 키워드 반복·새 검색량/순위 주장·기능 추가는 없다.
 
 ### 실제 기능/무료·유료 경계의 근거
 
@@ -53,19 +55,19 @@ Available in English, Korean, and Japanese.
 | --- | --- | --- |
 | 무료 text 기록·상징·조회/수정 | 현재 공개 설명의 짧은 기록/선택 상징·편집/다시 읽기, 기존 미국1·2·8번 화면, [기존 실제 기능 대조](04-seo-direction.md#phase2-search-expansion-20261031), 공개 FAQ q8/q10의 기본 기록 안내 | available symbols로 한정, 모든 상징/해금·무제한 사용을 약속하지 않음. 새 공개판 전체 수용 시험으로 확대하지 않음 |
 | 무료 로컬 ZIP export/지원 backup restore | 같은 배포의 `faq.html` q4/q10 및 기존 모바일 기능표의 로컬 ZIP 근거. [기존 플랫폼 기능표](https://github.com/moolsoft-stack/noveraflow-docs/blob/docs/global-growth-20261031/NOVERAFLOW_CURRENT_STATUS.md#platform-capabilities-20261031) 유지 | 사용자가 파일을 보관하는 **로컬 ZIP**만 설명. 모든 파일/기기/버전 호환·자동 cloud·sync·영구 보관을 약속하지 않음 |
-| 선택 유료 Premium / 무료 기능은 구독 불필요 | 기존 무료/Premium 권한·상품/결제 근거와 공개 FAQ/후보 최종 문구. 현재 Store의 인앱 구매·무료 설치 표시만으로 유료 기능을 추정하지 않음 | **미국 현행 가격/결제 주기·구체적인 공개 Premium 혜택은 이번 미확인**. 따라서 유료 AI대화/추가 quota·cloudbackup을 제공 중이라고 열거하지 않고, 실제 설치본 구매 화면의 상품/가격/포함 항목을 확인하도록 구분. 구체적 혜택 명시가 필요한 경우 공개판/판매 근거 확보 후 별도 수정 |
-| 개별 AI 피드백·주간/월간 성찰 | 기존 공개 설명/기능표·미국4·5·8번 화면, 공개 FAQ의 충분한 완료 기간 기록/수동 요청·연결/접근·사용 제한 안내 | 확인된 종류만 **별도 조건부 AI 항목**으로 유지. 무료 포함/유료 전용·quota 숫자·항상 제공/자동 실행을 단정하지 않음 |
+| 선택 유료 Premium / 개별 AI 피드백 한도 확대 | 기존 미국6번 원본의 Free/Premium 피드백 한도 비교, `app-web-english/docs/APP_STORE_PREPARATION.md`의 **2026-10-18 Android 공개판·Premium 최종 검증** 내 권한표·실행 release quota 확인 기록. `admin/backend/src/ai-feedback-quota-policy.js`의 free/premium 분기 및 App Premium UI의 aiQuota 혜택과 일치 | **개별 피드백은 무료 기본 quota, Premium은 일·월 한도 확대**로 명시. 과거 기록의 정확한 숫자를 현행 수치로 재보증하지 않음. 미국 가격·결제 주기는 추측하지 않고 구매 화면 확인 유지. 미확인 AI대화/cloudbackup은 제외 |
+| 주간/월간 성찰 | 같은 기존 검증의 무료/Premium 권한표: 별도 Premium capability 불필요, 동일 생성·조회 기능. 실행 정책은 daily_feedback/manual_request에만 Premium 확대 quota 선택, 나머지는 기본 정책. 기존 공개 설명·미국4·5·8번 화면·완료 기간/기록 요건 근거 재사용 | **Premium 없이 요청 가능**을 명시. 기록 충분/완료 기간·연결·서비스/사용량 제한 적용. 개별 피드백의 확대 quota를 주간·월간에 적용한다고 주장하지 않음. 신규 실기기 생성·운영 재조회는 하지 않음 |
 | 저장/AI 개인정보 안내 | 현재 상세 설명과 공개 FAQ의 기기 기본 저장·요청 시 필요한 기록 서버 전송 안내 | 로컬 전용/서버 전송 없음·보안/치료 효과 보장 없음. 개인정보 고지를 구매 유도 때문에 숨기지 않음 |
 
-연간 AI 리뷰는 기존 미구현 근거로 문안에서 제외했다. AI대화·자동 cloud backup·정확한 AI quota/미국 USD 가격은 공개판 수용/판매 조건 미확인이므로 제외했다. photo/voice는 공개 기능 소개에 존재하지만 무료 사용 범위·limit를 확정하지 못했으므로 **무료 목록**에는 넣지 않았다. 앱 소스만 보고 Premium 제공 완료로 바꾸거나, 이미 확인된 무료 기능까지 구독 대상으로 묶지 않는다.
+보완 검토에서는 기존2026-10-18 운영 검증의 권한표/실행 quota 근거를 재사용해, 이전 초안에서 빠졌던 **개별 피드백 무료 기본 한도 → Premium 확대**, **주간·월간은 Premium 전용 아님**을 문안에 직접 명시했다. 공개 기능 존재 근거와 과거 운영 권한 확인을 결합한 문안이며, 최신 공개 설치본의 구매·AI 생성 E2E나 현재 quota 숫자를 새로 확인했다는 뜻은 아니다. 연간 AI 리뷰는 기존 미구현 근거로 제외했다. AI대화·자동 cloud backup·정확한 AI quota/미국 USD 가격도 제외했다. photo/voice는 공개 기능 소개에 존재하지만 무료 사용 범위·limit를 확정하지 못했으므로 **무료 목록**에는 넣지 않았다.
 
 ### 현재 문구 대비 변경 이유
 
 | 현재 | 수정안 | 이유 |
 | --- | --- | --- |
 | 일반 기능 목록 후반에서 기본 사용/Premium을 묶어 설명 | 첫부분에 무료 text·상징·history/edit·로컬 ZIP 목록, 이어 구독 불필요 명시 | 설치 전에 무료로 할 수 있는 일을 바로 이해 |
-| 일부 AI/backup에 Premium이 적용될 수 있다는 포괄적 표현 | 로컬 ZIP은 무료로 분리하고 Premium은 선택 유료 구독/실제 구매 화면 기준으로 별도 설명 | 로컬 ZIP까지 유료로 보이거나 미확인 cloud 혜택이 보장되는 오해 방지 |
-| AI 종류와 일반 기능이 섞임 | 기존 확인된 개별/주간/월간 AI만 별도 조건/인터넷/기록 요건과 함께 설명 | 모든 AI가 무제한 무료 또는 구독에 모두 포함된다는 추정 방지 |
+| 일부 AI/backup에 Premium이 적용될 수 있다는 포괄적 표현 | 로컬 ZIP은 무료, Premium은 개별 AI 피드백 일·월 한도 확대로 구체화 | 무료 기능과 유료로 추가되는 혜택을 구매 화면 안내만으로 미루지 않고 구분 |
+| AI 종류와 일반 기능이 섞임 | 개별 피드백은 무료 기본 한도/유료 확대, 주간·월간은 Premium 없이 조건부 이용으로 명시 | 주간·월간이 유료 전용이거나 Premium 확대 한도가 모든 AI에 적용된다는 오해 방지 |
 | text/photo/voice를 한 번에 열거 | 본문 무료 목록은 범위가 확인된 text 중심, 제목/short는 유지 | 신규 무료 권한/가격·제공 범위를 만들어 내지 않음. 이번 변경은 상세 설명 문안만 |
 
 ### 향후 적용 조건·이번 마감
