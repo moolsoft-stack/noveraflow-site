@@ -1,5 +1,14 @@
 # Handover Status
 
+<a id="play-en-us-description-final-consistency-20261101"></a>
+## 2026-11-01 en-US 최종 상세 설명 정합성 검토 — 보수적 문안·승인 대기
+
+[마케팅 MD 최종안1건·기능별 권한표·변경 이유/적용 조건](02-brand-and-marketing.md#play-en-us-description-final-consistency-20261101)이 최신 owner다. 승인 대기 `3e1151b`의 무료 기본 기록/상징/조회·수정/로컬 ZIP, 제한된 무료 개별 AI/조건부 주간·월간은 현행 계약·기존 공개 기능과 일치해 유지했다. **Premium 개별 피드백 일·월 한도 확대를 현재 공개판 혜택으로 단정한 두 문장은 삭제**했다. 10-18 실행 quota/gate는 확대 정책을 지지하나 당시 공개1.0.80/이후 공개87·후보92 기록만으로 최신 공개판 인증·effective entitlement와 확대 적용을 연결할 수 없기 때문이다. 무료/Premium 정책 변경은 아니다.
+
+AI대화는 로그인+Premium capability, cloud 자동 backup도 로그인+별도 capability라는 정책이 있으나 공개판 완주 미검증으로 홍보 제외. 연간은 매핑만 있고 생성/조회 미구현으로 제외. 주간·월간은 별도 Premium gate 없고 기록 충분/완료 기간·서비스/사용량 제한 적용, 로컬 ZIP은 무료다. 제목/short의 사진·음성·기본 AI는 기존 공개/활성 기록과 충돌 없어 그대로 유지, 새 Console/스토어 일반 점검0이다.
+
+**상태:** 문안 준비 완료·공개판 Premium 혜택 확증 대기·Store 미적용/미제출. 사용자에게 보수적 문안 채택 및 별도 적용/제출 승인 필요. 향후 적용 직전 공개판 조건/구매 안내·대기 변경 충돌 확인, 미확인 혜택 추가 시 release 연결·권한/실제 quota 선택 근거 확보 필요. 기존6번째 이미지 심사와 분리·조회/재제출0. SEO/이미지/일반 검증 반복·신규 코드/테스트/artifact/빌드/서버/DB·결제 변경0. 기존 MD2개만 개인 moolsoft-stack/github-personal에 `[CF-Pages-Skip]` commit/push·원격 SHA 확인한다.
+
 <a id="play-en-us-description-draft-20261101"></a>
 ## 2026-11-01 미국 영어 상세 설명 문안 준비 완료 — 등록정보 미변경
 

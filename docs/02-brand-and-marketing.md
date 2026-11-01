@@ -7,6 +7,68 @@ brand/marketing direction for the public site.
 
 # Brand And Marketing
 
+<a id="play-en-us-description-final-consistency-20261101"></a>
+## 2026-11-01 en-US 상세 설명 최종 정합성 검토 — 적용 승인 대기
+
+**문안 확정본1개 준비 / 공개판 Premium 한도 확대 보장 삭제 / Store 미적용.** 최신 마감과 승인 대기 commit `3e1151b`를 기준으로 기능 권한 근거만 대조했다. 아래가 이번 최종 적용 후보이며, 다음 절의 초안은 당시 판단 이력이다. 일반 스토어/SEO 조사·이미지 교체/심사 조회·재제출은 반복하지 않았다.
+
+### 정책·운영 기록과 공개 Android 증거의 구분
+
+- **정책 우선순위:** `docs-us-english/NOVERAFLOW_CURRENT_STATUS.md`의 최신 플랫폼 기능표/현행 계약은 무료 기본 기록·로컬 ZIP·기본 AI, 지원 버전의 Premium 마음결/클라우드를 유지한다. 오래된 마스터의 주간·월간/로컬 ZIP Premium 표현보다 10-18 실제 gate와 feature contract를 우선한다. 이번에 가격·무료/유료 정책을 변경한 것은 아니다.
+- **운영 권한 근거:** `app-web-english/docs/APP_STORE_PREPARATION.md`의 2026-10-18 Android 공개판·Premium 최종 검증 및 `admin/docs/SUBSCRIPTION_ENTITLEMENT_ARCHITECTURE.md`의 같은 날짜 관측. 당시 실행 release `b975e36`의 순수 quota/gate 대조, config54의 AI/사진/음성 활성, policy catalog/plan mapping READ ONLY 확인 기록을 재사용했다. 새 운영 API·DB/계정 권한 조회·AI 생성·결제 시험은 하지 않았다.
+- **소스 대조:** App `83b4061`의 `backend_ai_feedback_client.dart`는 개별 피드백에 선택적 bearer를 보낸다. Admin `6ac2606`의 `ai-feedback-quota-policy.js`는 무료 기본/유효 Premium capability 확대를 분리하고, `server.js`는 daily_feedback+manual_request만 확대 정책을 선택한다. `payment-cloud/feature-access-policy.js`는 주간·월간에 capability를 요구하지 않는다. 이 소스를 최신 공개 AAB와 동일하다고 간주하지 않는다.
+- **공개 버전 한계:** 10-18 운영 검증이 대조한 공개판은1.0.80이다. 이후 `ANDROID_DEVICE_TESTING.md`에는 Play 설치 출처의1.0.87/code87 확인과 실제 ZIP 경로 관측, 10-29 사용자 확인의 공개87/내부91·후보92 구분이 있다. 최신 상태 문서도 공개판별 Premium 구매/복원·마음결/클라우드 완주를 미검증으로 유지한다. 버전 증가·후보 빌드 성공만으로 현재 공개판 entitlement 전달/확대 quota 실적을 확정할 수 없다.
+
+| 기능 | 확정된 무료·Premium 정책/기존 운영 기록 | 공개 Android 기준 판정·최종 문안 처리 |
+| --- | --- | --- |
+| AI 대화(마음결) | 새 대화/메시지/AI 생성은 로그인+`ai_conversation` 필요. 기존 로컬 대화 읽기/삭제는 별도 | UI/API·Premium 정책 존재, 공개 설치본 진입→생성→재열기 및 release 연결 미검증. **제공 중인 유료 혜택으로 홍보하지 않음** |
+| 개별 기록 AI 피드백(다른 시선) | 무료 기본 quota 있음. 인증된 유효 Premium capability가 있으면 daily/manual 일·월 quota 확대. 당시5/100 대50/1000 기록은 현행 숫자 보증 아님 | 기본 AI는 기존 공개 설명·출시/기능표 근거 있음. **무료 기본 사용+사용 제한은 유지**. 최신 공개판의 bearer/entitlement와 확대 적용 연결 미확보이므로 **Premium 한도 확대 확정 문구 삭제** |
+| 주간·월간 회고 | 별도 Premium capability 불필요, 무료 사용자도 완료된 이전 기간/기록 충분·통신/사용량 조건으로 수동 요청. Premium의 개별 피드백 확대와 별개 | 기존 공개 설명/주간·월간 화면·생성/저장 근거와 일치. **Premium 불필요/조건부 무료 요청** 유지. 최신 기간 재생성 성공을 새로 확인한 것은 아님 |
+| 연간 회고 | `ai_summary_yearly` active catalog/mapping은 있으나 App 생성·저장·조회 경로 미구현, runtime 지원 type에도 없음 | **공개 제공 불가·문안 제외**. 권한 식별자/옛 혜택 화면을 제공 증거로 쓰지 않음 |
+| 로컬 ZIP 백업·복원 | 무료. legacy `backup`은 reserved/inactive, App Premium gate 없음 | 기존 공개 기능/ZIP 검증·Play87 경로 관측 근거. **무료 로컬 파일 내보내기/지원 파일 복원** 유지. 최신 사용자 전체 데이터 복구 보장 아님 |
+| 클라우드 자동 백업·복원 | 로그인+`cloud_auto_backup` 및 저장소/기기 설정·실행 조건 필요, 무료 로컬 ZIP과 별개 | 운영 ready/API는 공개 Play 자동 업로드·복원 E2E의 증거가 아님. **문안 제외**. 웹 기본 sync와도 혼동하지 않음 |
+
+**제목·짧은 설명:** 11-01 05:00:10Z 기존 Console 읽기 대조의 `NoveraFlow AI Journal` / `Journal thoughts and feelings with text, photos and voice. Reflect with AI.`를 재사용했다. 사진·음성 기록과 기본 AI는 기존 공개 설명/출시·기능표, 10-18 config의 활성 기록과 일치하고 이번 대조에서 기능 모순이 발견되지 않았다. 제목/short는 무료 무제한 AI·AI대화·연간 기능을 약속하지 않으므로 **유지, 수정안 없음**. 실제 최신 설치본의 미디어 수용을 새로 실행했다거나 현재 Console을 재조회했다는 뜻은 아니다.
+
+### 최종 en-US 상세 설명 (적용 후보1건)
+
+```text
+NoveraFlow is a journaling app for everyday thoughts, feelings, and self-reflection. Start with a few words, choose a symbol for the moment, and revisit your entries at your own pace.
+
+FREE BASIC JOURNALING
+• Write text entries about your day.
+• Choose from available symbols to accompany your entries.
+• Read and edit saved entries in your history.
+• Export a local ZIP backup and restore a supported NoveraFlow backup file. Keep your own copy of the file.
+
+FREE AI REFLECTIONS WITH LIMITS
+• Request AI feedback on individual entries within the free usage limits.
+• Request weekly and monthly reflections without Premium when the completed period has enough eligible entries, subject to service availability and usage limits.
+An internet connection is required for AI features. You request each weekly or monthly reflection; it is not an automatic scheduled report. Free AI access is limited, not unlimited.
+
+OPTIONAL PREMIUM
+Premium is an optional paid subscription. The free features described above do not require a Premium subscription. Before subscribing, review the features included for your installed app and account, usage limits, price, and billing terms on the purchase screen.
+
+YOUR RECORDS
+Journal data is stored on your device by default. When you request an AI feature, the record content needed for that request is sent to the service. Read the privacy policy for details. AI responses do not replace medical diagnosis or professional advice.
+
+Available in English, Korean, and Japanese.
+```
+
+### 3e1151b 초안 대비·적용 조건
+
+| 변경 전 | 이번 최종안 | 이유 |
+| --- | --- | --- |
+| Premium increases/provides higher daily and monthly limits를 현재 혜택으로 단정 | 해당 두 문장 삭제. 확정된 무료 AI와 선택 구독/설치본·계정 구매 조건을 분리 | 10-18 운영 정책은 지지하나 최신 공개판 권한 적용까지 증명하지 못함. 정책 폐지/무료 전환 결정이 아님 |
+| AI REFLECTIONS ON FREE AND PREMIUM | FREE AI REFLECTIONS WITH LIMITS, 무료 개별·주간/월간과 요건을 먼저 명시 | 확인된 무료 범위를 유지하면서 유료 확대를 모든 공개판에 보장하지 않음 |
+| 무료 기본 기록/ZIP, 개인정보·언어 안내 | 유지 | 기존 기능 근거와 일치. 미구현 연간/미확인 대화·cloud/숫자·가격은 계속 제외 |
+
+**준비 상태:** 문안/권한표/변경 이유 정리 완료, 등록정보 입력·저장·제출0. 문안의 무료 개별 피드백과 주간·월간은 기존 공개 기능·실제 gate/현행 계약 근거에 한정하고 최신 실기기 수용 완료로 표시하지 않는다. 전체 문안은4000자 이내로 확인한다.
+
+**사용자 승인 및 남은 조건:** 이 보수적 최종안 채택과 이후 별도 상세 설명 적용/제출 승인 필요. 적용 직전 해당 공개판 권한·구매 안내와 en-US 대기 변경 충돌을 확인해야 하며, 공개판 근거를 새로 확보하기 전에는 Premium 확대·대화·cloud 혜택을 다시 추가하지 않는다. 확대 혜택을 추가하려면 해당 공개 Play 버전/출시 소스 연결 및 인증된 effective capability와 실제 일·월 quota 선택의 읽기 근거가 필요하다. 연간은 실제 구현/공개 제공 확인 전 계속 제외한다. 미국 가격은 추정하지 않는다. 6번째 이미지 심사는 별건으로 유지·재제출0이다.
+
+**변경 범위/검토:** 기존 마케팅·HANDOVER MD2개만 수정, 문구/길이·diff 확인. 새 코드/테스트/artifact/문서·앱 빌드/배포·서버/DB·결제 변경0. 개인 moolsoft-stack author/committer·github-personal 원격만 사용해 `[CF-Pages-Skip]` commit/push·원격 SHA 확인, 회사 adcomlab 계정/인증자원 접근0.
+
 <a id="play-en-us-description-draft-20261101"></a>
 ## 2026-11-01 미국 영어 상세 설명 수정안1개 — 무료/Premium 구분, 문안만
 
