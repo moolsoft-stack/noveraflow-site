@@ -7,6 +7,53 @@ direction.
 
 # NoveraFlow SEO 방향 기준
 
+<a id="first-record-measurement-readiness-20261101"></a>
+## 2026-11-01 첫 기록 측정 준비 — 기존 계측 확인·최소 실행안
+
+**기존 기능/공백 확인·계획 기록 완료 / 신규 계측 구현·운영 적용 없음 / 실제 첫10명 미측정.** 최신 Showcase 마감과 기존 GSC/Cloudflare 운영 수집 증적을 먼저 읽었다. 이번 확인은 기존 MD와 현재 로컬 소스의 읽기 대조다. 개인 대시보드 로그인·GSC/CF/Store 수치 재수집·운영 API/DB 조회는 하지 않았으므로 아래 baseline은 **10/31 보존 관측값**, 코드의 집계 능력은 **소스 확인**으로 구분한다. Google 색인 재요청·완료된 SEO/기능/보호 시험은 반복하지 않았다.
+
+### 확인 근거와 의미
+
+- **GSC·CF 보존 증적:** 아래 [기존 전환 운영 기록](#phase2-conversion-live-20261031)과 [채널 계획](#us-first10-channel-plan-20261101). GSC 미국 Web **2026-10-01~28 노출11/클릭0**, CF 미국 **당시 최근7일 visits46/직접46**. 현재 기간의 새 실적·영어 고유 방문자 수가 아니다. WAE 전용 dataset `noveraflow_web_conversions_v1` 수집/SQL 저장 확인은 기존 test 증적이며 실제 US 사용자10명 근거가 아니다.
+- **웹 소스:** Site `a8c517a`의 `js/conversions.js`, `scripts/conversion-receiver.mjs`; Web `83b4061`의 `observed_web_records_client.dart`, `main_web_account_development.dart`. 서버 ACK observer와4종 이벤트 연결을 확인했다. 새 빌드/전송/저장 시험은 하지 않았다.
+- **앱 소스:** Web83b4061 worktree에 포함된 공통 Native `home_screen.dart`, `analytics_lifecycle_service.dart`, `event_logger.dart`, `operational_metadata_service.dart`. 기록 repository 저장 완료 후 `record_created`, 설치별 `first_open`의 기존 안정 eventId 재사용을 확인했다. **현재 공개 Android/iOS 버전에 해당 emitter가 포함되어 실제 수집되는 coverage는 별도 미확인**이다. Native EventLogger는 Web에서 전송하지 않으므로 웹 workspace 계측과 합치지 않는다.
+- **Admin 소스:** `admin` HEAD `6ac2606`의 `admin3-operations-analytics.js`, `usage-statistics.js`, `operational-repository.js`, `admin3/routes.js`. 기존 `GET /api/admin3/operations/analytics`는 `config.read` 권한의 집계 응답이며 계정/원문을 공개할 필요가 없다. operations 집계 파일은 보존된 production branch c76254d의 blob과 동일하지만 **현재 운영 revision·응답/최신성은 새 확인하지 않았다**. 소스 존재만으로 현재 운영 데이터 확보 완료로 표시하지 않는다. canonical app의 기존 미커밋 변경은 읽기/커밋 대상으로 삼지 않았다.
+
+### 방문 → 설치 또는 웹 진입 → 첫 기록 구간표
+
+| 구간 | 신규 개발 없이 확인 가능한 지표 | 연결 불가/해석 제한 |
+| --- | --- | --- |
+| Google 검색 → 방문 관심 | 기존 GSC Web의 국가=US·기간·page/query별 노출/클릭/CTR. CF 방문 보고의 해당 host·국가·referrer별 visits | 검색 단계 국가이지 가입자/거주국 증명 아님. GSC는 사용자 영어 UI를 증명하지 않으며 CF baseline의 locale·사람/봇 구분도 불명. 서로 다른 기간/모수 합계로 전환율 산출 불가 |
+| 사이트 방문 → Store/웹 링크 클릭 | 동의한 페이지의 `store_android`, `store_ios`, `web_start`를 WAE event/language/country/source별 집계 | **CTA 클릭**이지 Store 도착/설치 또는 웹 로그인/첫 화면 도착 성공 아님. 동의 거절/GPC/DNT/차단/실패는 미수집, 페이지 이동/OAuth 복귀 후 동의 off. 페이지 간 동일 방문자 연결 없음 |
+| Store 방문 → 설치/최초 열기 | 기존 개인 Store 보고 접근 시 방문/획득·기간·국가/언어를 자체 단위로 보고 가능. 앱 `first_open`은 이벤트가 관측된 설치별 최초 열기 | Store 보고 최신값/권한은 이번 미확인. 직접 Play URL은 사이트 WAE를 거치지 않음. 설치·재설치·기기별 first_open≠고유 사람, 외부유입 증가≠Reddit 단독 효과 |
+| Native 열기 → 기록 저장 | `record_created`는 `repository.addEntry` 완료 뒤 전송. Admin operations의 `firstRecordUsers`는 보유 관측 전체에서 설치 ID별 첫 record 이벤트의 기간 내 건수, `firstOpenUsers`·기간별 feature users도 존재 | 이벤트 유실/오프라인/전송 실패 coverage·이전 보유 이력 공백·공개판 carrying version 미확인. 저장 이벤트는 로컬 repository 성공으로 Web 서버 ACK와 다름. **최초 관측 저장**을 생애 첫 기록으로 단정 불가 |
+| 웹 진입 → 서버 확인 신규 기록 | Web observer가 expectedRevision0→reply revision1·문서 일치·동일 auth scope·삭제 아님을 확인한 최초 create를 `record_created / first_ack_in_page`로 보냄 | 기존 계정도 포함되고 reload/다른 기기에서 다시 셀 수 있음. 세션/계정 최초 또는 사람 수 아님. 첫 ACK 전에 동의하지 않았으면 observer/JS의 reported guard가 이미 소비돼 같은 페이지에서 나중에 동의해도 그 첫 저장은 소급 수집되지 않음 |
+| US/영어 유입 → 동일인의 첫 기록 | WAE는 기존 coarse country=US, language=en으로 **기록 ACK 이벤트 범주**만 구분 가능. Native에는 language/locale metadata가 있음 | WAE 최초 유입 source는 OAuth/내부 이동에서 소실 가능. Native 국가 표는 **기기 locale의 국가**이며 실제 US 유입/거주가 아님. Web·Store·Native를 같은 사람으로 묶을 공통 획득/계정 키 없음 |
+
+**Admin에서 새로 구체화한 공백:** operations의 `firstRecordUsers` 단위는 `observed_installations`다. 국가 표에는 latest device locale 기준 active/firstOpen이 있지만 **국가×영어×첫 기록 교차 집계가 없다**. 연/월 사용량 표의 record users도 그 기간 기록한 설치 수이지 최초 기록자 수가 아니다. Native language는 정규화 과정에서 en 기본값도 가능하므로 사용자 확인 언어로 확대하지 않는다. 현재 normalize는 v1·유효 설치 ID/시간·중복 event ID·`test_account_at_ingest`를 거르지만 이것만으로 모든 `INTERNAL/TEST`가 제외된 PRODUCTION 모집단을 보증하지 않는다. 관측 범위/운영 분류를 확인하지 않은 기존 화면 수치를 그대로 미국 첫 사용자로 쓰지 않는다. 과거 ANALYTICS_EVENTS의 auth emitter 없음 설명과 달리83b4061에는 `auth_sign_in` 호출 소스가 있으나, 신규 가입 구분/공개 수집을 증명하지 않으므로 가입 지표로 채택하지 않는다.
+
+### 기존 지표로 먼저 실행할 최소 계획 (개발/배포0)
+
+1. **기간/단위 고정:** 다음 관측 시작 S와 종료 E, 비교 기간, 대상 영어 공개판/플랫폼, 확인 가능한 coverage 시작/최신시각을 기존 MD에 남긴다. 시각은 원 보고의 timezone과 UTC 경계를 함께 표기한다. Admin은 server_received_at·Asia/Seoul 기준, WAE 예시는 UTC다. GSC/Store의 보고 timezone·완결일을 확인해 일치 구간만 비교하고, 28일 GSC/rolling7일 CF 합계를 억지로 같은 분모로 만들지 않는다.
+2. **기존 권한으로 집계만 읽기:** 개인 기존 GSC·CF·Store 보고와 Admin의 허용된 aggregate GET을 읽어 위 구간의 값/기간/상태를 기록한다. 새 token/계정·분석 서비스·SQL 쓰기/DB schema·보존 설정 변경 없음. 기존 세션/권한이 없으면 해당 값을 미확인으로 유지하고 인증정보 추출/우회하지 않는다. 이번에는 이 운영 읽기를 새로 실행하지 않았다.
+3. **WAE는 기존 SQL 재사용:** [기존 가중치 집계 예시](#phase2-conversion-live-20261031)의 `production/en/US`와 S~E 범위를 적용해 4종 이벤트·source별 `SUM(_sample_interval*double1)`, 저장 표본수·최대 sample interval을 함께 보고한다. `COUNT()`/가중값은 사람 수가 아니다. `traffic=production`은 host/test-parameter 분류이지 운영자/봇 자동 제외가 아니다. 동의 coverage 분모 자체를 수집하지 않으므로 동의율/전체 전환율도 미측정으로 남긴다.
+4. **Native 기존 보고를 우선 확인:** firstOpenUsers·firstRecordUsers·생성된 시각/coverage·제외 사유를 먼저 확인한다. 데이터가 없거나 `instrumentation_required`/권한 부족이면0명으로 표시하지 않는다. firstRecordUsers/firstOpenUsers는 다른 시점에 처음 관측된 설치가 섞이므로 그대로 cohort 전환율을 계산하지 않는다. 필요한 교차 조건이 기존 보고에 없으면 다음 절의 일회성 읽기 집계 제안으로 넘긴다.
+5. **두 checkpoint를 분리:** (A) US/en WAE 서버 ACK 범주 수 또는 locale-US/영어 설치의 첫 저장 관측은 **보조 지표**, (B) 미국 유입 근거·영어·중복/시험 제외·실제 최초 저장이 확인된 **적격 사용자10명**은 본 목표다. A가10이어도 B 달성을 선언하지 않는다. 정확한 B를 입증할 수 없으면 현재처럼 **미측정** 유지. 공개 댓글/자기보고·설치 수로 대체하지 않는다.
+6. **주1회 검토 제안:** 같은 정의의 D7/D14 구간에서 원문/ID 없는 집계값·미확인/unknown·저장 막힘 범주·운영시간만 이 MD에 추가한다. 값/분모/coverage가 실제로 확보되기 전 전환율·미국 사용자 확보 성과를 주장하지 않는다. 모집/게시·실사용 시험은 이 측정 준비의 실행 범위가 아니다.
+
+### 부족한 항목에 대한 최소 변경 제안 — 미구현/미배포
+
+| 우선순위 | 최소 개선 방안 | 충족하는 것 / 남는 것 |
+| --- | --- | --- |
+| 0, 코드 변경 없음 | 보고서별 단위·기간·coverage/unknown·관측 시각과 production 필터의 의미를 명시. 기존 조회/기능 유지 | 설치/사람·CTA/설치·페이지 ACK/첫 기록의 오해를 즉시 방지. 실제 유입 연결을 새로 만들지는 않음 |
+| 1, 일회성 읽기 집계만 제안 | 기존 허용 App 이벤트를 **서버 안에서만** 설치별 보유 이력의 첫 `record_created`를 찾은 뒤 그 이벤트의 language=en·locale 국가US·공개판·기존 확인 가능한 운영/시험 분류·기간을 적용해 **총수/unknown/coverage만** 보고. 원본 ID/본문을 내보내거나 새로 저장하지 않고 운영 DB 쓰기/새 서비스 없음. 기존 보고로 불가하면 별도 검토 후 일회성 조회 또는 현재 집계의 작은 확장 후보로만 남김 | 새 emitter/SDK 없이 **locale-US·영어 첫 관측 기록 설치**를 셀 수 있는 후보. 현재 UI에 있는 기능은 아님. 최초 저장을 찾기 전에 기간/언어로 이력을 잘라 기존 사용자를 신규로 만드는 오류 금지. 실제 미국 유입·교차기기 동일인·계정 생애 최초는 여전히 입증 불가 |
+| 2, 작은 집계 확장 후보 | 반복 수요가 확인될 때만 기존 Admin aggregate 응답에 위 보조 지표/기간/제외 사유를 추가하는 안 검토. 기존 eventId 재시도 중복과 설치별 중복을 각각 유지. 신규 개인정보 필드·새 수집·서비스/SDK 도입 없음 | 운영자 수작업 감소 후보일 뿐 **이번 개발 승인/구현이 아님**. 기존 production/internal/test 분류가 데이터에 없으면 자동 추정하지 않고 unknown으로 제외/별도 보고 |
+| 보류 | Web 계정 최초 저장을 기존 서버의 권한 있는 계정별 기록 이력으로 내부 집계할 수 있는지 목적/보존/삭제·계정/로컬 자료 경계를 먼저 검토 | 기록 API의 계정 자료만으로 미국 획득 경로가 생기지 않음. 원본 계정 ID 외부 전송·fingerprint·추적 cookie·새 영구 marker·위치/IP 저장·referrer/UTM 원문 저장·외부 분석 도입은 제안에서 제외 |
+
+**결론/남은 조건:** 추가 개인정보 수집·교차 서비스 식별자 없이 현재 지표를 정확한 ‘미국 유입 실제 첫 사용자10명’으로 연결하는 것은 불가능하다. 우선 기존 집계로 저장 성공의 관측 범위를 분명히 하고, 보조 목표의 단위 채택 여부를 사용자가 결정한다. 본 목표는 기존 자료에 적격 근거가 실제로 존재할 때만 판정한다. 남은 것은 기존 개인 조회 권한·같은 기간 실측값·공개 Native 수집 coverage·운영/시험 분류·이력 완전성과 미국 유입/사람 중복 근거다. 코드/DB/운영 변경을 이 문서로 선승인하지 않는다.
+
+이번 기존 SEO/HANDOVER MD만 개인 Git author/committer moolsoft-stack <moolsoft@gmail.com>, origin github-personal:moolsoft-stack/noveraflow-site의 기존 main 추적 경로로 `[CF-Pages-Skip]` commit/push한다. 회사 계정/자원 사용0, 새 문서/코드·운영 배포·DB 변경·신규 수집·테스트/빌드0. 원격 SHA/문서 diff·이력/링크 보존만 확인하며 이전 SEO·보호 검증을 반복하지 않는다.
+
 <a id="android-showcase-draft-20261101"></a>
 ## 2026-11-01 Android Showcase 초안 준비·첫10명 측정 범위
 

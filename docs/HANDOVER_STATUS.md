@@ -1,5 +1,16 @@
 # Handover Status
 
+<a id="first-record-measurement-readiness-20261101"></a>
+## 2026-11-01 미국 영어권 첫 기록 측정 준비 마감 — 문서만
+
+**기존 계측/공백 확인·최소 계획 기록 완료 / 실제 첫10명 미측정.** [SEO의 측정 구간·소스 근거·최소 실행/개선안](04-seo-direction.md#first-record-measurement-readiness-20261101)이 최신 상세 owner다. GSC/CF는10/31 보존 증적(US11노출/0클릭·직접46visits), Web83b4061/Sitea8c517a 및 공통 Native 이벤트·Admin6ac2606 집계는 로컬 소스로 확인했다. 현재 개인 대시보드/운영 API·DB의 새 수치/신선도는 조회하지 않았다. 공개판 carrying version/운영 수집 coverage 미확인 유지.
+
+가능: 검색 노출/클릭·CF visits, 동의한 Web CTA/페이지 최초 서버 ACK 범주, Native 저장 후 record_created·설치별 first_open 소스, Admin firstRecordUsers 등 기존 집계. 한계: 설치≠사람, locale 국가≠미국 유입/거주, 페이지 ACK≠계정 최초. Admin 첫 기록 총수와 국가/영어 교차 필터·완전한 production/internal/test 분리·서비스 간 동일인 연결은 현재 근거가 없다. 기존 ANALYTICS_EVENTS의 auth emitter 없음 설명은83b4061 호출 소스와 다르지만 신규 가입 coverage로 사용하지 않았다.
+
+다음 최소 순서는 기간/단위/coverage 고정→기존 개인 권한의 aggregate 보고 읽기→Web production/en/US 가중 이벤트와 Native 설치 단위 값을 분리→보조 관측10건과 실제 적격 사용자10명 별도 판정이다. 부족한 교차 집계는 기존 이벤트의 서버 내부 일회성 읽기 총수 산출부터 제안하며 이번 구현/DB 조회/쓰기 없음. 이 안도 실제 미국 유입/사람 수를 확정하지 못하므로 본 목표는 적격 근거 확보 전 미측정 유지한다.
+
+색인 재요청·완료 SEO/채널 조사/기능 시험 반복0. 신규 기능/SDK/개인정보 수집·외부 서비스/계정/게시·운영 배포·DB 변경·테스트/빌드0. canonical app의 기존 사용자 미커밋 변경 보존. 관련 기존 MD2개만 개인 moolsoft-stack author/committer·github-personal 원격에 `[CF-Pages-Skip]` commit/push·원격 SHA 확인으로 마감하며 운영 Site9c709e1/Web83b4061·복구점 보존.
+
 <a id="android-showcase-draft-20261101"></a>
 ## 2026-11-01 영어 Android Showcase 초안 마감 — 게시/계정 접근 없음
 
