@@ -1,5 +1,14 @@
 # Handover Status
 
+<a id="android-showcase-draft-20261101"></a>
+## 2026-11-01 영어 Android Showcase 초안 마감 — 게시/계정 접근 없음
+
+**영어 제목·본문1건 작성 완료 / 게시 준비 미완료.** [기존 마케팅 MD의 검토본·체크 항목](02-brand-and-marketing.md#android-showcase-draft-20261101), [SEO의 첫10명 측정 메모](04-seo-direction.md#android-showcase-draft-20261101)를 따른다. 기존 공개 근거의 텍스트 기록/수정·상징·이전 기록 조회, 무료 기본 기록/선택 Premium 구독과 실제 Play URL만 초안에 사용했다. 미국 현행 금액/결제 주기·추가 기능/성과 주장은 제외했다. 이번 공개 Play 상세 읽기는 도구 접근 오류로 미확보이며 기존 근거를 새 공개판 실사용 확인으로 확대하지 않는다.
+
+남은 조건: 사용자의 직접 개인 계정 자격/최근 게시 이력 확인(24h·합산karma2·email 인증·주1회·스팸 제한), 게시 시 Showcase flair 선택, 실제 미국 공개판/가격 확인, 개인정보 없는 기존 영어 Android 미디어 선정/권한 확인, 본문/미디어·응답시간 및 별도 외부 게시 허용. 이미지 첨부 준비0, 계정 자격 미확인. 첫 기록10명은 현재 익명 집계로 입증 불가/미측정이며 기존 App/Admin의 US·최초 저장·중복 제외 보고 coverage가 남았다.
+
+최신 채널 조사/공식 템플릿·완료된 색인/SEO/기능 검증 재사용, 반복 조사/재요청/재검증0. Reddit 계정 접근/로그인·게시/DM/홍보/계정 생성·유료 결제·운영 배포/DB·새 기능/테스트/빌드0. 이번 기존 site MD3개만 개인 moolsoft-stack author/committer와 github-personal 원격으로 `[CF-Pages-Skip]` commit/push·원격 SHA 확인해 마감한다. 운영 Site9c709e1/Web83b4061·기존 증적/복구점 및 과거 기록은 보존한다.
+
 <a id="us-first10-channel-plan-20261101"></a>
 ## 2026-11-01 초기 사용자 채널 조사·계획 마감 — 외부 실행 없음
 

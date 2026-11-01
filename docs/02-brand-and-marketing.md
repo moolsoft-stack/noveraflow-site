@@ -7,6 +7,60 @@ brand/marketing direction for the public site.
 
 # Brand And Marketing
 
+<a id="android-showcase-draft-20261101"></a>
+## 2026-11-01 r/droidappshowcase 영어 Showcase 초안 1건 — 미게시
+
+**초안 작성 완료 / 게시 준비 미완료 / 외부 실행0.** 최신 SEO·HANDOVER의 채널 조사 마감과 기존 [공식 게시 템플릿](https://www.reddit.com/r/droidappshowcase/wiki/suggested-post-template/)·[규칙](https://www.reddit.com/r/droidappshowcase/)·[허용 도메인](https://www.reddit.com/r/droidappshowcase/wiki/approved-domains/) 열람 결과를 재사용했다. 채널 비교/색인/SEO/기능 검증을 다시 하지 않았다. 아래는 제작자 검토용 초안이며 Reddit 계정 접근·로그인·게시·DM·가입을 하지 않았다.
+
+근거는 [기존 공개 기능 대조](04-seo-direction.md#phase2-search-expansion-20261031) 및 같은 배포 소스의 `faq.html` q8/q10(기록 작성·수정/다시 보기·선택 상징, 무료 기본 기록/선택 Premium)이다. 이번 `hl=en_US&gl=US` Play 공개 상세 읽기는 도구 접근 오류로 본문을 얻지 못했다. 기존 실제 Play URL을 재사용하되 최신 미국 가격·공개 버전별 추가 기능을 새로 확인했다고 주장하지 않는다. 따라서 구체적인 금액·결제 주기, AI/동기화/백업·사진/음성의 공개판 조건, 이용자 수/효과·비교 우위는 초안에서 제외한다. 상징 전체의 무료/무제한 사용도 약속하지 않는다. 신규 이미지 제작/앱 실행은 하지 않았다.
+
+### 영어 제목
+
+NoveraFlow — an Android journal for short entries, symbols, and reflection
+
+### 영어 본문 (검토본)
+
+```markdown
+**App name:** NoveraFlow
+
+**One-line description:** An Android journaling app for writing about everyday moments and revisiting them later.
+
+Hi everyone — I'm the developer of NoveraFlow. I built it around a simple practice: write down a moment from your day, then come back to it when you want to reflect. An entry can be just a few sentences.
+
+**What it does**
+
+- Write text entries and edit them later.
+- Choose from the available symbols to accompany an entry.
+- Revisit saved entries in Records to read back through your days.
+
+The idea is to give you both your own words and a visual cue to return to. You decide what a moment means to you.
+
+**Who it's for**
+People who want to keep a journal on Android, capture small everyday moments, and make time to look back on them.
+
+**Cost**
+Freemium: basic journaling is free. An optional Premium subscription is available; it isn't required for basic journaling. Check the app for current Premium pricing and included features.
+
+**Google Play**
+https://play.google.com/store/apps/details?id=com.moolsoft.noveraflow
+
+When you revisit a journal entry, what helps you remember the day: the words, a symbol, or both?
+```
+
+질문은 일반적인 기록 습관에 관한 대화용이며 테스터/버그보고·설문 참여·리뷰/추천·DM·개인 일기 공개 요청이 아니다. 댓글/조회/설치를 첫 기록 사용자 성과로 표현하지 않는다. 공식 템플릿의 미디어 항목은 아래 준비 조건으로 남아 있으며 현재 완성 게시물로 취급하지 않는다.
+
+### 게시 전 체크 — 미확인은 체크하지 않음
+
+- [x] 제목/앱명·한 줄 설명·기능/용도·개발자 관계 공개·비교 우위 없는 장점·무료/선택 구독 구분·공식 Play 링크·사용자 질문 초안 작성.
+- [ ] **Flair:** 게시 시 `Showcase` 선택. 이번 Reddit UI에서 선택/설정하지 않았으며 Promo/Giveaway/Beta로 게시하지 않음.
+- [ ] **이미지:** 현재 이 초안에 첨부 준비된 파일0. 기존 공개 Android 영어 화면 중 기록 작성/상징/Records를 보여줄 자료 선정, 공개판과의 일치·사용 권한·개인 기록/계정정보 미노출 확인 후 직접 업로드할 미디어 준비. 템플릿의 Screenshots / Media 항목 채우기. 보유 파일 존재만으로 게시 준비 완료 처리하지 않음.
+- [ ] **가격/기능:** 게시 전에 사용자/운영자가 미국 공개 Android 앱의 무료 기본 기록·선택 구독 안내와 실제 구독 금액/결제 주기를 확인. 가격은 확인 후에만 Cost에 추가하고, 확인 불가 시 금액을 만들지 않으며 게시 준비 조건으로 유지. 이번 초안의 보수적 기능 범위도 현재 공개판과 다르면 수정.
+- [ ] **계정 자격:** 사용자가 직접 기존 개인 계정의 생성 후24시간 이상, 합산 karma2 이상, email 인증, 최근7일 앱 소개 이력/주1회 한도, 홍보전용/교차스팸 계정 아님을 확인. 이번 계정 상태는 전부 미확인; 계정 접근·로그인·karma 작업·계정 생성0.
+- [ ] 게시 직전 현행 규칙/허용 링크/Flair 변경 여부를 좁게 확인하고 완성 앱 소개임을 유지. 테스터 모집·다른 sub 교차게시·우회 사이트 링크·새 UTM 없음.
+- [ ] 사용자 별도 외부 게시 허용, 공개할 본문/미디어·응답 담당/시간 확정. 이번 초안 작성 요청은 게시 허가가 아님.
+
+첫10명 측정 가능/불가능 범위와 미측정 판정은 [SEO의 간결한 측정 메모](04-seo-direction.md#android-showcase-draft-20261101)를 따른다. 기존 채널 비교와 광범위 측정 계약은 복제하지 않는다. 이번 관련 MD만 개인 moolsoft-stack 명시적 author/committer·기존 main 추적 경로에 `[CF-Pages-Skip]` commit/push하며 코드/운영 배포·DB·새 기능·외부 게시0, 기존 이력/사용자 변경/복구점 보존.
+
 <a id="us-first10-channel-plan-20261101"></a>
 ## 2026-11-01 미국 영어권 첫10명 채널 조사·계획 완료
 
