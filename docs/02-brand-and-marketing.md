@@ -7,6 +7,13 @@ brand/marketing direction for the public site.
 
 # Brand And Marketing
 
+<a id="daily-close-20261101"></a>
+## 2026-11-01 마감 — 게시 자료 준비 완료·외부 게시 미실행
+
+`26f30d3`까지의 작업을 보존하고 오늘 작업을 종료했다. [최종 Showcase 제목/본문·PNG 경로·체크2개](#android-showcase-draft-20261101)는 준비 완료, Reddit 계정 자격/현행 규칙 확인과 실제 게시는 미완료다. Play 이미지/1,504자 설명 제출 완료와 공개 반영 미확인을 구분하며 심사 재조회/재제출0. 기존 측정 기준선·익명 저장 수치는 [SEO](04-seo-direction.md#first-record-admin-authenticated-20261101)에 보존하고 미국 실제 첫 기록10명은 미측정 유지한다.
+
+**내일 첫 작업1개:** 사용자가 게시 묶음 첫 체크의 **본인 Reddit 자격·현행 규칙/미디어 허용을 직접 확인**. 에이전트의 계정 접근/로그인/게시 금지는 유지한다. 구체적 완료/미완료·실행 상태·소스 변경 보존은 [HANDOVER 최종 마감](HANDOVER_STATUS.md#daily-close-20261101)을 따른다. 종료 후 새 조사/개발/운영 변경·반복 검증 없이 기존 마케팅/HANDOVER MD2개만 개인 moolsoft-stack/github-personal `[CF-Pages-Skip]` commit/push로 마감한다.
+
 <a id="android-showcase-ready-20261101"></a>
 ## 2026-11-01 r/droidappshowcase 게시 자료 준비 완료 — 계정/게시 조건부·미게시
 
