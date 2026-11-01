@@ -1,5 +1,14 @@
 # Handover Status
 
+<a id="android-showcase-ready-20261101"></a>
+## 2026-11-01 Reddit Showcase 자료 준비 완료 — 사용자 직접 게시 전 조건부
+
+`13f1334` 마감 후 [기존 마케팅의 최종 제목·본문·이미지·체크2개](02-brand-and-marketing.md#android-showcase-draft-20261101)를 정리했다. 기존 영어 제목/본문 **그대로 유지**, 공식 Play package 링크·기본 text/상징/조회·수정/무료·선택 구독 안내를 기존 근거로 확인. 새 홍보글/규칙 조사/기능 검증·집계 재조회0. 정확한 미국 구독 금액을 추가하지 않으므로 가격 재확인을 별도 선행 과제로 요구하지 않는다.
+
+이미지는 기존 [06-basic-journaling-final-v2.png](assets/play-us-20261101/06-basic-journaling-final-v2.png)1개(1440×2880·4,440,527bytes), 절대 경로/용도/개인정보 미포함·무료 기능 일치 확인을 마케팅에 명시했다. **AI 편집된 기능 소개 일러스트**, 실제 앱 screenshot 아님. 새 파일·이미지 수정/복사·Play 이미지/설명/심사 재제출0.
+
+**문안·링크·첨부 자료는 준비 완료 / 계정별 게시 가능·외부 게시 미확인/미실행.** 사용자 조치는 **①본인 계정 자격+현행 규칙/미디어 허용 확인 ②직접 작성 화면에서 Showcase Flair·PNG 첨부/미리보기 확인 후 게시 결정**뿐이다. 마지막 기록은24시간·합산karma2·인증email·주1회·홍보전용/교차스팸 금지 조건이며 이번 계정 접근/로그인/게시/댓글0. 실제 미국 첫 기록10명은 미측정 유지, 기존257/95·US locale14/11·CF100을 성과 주장에 쓰지 않는다. 마케팅/HANDOVER 기존 MD2개만 개인 moolsoft-stack/github-personal `[CF-Pages-Skip]` commit/push·원격 SHA 확인. 회사 adcomlab·서버/DB/앱/웹/계측/광고 변경0.
+
 <a id="first-record-admin-authenticated-20261101"></a>
 ## 2026-11-01 개인 Admin 집계 인증 해소 — 저장 수치 확보·미국 최초 기록 미측정
 

@@ -7,6 +7,15 @@ brand/marketing direction for the public site.
 
 # Brand And Marketing
 
+<a id="android-showcase-ready-20261101"></a>
+## 2026-11-01 r/droidappshowcase 게시 자료 준비 완료 — 계정/게시 조건부·미게시
+
+최신 `13f1334` 마감을 확인했다. 기존 [Showcase 제목·본문·이미지·최소 체크](#android-showcase-draft-20261101)를 한 게시 묶음으로 정리했으며 **제목/본문 원문은 그대로 유지**했다. 새 홍보글/이미지/파일은 만들지 않았다. 기존 최종 PNG1개를 첨부 자료로 선정해 경로·기능 정합성·개인정보 미포함을 확인했다. Reddit 계정·로그인·작성 화면/게시/댓글 접근0, Play 이미지/설명/심사 변경·재제출0이다.
+
+**상태:** 문안·공식 Play 링크·미디어 파일 준비 완료. 사용자의 계정 자격과 게시 직전 규칙은 미확인이므로 실제 게시 가능까지 확정한 상태는 아니다. 마지막 확인된 규칙을 재사용했고 새 규칙 조사/기준선·익명 집계 재조회0. 기존257건/95설치·US locale14건/11설치·CF100visits는 내부 기준선으로 보존하고 홍보 성과 문구에 넣지 않았으며 **미국 실제 첫 기록10명은 미측정** 유지한다.
+
+사용자는 아래 묶음의 최종 제목/본문을 복사하고 지정 PNG1개를 첨부하면 된다. 추가 가격 확인/새 캡처/기능 시험은 현재 보수적 문구의 선행 조건으로 요구하지 않는다. 남은 최소 확인2개와 직접 게시 절차를 해당 절에 모았다. 이번 요청은 게시 준비만 허용하므로 에이전트의 외부 게시 승인으로 해석하지 않는다. 기존 마케팅/HANDOVER MD2개만 개인 moolsoft-stack/github-personal에 `[CF-Pages-Skip]` commit/push·원격 SHA 확인, 회사 adcomlab·서버/DB·앱/웹·계측/광고 변경0.
+
 <a id="play-en-us-description-submitted-20261101"></a>
 ## 2026-11-01 승인된 en-US 1504자 적용·검토 제출 완료 / 후속 Play 기준선 조회
 
@@ -402,17 +411,17 @@ Use consistent polished English typography matching the reference and ensure tex
 남은 조건은 실제 Store 수정 허용, 현재 미국 공개판의 기능/구독 조건에 맞는 자산 검토, 최신 인앱 가격·quota/로그인 조건, 충분한 Store 전환 표본이다. 공개 등록정보 표시가 앱 실사용/보안 검증 완료를 뜻하지 않는다. 개인 moolsoft-stack author/committer·github-personal 원격의 기존 main 추적 경로에 `[CF-Pages-Skip]` 문서 commit/push·원격 SHA 확인만 수행하며 회사 adcomlab 혼용0·운영 배포/DB/새 기능 변경0, 기존 이력/사용자 미커밋/복구점 보존.
 
 <a id="android-showcase-draft-20261101"></a>
-## 2026-11-01 r/droidappshowcase 영어 Showcase 초안 1건 — 미게시
+## 2026-11-01 r/droidappshowcase 최종 게시 묶음1건 — 기존 초안 재사용·미게시
 
-**초안 작성 완료 / 게시 준비 미완료 / 외부 실행0.** 최신 SEO·HANDOVER의 채널 조사 마감과 기존 [공식 게시 템플릿](https://www.reddit.com/r/droidappshowcase/wiki/suggested-post-template/)·[규칙](https://www.reddit.com/r/droidappshowcase/)·[허용 도메인](https://www.reddit.com/r/droidappshowcase/wiki/approved-domains/) 열람 결과를 재사용했다. 채널 비교/색인/SEO/기능 검증을 다시 하지 않았다. 아래는 제작자 검토용 초안이며 Reddit 계정 접근·로그인·게시·DM·가입을 하지 않았다.
+**본문·링크·이미지 준비 완료 / 사용자 계정·게시 직전 조건 미확인 / 외부 실행0.** 최초 초안을 `13f1334` 이후 준비 작업에서 그대로 최종 복사본으로 지정했다. 기존 [공식 게시 템플릿](https://www.reddit.com/r/droidappshowcase/wiki/suggested-post-template/)·[규칙](https://www.reddit.com/r/droidappshowcase/)·[허용 도메인](https://www.reddit.com/r/droidappshowcase/wiki/approved-domains/)의 마지막 확인 기록(11-01 채널 계획)을 재사용했다. Reddit 계정 접근·로그인·게시·댓글·DM·가입0, 새 규칙 조사/채널 비교/색인·SEO/기능 시험0이다.
 
-근거는 [기존 공개 기능 대조](04-seo-direction.md#phase2-search-expansion-20261031) 및 같은 배포 소스의 `faq.html` q8/q10(기록 작성·수정/다시 보기·선택 상징, 무료 기본 기록/선택 Premium)이다. 이번 `hl=en_US&gl=US` Play 공개 상세 읽기는 도구 접근 오류로 본문을 얻지 못했다. 기존 실제 Play URL을 재사용하되 최신 미국 가격·공개 버전별 추가 기능을 새로 확인했다고 주장하지 않는다. 따라서 구체적인 금액·결제 주기, AI/동기화/백업·사진/음성의 공개판 조건, 이용자 수/효과·비교 우위는 초안에서 제외한다. 상징 전체의 무료/무제한 사용도 약속하지 않는다. 신규 이미지 제작/앱 실행은 하지 않았다.
+근거는 [기존 공개 기능 대조](04-seo-direction.md#phase2-search-expansion-20261031), `faq.html` q8/q10, [기존 최종 상세 설명 정합성](#play-en-us-description-final-consistency-20261101)의 무료 기본 기록·상징·조회/수정·선택 Premium이다. 초안 최초 작성 당시 Play 웹 도구 오류는 이후 [미국 스토어 확인 기록](#play-us-listing-review-20261101)의 실제 US HTML/공식 package URL로 보완된 이력이며 이번 새 조회는 없다. 아래 직접 Play URL은 기존 공식 package `com.moolsoft.noveraflow`와 일치, noveraflow.com 우회 링크/UTM은 없다. 구체적 미국 금액·주기·미확인 AI/백업/동기화·성과·비교 우위·모든 상징 무료/무제한 주장을 추가하지 않는다. Cost는 검증된 freemium/선택 구독 안내를 유지하므로 **정확한 미국 가격 추가 확인을 필수로 요구하지 않는다**.
 
-### 영어 제목
+### 최종 영어 제목 — 기존 원문 그대로 복사
 
 NoveraFlow — an Android journal for short entries, symbols, and reflection
 
-### 영어 본문 (검토본)
+### 최종 영어 본문 — 기존 원문 그대로 복사
 
 ```markdown
 **App name:** NoveraFlow
@@ -441,19 +450,21 @@ https://play.google.com/store/apps/details?id=com.moolsoft.noveraflow
 When you revisit a journal entry, what helps you remember the day: the words, a symbol, or both?
 ```
 
-질문은 일반적인 기록 습관에 관한 대화용이며 테스터/버그보고·설문 참여·리뷰/추천·DM·개인 일기 공개 요청이 아니다. 댓글/조회/설치를 첫 기록 사용자 성과로 표현하지 않는다. 공식 템플릿의 미디어 항목은 아래 준비 조건으로 남아 있으며 현재 완성 게시물로 취급하지 않는다.
+질문은 일반적인 기록 습관에 관한 대화용이며 테스터/버그보고·설문 참여·리뷰/추천·DM·개인 일기 공개 요청이 아니다. 댓글/조회/설치를 첫 기록 사용자 성과로 표현하지 않는다. 본문은 새로 쓰지 않았고 미디어는 아래 기존 파일1개를 별도로 첨부한다.
 
-### 게시 전 체크 — 미확인은 체크하지 않음
+### 첨부할 이미지1개 — 기존 파일, 새 제작 없음
 
-- [x] 제목/앱명·한 줄 설명·기능/용도·개발자 관계 공개·비교 우위 없는 장점·무료/선택 구독 구분·공식 Play 링크·사용자 질문 초안 작성.
-- [ ] **Flair:** 게시 시 `Showcase` 선택. 이번 Reddit UI에서 선택/설정하지 않았으며 Promo/Giveaway/Beta로 게시하지 않음.
-- [ ] **이미지:** 현재 이 초안에 첨부 준비된 파일0. 기존 공개 Android 영어 화면 중 기록 작성/상징/Records를 보여줄 자료 선정, 공개판과의 일치·사용 권한·개인 기록/계정정보 미노출 확인 후 직접 업로드할 미디어 준비. 템플릿의 Screenshots / Media 항목 채우기. 보유 파일 존재만으로 게시 준비 완료 처리하지 않음.
-- [ ] **가격/기능:** 게시 전에 사용자/운영자가 미국 공개 Android 앱의 무료 기본 기록·선택 구독 안내와 실제 구독 금액/결제 주기를 확인. 가격은 확인 후에만 Cost에 추가하고, 확인 불가 시 금액을 만들지 않으며 게시 준비 조건으로 유지. 이번 초안의 보수적 기능 범위도 현재 공개판과 다르면 수정.
-- [ ] **계정 자격:** 사용자가 직접 기존 개인 계정의 생성 후24시간 이상, 합산 karma2 이상, email 인증, 최근7일 앱 소개 이력/주1회 한도, 홍보전용/교차스팸 계정 아님을 확인. 이번 계정 상태는 전부 미확인; 계정 접근·로그인·karma 작업·계정 생성0.
-- [ ] 게시 직전 현행 규칙/허용 링크/Flair 변경 여부를 좁게 확인하고 완성 앱 소개임을 유지. 테스터 모집·다른 sub 교차게시·우회 사이트 링크·새 UTM 없음.
-- [ ] 사용자 별도 외부 게시 허용, 공개할 본문/미디어·응답 담당/시간 확정. 이번 초안 작성 요청은 게시 허가가 아님.
+- **파일:** [06-basic-journaling-final-v2.png](assets/play-us-20261101/06-basic-journaling-final-v2.png)
+- **절대 경로:** `D:/Development/Personal/noveraflow/site-us-english/docs/assets/play-us-20261101/06-basic-journaling-final-v2.png`
+- 기존 검증 규격 **1440×2880 PNG / 4,440,527bytes**·Git 추적 파일을 그대로 사용한다. 이미지 재편집/생성/복사·앱 캡처/스토어 재업로드0. 이번은 Reddit 첨부 자료 선정 목적의 시각 확인만 했다.
+- 내용은 text entry·symbol·saved entries 읽기/수정·basic free/optional Premium으로 본문/기존 공개 기능 근거와 일치한다. 개인 일기·계정·식별자·미확인 유료 혜택/연간 기능이 없으며 기존 프로젝트에서 만든 홍보 자산이다. **AI 편집된 기능 소개 일러스트**로, 실제 앱 실행 화면을 캡처한 screenshot이라고 설명하지 않는다. Store 심사 통과/공개 완료를 Reddit 사용의 근거로 내세우지 않는다.
 
-첫10명 측정 가능/불가능 범위와 미측정 판정은 [SEO의 간결한 측정 메모](04-seo-direction.md#android-showcase-draft-20261101)를 따른다. 기존 채널 비교와 광범위 측정 계약은 복제하지 않는다. 이번 관련 MD만 개인 moolsoft-stack 명시적 author/committer·기존 main 추적 경로에 `[CF-Pages-Skip]` commit/push하며 코드/운영 배포·DB·새 기능·외부 게시0, 기존 이력/사용자 변경/복구점 보존.
+### 사용자 게시 직전 최소 확인2개
+
+- [ ] **본인 계정·현행 규칙:** 마지막 확인 조건은 계정 생성 후24시간 이상·합산 karma2 이상·인증 email·1계정 주1회(최근7일 소개 이력 확인)·홍보전용/교차스팸 금지다. 사용자만 자신의 자격과 게시판의 현재 규칙/허용 링크·미디어 조건이 그대로인지 확인한다. 기존 규칙은 완성 Android 앱 소개/기능·대상·Cost·공식 Play·미디어를 요구하며 테스터 모집은 별도다. 위 일러스트의 허용 여부나 AI 표시 요구가 바뀌었으면 그 요구를 먼저 따른다. 자격 충족/현행 규칙은 이번 미확인이다.
+- [ ] **사용자 직접 게시 화면:** 위 제목/본문과 PNG1개를 준비해 `Showcase` Flair 선택, 직접 Play 링크·이미지 렌더링/텍스트 잘림·첨부 수용 여부만 미리보기에서 확인하고 사용자가 게시 여부를 결정한다. 요구 미충족이면 게시하지 않는다. 계정/게시 UI에는 에이전트가 접근하지 않았으므로 Flair 설정/업로드/게시 완료로 표시하지 않는다.
+
+본문·링크·미디어 선정은 완료됐고 계정별 게시 적격 확인과 직접 게시 조작만 사용자에게 남는다. 에이전트 외부 게시 허용을 다시 요청하지 않으며 이번 준비 완료를 게시 승인/실행으로 바꾸지 않는다. 미국 실제 첫 기록10명은 [최신 익명 집계 판정](04-seo-direction.md#first-record-admin-authenticated-20261101)의 **미측정** 상태로 유지. 기존 마케팅/HANDOVER MD2개만 개인 moolsoft-stack/github-personal에 `[CF-Pages-Skip]` commit/push하며 새 코드/운영 배포·DB·광고·외부 게시0, 기존 이력/사용자 변경/이미지 원본 보존.
 
 <a id="us-first10-channel-plan-20261101"></a>
 ## 2026-11-01 미국 영어권 첫10명 채널 조사·계획 완료
