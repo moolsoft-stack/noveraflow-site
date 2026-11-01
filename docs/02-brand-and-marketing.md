@@ -7,6 +7,51 @@ brand/marketing direction for the public site.
 
 # Brand And Marketing
 
+<a id="play-sixth-final-submission-20261101"></a>
+## 2026-11-01 6번째 이미지 최종 문구 수정 — 파일 완료 / Console 대상 확인 대기
+
+**FINAL_IMAGE_READY / STORE_NOT_APPLIED / SUBMISSION_NOT_RUN / PUBLICATION_UNCONFIRMED.** 최신 후보 마감과 현재 사용자 지시를 기준으로 두 문구만 수정했다. 사용자 이번 요청은 대상/현재 상태 일치 확인 후 교체·제출까지 허용한다. 이전 절의 별도 Store 수정 허용 대기는 이번 지시로 갱신됐으나, **Console 대상 확인이 되지 않아 업로드/제출은 미실행**이다. 완료된 스토어/SEO 조사·앱 기능 시험을 반복하지 않았다.
+
+### 최종 파일과 정확한 변경 범위
+
+- **최종 PNG:** [06-basic-journaling-final-v2.png](assets/play-us-20261101/06-basic-journaling-final-v2.png). 절대 경로 `D:/Development/Personal/noveraflow/site-us-english/docs/assets/play-us-20261101/06-basic-journaling-final-v2.png`.
+- **규격:**1440×2880,1:2 PNG,4,440,527bytes. SHA256 `83f66cf9656700b2d97ab6f140602cf1afa614a1cbebb58c21e625e7ee5b90a0`.
+- **보존 원본:** 기존 `06-basic-journaling-candidate-v1.png`, SHA256 `1d9f4dbff51f1445f6be0a942071c228f94d2048372a49d083e53789ed772b19` 불변. 공개6번째 대응 원본 `app/assets/IOS_K_E_J_img/e5_p_aos.png` 및 다른7개 Android 원본도 기존 baseline과 **8/8 SHA256 일치**. 새 파일에만 저장했다.
+
+| 위치 | 이전 문구 | 최종 문구 |
+| --- | --- | --- |
+| 상징 안내 | Choose an available symbol. | **Choose a symbol for the moment.** |
+| 기록 다시 보기 제목 | Come back to your words | **Revisit your entries** |
+
+나머지 전체 문구(BASIC JOURNALING, Your words./Your own pace., Write a little. Return when you want., Start with a moment/Write a short text entry., Make it yours, Read and edit saved entries., Basic journaling is free./Premium is optional., NoveraFlow)는 기존 후보 그대로다. 기존 공개 설명/화면 및 [앞 절의 기능 근거](#play-sixth-candidate-20261101)를 재사용했다. 새 표현은 상징 선택·저장 기록 재조회라는 기존 기능과 일치하며, 미구현 연간/backup-sync/미확인 유료 혜택을 추가하지 않았다.
+
+**편집/검증:** 내장 image_gen으로 정확한 두 문구 편집을 요청했다. 전체 생성 결과를 그대로 대체하지 않고 원본 후보1440×2880에 두 텍스트 영역만 규격 보간/합성해 나머지 디자인을 고정했다. 변경 가능 영역은 좌상단 기준 `(592,1517,650,77)` 및 `(592,1879,650,72)`의 x/y/width/height다. PNG를 decode해 RGB 픽셀을 전수 비교한 결과 **변경93,447px / 두 영역 밖 변경0px**. 배경·아이콘·배치·색상·다른 문구·비율은 영역 밖 픽셀 동일로 확인했다. 최종 파일을 직접 열어 두 문구의 철자/대소문자/마침표·가독성·잘림 없음을 확인했고1440×2880을 검증했다. 자동 OCR/새 앱 실행·기능 회귀/빌드는 하지 않았다.
+
+### Google Play Console 확인 시도와 정확한 현재 상태
+
+연결 도구 목록에서 Play Console/브라우저 조작 connector가 없었고 접근 가능한 개인 인증 CDP 세션도 찾지 못했다. 회사 프로필/쿠키/인증정보를 읽지 않고 개인 작업 경로 아래의 새 격리 Chrome 프로필로 `https://play.google.com/console/` 및 개발자 진입 경로 `/console/u/0/developers`를 읽기 전용으로 열었다. 두 요청 모두 실제 반환 title은 **Google Play for business | Launch & monetize your apps | Google Play Console**인 공개 안내 페이지였고 NoveraFlow 앱 ID/등록정보 편집 화면은 확인되지 않았다. 이를 인증된 Console 접근/미국 등록정보 확인 성공으로 보고하지 않는다. 개인 세션 연결 가능 여부를 사용자에게 요청해 둔 상태다.
+
+| 작업 | 실제 상태 |
+| --- | --- |
+| 현재 Console의 개발자/앱/package·미국 영어 대상 및 기존 MD 일치 확인 | **미확인**. 앱 식별자 기대값은 `com.moolsoft.noveraflow`. 기존 공개 baseline은 en_US/gl=US와8장이나 현재 Console 편집 대상/맞춤 등록정보를 대체하지 않음 |
+| 기존8장 중6번째 삭제·최종 PNG 업로드 | **미실행**. Console에 쓴 변경0 |
+| 다른7개 이미지/전체8장 순서 확인 | 로컬 원본7개 보존 확인. **현재 Console의7개/순서 조회는 미확인**, 운영 이미지를 변경하지 않음 |
+| 미국 영어 미리보기의 최종 이미지/순서 점검 | **미실행** |
+| 변경 제출 / 검토 상태 / 게시 | **제출0 / 검토 상태 미확인 / 이번 변경 게시0**. 최종 파일 완성을 운영 반영 완료로 표시하지 않음 |
+
+**재개 조건/실행 순서:** 인증된 **개인 moolsoft 개발자 계정** Console 세션 연결→NoveraFlow package/현재 제목·대상 등록정보/미국·영어·8장 baseline 대조→차이가 있으면 변경/제출 중단하고 차이 보고→일치하면6번째만 최종 PNG로 교체, 나머지7개/8장 순서 보존→미국 영어 미리보기에서 문구/순서 확인→이번 승인 범위의 등록정보 변경만 제출→검토/관리형 게시 여부와 공개 반영을 각각 기록한다. 최종 대상/미리보기 확인 없이 제출하지 않는다. 개인정보/비밀번호/인증코드를 채팅으로 받거나 회사 계정을 사용하지 않는다. 현재 남은 조건은 추가 디자인/제출 허가가 아니라 **접근 가능한 개인 인증 세션과 대상/미리보기 확인**이다. 심사/게시 조건은 실제 Console 확인 후에만 판정한다.
+
+앱 소스/APK/AAB·서버/DB·결제 설정/구독 상품 변경0. 이번 파일/문서는 기존 개인 site repo의 main 추적 경로에 명시적 moolsoft-stack author/committer·`[CF-Pages-Skip]` commit/push·원격 SHA 확인으로 보존하며, 이는 **Git 저장 완료일 뿐 Google Play 제출/게시 완료가 아니다**. 기존 후보/원본/다른 이미지·사용자 미커밋·운영 복구점 유지.
+
+### 사용한 최종 편집 프롬프트 (내장 image_gen)
+
+```text
++Edit this existing NoveraFlow promotional image. Use case text-localization. Preserve the exact design, composition, background landscape and texture, cream card, decorative book/leaf/moon icons, colors, layout, all other text, brand and footer. Make ONLY these TWO literal text replacements in their current locations, preserving typefaces, weight, alignment and text size as closely as possible:
+1. Replace "Choose an available symbol." with "Choose a symbol for the moment."
+2. Replace "Come back to your words" with "Revisit your entries"
+Absolutely no other visible text changes, no paraphrases, no added words, no changed icons. Keep the image 1:2 portrait. Requested final dimensions 1440 x 2880. Keep all areas outside the two edited text lines as unchanged as possible. This is an edit, not a redesign.
+```
+
 <a id="play-sixth-candidate-20261101"></a>
 ## 2026-11-01 미국 Play 6번째 이미지 교체 후보1개 준비 — 미업로드
 
