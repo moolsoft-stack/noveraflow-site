@@ -1,5 +1,14 @@
 # Handover Status
 
+<a id="us-baseline-20261004-31-20261101"></a>
+## 2026-11-01 미국 보고 기준선 조회 마감 — 지정28일·미확인 분리
+
+`97973a3` 이후 [SEO의2026-10-04~31 미국 기준선](04-seo-direction.md#us-baseline-20261004-31-20261101)을 갱신했다. **GSC Web 미국13노출/0클릭**, 같은 기간 전체52노출/3클릭 확인. 개인 moolsoft@gmail.com·noveraflow.com 도메인, 맞춤 날짜와 **국가: 미국** 표시를 확인한07:40:53Z 시점값이다. 업데이트10.5시간 전·월말 완결성 별도 미확인.
+
+Play 동일 기간의 노출/기기 획득/최초 실행에 COUNTRY/US를 요청했으나 미국 이름/수치가 화면에 확정되지 않고 **데이터 없음·표 `-`**를 반환했다. 최초 실행은 일부 데이터 사용 불가 안내도 있어 **미확인**,0으로 대체 안 함. 기존 전체국가20/6/5는97973a3 관측을 재사용하고 미국 수치로 바꾸지 않는다. CF 개인 브라우저는 `/login`으로 이동해 해당 조회만 중단, 지정 기간 visits 미확인. 이전7일46visits·GSC10/1~28 미국11노출은 기간이 달라 이번 기준선에 사용하지 않는다.
+
+미국 첫 기록 작성자는 **미측정** 유지, 서비스/지표 간 연결·합산·추정0. **다음 실행1개:** 개인 CF 재인증 후10/4~31·host=noveraflow.com·미국 Web Analytics 기존 visits 조회. Play 수치 미제공 원인을 추정하거나 반복 조회하지 않는다. Google 심사/등록정보·Reddit/게시/광고·신규 계측/개발/앱 빌드·서버/DB 변경0. 기존 SEO/HANDOVER MD2개만 개인 moolsoft-stack/github-personal로 `[CF-Pages-Skip]` commit/push·원격 SHA 확인, 회사 adcomlab 계정/자원 혼용0.
+
 <a id="play-en-us-description-submitted-20261101"></a>
 ## 2026-11-01 승인된 en-US 상세 설명 적용·Google 검토 제출 완료
 
