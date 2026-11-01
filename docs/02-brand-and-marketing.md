@@ -7,6 +7,73 @@ brand/marketing direction for the public site.
 
 # Brand And Marketing
 
+<a id="play-en-us-description-draft-20261101"></a>
+## 2026-11-01 미국 영어 상세 설명 수정안1개 — 무료/Premium 구분, 문안만
+
+**문안 준비 완료 / Console 입력·저장·제출0.** 최신6번째 이미지 교체·Google 검토 제출 마감을 읽고 완료 작업으로 유지했다. 이미지 재업로드/순서 변경·제출/심사 확인은 반복하지 않았다. 이번은 기존 en-US 문구의 읽기 전용 대조와 실제 기능 근거에 맞는 상세 설명 초안 작성이며 Google 색인/SEO 조사·기능 시험·앱 빌드·운영 배포·서버/DB·결제/상품 변경0이다.
+
+### 현재 등록 문구와 기존 자료 대조
+
+**2026-11-01T05:00:10Z(14:00 KST)**, 기존 개인 moolsoft@gmail.com Console 세션에서 NoveraFlow `com.moolsoft.noveraflow`의 기본 등록정보 **영어(미국) – en-US**를 읽었다. 언어 선택만 했고 필드 입력/저장/제출은 하지 않았다. 현재 제목·짧은 설명·상세 설명 전체가 기존 미국 공개 HTML/`public-summary.json` 및 [직전 Console 대조 기록](#play-sixth-submitted-20261101)과 **3/3 동일**이었다. 새 공개 스토어 재수집/SEO 검증은 하지 않았다.
+
+- **제목 유지:** NoveraFlow AI Journal
+- **짧은 설명 유지:** Journal thoughts and feelings with text, photos and voice. Reflect with AI.
+- **현재 상세 설명:** 짧은 기록/상징·text/photo/voice·AI 피드백/주간·월간 성찰·history/calendar·로컬 ZIP을 소개한다. 무료 기본 기록/조회와 일부 AI·backup의 사용 제한 또는 Premium 적용 가능성을 뒤쪽에서 묶어 설명해, 무료 로컬 ZIP과 유료 backup을 구분하기 어렵다. 현재 상세 설명은 바꾸지 않았으며 아래는 교체 검토본이다.
+
+### 영문 상세 설명 수정안 (1개)
+
+```text
+NoveraFlow is a journaling app for everyday thoughts, feelings, and self-reflection. Start with a few words, choose a symbol for the moment, and revisit your entries at your own pace.
+
+FREE BASIC JOURNALING
+• Write text entries about your day.
+• Choose from available symbols to accompany your entries.
+• Read and edit saved entries in your history.
+• Export a local ZIP backup and restore a supported NoveraFlow backup file. Keep your own copy of the file.
+
+These basic journaling features are free and do not require a Premium subscription.
+
+OPTIONAL PREMIUM
+Premium is an optional paid subscription. You can keep using the free features above without subscribing. Before subscribing, review the Premium features, access and usage limits, price, and billing period shown on the purchase screen in your installed app.
+
+AI REFLECTIONS
+Individual-entry AI feedback and weekly or monthly reflections are subject to access and usage limits. An internet connection is required. Weekly and monthly reflections need enough eligible entries from the completed period. You request each reflection; it is not an automatic scheduled report. Check the app for the access available to you.
+
+YOUR RECORDS
+Journal data is stored on your device by default. When you request an AI feature, the record content needed for that request is sent to the service. Read the privacy policy for details. AI responses do not replace medical diagnosis or professional advice.
+
+Available in English, Korean, and Japanese.
+```
+
+문안은 1492자(줄바꿈 포함)로 기존4000자 기준 안이다. 핵심 journaling app·free 기본 기능·self-reflection이라는 기존 검색 의도와 조용한 브랜드 톤을 자연스럽게 유지했다. 키워드 반복·새 검색량/순위 주장·기능 추가는 없다.
+
+### 실제 기능/무료·유료 경계의 근거
+
+| 문안 범위 | 재사용한 실제 근거 | 주장 한계 |
+| --- | --- | --- |
+| 무료 text 기록·상징·조회/수정 | 현재 공개 설명의 짧은 기록/선택 상징·편집/다시 읽기, 기존 미국1·2·8번 화면, [기존 실제 기능 대조](04-seo-direction.md#phase2-search-expansion-20261031), 공개 FAQ q8/q10의 기본 기록 안내 | available symbols로 한정, 모든 상징/해금·무제한 사용을 약속하지 않음. 새 공개판 전체 수용 시험으로 확대하지 않음 |
+| 무료 로컬 ZIP export/지원 backup restore | 같은 배포의 `faq.html` q4/q10 및 기존 모바일 기능표의 로컬 ZIP 근거. [기존 플랫폼 기능표](https://github.com/moolsoft-stack/noveraflow-docs/blob/docs/global-growth-20261031/NOVERAFLOW_CURRENT_STATUS.md#platform-capabilities-20261031) 유지 | 사용자가 파일을 보관하는 **로컬 ZIP**만 설명. 모든 파일/기기/버전 호환·자동 cloud·sync·영구 보관을 약속하지 않음 |
+| 선택 유료 Premium / 무료 기능은 구독 불필요 | 기존 무료/Premium 권한·상품/결제 근거와 공개 FAQ/후보 최종 문구. 현재 Store의 인앱 구매·무료 설치 표시만으로 유료 기능을 추정하지 않음 | **미국 현행 가격/결제 주기·구체적인 공개 Premium 혜택은 이번 미확인**. 따라서 유료 AI대화/추가 quota·cloudbackup을 제공 중이라고 열거하지 않고, 실제 설치본 구매 화면의 상품/가격/포함 항목을 확인하도록 구분. 구체적 혜택 명시가 필요한 경우 공개판/판매 근거 확보 후 별도 수정 |
+| 개별 AI 피드백·주간/월간 성찰 | 기존 공개 설명/기능표·미국4·5·8번 화면, 공개 FAQ의 충분한 완료 기간 기록/수동 요청·연결/접근·사용 제한 안내 | 확인된 종류만 **별도 조건부 AI 항목**으로 유지. 무료 포함/유료 전용·quota 숫자·항상 제공/자동 실행을 단정하지 않음 |
+| 저장/AI 개인정보 안내 | 현재 상세 설명과 공개 FAQ의 기기 기본 저장·요청 시 필요한 기록 서버 전송 안내 | 로컬 전용/서버 전송 없음·보안/치료 효과 보장 없음. 개인정보 고지를 구매 유도 때문에 숨기지 않음 |
+
+연간 AI 리뷰는 기존 미구현 근거로 문안에서 제외했다. AI대화·자동 cloud backup·정확한 AI quota/미국 USD 가격은 공개판 수용/판매 조건 미확인이므로 제외했다. photo/voice는 공개 기능 소개에 존재하지만 무료 사용 범위·limit를 확정하지 못했으므로 **무료 목록**에는 넣지 않았다. 앱 소스만 보고 Premium 제공 완료로 바꾸거나, 이미 확인된 무료 기능까지 구독 대상으로 묶지 않는다.
+
+### 현재 문구 대비 변경 이유
+
+| 현재 | 수정안 | 이유 |
+| --- | --- | --- |
+| 일반 기능 목록 후반에서 기본 사용/Premium을 묶어 설명 | 첫부분에 무료 text·상징·history/edit·로컬 ZIP 목록, 이어 구독 불필요 명시 | 설치 전에 무료로 할 수 있는 일을 바로 이해 |
+| 일부 AI/backup에 Premium이 적용될 수 있다는 포괄적 표현 | 로컬 ZIP은 무료로 분리하고 Premium은 선택 유료 구독/실제 구매 화면 기준으로 별도 설명 | 로컬 ZIP까지 유료로 보이거나 미확인 cloud 혜택이 보장되는 오해 방지 |
+| AI 종류와 일반 기능이 섞임 | 기존 확인된 개별/주간/월간 AI만 별도 조건/인터넷/기록 요건과 함께 설명 | 모든 AI가 무제한 무료 또는 구독에 모두 포함된다는 추정 방지 |
+| text/photo/voice를 한 번에 열거 | 본문 무료 목록은 범위가 확인된 text 중심, 제목/short는 유지 | 신규 무료 권한/가격·제공 범위를 만들어 내지 않음. 이번 변경은 상세 설명 문안만 |
+
+### 향후 적용 조건·이번 마감
+
+남은 조건은 사용자 문안 채택/별도 Store 적용 허용, 적용 직전 현재 en-US 문구/대기 변경과 충돌 여부 확인, 현행 공개판의 무료 범위·구매 화면 상품/포함 기능/미국 가격·주기 확인이다. 미확인 Premium 혜택을 명시하려면 해당 공개판 근거부터 확보한다. 아직 제품에 없는 연간 기능이나 근거 없는 가격을 채우지 않는다. 적용 때도 제목/short/이미지·다른 언어·결제/상품을 함께 바꾸지 않는다. 기존6번째 이미지 제출은 별개로 유지하며 이번 문안으로 재제출하지 않는다.
+
+초안의 문구/철자·무료/선택 유료/조건부 AI 경계·문자수와 문서 diff/기존 이력만 검토한다. 새 문서/이미지/코드/테스트/빌드/운영 변경0. 이 기존 마케팅/HANDOVER MD2개만 개인 moolsoft-stack author/committer·github-personal 원격의 기존 main 추적 경로에 `[CF-Pages-Skip]` commit/push·원격 SHA 확인한다. 회사 adcomlab 혼용0, 기존 사용자 변경/제출 결과/복구점 보존.
+
 <a id="play-sixth-submitted-20261101"></a>
 ## 2026-11-01 미국 영어 6번째 이미지 교체·검토 제출 완료 — 심사 중
 
