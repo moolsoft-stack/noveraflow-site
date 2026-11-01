@@ -7,6 +7,15 @@ direction.
 
 # NoveraFlow SEO 방향 기준
 
+<a id="cf-us-baseline-auth-required-20261101"></a>
+## 2026-11-01 Cloudflare 미국 방문 기준선 — 사용자 로그인 필요
+
+최신 마감 및 `80eb760`을 읽고 **기존 개인 전용 Chrome 세션의 기존 Cloudflare 탭만** 확인했다. **2026-11-01T07:42:41.993Z(16:42 KST)**, `https://dash.cloudflare.com/login`에 **Sign in to Cloudflare / Email / Password**가 표시돼 인증된 보고서 세션을 재사용할 수 없었다. 로그인 입력·전송/2단계 인증·우회·반복 시도·타 브라우저/회사 계정 접근 없이 해당 조회를 중단했다. 세션 만료인지 처음부터 로그인되지 않았는지는 확정하지 않는다.
+
+**요청값:** 기존 noveraflow.com Web Analytics, 2026-10-04~10-31·Country=United States·Host equals noveraflow.com. **결과: 미국 visits 미확인(0 아님)**. 보고서에 접근하지 못해 실제 기간/필터 적용·시간대·과거 자료 제공 여부 및 해당 지표의 현행 정의도 새로 확인하지 못했다. 과거7일46visits를 이번28일 값으로 대체하지 않는다. visits를 고유 사용자/설치/첫 기록으로 해석하지 않으며 미국 첫 기록 작성자는 **미측정** 유지한다.
+
+**필요한 사용자 조치1개:** 현재 개인 전용 브라우저의 Cloudflare 로그인 탭에서 **noveraflow.com을 관리하는 개인 계정으로 로그인 완료**. 이후 위 조건의 기존 보고서만 읽는다. 기존 GSC/Play 조회·SEO/측정 구조 분석·이미지/설명 제출은 반복0, 운영 설정/DNS/서버/DB/결제/앱·웹 배포 변경0. 기존 기준선/이력은 보존하고 이 SEO/HANDOVER MD2개만 개인 moolsoft-stack/github-personal에 `[CF-Pages-Skip]` commit/push·원격 SHA 확인한다.
+
 <a id="us-baseline-20261004-31-20261101"></a>
 ## 2026-11-01 미국 기준선 — 2026-10-04~10-31 기존 보고서 읽기
 
