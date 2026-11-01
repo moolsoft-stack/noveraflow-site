@@ -7,6 +7,46 @@ brand/marketing direction for the public site.
 
 # Brand And Marketing
 
+<a id="play-sixth-submitted-20261101"></a>
+## 2026-11-01 미국 영어 6번째 이미지 교체·검토 제출 완료 — 심사 중
+
+**CONSOLE_REPLACED / EN_US_PREVIEW_VERIFIED / SUBMITTED_FOR_REVIEW / PUBLICATION_PENDING.** 사용자가 개인 Console을 연 뒤 인증된 세션에서 미완료 교체/순서/미리보기/제출만 진행했다. **2026-11-01T04:57:28Z(13:57 KST)** 게시 개요의 **검토 중인 변경사항**, **검토를 위해 변경사항1개를 전송했습니다** 확인으로 제출 완료를 판정했다. 아래 로그인 대기/제출 미실행 기록은 이전 이력이다. Google 승인·실제 공개 반영까지 완료된 것은 아니다.
+
+### 대상 확인과 변경 전 대조
+
+- 개인 Google 계정 `moolsoft@gmail.com`, 개발자 ID `7112479946604009935`, 앱 ID `4972591412444123458`, package **com.moolsoft.noveraflow** 확인. 회사 adcomlab 계정/프로필을 사용하지 않았다. 대시보드의 시작 상태는 **게시되지 않은 변경사항 없음**이었다.
+- Console 등록정보 목록에는 기본 등록정보가 있고 별도 미국 맞춤 등록정보는 표시되지 않았다. **기본 스토어 등록정보의 영어(미국) – en-US 번역**을 선택했다. 한국어 기본값·일본어 항목을 수정하지 않았다. 이는 미국 전용 지역 캠페인/새 맞춤 등록정보 생성이 아니라 기존 en-US 영어 자산 수정이다.
+- 변경 전 en-US 제목/짧은 설명/상세 설명 전체를 기존 미국 공개 HTML과 대조해 **동일** 확인. 휴대전화8장도 기존 `public-summary.json`의 이미지 원본 ID·순서 **8/8 동일**이었다. 현재 대상이 불명확하거나 MD와 달라 제출을 멈춰야 하는 조건은 발견되지 않았다. SEO/수요 조사나 앱 기능 시험은 반복하지 않았다.
+
+### 실제 교체·전체 순서·보존 확인
+
+최종 파일은 기존 검증된 [06-basic-journaling-final-v2.png](assets/play-us-20261101/06-basic-journaling-final-v2.png), 절대 경로 `D:/Development/Personal/noveraflow/site-us-english/docs/assets/play-us-20261101/06-basic-journaling-final-v2.png`다. **1440×2880 PNG**, SHA256 `83f66cf9656700b2d97ab6f140602cf1afa614a1cbebb58c21e625e7ee5b90a0`. 파일 재생성/재편집 없이 사용했다. 두 문구는 **Choose a symbol for the moment.** 및 **Revisit your entries**, 그 외 문구/디자인 보존·이미지 기능 정합성·픽셀 검증은 [완료된 최종 파일 기록](#play-sixth-final-submission-20261101)을 재사용한다.
+
+Console의 기존8장 한도를 유지하기 위해6번째 `e5_p_aos.png`를 en-US 편집 목록에서 먼저 제외하고 최종 PNG1개를 업로드했다. 업로드 처리 완료 후 새 이미지를6번째로 배치했다. 원본 자산 자체를 미디어 라이브러리에서 삭제하지 않았고 로컬 원본/후보도 보존했다.
+
+| 순서 | 저장/제출한 en-US 휴대전화 이미지 | 보존 확인 |
+| --- | --- | --- |
+| 1 | e0_on_aos.png | 기존 원본 URL/ID 동일 |
+| 2 | e1_h_aos.png | 기존 원본 URL/ID 동일 |
+| 3 | e2_m_aos.png | 기존 원본 URL/ID 동일 |
+| 4 | e3_w_aos.png | 기존 원본 URL/ID 동일 |
+| 5 | e4_m_aos.png | 기존 원본 URL/ID 동일 |
+| **6** | **06-basic-journaling-final-v2.png** | 기존 e5_p_aos.png만 교체 |
+| 7 | e6_pb_aos.png | 기존 원본 URL/ID 동일 |
+| 8 | e7_d_aos.png | 기존 원본 URL/ID 동일 |
+
+새 업로드 원본 ID는 `qZl-nJv_udDi2Ch7qRpB2ae_KZYLhs0GjzFH9iQ6Mvy-GZWP9H2FXPT1-Q2_bupk6kwi6TeBaEjBm-PTkjQX`다. 편집 목록과 **리뷰 단계의 영어(미국) – en-US 애셋 미리보기**에서 위8장 순서를 각각 확인했다. 새6번째 미리보기의 렌더링도 직접 확인했다. 다른7개 원본 URL·ID와 상대 위치, 기존 제목/두 설명·아이콘/그래픽/동영상 입력은 변경 전 값과 **동일**이었다.
+
+### 저장·제출·게시 상태
+
+1. 리뷰 단계의 AI 애셋 선언에서 기존 애셋 라벨은 유지하고 **새6번째 PNG만 AI 생성/편집 라벨**을 표시했다. 기존23개 스크린샷 라벨과 아이콘/그래픽 라벨은 바꾸지 않았으며 체크 상태 차이가 새 PNG1개뿐임을 확인했다.
+2. en-US 미리보기/순서/타 자산 불변 확인 후 저장했다. Console의 **변경사항이 저장되었습니다. 게시 개요에서 전송하여 검토를 받으세요** 확인.
+3. 게시 개요에 대기 변경이 **1개**, 범위가 **영어(미국) – en-US / 기본 스토어 등록정보 / 휴대전화 스크린샷 변경**뿐임을 확인했다. 다른 변경을 함께 제출하지 않았다.
+4. **검토를 위해 변경사항1개 제출** 및 확인창의 **검토를 위해 변경사항 전송**을 실행했다. **검토 중인 변경사항**과 전송 성공 문구를 읽어 확인했다. 단순 저장·버튼 클릭만으로 제출 완료를 주장하지 않는다.
+5. **관리형 게시가 사용 중지됨**을 확인했다. 현재는 Google 검토 중이며 승인 후 자동 게시되는 설정이다. 게시 옵션을 변경하지 않았다. UI가 일반적으로7일 이내/더 오래 걸릴 수 있다고 안내했지만 실제 심사/게시 일정을 확정하지 않는다. 현재 최근 게시일 표시는10/25로 남아 있어 새 이미지의 공개 반영 완료를 주장하지 않는다.
+
+**남은 조건:** Google 검토 승인 및 공개 스토어 반영. 현재 추가 사용자 제출 승인·개인 인증 연결은 필요하지 않으며, 공개 반영 후 en-US6번째/순서 확인은 아직 남아 있다. 거절/보완 요청이 오면 그 내용에 한정해 처리한다. 앱 소스·APK/AAB·서버/DB·결제 설정/구독 상품 변경0, 이미지 재생성/전체 테스트/빌드0. 이번 후속 Git 변경은 이 기존 마케팅/HANDOVER MD2개에 한정하고 개인 moolsoft-stack/github-personal에 `[CF-Pages-Skip]` commit/push·원격 SHA 확인한다. 운영 Pages 배포와 Google Play 심사 제출은 구분한다.
+
 <a id="play-sixth-final-submission-20261101"></a>
 ## 2026-11-01 6번째 이미지 최종 문구 수정 — 파일 완료 / Console 대상 확인 대기
 

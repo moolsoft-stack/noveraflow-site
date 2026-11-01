@@ -1,5 +1,16 @@
 # Handover Status
 
+<a id="play-sixth-submitted-20261101"></a>
+## 2026-11-01 미국 영어6번째 교체·검토 제출 완료 / Google 심사 중
+
+**교체 완료·en-US 리뷰 미리보기/전체8장 순서 확인·검토 제출 완료 / 공개 게시 대기.** [마케팅의 대상/변경 전 대조·최종 경로/문구·8장 순서·보존/제출 근거](02-brand-and-marketing.md#play-sixth-submitted-20261101)가 최신 owner다. 개인 moolsoft@gmail.com·개발자7112479946604009935·NoveraFlow package com.moolsoft.noveraflow 확인. 기본 등록정보의 **영어(미국) – en-US**를 수정했고 별도 지역 맞춤 등록정보를 만들지 않았다. 시작 시 다른 게시 대기 변경 없음, 기존 US 문구 전체/이미지8장 ID·순서와 Console 일치 확인 후 진행했다.
+
+기존 [06-basic-journaling-final-v2.png](assets/play-us-20261101/06-basic-journaling-final-v2.png)1440×2880/SHA256 `83f66cf9656700b2d97ab6f140602cf1afa614a1cbebb58c21e625e7ee5b90a0`를 업로드해 **6번째 e5_p_aos.png만 교체**했다. 순서는 e0→e1→e2→e3→e4→최종v2→e6_pb→e7_d, 다른7개 원본 URL/ID·순서 동일 확인. 제목/설명·아이콘/그래픽·한국어/일본어·원본 미디어/로컬 후보 보존. 리뷰의 en-US 애셋 미리보기/렌더링 확인 후 새PNG만 AI 라벨 추가, 기존 라벨 유지.
+
+저장 후 게시 개요에서 변경 **1개 / 영어(미국) – en-US / 휴대전화 스크린샷 변경**만 확인하고 최종 전송했다. **2026-11-01T04:57:28Z(13:57 KST)** 전송 성공 **검토를 위해 변경사항1개를 전송했습니다**와 **검토 중인 변경사항** 확인. **관리형 게시 사용 중지** 상태로 승인 후 자동 게시되며 설정 변경0. 최근 게시일10/25 표시 유지, **Google 승인/공개 반영은 아직 미확인**이다. 아래 개인 로그인 대기/제출 미실행은 이전 이력으로 보존한다.
+
+남은 조건은 Google 검토·공개 반영 및 이후6번째/순서 확인이다. 앱 소스·APK/AAB·서버/DB·결제/구독 변경0, 이미지 재생성/완료된 조사·검증 반복0. 이번 기존 MD2개만 개인 moolsoft-stack author/committer·github-personal 원격에 `[CF-Pages-Skip]` commit/push·원격 SHA 확인해 마감한다. 회사 adcomlab 혼용0·기존 사용자 변경/운영 복구점 보존.
+
 <a id="play-sixth-final-submission-20261101"></a>
 ## 2026-11-01 최종 문구 수정 완료 / Play Console 교체·제출 대기
 
