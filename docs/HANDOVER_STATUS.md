@@ -1,5 +1,12 @@
 # Handover Status
 
+<a id="cf-us-baseline-confirmed-20261101"></a>
+## 2026-11-01 Cloudflare 미국 방문 기준선 확보 — 인증 대기 해소
+
+사용자 로그인 후 `904b810`을 확인하고 기존 개인 Cloudflare 탭/Moolsoft@gmail.com's Account만 재사용했다. **07:49:43.564Z**, 기존 noveraflow.com Web Analytics Visits에서 **미국100 visits** 확인. 요청10/4~31을 **10/4 00:00~11/1 00:00 GMT+9** 경계로 조회, Country=United States·Host=noveraflow.com·Exclude bots=Yes 적용 확인. 직접100, `/privacy`90·`/`10이며 전체 국가/고유 사용자/첫 기록 수가 아니다. [SEO의 실제 조건·지표 정의·근거](04-seo-direction.md#cf-us-baseline-confirmed-20261101)가 owner다.
+
+Cloudflare 방문 정의는 직접/외부 참조자 진입이고 한 방문에 여러 page views 가능. 과거7일46visits 재활용/추정0, GSC/Play와 합산·전환율/동일인 연결0. **미국 첫 기록 미측정** 유지. CF 로그인/조회 차단은 해소됐고 이번 기준선 범위의 추가 사용자 조치 없음. 아래 로그인 필요 기록은 과거 이력이다. 완료된 통계/SEO/심사 재조회·제출0, 운영 설정/DNS/서버/DB/결제/앱·웹 배포 변경0. SEO/HANDOVER 기존 MD2개만 개인 moolsoft-stack/github-personal로 `[CF-Pages-Skip]` commit/push·원격 SHA 확인한다.
+
 <a id="cf-us-baseline-auth-required-20261101"></a>
 ## 2026-11-01 Cloudflare 기준선 후속 — 기존 개인 세션 로그인 필요
 

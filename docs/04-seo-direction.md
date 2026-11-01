@@ -7,6 +7,23 @@ direction.
 
 # NoveraFlow SEO 방향 기준
 
+<a id="cf-us-baseline-confirmed-20261101"></a>
+## 2026-11-01 Cloudflare 미국 방문 기준선 확보 — 100 visits
+
+사용자의 로그인 완료 안내 후 `904b810` 마감과 기존 개인 전용 브라우저 탭을 재사용했다. **Moolsoft@gmail.com's Account**에서 기존 noveraflow.com Web Analytics에 접근, **2026-11-01T07:49:43.564Z(16:49 KST)** Visits 상세 보고서에서 아래 실제 표시값을 확인했다. 이전 인증 대기는 해소됐으며 아래 로그인 필요 기록은 당시 이력이다.
+
+| 항목 | 실제 적용 조건/표시값 |
+| --- | --- |
+| 요청 일자 범위 | **2026-10-04~2026-10-31**. 보고서 경계는 **10/4 00:00~11/1 00:00 (GMT+9)**로 설정. URL `date-from=2026.10.03-1500&date-to=2026.10.31-1500`(UTC 경계)와 화면 **Oct 4, 00:00 - Nov 1, 00:00 / GMT+9** 일치 |
+| 사이트·호스트 | 기존 siteTag `11d343717c8b4448bee91fd20e53c118` / **Host equals noveraflow.com**. 같은 태그의 admin 하위 도메인 제외 |
+| 국가·봇 | **Country equals United States** (`country=US`) / **Exclude bots equals Yes**. 보고 필터만 적용, 운영 수집/봇 설정 변경 아님 |
+| 총 방문·국가별 방문 | **100 visits**, United States **100**. 전체 국가 수치가 아니라 위 미국·host 조건의 표시값 |
+| 같은 보고의 부가 집계 | referrer 없음(직접)100, path `/privacy`90·`/`10, host noveraflow.com100. 페이지 보기 카드100. visits와 page views를 합산하지 않음 |
+
+**지표 정의:** 보고서의 방문 요약은 직접 또는 외부 참조자에서 사이트로 탐색한 경우를 방문으로 설명하고 한 방문에 여러 페이지 보기가 포함될 수 있다고 안내한다. [Cloudflare 공식 High-level metrics](https://developers.cloudflare.com/web-analytics/data-metrics/high-level-metrics/)도 HTTP referer가 hostname과 다른 페이지 보기/직접 링크 진입을 visits의 기준으로 설명한다. 따라서100은 **보고서가 제공하는 방문 집계**이며 고유 사람·가입·설치·실제 첫 기록100명이 아니다. 봇 제외 Yes도100명의 사람을 검증한 것은 아니다. 표시값의 표본화/보정 여부·누락률은 별도 확인하지 않았고 정밀한 전수 인원으로 해석하지 않는다.
+
+**해석/남은 조건:** 과거7일46visits를28일로 환산한 값이 아니다. GSC/Play의 날짜 표시가 같아도 원 보고 시간대·단위가 달라 사용자 연결/합산/전환율 산출을 하지 않는다. **미국 첫 기록 작성자는 미측정** 유지. 이번 CF 기준선 확보에는 추가 로그인/승인 조건이 없으며, 첫 기록/고유 사용자 연결은 기존 미해결 범위로 남는다. GSC/Play/SEO/측정 구조·이미지/설명 제출 재검증0. UI 보고 날짜/필터 조회 외 운영 설정/DNS/서버/DB/결제/앱·웹 배포 변경0. 기존 SEO/HANDOVER MD2개만 개인 moolsoft-stack/github-personal에 `[CF-Pages-Skip]` commit/push·원격 SHA 확인, 회사 adcomlab 계정/인증자원 접근0.
+
 <a id="cf-us-baseline-auth-required-20261101"></a>
 ## 2026-11-01 Cloudflare 미국 방문 기준선 — 사용자 로그인 필요
 
