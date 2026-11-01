@@ -1,5 +1,12 @@
 # Handover Status
 
+<a id="us-first10-channel-plan-20261101"></a>
+## 2026-11-01 초기 사용자 채널 조사·계획 마감 — 외부 실행 없음
+
+**조사·계획 완료 / 첫10명 확보 미실행·미측정.** 최신 추천은 droidappshowcase 소개1회→기존 Google 자연검색·Store 검색 보조 관측이다. [SEO의 상세 비교/원문/최소 실행안](04-seo-direction.md#us-first10-channel-plan-20261101), [마케팅 요약](02-brand-and-marketing.md#us-first10-channel-plan-20261101)이 owner다. 다음은 기존 개인 Reddit 계정 자격/이력 확인과 무료/Premium·현행 가격·공식 Play 링크·공개 가능 미디어의 비공개 Showcase 검토본 준비다. 외부 게시 허용·주간 시간·기존 US/영어/최초 저장/중복 제외 보고 범위 확정 전 게시하지 않는다. 현행 Web 익명 범주 집계는10명 달성 증거가 아니다.
+
+기존 Google 갱신 요청·sitemap 성공·SEO·제품/보호 검증은 반복하지 않았다. 미국11노출/0클릭·직접46visits(사람 수 아님), 기존 운영 Site9c709e1/Web83b4061을 재사용한다. 새 문구 색인·채널 미국 비중/전환·D7/결제는 미확인. 공개 채널 읽기/MD만 변경, 새 문서·코드·테스트/생성기/빌드·게시/외부 연락/가입·광고/결제·운영 배포/DB 쓰기0. 기존 미커밋 작업과 증적/복구점 보존. 개인 SSH moolsoft-stack 확인, Site [CF-Pages-Skip]·Docs 기존 개인 branch에 문서만 commit/push·원격 SHA 확인으로 마감한다. 아래 중단 시점의 GSC부터 재확인하라는 순서는 이번 사용자 지시로 대체됐다.
+
 <a id="phase2-index-channels-stop-20261031"></a>
 ## 2026-10-31 검색 색인·미국 초기 유입 채널 조사 중단 / 오늘 작업 종료
 

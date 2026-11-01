@@ -7,6 +7,87 @@ direction.
 
 # NoveraFlow SEO 방향 기준
 
+<a id="us-first10-channel-plan-20261101"></a>
+## 2026-11-01 미국 영어권 첫 사용자 10명 — 채널 조사·최소 실행 계획
+
+**조사·계획 완료 / 실행 미착수.** 사용자 최신 지시가 아래 10/31 중단 기록의 재개 순서보다 우선한다. 기존 Google 세 URL 갱신 요청·sitemap 성공·SEO 수정·제품/보호 검증은 재사용했고 GSC 재조회·재요청·사이트 재검증을 하지 않았다. 운영 기준은 기존 **Site9c709e1 / Web83b4061**이다. 공개 채널 원문을 읽었으며 게시·외부 연락·계정 생성·광고·결제·Store 수정·배포·DB 변경은 하지 않았다.
+
+### 1. 수요와 현재 제품에서 출발하는 판단
+
+기존 [25절 수요 조사](#phase2-keyword-evidence-20261031)와 [미국 자동완성 보완](#phase2-demand-signal-supplement-20261031)을 재사용한다. **journaling app**은 앱 탐색, **free journaling app**은 실제 무료 범위·플랫폼·보관 비용 확인, **self reflection app**은 일상을 짧게 쓰고 돌아보는 사용 목적이라는 가설이다. 미국 월 검색량·KD·각 채널 미국 비중·NoveraFlow 채널별 전환율은 **미확인**이다. 세 키워드 간 수요 크기/우열을 수치로 만들지 않는다.
+
+이번 보완 신호는 [무료 일기 앱 추천 질문](https://www.reddit.com/r/digitaljournaling/comments/1sfvq2y/can_someone_recommend_a_free_and_decent/), [Android 일기 앱 소개와 실사용 의견 사례](https://www.reddit.com/r/droidappshowcase/comments/1ryobkm/a_clean_privacyfirst_journal_app/), [짧은 일상 성찰 앱 소개 사례](https://www.reddit.com/r/droidappshowcase/comments/1qndsih/daily_reflection_journal_no_ads/), [Day One 대안 목록](https://alternativeto.net/software/day-one/)이다. 무료/기기/보관·성찰 관심과 소개 형식의 존재를 보여줄 뿐 미국 수요 규모·경쟁사 설치·유료 전환의 증거는 아니다. 과거 게시 허용 사례가 현행 규칙을 대신하지 않는다. 공개 피드의 상대 시각/검색 캐시는 실시간 활동량으로 사용하지 않았다.
+
+기능 주장은 [기존 운영 배포의 실제 기능 대조](#phase2-search-expansion-20261031)를 따른다. 무료 기본 기록과 짧은 기록→다시 읽기의 수동 성찰을 앞세운다. Web은 Google/Apple 로그인 후 텍스트 작성·보기·수정·검색·기본 sync 경로이며 `/app/?lang=en`을 유지한다. 모바일 상징/AI 피드백·주간/월간 성찰과 로컬 ZIP 백업은 지원 버전·권한·quota·연결 조건을 구분한다. AI 대화/자동 cloud backup의 모바일 로그인·Premium 조건도 유지한다. Web AI·사진/음성·ZIP 복원·연간 AI 요약, 무제한 무료 AI·완전한 실시간 백업·치료 효과를 약속하지 않는다. 최신 모바일 모든 기능/왕복의 실기기 수용을 완료했다고 확대하지 않는다.
+
+기준선은 **GSC US Web 2026-10-01~28 노출11/클릭0**, **CF 미국 최근7일 직접46 visits**다. 서로 기간/모수가 다르고 visits는 사람 수가 아니다. 실제 적격 첫 사용자 수는 **미측정**이며 0명으로도, 46명으로도 바꾸지 않는다.
+
+### 2. 채널 접근·현행 홍보 규칙 확인 (공개 원문, 2026-11-01)
+
+| 채널 | 실제 읽기 접근과 실행 조건 | 이번 판단 |
+| --- | --- | --- |
+| Reddit r/droidappshowcase | [규칙](https://www.reddit.com/r/droidappshowcase/): 완성 Android 앱 소개 허용, 계정당 주1회·24시간 이상·합산 karma2 이상·인증 email, 홍보전용 계정/교차스팸 금지. 테스터·버그보고 모집은 별도 sub 대상. [템플릿](https://www.reddit.com/r/droidappshowcase/wiki/suggested-post-template/)은 기능·대상·가격·공식 링크·미디어 요구. [허용 도메인](https://www.reddit.com/r/droidappshowcase/wiki/approved-domains/)에 play.google.com 확인 | **1순위, 조건부 실행 가능.** 기존 개인 계정 자격/게시 이력은 미확인. Showcase 1건·공식 Play 직접 링크 사용. noveraflow.com 허용 확인 전 사이트 링크/리다이렉트 추가 금지. tester 모집으로 위장하지 않음 |
+| Reddit r/iosapps | [일반 규칙](https://www.reddit.com/r/iosapps/): local karma10·Trust/Transparency·ABC, 개발자30일 제한·공식 App Store/TestFlight 링크. [10월 App Shelf 본문](https://www.reddit.com/r/iosapps/comments/1wvvq6p/megathread_the_app_shelf_october_2026/)은 낮은 karma·생성 AI 앱을 megathread로 제한하고 ABC/가격/스토어 링크·30일 제한 명시 | 예비 후보. NoveraFlow는 생성 AI 기능이 있어 일반 피드 자격으로 추정하지 않음. **11월 실행 시 활성 thread/쓰기 가능 여부 재확인 필요**, 10월 thread를 그대로 사용할 계획 아님. 미국 비중 미확인 |
+| 일기·성찰 관련 커뮤니티 | [r/Journaling](https://www.reddit.com/r/Journaling/) 종이 중심·앱/AI 금지, [r/digitaljournaling](https://www.reddit.com/r/digitaljournaling/) 자기 앱 홍보 금지, [r/selfimprovement](https://www.reddit.com/r/selfimprovement/) 제품 언급/링크/홍보 금지, [r/androidapps](https://www.reddit.com/r/androidapps/) 개발자 소개는 showcase로 안내 | 수요 읽기만. 추천 질문 댓글·DM·우회 홍보·설문/테스터 모집도 실행안에 넣지 않음 |
+| r/ProductivityApps | [규칙](https://www.reddit.com/r/ProductivityApps/): 월1회·community karma10, tester/설문 및 vibe coded 앱 금지 | 계정 자격과 제작 방식의 규칙 적합성 미확인. AI 활용 개발을 숨겨 통과시키는 경로 없음. 초기 상위 후보 제외 |
+| Product Hunt | [공식 출시 가이드](https://www.producthunt.com/launch/how-product-hunt-works): 개인 계정 무료 제출, 회사/브랜드 계정 불가, 유료 hunt/트래픽 조작 금지, 추천 노출은 자동 보장 아님 | 공개 열람 가능·제출은 로그인 필요. NoveraFlow 검색에서 기존 등록을 확정하지 못함(미등록 증명 아님). 기존 출시/재출시 조건·계정 상태 확인 후 검토. 대규모 launch 준비는 후순위 |
+| AlternativeTo | [공식 FAQ](https://alternativeto.net/faq/): 영어 지원 앱·email 인증·정식 앱 제안/심사, 프로필 광고 금지. 무료 심사 backlog가 길고 심사일/승인 보장 없음. 공식 사이트 링크 UTM은 일반적으로 불허 | 공개 Day One 대안 목록 접근 가능, 기존 NoveraFlow 등록/대기 제출은 미확인. 무료 제출만 장기 예비 후보. 심사 대기를 첫10명 일정에 넣지 않으며 유료 우선심사 구매0 |
+| 기존 App Store / Google Play 검색 | 기존 공개 Store와 사이트 CTA 증거 재사용. [Apple 검색 안내](https://developer.apple.com/app-store/search/)는 metadata·사용 행동 등 검색 요인을 설명하며 경쟁사명/무관 keyword 금지. [Play 검색 안내](https://support.google.com/googleplay/android-developer/answer/9042516?hl=en)는 기기/지역별 결과 차이를 명시 | **3순위, 기존 검색 관측.** US 제공·영어 metadata의 현재 적합성과 개인 Console 집계 접근은 후속 조건. 현재 순위/검색량/설치를 새로 검증하지 않음. metadata 변경/신규 심사 제출 없음 |
+| 기존 Google 자연검색 | 기존 root·/philosophy·/faq와 갱신 요청·sitemap 성공을 재사용. [Google 안내](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)는 변경 효과 판단에 시간이 필요하다고 설명 | **2순위, 기존 자산 관측.** 세 의도와 연결된 기존 페이지 유지, 새 SEO 수정·재색인 요청 없음. 신규 문구 실제 색인/유입 증가는 미확인 |
+
+공개 페이지 열람 성공은 개인 계정의 게시 권한·미국 대상 도달·유입 성과를 뜻하지 않는다. 다른 소규모 포럼/Discord/Slack은 구체적인 채널별 홍보 규칙·가입 자격을 확인하지 못했으므로 실행 후보로 확정하지 않는다. 기존 중단 기록의 일반 디렉터리/언론 리뷰 후보는 미국 유입·승인 경로 근거가 약해 추가 확장하지 않는다.
+
+### 3. 비용·1인 운영·첫 유입·유료 전환 비교
+
+아래 **시간·성과 가능성은 운영 계획용 추정**이며 실측/전환 확률/예상 인원 약속이 아니다. 현금은 기존 앱·도메인·스토어 계정/인프라를 유지할 때의 **추가 지출 USD**, 고정비·AI 사용 원가는 별도다. 무료 채널이라도 응답 시간과 기존 서비스 변동비가 든다.
+
+| 채널 / 순위 | 초기 추가비 | 1인 준비 / 운영 시간 추정 | 첫 사용자 가능성·관측 창 (추정) | 유료 전환 가능성 (정성 가설) | 주요 위험 |
+| --- | --- | --- | --- | --- | --- |
+| **1. droidappshowcase** | $0 | 준비2~3h, 첫7일 응답/집계1.5~2h | 조건 통과 후 소개1회로 직접 시도 유도 가능, 7~14일 관측. 비교 후보 중 빠른 학습 가능성은 상대적으로 높음 | 무료 기본 기록→재방문→지원 모바일 Premium 필요 확인. 무료/할인 탐색자가 섞여 초기 결제는 낮거나 미확인 | 계정 필터·삭제, 미국 비중 불명, 무료 기능 오인, 직접 Play 유입의 첫 기록 귀속 불가 |
+| **2. 기존 Google 자연검색** | $0 | 비교 항목 정리0.5h, 주0.5h | 의도 적합성은 높지만 기존11노출/0클릭으로 단기10명 근거 약함. 7/14일 관측·28일 비교 | self reflection의 반복 사용 뒤 모바일 Premium 수요 가능, free 의도는 무료 이용에 머물 수 있음. Web 직접 결제 없음 | 색인 지연·적은 표본·비공개 query, 관측과 인과관계 혼동 |
+| **3. 기존 앱스토어 검색** | $0 | 기존 보고 범위 확인1h, 주0.5h | 설치 의도는 직접적이나 순위·검색 보고 baseline 미확인. 14~28일 관측, 단독 단기 확보는 불확실 | 지원 모바일의 기존 결제 경로와 가까움. 설치/구매 의도 또는 지불 의사는 동일하지 않음 | 경쟁/리뷰 부족, US 공개 버전·플랫폼별 지원 차이, Console threshold/동의 및 첫 기록 공백 |
+| iosapps App Shelf (예비) | $0 | 준비1~2h, 주1~2h | 활성 thread/자격 확인 뒤 7~14일 관측, 댓글 내 묻힘 가능 | 모바일 결제 경로는 있으나 AI/무료 사용자 혼합으로 미확인 | 일반 피드/megathread 규칙 혼동·30일 제한·11월 thread 미확인 |
+| Product Hunt (보류) | 무료 제출 $0 | 준비6~10h, 출시일3~5h·후속 주1~2h | 출시일 유입은 가능하나 추천/미국 사용자/실제 기록 불확실 | 제품 구경/제작자 방문이 기록 습관/결제로 이어질지 미확인 | 1인 응답 부담, 일회성 유입, 실제 기능과 차별점 과장, 기존 출시 여부 |
+| AlternativeTo (장기 예비) | 무료 표준 $0 | 준비1~2h, 월0.25~0.5h | 비교 의도는 맞지만 무료 승인 시점 불명, 첫14일 기여는 기대하지 않음 | 교체 목적은 적합하나 무료 대안 선호로 유료 수요 불확실 | 승인 지연·거절·기존 등록 중복, 미국 비중/유입 귀속 공백 |
+| 홍보 금지 커뮤니티 | 열람 $0 | 조사만 필요 시0.5h 이내 | 홍보를 통한 확보 가능성은 평가 대상 제외 | 평가 안 함 | 삭제·ban·브랜드 신뢰 손상 |
+
+**1순위 선정 이유:** 세 의도의 사용 사례를 완성 Android 제품으로 설명할 수 있고 공식 Play 링크로 바로 이동시킬 수 있다. 명시적 소개 허용 규칙과 실제 일기/성찰 앱 사례가 있어 소규모 소개·응답으로 배울 경로가 구체적이다. PH보다 준비 부담이 작고 Google/무료 디렉터리 대기만 하는 것보다 실행 시점을 통제할 수 있다. 이 판단은 **규칙 적합성과 운영 부담에 근거한 추천**이며 미국 도달률/설치율 우위가 입증됐다는 뜻은 아니다. 계정 자격이 없으면 karma 작업/계정 생성/규칙 우회 없이 보류한다. 2·3순위는 기존 검색의 보조 관측이며 별도 홍보 게시 슬롯이 아니다.
+
+### 4. 첫10명 최소 실행 순서 — 다음 단계 허용 후의 계획
+
+목표는 [마스터의 측정 계약](https://github.com/moolsoft-stack/noveraflow-docs/blob/docs/global-growth-20261031/MASTER_ROADMAP.md#growth-metrics-20261031)의 **미국/영어 cohort에서 중복·시험을 제외한 실제 첫 기록 성공10명**이다. 14일은 첫 학습 기간 제안이며 10명 확보 기한 보장이 아니다. 미국 이외 영어권은 별도 보조 cohort, 국가 불명은 unknown으로 분리한다. 이번에는 아래 실행을 하지 않는다.
+
+1. **첫 실행 작업(비공개 준비, 2~3h 추정):** 기존 개인 Reddit 계정의 나이/합산 karma/인증 email·최근7일 소개 이력·홍보전용 여부를 확인하고, **완성 Android 앱 Showcase 1건 검토본**을 같은 마케팅 문서에서 준비한다. 내용은 제작자 관계 공개→짧은 기록/다시 읽기→공개판에서 근거 있는 기능3개→무료 기본 기록과 선택 Premium/미국 현행 가격·결제 주기→공식 Play 링크 `https://play.google.com/store/apps/details?id=com.moolsoft.noveraflow`→개인 기록/계정정보 없는 기존 화면 자료다. 가격/이미지 권한이 불명확하면 게시 준비 미완료로 남긴다. 새 가격·혜택·쿠폰·기능을 만들지 않고 테스터/설문/리뷰 요청을 넣지 않는다.
+2. **집계 가능 범위 확정(1h 추정):** 기존 개인 Play Console/App Store Connect 및 허용된 App/Admin 보고서만으로 US/영어·기간·운영/시험 제외·첫 저장·중복 제외를 구분할 수 있는지 표로 정한다. 이는 기존 검증 재실행이 아니라 후속 실험의 보고 범위 결정이다. 최신 공개판의 첫 기록 경로에 알려진 중대한 보호/저장 문제가 있거나 실행 기준을 확인할 수 없으면 해당 플랫폼 모집을 보류하고 기존 owner에 조건만 남긴다. 새로운 실사용/기기/DB 시험을 이 계획에 끼워 넣지 않는다.
+3. **게시 전 gate:** 기존 개인 계정 사용, 공개할 검토본/가격/미디어, 담당1인·주간 시간, 최소 측정/cohort를 확정하고 사용자가 별도로 외부 게시를 허용한 뒤에만 진행한다. 현행 규칙 변경 여부를 게시 직전에 좁게 확인한다. Google 요청·SEO·이전 기능 검증을 되풀이하지 않는다.
+4. **D0: Showcase 1회**, 기존 무료 기본 기록 경로로 시도를 안내한다. 공식 Play 직접 링크·Showcase flair 사용, 사이트 우회 링크/새 UTM/할인/DM 모집/다른 sub 교차게시 없음. 미국 영어로 작성해도 미국 전용 도달로 간주하지 않는다. 원문 기록 공개나 분석 동의를 이용 조건으로 요구하지 않는다.
+5. **D1~7:** 하루10분 이내 자발적 질문에 기능/무료 범위를 답하고 막힘을 범주로 기록한다. 일기 원문·스크린샷·email/UUID를 마케팅 MD에 수집하지 않는다. 요청하지 않은 DM/설문/리뷰·추천 유도 없음. 한 게시물 반응을 확인하는 동안 다른 채널을 동시에 launch하지 않는다.
+6. **D7/D14:** 아래 지표와 실제 운영시간을 동일 관측기간으로 정리한다. 첫 저장 성공·US·중복 판정이 가능한 적격 값만 누적하고 10명 충족 시 checkpoint 검토로 넘어간다. 10명 미만이면 학습을 기록하고 무작정 재게시하지 않는다. 삭제/규칙 부적합이면 즉시 해당 채널 중단, 저장/기록 보호 문제면 모집 중단·기존 안정성 절차로 인계한다.
+7. **후속 한 번의 선택:** 적격 사용자가 늘고 응답 부담이 주3h 이내라면 30일 범위에서 관측 연장을 검토한다. 14일간 시도/유용한 반응 근거가 없으면 같은 소개 반복 대신 자격이 확인된 활성 iosapps App Shelf 한 곳으로 다음 실험을 검토한다(별도 게시 허용 필요). 설치/시도는 있으나 첫 기록이 막히면 원인 분류를 우선한다. 기존 Google은 주1회·28일 비교, Store는 주1회 읽기 관측만 병행한다. 전체 준비4~5h·주 운영3h 이내/$0 추가비는 **추정 상한 제안**이며 사용자 시간 합의 전 확정 일정이 아니다.
+
+### 5. 측정표와 10명 판정의 한계
+
+| 단계 / 지표 | 기존 자료로 보고할 수 있는 것 | 보고할 수 없는 것 / 판정 |
+| --- | --- | --- |
+| 게시 노출·반응 | 허용된 Reddit 게시 통계/자발적 질문 수·질문 범주, 게시일·관측일·운영시간 | 공개 upvote/댓글/조회는 US 방문·설치·첫 기록 인원이 아님. 계정별 통계 접근은 미확인 |
+| Google 검색 | GSC US Web, 같은 기간/페이지/검색어의 노출·클릭·CTR, 브랜드/비브랜드 구분 | GSC 클릭은 가입자의 거주국/첫 기록 증거가 아님. 기존10/1~28 baseline과 서로 다른 길이 기간의 합계 직접 비교 금지 |
+| Store 유입 | 기존 개인 Console 접근 후 Store 방문/획득·검색/외부유입·국가/언어·기간. [Play 공식 보고 정의](https://support.google.com/googleplay/android-developer/answer/9859173?hl=en-EN)에 따라 threshold/Other/unknown과 중복 단위를 함께 표시 | 직접 Play 링크 유입은 사이트 WAE를 거치지 않음. 무태그 외부유입 증가를 Reddit 단독 기여로 확정 불가. 설치·first_open≠사람·첫 기록 |
+| Web 동의 범주 | 기존 WAE production/en/US에서 store_android/store_ios/web_start/record_created의 `SUM(_sample_interval*double1)`·저장 표본수·최대 sample_interval 및 unknown/동의 한계 | `source=social`은 Reddit 전용 아님, PH/AlternativeTo는 other로 합쳐짐. 내부 이동은 internal, referrer 손실은 direct. UTM을 붙여도 현재 script는 캠페인별로 읽지 않음 |
+| 실제 첫 기록10명 | 기존 개인정보 보호 집계로 적격 주체 최초 저장1회·재시도/기기 중복 제외·US/영어 및 운영/시험 분리가 확인된 경우만 달성 판정 | Web `first_ack_in_page`는 페이지에서 처음 관측한 서버 ACK이며 계정 생애 최초/고유 인원 아님. 익명 범주 합계·가중치로10명 입증 불가. 기존 모바일 record_created의 공개 runtime coverage/국가·중복 연결도 미확인 |
+| D7 재방문·재작성 | 관측 가능한 첫 기록 cohort 중7일 관측이 끝난 인원과 새로운 두 번째 기록 성공을 분리. 분모/결측/기간 명시 | history_opened를 전체 재방문으로 확대하지 않음. 같은 글 수정은 재작성 아님, 서로 다른 자료를 계정별 퍼널로 임의 join하지 않음 |
+| 유료 전환 | 기존 지원 모바일의 서버 검증 신규 결제 주체/관측 가능한 적격 무료 cohort, 테스트 구매·grant 제외 | 가격·결제/권한 미변경. 신규 결제 집계와 cohort 연결이 없으면 미측정; Web 결제 제공으로 설명하지 않음 |
+
+보고 양식은 **관측기간·채널/플랫폼·표본/coverage·US/영어 근거·단계별 수치 또는 미측정·첫 기록 적격 누적·국가/중복 unknown·막힘 범주·실제 시간·추가비**다. 현재 수치는 baseline 외 **미측정**으로 시작한다. 전환율은 동일 cohort/기간·정의가 맞는 분자와 분모가 있을 때만 계산한다.
+
+**개발 없이 가능한 출발과 남은 한계:** 외부 소개→기존 Store/기본 기록 사용 경로는 제안할 수 있다. 하지만 현재 WAE만으로 10명 달성은 증명할 수 없다. 기존 App/Admin의 허용된 보고로 조건을 충족하지 못하면 **첫10명은 미측정 상태 유지**, 설치/자발적 성공 응답 등은 보조 근거로만 보고한다. 향후 별도 허용된 비공개 자발적 피드백을 쓴다면 미국/영어·첫 저장 성공·중복 확인 방식/최소 보존부터 정하며 자기보고와 서버 확인을 구분한다. 공개 댓글을 사용자 DB로 만들지 않고 신규 SDK·식별자·위치정보·기능 개발을 측정 공백의 자동 해결책으로 넣지 않는다.
+
+### 6. 남은 조건·이번 마감
+
+- **후속 실행 조건:** 개인 Reddit 계정 자격/게시 이력, 미국 제공 Android 공개판의 허용 주장/현행 Premium 가격·기존 미디어 공개 범위, 사용자 별도 게시 허용, 주간 운영시간, 기존 Console/App/Admin 집계 접근과 first-record/US/중복 coverage 확정. 미확인을 승인/완료로 바꾸지 않는다.
+- **성과 미완료:** 실제 첫 기록10명·D7·유료 전환, 채널별 미국 도달/전환율·월 검색량, 새 문구 색인 효과는 미확인. PH/AlternativeTo 기존 등록·iosapps 활성11월 thread도 미확인이나 1순위 조사 완료를 막는 조건은 아니다.
+- **보존/검토:** 기존 Site/Docs worktree clean 기준에서 관련 MD만 수정한다. 새 문서/코드·roadmap snapshot/생성기·테스트·빌드·SEO/기능 재검증·운영 접근/배포·DB/실사용 기록 조작0. 문서 diff/링크·범위만 검토한다. 과거 중단/검증 이력은 아래 보존하며 이번 재개 계획을 최신으로 읽는다.
+- **개인 Git:** origin은 github-personal:moolsoft-stack의 noveraflow-site / noveraflow-docs, SSH 응답 moolsoft-stack 확인. author/committer는 moolsoft-stack <moolsoft@gmail.com> 명시. Site 기존 main 추적 경로는 **[CF-Pages-Skip]** 문서 commit, Docs는 기존 docs/global-growth-20261031로 일반 push·원격 SHA 확인한다. 회사 계정/경로/서비스 혼용0. 문서 수정 복구는 해당 문서 commit revert 검토이며 기존 운영 복구점을 변경하지 않는다.
+
 <a id="phase2-index-channels-stop-20261031"></a>
 ## 2026-10-31 검색 색인·미국 유입 채널 조사 — 사용자 요청으로 오늘 작업 종료
 
