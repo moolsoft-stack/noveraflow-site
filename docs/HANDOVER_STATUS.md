@@ -1,5 +1,14 @@
 # Handover Status
 
+<a id="play-us-listing-review-20261101"></a>
+## 2026-11-01 미국 Google Play 설치 전환 점검 마감 — 권장안만
+
+**현재 공개 US 페이지·영문 문구/아이콘/8장 이미지 확인·권장안3개 기록 완료 / Store 수정·게시 없음.** [마케팅의 상세 평가/수정안/로컬 증적](02-brand-and-marketing.md#play-us-listing-review-20261101), [SEO의 연결 기록](04-seo-direction.md#play-us-listing-review-20261101)을 따른다. 도구의 US URL 접근 오류는 비로그인 직접 GET으로 보완, 실제 footer United States (English)/USD0·제목 NoveraFlow AI Journal·In-app purchases·업데이트10/25 확인. 현재 인앱 USD 가격·공개판 실사용은 미확인이다.
+
+큰 문제/순서: **①6번 Premium 이미지의 미구현 연간 AI 리뷰·backup/sync 오해 ②무료 기본 기록/로컬 ZIP과 선택 Premium 경계의 모호함 ③첫 이미지의 추상적 소개와 짧은 설명의 일반 기능 나열**. 먼저6번 이미지 제외/확인된 기본 기능 화면 대체 검토본 준비를 권장한다. 이어 무료 범위의 앞쪽 명시와2→1→8번 순서/구체적인 short 후보를 제안했으며 이번 자산 제작/수정/업로드0. 제목·아이콘 재설계는 우선 제외, 전환 효과/수치 미측정.
+
+기존 기능·검증·측정 근거를 재사용했고 색인/SEO/채널 조사·전체 기능 검증 반복0. Console/계정 로그인·스토어 수정·구매·앱 실행/개발/빌드·운영 배포/DB 변경0. 공개 HTML/이미지는 개인 noveraflow 로컬 증적으로 보관, 기존 MD3개만 명시적 개인 moolsoft-stack author/committer·github-personal 원격으로 `[CF-Pages-Skip]` commit/push·원격 SHA 확인해 마감한다. 회사자원 혼용0, 기존 사용자 변경/운영 Site9c709e1/Web83b4061·복구점 보존. 남은 조건은 별도 Store 수정 허용·미국 공개판 기능/판매 조건에 맞는 자산 검토·최신 가격/quota·Store 전환 표본이다.
+
 <a id="first-record-measurement-readiness-20261101"></a>
 ## 2026-11-01 미국 영어권 첫 기록 측정 준비 마감 — 문서만
 

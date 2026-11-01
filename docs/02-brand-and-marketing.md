@@ -7,6 +7,63 @@ brand/marketing direction for the public site.
 
 # Brand And Marketing
 
+<a id="play-us-listing-review-20261101"></a>
+## 2026-11-01 미국 Google Play 설치 전환 점검 — 공개 조회·권장안만
+
+**공개 페이지/이미지 확인·우선 수정안3개 기록 완료 / Store 수정·게시·배포 없음.** 최신 측정 준비 마감을 먼저 읽었다. 완료된 채널/Google 색인·SEO 조사와 기존 기능 검증은 반복하지 않았다. 이번은 미국 Play 공개 등록정보를 비로그인으로 읽고 기존 실제 기능 근거와 대조한 점검이며 신규 기능·앱 실행/빌드·Console 로그인·구매·운영 DB 변경0이다.
+
+### 현재 미국 공개 상태와 근거
+
+- **조회:** 2026-11-01 13:29 KST(04:29 UTC), [공식 미국 영어 URL](https://play.google.com/store/apps/details?id=com.moolsoft.noveraflow&hl=en_US&gl=US). 웹 조회 도구의 US query URL은 접근 오류였으나 직접 HTTPS GET은 성공했다. 실제 HTML footer **United States (English)**와 구조화 Offer의 **USD0 / InStock**, 영어 본문을 확인했다. 지역 미지정 도구 결과는 Japan (English)이므로 미국 근거로 사용하지 않았다. 이는 비로그인 US 지정 응답이며 모든 미국 계정/기기·맞춤 등록정보에서 같은 노출/설치를 보증하지 않는다.
+- **제목:** `NoveraFlow AI Journal`. **짧은 설명:** `Journal thoughts and feelings with text, photos and voice. Reflect with AI.` 현재 실제 공개 문구이며 앱 준비 MD의 과거 초안과 구분한다.
+- **상세 설명:** AI 일기 앱·짧은 한 줄/감정·선택 상징·편집/다시 읽기를 설명하고, 개별 AI 피드백·충분한 전주/전월 기록이 있을 때 요청하는 주간/월간 성찰·history/calendar·로컬 ZIP backup/restore를 소개한다. text/photo/voice·ko/en/ja 목록이 이어진다. 끝부분에 기본 기록/history 이용, 일부 AI/backup의 사용 제한 또는 Premium 가능성, 기기 기본 저장·AI 요청 시 필요한 기록의 서버 전송과 의료 대체 아님을 안내한다. 무료와 Premium을 명확한 항목으로 나누지는 않는다.
+- **설치/과금 표시:** 무료 설치 Offer와 Install, In-app purchases 표시가 있다. 본문에는 구체적인 USD 구독 금액/결제 주기가 없으며6번 이미지에도 금액은 없다. **무료 다운로드가 전체 기능 무료를 뜻하지 않음**. 현행 인앱 판매 가격은 이번 확인하지 않았고 임의로 채우지 않는다.
+- **보이는 참고 정보:** 업데이트2026-10-25, Lifestyle,3+ 연령,5+ downloads. 이 값은 설치 전환율/미국 사용자 수/실제 만족도의 근거가 아니다. Data safety에는 제3자 공유 없음·개인정보/메시지 외 일부 유형 수집 가능·전송 중 암호화·삭제 요청 가능이 보인다. 이는 개발자 선언 표시이며 보안 감사 결과나 완전한 로컬 전용 앱의 증거가 아니다.
+- **아이콘:** 현재 공식 소스는 투명 배경에 어두운 가는 추상 선 마크다. 브랜드 연속성은 있지만 일기 앱이라는 범주를 단독으로 설명하지는 않는다. 작은 크기의 실제 목록 배경/기기별 대비는 이번 시각 검증 범위 밖이며, 아래3개보다 아이콘 재설계를 먼저 추진할 근거는 없다. 제목이 앱 범주를 보완하므로 현재 제목/아이콘은 우선 유지한다.
+
+### 공개 스크린샷8장 직접 확인 (현재 HTML 순서)
+
+| 번호 | 실제 내용 | 미국 사용자의 이해/조건 |
+| --- | --- | --- |
+| 1 | 영어 감성 소개와 상징 선택/시작 화면 | 한 줄 기록 입력·저장 결과는 안 보임. 앱보다 감성 공간/상징 선택부터 이해하게 됨 |
+| 2 | 영어 홈, 입력란·상징·Voice/Photo/Save·history 진입, Maeumgyeol·widget 안내 | 기본 일기 기능이 가장 직접적으로 보임. 예시 기록 대신 입력 안내문, 별도 설명 없는 로마자 기능명·여러 요소로 초점 분산 |
+| 3 | 영어 AI conversation 및 대화 예시 | AI 대화 존재는 보이나 화면 자체에 로그인/Premium 조건이 드러나지 않음. 공개판별 수용 미확인을 이미지 존재만으로 해소하지 않음 |
+| 4 | 전주9건의 주간 성찰 예시 | 기능은 보이나 긴 본문과 이전 기간 비교 자료 없음이 핵심 장점을 흐림. 자동 생성/항상 이용 가능으로 읽히지 않도록 조건 유지 필요 |
+| 5 | 전월21 eligible/20 included의 월간 성찰 예시 | 실제 결과 구조는 보임. 긴 설명/내부 수량은 작은 미리보기에서 이해 부담 |
+| 6 | Premium 소개, AI대화·정확한 quota 숫자·자동 cloud backup·연간 AI review, 데이터 안내 | **연간 리뷰를 현재 혜택처럼 노출**. 자동 backup 설명에 동기화로 읽히는 문구가 있고 일부 작은 글씨/가격 부재. quota 숫자의 현재 공개판 일치는 미확인 |
+| 7 | Premium cloud backup, 기동/복귀 시 실행·복수 기기 시점 제한, 수동 backup/restore |6번의 동기화 인상과 달리 시점에 따라 일부 기록 미포함을 안내. 기능 이해는 가능하지만 공개판 upload/restore 수용 근거는 기존 미검증 유지 |
+| 8 | 저장한 영어 기록 상세와 Another view AI 피드백 | 기록+피드백의 연결이 구체적이나 맨 뒤에 있어 처음 보는 사용자에게 늦게 전달됨 |
+
+8장 모두 영어 안내/화면이며 한글 화면 때문에 설치가 막히는 상태로 판단하지 않는다. 자연 배경/색상/타이포는 일관되지만 장문의 UI·decorative 배경·큰 여백 때문에 작은 갤러리에서 실제 사용 장면이 약해질 수 있다. 문구 평가는 전환 실측이 아닌 정성 판단이다.
+
+### 실제 기능 기준과 설치 관점 평가
+
+기존 [플랫폼 기능표](https://github.com/moolsoft-stack/noveraflow-docs/blob/docs/global-growth-20261031/NOVERAFLOW_CURRENT_STATUS.md#platform-capabilities-20261031)와 [이미 완료된 공개 기능 대조](04-seo-direction.md#phase2-search-expansion-20261031)를 재사용한다. 기본 기록/편집·다시 읽기·상징·지원 모바일 로컬 ZIP과 기존 개별/주간/월간 AI 범위는 근거가 있다. **연간 AI 요약은 사용자 생성/조회 경로 미구현**, cloud backup과 sync는 다른 기능, 최신 공개판별 AI대화/cloud backup 완주·quota·결제 실사용은 미검증이다. 앱을 재실행해 이 검증을 반복하거나 기능을 추가하지 않았다.
+
+| 질문 | 평가 |
+| --- | --- |
+| 어떤 앱인지 즉시 이해되는가? | **문구는 대체로 가능**: 제목의 AI Journal과 짧은 설명이 일기 앱임을 설명. 첫 이미지에서는 기록 쓰기보다 추상적 공간/상징 소개가 앞섬 |
+| 구별되는 특징이 있는가? | **부분적**: 한 줄 기록·상징·기록을 다시 읽는 성찰 조합은 구체적 장점이나 short description에는 상징이 빠지고 text/photo/voice/AI의 일반 목록이 중심. 독점/경쟁 우위로 단정할 근거 없음 |
+| 무료 범위가 명확한가? | **부족**: 무료 설치/IAP 외 기본 기록·로컬 ZIP 무료가 전면에 명시되지 않음. 상세의 일부 AI/backup에 Premium이 적용될 수 있다는 설명은 로컬 ZIP도 유료인지 헷갈리게 함 |
+| 핵심 기능을 보여주는가? | **보여주지만 순서/정확성이 문제**:2번 작성·8번 상세/피드백은 구체적.1번은 감성 도입,3~7번은 조건 있는 AI/Premium 위주,6번은 실제 기능 기준과 충돌 |
+| 설치를 망설이게 하는가? | 무료 범위 불확실성과 기능 기대 불일치가 주요 후보. AI 요청 시 내용 전송 고지는 유지할 정보이며 숨길 대상이 아님. 작은 다운로드 표본은 이해할 맥락일 뿐 가짜 리뷰/숫자로 보완하지 않음 |
+
+### 권장 수정안 — 최대3개, 아직 적용하지 않음
+
+| 우선순위 / 가장 큰 문제 | 최소 수정안·검토용 문구 | 기대 효과와 조건 |
+| --- | --- | --- |
+| **1. Premium 이미지의 미지원/오해 가능 주장** | **6번을 먼저 제외하거나 현재 공개판의 확인된 다른 화면으로 교체**. 연간 리뷰/한 해 성찰 혜택과 backup을 sync처럼 표현한 부분, 확인되지 않은 정확한 quota 숫자를 홍보하지 않는다.3·7번도 공개판 제공 조건 근거가 없으면 활성 기능 홍보 갤러리에서 보류하고 기존 기본 기록/상세 화면으로 대체. 현재 UI의 미지원 연간 영역을 이미지에서 실제 제공 기능처럼 재현하지 않음. 앱 기능 추가로 문구를 맞추지 않는다 | 신뢰/기대 일치를 우선. **전환 상승률은 미측정**. 공개 이미지의 기능 과장 우려를 해소하는 것이 우선이며 새 기능·새 실사용 검증을 이번 수행하지 않음 |
+| **2. 무료/유료 경계가 늦고 모호함** | 상세 첫부분에 다음 구분을 추가하는 안: **Basic journaling, history, and supported local ZIP backup and restore are free. Premium is optional. AI features have access and usage limits. Check the app for the features and price available in your version.** AI 내용 전송 고지 유지. 유료 전용 기능명/미국 가격·주기는 실제 공개판/판매 조건 확인 후에만 별도 명시. 사용 제한을 무제한으로 바꾸지 않음 | 무료 기본 기록 시작에 대한 불안 감소 **가설**. local ZIP/유료 cloud를 같은 backup으로 묶지 않음. 스토어 USD0를 Premium0로 해석하지 않음 |
+| **3. 처음 보이는 사용 장면과 차별점이 약함** | 제목/아이콘은 유지. short 후보(71자): **A journal for short entries, personal symbols, and everyday reflection.** 첫3장 순서 **현재2번(작성)→1번(선택 상징)→8번(기록/다른 시선)**을 우선 검토. 첫 작성 이미지 heading 후보: **Start a journal with one line.** 짧은 비민감 예시 기록과 Save가 눈에 들어오게 기존 실제 UI 중심으로 구성하는 안. AI 피드백 화면은 기존 사용 제한을 숨기지 않음 | 글쓰기 진입·상징·기록 성찰을 빠르게 이해할 가능성. 현재 실제 UI/공개판과 맞는 이미지여야 하며 이번 이미지 생성/수정/업로드0. 다른 언어/앱 UI 변경은 제안하지 않음 |
+
+**첫 후속 작업:** 1순위인6번째 이미지의 기능 불일치를 먼저 정리할 Store 자산 수정 검토본을 준비한다. 이번은 권고만이며 Console 변경/실제 자산 제작·업로드를 하지 않는다. 향후 별도 Store 수정 허용과 공개판 기능/판매 조건·비민감 미디어 확인 후1→2→3 순서로 적용을 검토한다. 이 과정에서 완료된 SEO/색인·기존 전체 시험을 반복하지 않는다. 설치 전환 관측은 [기존 측정 준비안](04-seo-direction.md#first-record-measurement-readiness-20261101)의 동일 기간 Store 방문/획득 범위로 하며, 작은 표본에서 A/B 승자·개선율을 만들지 않는다.
+
+### 증적·문서 마감
+
+로컬 근거는 `D:/Development/Personal/noveraflow/phase2-evidence-20261031/play-us-review-20261101/`의 `play-us.html`, `public-summary.json`, `icon.png`, `screenshot-01.png`~`screenshot-08.png`다. HTML SHA256 **744919938cab3672edce86af0361384243d4b6570b7717e3f8e18a26379892ec**. 이 공개 자료는 개인 로컬 증적으로만 보관하고 Git에는 관련 기존 MD만 포함한다. 사용자 일기·로그인/Console·결제정보를 읽거나 수집하지 않았다.
+
+남은 조건은 실제 Store 수정 허용, 현재 미국 공개판의 기능/구독 조건에 맞는 자산 검토, 최신 인앱 가격·quota/로그인 조건, 충분한 Store 전환 표본이다. 공개 등록정보 표시가 앱 실사용/보안 검증 완료를 뜻하지 않는다. 개인 moolsoft-stack author/committer·github-personal 원격의 기존 main 추적 경로에 `[CF-Pages-Skip]` 문서 commit/push·원격 SHA 확인만 수행하며 회사 adcomlab 혼용0·운영 배포/DB/새 기능 변경0, 기존 이력/사용자 미커밋/복구점 보존.
+
 <a id="android-showcase-draft-20261101"></a>
 ## 2026-11-01 r/droidappshowcase 영어 Showcase 초안 1건 — 미게시
 

@@ -7,6 +7,11 @@ direction.
 
 # NoveraFlow SEO 방향 기준
 
+<a id="play-us-listing-review-20261101"></a>
+## 2026-11-01 미국 Play 공개 등록정보 점검 — Store 변경 없음
+
+[마케팅 MD의 현재 미국 문구·8장 이미지 평가·권장 수정안3개](02-brand-and-marketing.md#play-us-listing-review-20261101)가 상세 owner다. 비로그인 직접 GET에서 US English footer/USD0와 현재 제목 NoveraFlow AI Journal·영문 설명·공개 아이콘/8장 이미지를 확인했다. 이전 도구 접근 오류는 이번 직접 조회로 보완했으나 Console/설치·앱 실사용 확인은 아니다. 우선순위는 **①6번 Premium 이미지의 미구현 연간 요약/backup-sync 오해 제거 ②무료 기본 기록·로컬 ZIP/선택 Premium 구분을 앞에 명시 ③작성→상징→기록/피드백 순서와 구체적인 short 문구**다. 제목/아이콘은 우선 유지, 효과는 정성 가설이며 개선율 미측정. 기존 실제 기능표·측정 준비 근거만 재사용, 색인/SEO/채널 조사·기존 검증 반복0. 이번 Store/자산 수정·게시·개발·배포·DB 변경0, 관련 기존 MD만 개인 Git에 `[CF-Pages-Skip]` commit/push한다.
+
 <a id="first-record-measurement-readiness-20261101"></a>
 ## 2026-11-01 첫 기록 측정 준비 — 기존 계측 확인·최소 실행안
 
