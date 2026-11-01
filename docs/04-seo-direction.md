@@ -7,6 +7,28 @@ direction.
 
 # NoveraFlow SEO 방향 기준
 
+<a id="first-record-existing-aggregate-read-20261101"></a>
+## 2026-11-01 기존 첫 기록 집계 조회 — 미국 작성자 미측정 유지
+
+`d48eec6`과 기존 [첫 기록 측정 기록](#first-record-measurement-readiness-20261101)의 이벤트/위치/집계 방법만 재사용했다. **CF 미국100 visits·GSC 미국13노출/0클릭은 기존 확정 기준선으로 보존·재조회0.** 이번은 기존 익명 집계 읽기만 수행했으며 이벤트 구현/측정 구조 분석을 처음부터 반복하지 않았다.
+
+| 기존 자료 | 실제 조회 결과 | 2026-10-04~10-31 첫 기록에 대한 의미 |
+| --- | --- | --- |
+| Native 저장 완료 `record_created` → 설치별 최초 관측 `firstRecordUsers` | 기존 개인 브라우저에서 `GET https://admin.noveraflow.com/api/admin3/operations/analytics` **1회**, 응답 `error: unauthorized`. 인증 우회/credential·ID 추출/재시도0 | **건수 미확인**. firstRecordUsers·coverage/발생 구간·제외 사유를 읽지 못함. 전체 또는 미국 건수를0으로 대체하지 않음 |
+| Web `record_created / first_ack_in_page` → 기존 WAE 익명 범주 집계 | 개인 Moolsoft@gmail.com's Account의 기존 `noveraflow_web_conversions_v1` Studio에서 **SELECT1회**, 결과 **8열·0행**(오류 표시 없음), 2026-11-01T07:52:30.766Z 관측 | 해당 조건의 저장 ACK **집계 행 미관측**. SUM/표본수/최대 sample interval의 반환 행도 없어 수치를 만들어 채우지 않음. 첫 기록 사람0명이라는 증거가 아님 |
+
+**WAE의 실제 조회 조건:** `blob6='production' AND blob1='record_created'`, `timestamp >= toDateTime('2026-10-04 00:00:00') AND timestamp < toDateTime('2026-11-01 00:00:00')` **UTC**. 기존 방법대로 event·ui_language(blob2)·country_bucket(blob3)·source(blob4)·count_scope(blob5)별 `SUM(_sample_interval*double1)`, `COUNT()`, `MAX(_sample_interval)`, LIMIT100을 조회했다. 개인정보/ID/본문 없이 기존 허용 범주만 GROUP BY했다. 전체 production 저장 ACK를 언어·국가별로 나눴으나 반환 행이 없어 US/en 값도 확보되지 않았다. Studio의 table/view/index 표시용 Filters는 행의 국가 필터로 해석하지 않았다. 결과 export/새 보고 저장/수집 설정 변경0.
+
+**관측 범위:** WAE 수집/ACK 검증은 기존10/31 개시 증적이며10/4부터28일 전수 관측을 보장하지 않는다. 당시 `record_created` test/en/KR/합성 source 표본은 production/US 실제 첫 기록에서 제외한다. Web 이벤트는 현재 페이지에서 처음 확인된 서버 ACK이며 계정/설치 생애 최초가 아니다. 이번 UTC 기간은 CF의 GMT+9 방문 집계나 Native의 server_received_at/Asia/Seoul와 강제 결합하지 않는다.
+
+**없는 연결을 한 번 정리:** 기존 MD의 `firstRecordUsers`는 **관측 설치 단위**이고, 국가 표는 latest device locale 기준 active/firstOpen이다. **첫 기록×국가×영어×공개판/시험 제외 교차 집계**와 **실제 미국 획득 → 같은 사람의 생애 최초 저장** 연결이 기존 확보 자료에 없다. locale-US는 미국 유입/거주 증명이 아니며 언어 기본값도 영어 사용자 확인이 아니다. 웹 범주에는 설치/계정 연결키가 없고 페이지 ACK 수를 설치별 최초 기록 수와 합칠 수 없다. 기존 소스의 해당 계약·API 권한 경계만 좁게 확인했으며 새 관측 원문/식별자나 운영 DB를 읽지 않았다.
+
+**판정:** 미국 첫 기록 작성자 수 **미측정**, 적격 미국 사용자10명 확보 **입증 불가**. 전체 Native 건수도 이번 인증 부재로 미확인이다. 방문100/검색 노출13/Play 설치·웹 ACK를 첫 기록 사람 수로 추정·합산하지 않는다.
+
+**다음 최소 실행 조건/사용자 조치:** 기존 **개인 Admin의 익명 집계 조회 권한이 있는 로그인 세션을 연결**하면 firstRecordUsers·coverage를 우선 읽을 수 있다. 지정10/4~31의 기존 보고/스냅샷이 있어야 그 기간 수치를 기록하며, 인증만으로 US/en/시험 제외·실제 사람 연결 공백이 해소된다고 보지 않는다. 해당 교차·획득 근거가 기존 보고에 없으면 계속 미측정이며 이번에 원문 조회/ID 추출/새 SQL 원장 조회·집계 개발/이벤트 추가/배포로 대체하지 않는다. 같은 조사/인증 실패 반복0.
+
+기존 SEO/HANDOVER MD2개만 개인 moolsoft-stack/github-personal에 `[CF-Pages-Skip]` commit/push·원격 SHA 확인한다. 회사 adcomlab 계정/자원·Google Play 심사·Reddit 접근0. 개인정보/식별자 출력·운영 DB 수정·계측/서버/결제/앱·웹 배포 변경0.
+
 <a id="cf-us-baseline-confirmed-20261101"></a>
 ## 2026-11-01 Cloudflare 미국 방문 기준선 확보 — 100 visits
 

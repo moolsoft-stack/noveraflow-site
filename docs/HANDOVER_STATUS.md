@@ -1,5 +1,14 @@
 # Handover Status
 
+<a id="first-record-existing-aggregate-read-20261101"></a>
+## 2026-11-01 기존 첫 기록 집계 읽기 — 미국10명 입증 불가
+
+`d48eec6` 최신 마감/기존 이벤트 계약을 재사용, CF100visits·GSC13노출/0클릭 재조회0. [SEO의 실제 조회/필터·공백·최소 조건](04-seo-direction.md#first-record-existing-aggregate-read-20261101)이 owner다. 기존 Native 익명 집계 `GET /api/admin3/operations/analytics`1회는 **unauthorized**, firstRecordUsers/coverage **미확인**. 재인증 우회·credential/원문/식별자 추출·재시도0.
+
+기존 개인 CF Analytics Engine에서10/4 00:00~11/1 00:00 **UTC**, production·record_created를 언어/국가/source/scope별 가중 집계 SELECT1회, **07:52:30.766Z 결과8열·0행**. 집계 행 미관측이지 첫 기록 사람0명 아님. Web first_ack_in_page는 생애 최초가 아니고10/31 수집 증적도28일 coverage를 보장하지 않는다. 전체 Native를 미국으로 추정하거나 방문/ACK/설치를 합산하지 않았다.
+
+**미국 첫 기록 작성자 미측정·적격10명 입증 불가.** 기존 설치별 firstRecordUsers와 국가×영어×공개판/시험 제외 교차 및 실제 US 획득/동일 사람 생애 최초 저장 연결이 확보되지 않았다. **사용자 조치:** 기존 개인 Admin 익명 집계 권한의 로그인 세션 연결. 이후 지정 기간 보고/coverage가 있어야 읽으며 권한 연결만으로 US 입증이 되지는 않는다. 같은 조사 반복·신규 분석/이벤트/개발/배포·운영DB 수정·Google Play 심사/Reddit 접근0. 기존 SEO/HANDOVER MD2개만 개인 moolsoft-stack/github-personal `[CF-Pages-Skip]` commit/push·원격 SHA 확인한다.
+
 <a id="cf-us-baseline-confirmed-20261101"></a>
 ## 2026-11-01 Cloudflare 미국 방문 기준선 확보 — 인증 대기 해소
 
