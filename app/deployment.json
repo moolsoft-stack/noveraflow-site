@@ -1,7 +1,7 @@
 {
-  "release": "web-20261031-conversions-v1",
-  "webSource": "83b40612160d84b1be589774ec823766b9265cba",
-  "siteBase": "9b79c63f92fcb94ca0e8bd8f3e63baf6783b1b49",
+  "release": "web-20261103-record-composer-v1",
+  "webSource": "6313256a22fd9501afa091a165f284557f2b2578",
+  "siteBase": "71b4a6f3c6a8fd1f790a4564287ce3fbaf400629",
   "backendWebSource": "518ea9b7ef9bcb8b3722f748f416c0f427e14537",
   "baseHref": "/app/",
   "oauthProviders": [
@@ -11,14 +11,15 @@
   "actualStandaloneSignupAcceptance": "NOT_RUN",
   "actualOfflineAcceptance": "NOT_RUN",
   "actualBidirectionalAccountAcceptance": "NOT_RUN",
-  "mainSha256": "47f0176308f81a45c558f1d754c95936ce172f3e238f0e9c30d48817101ae507",
-  "previousRelease": "web-20261031-english-entry-v2",
+  "mainSha256": "e72d59e9d4b5e44351bbba1cce40ca8bd3d6cfc4c2ecb76f397fc0ab099d2f83",
+  "previousRelease": "web-20261031-conversions-v1",
   "actualPostDeploymentAcceptance": "NOT_RUN",
-  "englishLocaleAcceptance": "SYNTHETIC_TEST_PASS",
+  "englishLocaleAcceptance": "CANDIDATE_ANONYMOUS_FIRST_FRAME_ONLY",
   "homepageBaseline": "01b3d449d998d42e80e051bab2855117dbfbfaf3",
-  "resumeAfterRollback": "80bf84569458a2f1258d21dd9541542ceec8d192",
-  "preDeploymentReadOnlyAcceptance": "AUTHENTICATED_UI12_API12_PASS",
-  "recordStorageAndSync": "CORE_LOGIC_UNCHANGED_FROM_0EACA55",
+  "preDeploymentReadOnlyAcceptance": "NOT_RUN_FOR_CANDIDATE",
+  "recordStorageAndSync": "EXISTING_CONTRACT_COMPOSER_CHANGE",
   "conversionObservation": "CONSENT_REQUIRED_FIRST_SERVER_ACK_IN_PAGE",
-  "actualConversionAcceptance": "CANDIDATE_CTA3LANG_ACK_SUCCESS_FAILURE_PASS"
+  "actualConversionAcceptance": "NOT_RUN_FOR_CANDIDATE",
+  "rollbackWebSource": "83b40612160d84b1be589774ec823766b9265cba",
+  "rollbackPagesDeployment": "02aad47d-1a0e-4bc7-aa80-f45fd59d6a4d"
 }
