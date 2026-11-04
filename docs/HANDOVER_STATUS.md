@@ -1484,3 +1484,9 @@ Recovery may return Pages to previous7192bd14/sourcefb23e35 or tested OFF snapsh
 - 홈 ko/en/ja에 앱 기본 기록은 로그인 없이 이용 가능, 웹과 계정 동기화에는 로그인 필요, 기존 기록은 지원 버전의 연결·가져오기 확인이 필요하고 미지원 자료는 기기에 남는다는 설명을 추가했다. 기존 웹 CTA 3개를 유지한다. 공개 KR App Store 조회는 무료 다운로드/버전 1.0.81을 확인했지만 인앱 상품·가격은 표시하지 않았다. 코드의 월 상품 ID와 StoreKit 가격 표시는 확인했으나 실상품 가격을 추측하지 않았다.
 - 배포 전 공개 `/app/deployment.json`은 `web-20261103-record-composer-v1`, web source `6313256a22fd9501afa091a165f284557f2b2578`, site main `897d616167e9a10c8482d5e4361b20abcdfc907f`였다. 이번 후보는 기존 Pages main 통합을 사용한다. 필요 시 site 배포 커밋을 revert해 일반 push하거나 기존 정상 Pages 배포로 복구한다. 운영 기록 DB·암호화 키·계정 및 백업은 유지한다.
 - release 후보 JS SHA256 `cbdca96056b7645199ec48698305db49a04495a2060bc61d82dac11fe63b5545`. 로컬 Flutter release, base `/app/`, 기존 공개 Supabase 설정과 API origin 사용; 개인키/secret 형태 검사 0. 페이지·JS 및 브라우저 후속 검증 결과는 배포 후 별도 기록한다.
+
+### 운영 반영 결과 (2026-11-04 KST)
+
+- 기존 `moolsoft-stack/noveraflow-site` main으로 source `d0b0b590b3dea9dfc0391cb03157027ddd486dd8`를 일반 push했다. GitHub Cloudflare Pages check `126337936843` completed/success. 공개 `https://noveraflow.com/app/`의 배포 표식은 `web-20261104-record-edit-v1`, App `8c61a06b55a8d7bf55e4efd55a25cb4fc5d8bada`; 공개 JS HTTP 200 및 SHA256 `cbdca96056b7645199ec48698305db49a04495a2060bc61d82dac11fe63b5545`가 후보와 일치한다.
+- ko/en/ja 홈 HTTP 200, 각 언어 기존 `/app/?lang=` 링크 3개와 새 번역 cache key 확인. 인증 없는 기록 API 401. 실제 사용자 기록 읽기·수정·삭제, 새 OAuth 로그인과 실제 계정 동기화는 수행하지 않았다. Chrome 접근 호스트 unavailable로 현재 운영 화면의 글꼴·겹침·실제 provider 인증은 직접 검증하지 못했다. 서버 시험 화면의 수정 방향은 사용자가 직접 확인해 승인했다.
+- 운영 복구는 직전 site source `897d616167e9a10c8482d5e4361b20abcdfc907f`에 대응하는 기존 정상 Pages 배포를 선택하거나, 이번 `d0b0b590b3dea9dfc0391cb03157027ddd486dd8`를 revert하고 일반 main push한다. DB·기록·키·OAuth 설정은 복구 대상이 아니다. 문서 후속 커밋은 `[CF-Pages-Skip]`로 코드 재배포를 피한다.
