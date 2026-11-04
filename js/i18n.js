@@ -352,9 +352,9 @@
       "landing.scene.one": "일출",
       "landing.scene.two": "일몰",
       "privacy.s3.copy6": "지원 버전에서 AI 대화를 요청하면 메시지와 관련 맥락이 서버 AI 처리에 사용됩니다. 클라우드 자동 백업을 켜면 기록, 첨부파일, 저장된 대화 데이터의 사본이 계정과 연결된 서버 저장소로 업로드됩니다. 이용 가능 여부는 플랫폼, 앱 버전과 권한에 따라 다릅니다.",
-      "landing.web.scope": "웹: 무료 텍스트 기록과 기본 동기화. Google 또는 Apple로 로그인하며 처음 이용하면 같은 과정에서 계정이 만들어집니다.",
+      "landing.web.scope": "앱의 기본 기록은 로그인 없이 사용할 수 있습니다. 웹 기록과 계정 동기화에는 로그인이 필요합니다. 앱의 기존 기록은 지원 버전에서 연결과 가져오기 확인이 필요하며, 지원하지 않는 자료는 기기에 남습니다.",
       "landing.start.title": "시작할 곳을 선택하세요",
-      "landing.start.copy": "Android·iPhone에서는 앱을 다운로드해 무료 일기를 시작하세요. 웹에서는 로그인 후 새 기록을 선택해 텍스트를 저장하세요. 앱과 웹의 지원 기능은 다릅니다."
+      "landing.start.copy": "앱에서는 로그인 없이 기록을 시작할 수 있습니다. 웹에서는 Google 또는 Apple로 로그인해 텍스트 기록을 작성하고 다시 볼 수 있습니다. 사진·음성 기록은 앱에서 이용하세요."
     },
     "thoughts": [
       "오늘은 작은 기록만으로도 충분해요.",
@@ -713,9 +713,9 @@
       "landing.scene.one": "Sunrise",
       "landing.scene.two": "Sunset",
       "privacy.s3.copy6": "In supported versions, requesting an AI conversation sends your messages and relevant context for server AI processing. Enabling automatic cloud backup uploads a copy of records, attachments, and saved conversation data to account-linked server storage. Availability depends on platform, app version, and access rights.",
-      "landing.web.scope": "Web: free text entries and basic sync. Sign in with Google or Apple; new users create an account in the same step.",
+      "landing.web.scope": "Write basic entries in the app without signing in. Web entries and account sync require Google or Apple sign-in. Importing existing app entries requires connection and confirmation in a supported version; unsupported items stay on your device.",
       "landing.start.title": "Choose where to start",
-      "landing.start.copy": "Android or iPhone: download the app and start a free diary. Web: sign in, choose New entry, and save a text entry. Mobile features differ from the web workspace."
+      "landing.start.copy": "Start writing in the app without signing in. On the web, sign in with Google or Apple to write and revisit text entries. Use the app for photo and voice entries."
     },
     "thoughts": [
       "A small record is enough today.",
@@ -1074,9 +1074,9 @@
       "landing.scene.one": "日の出",
       "landing.scene.two": "日没",
       "privacy.s3.copy6": "対応バージョンでAI対話をリクエストすると、メッセージと関連する文脈がサーバーのAI処理に使われます。クラウド自動バックアップを有効にすると、記録、添付ファイル、保存済み対話データのコピーがアカウントに紐づくサーバーストレージにアップロードされます。利用可否はプラットフォーム、バージョン、権限によって異なります。",
-      "landing.web.scope": "ウェブ：無料のテキスト記録と基本同期。GoogleまたはAppleでログインすると、初めての場合は同じ手順でアカウントが作成されます。",
+      "landing.web.scope": "アプリの基本記録はログインせずに利用できます。ウェブの記録とアカウント同期にはログインが必要です。既存のアプリ記録の取り込みには対応版での接続と確認が必要で、非対応のデータは端末に残ります。",
       "landing.start.title": "始める場所を選ぶ",
-      "landing.start.copy": "Android・iPhoneではアプリをダウンロードして無料の日記を始めましょう。ウェブではログイン後、新しい記録を選んでテキストを保存できます。アプリとウェブの対応機能は異なります。"
+      "landing.start.copy": "アプリではログインせずに記録を始められます。ウェブではGoogleまたはAppleでログインしてテキスト記録を作成・閲覧できます。写真・音声の記録はアプリをご利用ください。"
     },
     "thoughts": [
       "今日は小さな記録だけでも十分です。",

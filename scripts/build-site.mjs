@@ -79,7 +79,7 @@ export function renderPage(template, page, language, locales, {preserveLocales =
   html = html.replace(/<img\b[^>]*data-screen="([^"]+)"[^>]*>/g, (tag, screen) => tag.replace(/src="[^"]*"/, `src="/assets/landing/${language}-${screen}-v20261017.webp"`).replace(/alt="[^"]*"/, `alt="${escape(copy.messages[`landing.screen.${screen}`])}"`));
   html = html.replace(/alt="NoveraFlow official mark"/g, `alt="${escape({en:'NoveraFlow official mark',ko:'NoveraFlow 공식 로고',ja:'NoveraFlow公式ロゴ'}[language])}"`);
   const contactAssetVersion = page.key === 'contact' ? '20261020' : '20261018a';
-  const i18nVersion = language === 'en' && ['home', 'features', 'faq'].includes(page.key) ? '20261031search' : '20261031en';
+  const i18nVersion = page.key === 'home' ? '20261104web' : language === 'en' && ['features', 'faq'].includes(page.key) ? '20261031search' : '20261031en';
   html = html.replace(/href="css\//g, 'href="/css/').replace(/\/js\/i18n\.js\?v=[^"]+/g, `/js/i18n.js?v=${i18nVersion}`).replace(/\/js\/landing\.js\?v=[^"]+/g, '/js/landing.js?v=20261018a').replace(/\/css\/styles\.css(?:\?v=[^"]*)?/g, `/css/styles.css?v=${contactAssetVersion}`).replace(/\/css\/landing\.css\?v=[^"]+/g, '/css/landing.css?v=20261018a');
   for (const [name, value, property] of [
     ['description',meta.description], ['og:title',meta.ogTitle || meta.title,true], ['og:description',meta.ogDescription || meta.description,true],

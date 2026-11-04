@@ -1477,3 +1477,10 @@ Recovery may return Pages to previous7192bd14/sourcefb23e35 or tested OFF snapsh
 - 정상본 d922b19의 archive와 원래 JS blob SHA256이 배포 전 정상 marker b0d27f55와 일치한다. 문제가 생기면 **git revert 53c55014a9174528dbbad33d235d41720532b3b1**을 검토해 일반 main push하거나 Pages의 정상 **fc191fb6-5a5c-425e-bb8b-683e730ec4d7**로 복구한다. 정상 archive·기존 설정 백업·이전9b206bc5 복구점은 보존했다. DB/OAuth/모바일 앱/결제 rollback은 필요하지 않다.
 - 증거 위치: **D:/Development/Personal/noveraflow/phase2-evidence-20261031/** 의 preflight.json, site-d922b19-before.tar, deployment.json, production-http.json, candidate-browser/report.json, live-browser/report.json과 공개 화면 PNG. 원문 기록/UID/token/cookie/인증 응답 본문은 저장하지 않았다. 기존 개인 Chrome/계정을 열거나 사용하지 않았고 별도 익명 프로필만 사용했다.
 - 미완료는 실제 계정 provider 로그인·가입/로그아웃·허용된 기록 실사용/동기화, W1·기존 표식 미해결, 미국 검색량/GSC 및 전환·재방문 계측과 최신 모바일 기능 수용이다. 이번 배포가 이 과제나 Phase2 전체를 완료한 것은 아니다. 새 유료 분석/SDK/스토어 변경/DB/실제 사용자 기록 조작은 없다.
+
+## 2026-11-04 웹 기록 편집 및 연결 안내 운영 후보
+
+- App `8c61a06b55a8d7bf55e4efd55a25cb4fc5d8bada` release 후보: 기존 기록 편집 취소, 상징 미리보기·사용 불가 안내 제거와 기존 상징 보존, 메모 메뉴 숨김. 기존 OAuth/API/기록 저장소·offline shell 계약을 유지한다. 사용자 승인 합성 시험 및 이전 위젯/오프라인 시험을 재사용했고 인증 fixture 6 PASS, 사이트 28 PASS. Chrome 호스트 unavailable로 현재 후보의 실제 브라우저 글꼴/겹침 및 운영 계정 왕복은 미검증이다.
+- 홈 ko/en/ja에 앱 기본 기록은 로그인 없이 이용 가능, 웹과 계정 동기화에는 로그인 필요, 기존 기록은 지원 버전의 연결·가져오기 확인이 필요하고 미지원 자료는 기기에 남는다는 설명을 추가했다. 기존 웹 CTA 3개를 유지한다. 공개 KR App Store 조회는 무료 다운로드/버전 1.0.81을 확인했지만 인앱 상품·가격은 표시하지 않았다. 코드의 월 상품 ID와 StoreKit 가격 표시는 확인했으나 실상품 가격을 추측하지 않았다.
+- 배포 전 공개 `/app/deployment.json`은 `web-20261103-record-composer-v1`, web source `6313256a22fd9501afa091a165f284557f2b2578`, site main `897d616167e9a10c8482d5e4361b20abcdfc907f`였다. 이번 후보는 기존 Pages main 통합을 사용한다. 필요 시 site 배포 커밋을 revert해 일반 push하거나 기존 정상 Pages 배포로 복구한다. 운영 기록 DB·암호화 키·계정 및 백업은 유지한다.
+- release 후보 JS SHA256 `cbdca96056b7645199ec48698305db49a04495a2060bc61d82dac11fe63b5545`. 로컬 Flutter release, base `/app/`, 기존 공개 Supabase 설정과 API origin 사용; 개인키/secret 형태 검사 0. 페이지·JS 및 브라우저 후속 검증 결과는 배포 후 별도 기록한다.

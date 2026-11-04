@@ -1,7 +1,7 @@
 {
-  "release": "web-20261103-record-composer-v1",
-  "webSource": "6313256a22fd9501afa091a165f284557f2b2578",
-  "siteBase": "71b4a6f3c6a8fd1f790a4564287ce3fbaf400629",
+  "release": "web-20261104-record-edit-v1",
+  "webSource": "8c61a06b55a8d7bf55e4efd55a25cb4fc5d8bada",
+  "siteBase": "897d616167e9a10c8482d5e4361b20abcdfc907f",
   "backendWebSource": "518ea9b7ef9bcb8b3722f748f416c0f427e14537",
   "baseHref": "/app/",
   "oauthProviders": [
@@ -11,8 +11,8 @@
   "actualStandaloneSignupAcceptance": "NOT_RUN",
   "actualOfflineAcceptance": "NOT_RUN",
   "actualBidirectionalAccountAcceptance": "NOT_RUN",
-  "mainSha256": "e72d59e9d4b5e44351bbba1cce40ca8bd3d6cfc4c2ecb76f397fc0ab099d2f83",
-  "previousRelease": "web-20261031-conversions-v1",
+  "mainSha256": "cbdca96056b7645199ec48698305db49a04495a2060bc61d82dac11fe63b5545",
+  "previousRelease": "web-20261103-record-composer-v1",
   "actualPostDeploymentAcceptance": "NOT_RUN",
   "englishLocaleAcceptance": "CANDIDATE_ANONYMOUS_FIRST_FRAME_ONLY",
   "homepageBaseline": "01b3d449d998d42e80e051bab2855117dbfbfaf3",
@@ -20,6 +20,6 @@
   "recordStorageAndSync": "EXISTING_CONTRACT_COMPOSER_CHANGE",
   "conversionObservation": "CONSENT_REQUIRED_FIRST_SERVER_ACK_IN_PAGE",
   "actualConversionAcceptance": "NOT_RUN_FOR_CANDIDATE",
-  "rollbackWebSource": "83b40612160d84b1be589774ec823766b9265cba",
-  "rollbackPagesDeployment": "02aad47d-1a0e-4bc7-aa80-f45fd59d6a4d"
+  "rollbackWebSource": "6313256a22fd9501afa091a165f284557f2b2578",
+  "rollbackPagesDeployment": null
 }
