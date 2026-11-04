@@ -1490,3 +1490,9 @@ Recovery may return Pages to previous7192bd14/sourcefb23e35 or tested OFF snapsh
 - 기존 `moolsoft-stack/noveraflow-site` main으로 source `d0b0b590b3dea9dfc0391cb03157027ddd486dd8`를 일반 push했다. GitHub Cloudflare Pages check `126337936843` completed/success. 공개 `https://noveraflow.com/app/`의 배포 표식은 `web-20261104-record-edit-v1`, App `8c61a06b55a8d7bf55e4efd55a25cb4fc5d8bada`; 공개 JS HTTP 200 및 SHA256 `cbdca96056b7645199ec48698305db49a04495a2060bc61d82dac11fe63b5545`가 후보와 일치한다.
 - ko/en/ja 홈 HTTP 200, 각 언어 기존 `/app/?lang=` 링크 3개와 새 번역 cache key 확인. 인증 없는 기록 API 401. 실제 사용자 기록 읽기·수정·삭제, 새 OAuth 로그인과 실제 계정 동기화는 수행하지 않았다. Chrome 접근 호스트 unavailable로 현재 운영 화면의 글꼴·겹침·실제 provider 인증은 직접 검증하지 못했다. 서버 시험 화면의 수정 방향은 사용자가 직접 확인해 승인했다.
 - 운영 복구는 직전 site source `897d616167e9a10c8482d5e4361b20abcdfc907f`에 대응하는 기존 정상 Pages 배포를 선택하거나, 이번 `d0b0b590b3dea9dfc0391cb03157027ddd486dd8`를 revert하고 일반 main push한다. DB·기록·키·OAuth 설정은 복구 대상이 아니다. 문서 후속 커밋은 `[CF-Pages-Skip]`로 코드 재배포를 피한다.
+
+## 2026-11-04 웹 기록 메뉴·설정 운영 후보
+
+- 사용자 확인 합성 시험 JS SHA256 `a4b9ac2027cec02a80992d3d5cfabdbf5c0b7a1283f7befea8a505a39035f3d1`과 현재 App source로 재현한 시험 빌드가 일치했다. App source `1e3bc6674ba4ec21d031a74a1df86f68c4ef9624`에는 홈의 작성·최근 5개, 기록 목록·검색, 설정의 동기화 상태·수동 동기화가 포함된다. 이전 합성 시험과 분석 결과를 재사용했다.
+- 기존 운영 `web-20261104-record-edit-v1`, App source `8c61a06b55a8d7bf55e4efd55a25cb4fc5d8bada`, JS SHA256 `cbdca96056b7645199ec48698305db49a04495a2060bc61d82dac11fe63b5545`와 site `ec80d85f9f15144f9df852fc9d1f201ef380a6cf`가 배포 전 기준이다. 공개 JS와 로컬 보존본의 해시 일치를 확인했다. 문제 발생 시 이번 site 배포 commit을 revert해 일반 main push하거나 기존 정상 Pages 배포로 복구한다. 기록 DB·키·OAuth·사용자 데이터는 복구 대상이 아니다.
+- 후보는 기존 공개 Auth/API 설정과 `/app/` 경로의 Flutter release 빌드이며 JS SHA256 `66fe2b4feb903aa1b257c8936c826ca12827698dfee73e9c78c34de39a1c10b7`. 다른 운영 자산과 설정은 유지한다. 실제 계정 로그인·기록 변경과 Chrome 자동 제어 검증은 수행하지 않았다.
