@@ -1496,3 +1496,9 @@ Recovery may return Pages to previous7192bd14/sourcefb23e35 or tested OFF snapsh
 - 사용자 확인 합성 시험 JS SHA256 `a4b9ac2027cec02a80992d3d5cfabdbf5c0b7a1283f7befea8a505a39035f3d1`과 현재 App source로 재현한 시험 빌드가 일치했다. App source `1e3bc6674ba4ec21d031a74a1df86f68c4ef9624`에는 홈의 작성·최근 5개, 기록 목록·검색, 설정의 동기화 상태·수동 동기화가 포함된다. 이전 합성 시험과 분석 결과를 재사용했다.
 - 기존 운영 `web-20261104-record-edit-v1`, App source `8c61a06b55a8d7bf55e4efd55a25cb4fc5d8bada`, JS SHA256 `cbdca96056b7645199ec48698305db49a04495a2060bc61d82dac11fe63b5545`와 site `ec80d85f9f15144f9df852fc9d1f201ef380a6cf`가 배포 전 기준이다. 공개 JS와 로컬 보존본의 해시 일치를 확인했다. 문제 발생 시 이번 site 배포 commit을 revert해 일반 main push하거나 기존 정상 Pages 배포로 복구한다. 기록 DB·키·OAuth·사용자 데이터는 복구 대상이 아니다.
 - 후보는 기존 공개 Auth/API 설정과 `/app/` 경로의 Flutter release 빌드이며 JS SHA256 `66fe2b4feb903aa1b257c8936c826ca12827698dfee73e9c78c34de39a1c10b7`. 다른 운영 자산과 설정은 유지한다. 실제 계정 로그인·기록 변경과 Chrome 자동 제어 검증은 수행하지 않았다.
+
+### 운영 배포 결과 (2026-11-04 KST)
+
+- site source `047cd2e741997d70e1c0f233561ba0d6ea1d2415`를 기존 개인 GitHub main→Cloudflare Pages로 배포했으며 check `126359796599` completed/success다. 공개 `https://noveraflow.com/app/` 200, noindex/no-store; 배포 표식 `web-20261104-record-navigation-v1`, App source `1e3bc6674ba4ec21d031a74a1df86f68c4ef9624`. 공개 JS 200 및 SHA256 `66fe2b4feb903aa1b257c8936c826ca12827698dfee73e9c78c34de39a1c10b7`은 릴리스 후보와 일치한다.
+- ko/en/ja 랜딩 각 200 및 기존 언어별 웹 링크 3개 확인, 비인증 records API 401. 사용자 기록 읽기·수정·삭제와 실제 계정 동기화는 수행하지 않았다. 미스터윤님의 합성 시험 화면 확인은 받았으나 이번 운영 화면의 실제 Chrome 자동 검증은 수행하지 않았다.
+- 직전 site `ec80d85f9f15144f9df852fc9d1f201ef380a6cf`의 운영 JS SHA256 `cbdca96056b7645199ec48698305db49a04495a2060bc61d82dac11fe63b5545`를 배포 전에 확인했다. 회귀 시 `047cd2e741997d70e1c0f233561ba0d6ea1d2415`를 revert 후 일반 main push하거나 직전 정상 Pages 배포로 복구한다. 사용자 DB·키·OAuth 설정은 보존한다. 이 후속 문서 커밋은 `[CF-Pages-Skip]`이다.
